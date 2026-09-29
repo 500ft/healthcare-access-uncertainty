@@ -56,7 +56,7 @@ Counts below are historical snapshots; the current suite is 116 tests on PR #22.
 
 Five generated-worksheet tests cover holdout omission, unchanged eligibility, future site inclusion, duplicate IDs and committed output consistency. 63 analysis tests and both Node checks pass. All six sites remain unverified; no imagery or Earth Engine evaluation occurred.
 
-Review [DAY3_PLAN.md](DAY3_PLAN.md), [deliverable](SITE_VERIFICATION_WORKSHEET.md), and [commands/evidence](../evidence/task-day3-2026-09-09/README.md). Base: `346b942b6de2ade58d40f2dfe367cbd086370d87`; new PR branch: `task/day-three-20260909`. No original Owner/External gate is closed. Final source identity is the PR head, reported in its delivery record rather than embedded circularly here.
+Review [DAY3_PLAN.md](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/DAY3_PLAN.md), [deliverable](SITE_VERIFICATION_WORKSHEET.md), and [commands/evidence](../evidence/task-day3-2026-09-09/README.md). Base: `346b942b6de2ade58d40f2dfe367cbd086370d87`; new PR branch: `task/day-three-20260909`. No original Owner/External gate is closed. Final source identity is the PR head, reported in its delivery record rather than embedded circularly here.
 
 No feature confirmation without seeing the dated source image; no Earth Engine or holdout evaluation implied.
 

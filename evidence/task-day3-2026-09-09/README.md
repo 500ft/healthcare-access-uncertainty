@@ -7,7 +7,7 @@ Branch: `task/day-three-20260909`. Scope: Make source-image inspection a bounded
 
 Five generated-worksheet tests cover holdout omission, unchanged eligibility, future site inclusion, duplicate IDs and committed output consistency. 63 analysis tests and both Node checks pass. All six sites remain unverified; no imagery or Earth Engine evaluation occurred.
 
-See [plan](../../docs/DAY3_PLAN.md) and [primary deliverable](../../docs/SITE_VERIFICATION_WORKSHEET.md). Status is maintained only in [SPRINT_TASKS.csv](../../docs/SPRINT_TASKS.csv); original research/CAD gates remain unchanged. Delivery is a new PR, not an automatic merge or scientific release.
+See [plan](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/DAY3_PLAN.md) and [primary deliverable](../../docs/SITE_VERIFICATION_WORKSHEET.md). Status is maintained only in [SPRINT_TASKS.csv](../../docs/SPRINT_TASKS.csv); original research/CAD gates remain unchanged. Delivery is a new PR, not an automatic merge or scientific release.
 
 ## Verification and reproducibility
 

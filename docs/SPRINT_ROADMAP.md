@@ -20,7 +20,7 @@ Original checkout: `/Users/redhose/.graphify/repos/500ft/CatanRoads`; preserved.
 
 Verified: config/sites.geojson has six unverified starting guesses; GEE candidateMask is positive disturbance, including a recovering site whose expected sign is opposite. Current gate counts large components, not roads. No installed .github/workflows exists; proposed patch is not active CI.
 
-Sources inspected: [config/sites.geojson](../config/sites.geojson), [gee/ndvi_change.js](../gee/ndvi_change.js), [tools/validate_phase1.mjs](../tools/validate_phase1.mjs), [docs/design.md](../docs/design.md), [README.md](../README.md), [analysis/pyproject.toml](../analysis/pyproject.toml), [ci-proposed/README.md](../ci-proposed/README.md).
+Sources inspected: [config/sites.geojson](../config/sites.geojson), [gee/ndvi_change.js](../gee/ndvi_change.js), [tools/validate_phase1.mjs](../tools/validate_phase1.mjs), [docs/design.md](../docs/design.md), [README.md](../README.md), [analysis/pyproject.toml](../analysis/pyproject.toml), [ci-proposed/README.md](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/ci-proposed/README.md).
 [Actual baseline command outputs](../evidence/sprint-2026-09-05/baseline.json) record working directories, runtime versions, outputs and exit statuses. Alleged defects become reproduced failures only when the red tests record them. Test counts are not research performance.
 
 Verified existing commands (repository root; local Python may need the recorded readline workaround):
