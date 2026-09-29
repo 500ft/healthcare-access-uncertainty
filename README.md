@@ -9,9 +9,9 @@ Mongolia, then test those candidates against dated reference imagery.
 
 [Overview](#overview) · [Evidence](#evidence) · [Getting started](#getting-started) · [Documentation](#documentation) · [Next milestone](#next-milestone)
 
-![Conceptual route from satellite disturbance screening to synthetic corridor extraction and pending dated-image confirmation](docs/media/project-overview.svg)
+![Illustrative overhead terrain with branching informal-road candidates](docs/media/hero.jpg)
 
-*Method overview, not a satellite result. Real-site evaluation and network
+*AI-generated synthetic landscape, not a satellite result. Real-site evaluation and network
 conditioning remain gated. [Visual provenance](docs/REPOSITORY_IDENTITY.md#visual-provenance).*
 
 ## Overview
