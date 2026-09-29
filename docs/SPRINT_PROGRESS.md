@@ -41,7 +41,7 @@ Each omitted or incomplete recommendation is accounted for separately in the cur
 
 ## Day-3 work — 2026-09-09
 
-Delivery update: the preparation was committed as 500ft and pushed; [day-3 PR](https://github.com/500ft/informal-road-mapping/pull/8) is open against main. Initial implementation source: `b3e7797f62ac2a8b1c0cd630b5d2455a9bfb2b52` (later review/documentation commits are visible in the PR). This supersedes the pre-push stopping state below. Original day-1/day-2 PRs are merged; this new PR is not merged. Resume from the named unresolved project gates in [DAY3_PLAN.md](DAY3_PLAN.md), not from the already completed push step.
+Delivery update: the preparation was committed as 500ft and pushed; [day-3 PR](https://github.com/500ft/informal-road-mapping/pull/8) is open against main. Initial implementation source: `b3e7797f62ac2a8b1c0cd630b5d2455a9bfb2b52` (later review/documentation commits are visible in the PR). This supersedes the pre-push stopping state below. Original day-1/day-2 PRs are merged; this new PR is not merged. Resume from the named unresolved project gates in [DAY3_PLAN.md](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/DAY3_PLAN.md), not from the already completed push step.
 
 Both reviewed PR layers merged into main; new work starts from `346b942b6de2ade58d40f2dfe367cbd086370d87` on `task/day-three-20260909`. Five generated-worksheet tests cover holdout omission, unchanged eligibility, future site inclusion, duplicate IDs and committed output consistency. 63 analysis tests and both Node checks pass. All six sites remain unverified; no imagery or Earth Engine evaluation occurred.
 

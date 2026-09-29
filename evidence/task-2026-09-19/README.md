@@ -1,6 +1,6 @@
 # Week of 2026-09-19 — Day 1 intake and stack review (W0)
 
-Plan: [docs/WEEKLY_PLAN_2026-09-19.md](../../docs/WEEKLY_PLAN_2026-09-19.md) (the committed,
+Plan: [docs/WEEKLY_PLAN_2026-09-19.md](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/WEEKLY_PLAN_2026-09-19.md) (the committed,
 critiqued version of the handoff draft). Day 1 is **review only**: no source file, record,
 threshold, site or PR was changed by this task. Synthetic evidence throughout; CR-08 unchanged.
 

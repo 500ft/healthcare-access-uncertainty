@@ -1,7 +1,7 @@
 # Closeout — 2026-09-25
 
 Owner-independent preparation for this repository, executed against
-[docs/CLOSEOUT_PLAN_2026-09-25_CLAUDE_HANDOFF.txt](../../docs/CLOSEOUT_PLAN_2026-09-25_CLAUDE_HANDOFF.txt).
+[docs/CLOSEOUT_PLAN_2026-09-25_CLAUDE_HANDOFF.txt](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/CLOSEOUT_PLAN_2026-09-25_CLAUDE_HANDOFF.txt).
 **This closes the preparation work. It does not manufacture research completion.** No site is
 verified, no Earth Engine run occurred, no gate, threshold or committed record changed.
 
