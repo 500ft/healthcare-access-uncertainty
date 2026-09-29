@@ -39,3 +39,14 @@ Not lazy about: understanding the problem (read it fully and trace the real flow
   [Project-specific applications](docs/ENGINEERING_AUDIT_PLANNING_GUIDANCE_2026-09-21.txt)
   cover independent expected results, coordinate probes, artifact round-trips,
   and evidence provenance. Check existing coverage before adding tests or tools.
+
+## Earth Engine testing — owner instruction, 2026-09-28
+
+- Use https://code.earthengine.google.com/ in the user's signed-in browser for
+  this project's Earth Engine runtime tests. Local Python and static checks
+  complement these runs; they do not establish Earth Engine runtime behavior.
+- Browser access to the Code Editor was confirmed on 2026-09-28; no script was
+  executed during that access check. Check the active project before running,
+  and record actual console results and completed export states as applicable.
+- Use this browser route before declaring Earth Engine access unavailable.
+  Preserve existing scripts and the registered site's evidence requirements.
