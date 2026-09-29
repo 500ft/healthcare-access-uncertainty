@@ -17,7 +17,11 @@ updates:
     groups:
       pip:
         patterns: ["*"]
+    # Keep ">=" ranges as written; only bump pins, or a range the new release falls outside.
+    versioning-strategy: increase-if-necessary
     ignore:
-      # numpy >= 2.5 requires Python >= 3.12; CI runs 3.11.
+      # These releases require Python >= 3.12; CI runs 3.11.
       - dependency-name: "numpy"
         versions: [">=2.5"]
+      - dependency-name: "scipy"
+        versions: [">=1.18"]
