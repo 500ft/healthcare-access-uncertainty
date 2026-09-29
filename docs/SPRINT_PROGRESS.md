@@ -1,5 +1,13 @@
 # Sprint progress — CatanRoads
 
+## 2026-09-29 — first Earth Engine runtime evidence
+
+Executed the grid probe and default development QA script in the Code Editor.
+Fixed the probe failures encountered during execution and checked the resulting
+geometry independently. Console measurements, source identity, export states and
+remaining limitations are in the [canonical runtime record](../results/earth_engine_runtime_2026-09-29.json).
+CR-08 still requires dated reference imagery and owner judgment; no site was verified.
+
 ## 2026-09-25 — preparation closeout
 
 Corrected PR #37's "independent samples" overclaim before merge (area equivalents are not sample

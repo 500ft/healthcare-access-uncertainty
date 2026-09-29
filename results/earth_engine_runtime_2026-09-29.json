@@ -1,0 +1,311 @@
+{
+  "date": "2026-09-29",
+  "base_revision": "c238450",
+  "project": "desire-lines-505107",
+  "execution_surface": "Earth Engine Code Editor through signed-in Chrome",
+  "scope": "Development QA only; no site verification or Phase-1 verdict",
+  "original_probe": {
+    "status": "FAILED",
+    "source_revision": "c238450",
+    "path": "evidence/task-2026-09-25/grid_runtime_probe.js",
+    "console": "\n- button \"Console\"\n- button \"Tasks\"\n- button \"chat_spark_2 Ask\":\n  - generic: chat_spark_2\n  - text: Ask\n- text: Use\n- code: print(...)\n- text: to write to this console.\n- separator\n- generic: JSON\n- generic: \"dev-01-braided-lat :: crs\"\n- generic: JSON\n- generic: EPSG:3857\n- separator\n- generic: JSON\n- generic: \"dev-01-braided-lat :: nominalScale (m)\"\n- generic: \"10\"\n- separator\n- generic: JSON\n- generic: \"dev-01-braided-lat :: transform\"\n- generic: JSON\n- generic: \"[10,0,0,0,-10,0]\"\n- separator\n- generic: JSON\n- generic: \"dev-01-braided-lat :: pixelArea at point (m2)\"\n- generic: JSON\n- generic: Object (1 property)\n- separator\n- generic: JSON\n- generic: \"dev-01-braided-lat :: one-pixel-east ground distance (m)\"\n- generic: \"67.9387716145232\"\n- separator\n- generic: JSON\n- generic: \"dev-01-braided-lat :: lon/lat\"\n- generic: JSON\n- generic: \"[102.3,47.3]\"\n- separator\n- generic: error_outline\n- generic: Error\n- generic: JSON\n- generic: \"dev-01-braided-lat :: 50-px-equivalent box area on the ground (m2)\"\n- generic: Number (Error)\n- generic: \"Geometry.buffer: maxError for Buffer must be in the same units as the distance.\"\n- button \"Troubleshoot\":\n  - generic: chat_spark_2\n  - generic: Troubleshoot\n- separator\n- generic: JSON\n- generic: \"equator-control :: crs\"\n- generic: JSON\n- generic: EPSG:3857\n- separator\n- generic: JSON\n- generic: \"equator-control :: nominalScale (m)\"\n- generic: \"10\"\n- separator\n- generic: JSON\n- generic: \"equator-control :: transform\"\n- generic: JSON\n- generic: \"[10,0,0,0,-10,0]\"\n- separator\n- generic: JSON\n- generic: \"equator-control :: pixelArea at point (m2)\"\n- generic: JSON\n- generic: Object (1 property)\n- separator\n- generic: JSON\n- generic: \"equator-control :: one-pixel-east ground distance (m)\"\n- generic: \"100.00000000059052\"\n- separator\n- generic: JSON\n- generic: \"equator-control :: lon/lat\"\n- generic: JSON\n- generic: \"[102.3,0]\"\n- separator\n- generic: error_outline\n- generic: Error\n- generic: JSON\n- generic: \"equator-control :: 50-px-equivalent box area on the ground (m2)\"\n- generic: Number (Error)\n- generic: \"Geometry.buffer: maxError for Buffer must be in the same units as the distance.\"\n- button \"Troubleshoot\":\n  - generic: chat_spark_2\n  - generic: Troubleshoot\n- separator\n- generic: error_outline\n- generic: Error\n- generic: \"Line 66: outer.weights is not a function\"\n- button \"Troubleshoot\":\n  - generic: chat_spark_2\n  - generic: Troubleshoot\n- separator\n"
+  },
+  "corrected_probe": {
+    "status": "EXECUTED",
+    "path": "evidence/task-2026-09-25/grid_runtime_probe.js",
+    "observation_format": "JSON parsed from Code Editor GRID_PROBE console lines",
+    "observations": [
+      {
+        "label": "dev-01-braided-lat:geometry",
+        "status": "OK",
+        "value": {
+          "center_lonlat": [
+            102.3000098082385,
+            47.299969998954076
+          ],
+          "crs": "EPSG:3857",
+          "east_distance_m": 6.793881004535193,
+          "east_lonlat": [
+            102.3000996397669,
+            47.299969998954076
+          ],
+          "footprint_area_m2": 2294.3565802680478,
+          "footprint_projected_bounds": [
+            11387980,
+            5991170,
+            11388080,
+            5991220
+          ],
+          "nominal_scale_m": 10,
+          "north_distance_m": 6.772963208461185,
+          "north_lonlat": [
+            102.3000098082385,
+            47.30003091907319
+          ],
+          "pixel_area_m2": 46.01436996459961,
+          "raster_footprint": {
+            "area": 2300.7080078125,
+            "cells": 50
+          },
+          "transform": "PARAM_MT[\"Affine\", \n PARAMETER[\"num_row\", 3], \n PARAMETER[\"num_col\", 3], \n PARAMETER[\"elt_0_0\", 10.0], \n PARAMETER[\"elt_1_1\", -10.0]]"
+        },
+        "error": null
+      },
+      {
+        "label": "dev-01-braided-lat:ring",
+        "status": "OK",
+        "value": {
+          "counts": {
+            "inner": 1257,
+            "outer": 20081,
+            "ring": 18824
+          },
+          "radial_extent": {
+            "radius_projected_m_max": 800,
+            "radius_projected_m_min": 200.24984394500788
+          }
+        },
+        "error": null
+      },
+      {
+        "label": "equator-control:geometry",
+        "status": "OK",
+        "value": {
+          "center_lonlat": [
+            102.3000098082385,
+            -0.00004491576420496909
+          ],
+          "crs": "EPSG:3857",
+          "east_distance_m": 9.999999998356522,
+          "east_lonlat": [
+            102.3000996397669,
+            -0.00004491576420496909
+          ],
+          "footprint_area_m2": 4988.827718752722,
+          "footprint_projected_bounds": [
+            11387980,
+            -10,
+            11388080,
+            40
+          ],
+          "nominal_scale_m": 10,
+          "north_distance_m": 9.93294378648238,
+          "north_lonlat": [
+            102.3000098082385,
+            0.00004491576420496909
+          ],
+          "pixel_area_m2": 99.33055877685547,
+          "raster_footprint": {
+            "area": 4966.527938842773,
+            "cells": 50
+          },
+          "transform": "PARAM_MT[\"Affine\", \n PARAMETER[\"num_row\", 3], \n PARAMETER[\"num_col\", 3], \n PARAMETER[\"elt_0_0\", 10.0], \n PARAMETER[\"elt_1_1\", -10.0]]"
+        },
+        "error": null
+      },
+      {
+        "label": "equator-control:ring",
+        "status": "OK",
+        "value": {
+          "counts": {
+            "inner": 1257,
+            "outer": 20081,
+            "ring": 18824
+          },
+          "radial_extent": {
+            "radius_projected_m_max": 800,
+            "radius_projected_m_min": 200.24984394500788
+          }
+        },
+        "error": null
+      },
+      {
+        "label": "resampling:metadata",
+        "status": "OK",
+        "value": {
+          "composite_crs": "EPSG:4326",
+          "scene_count": 5,
+          "scene_ids": [
+            "20230709T040549_20230709T040558_T47TQN",
+            "20230714T040551_20230714T041506_T47TQN",
+            "20230724T040551_20230724T040558_T47TQN",
+            "20230727T041551_20230727T042146_T47TQN",
+            "20230729T040549_20230729T040559_T47TQN"
+          ],
+          "source_B11_nominal_m": 20,
+          "source_B11_transform": "PARAM_MT[\"Affine\", \n PARAMETER[\"num_row\", 3], \n PARAMETER[\"num_col\", 3], \n PARAMETER[\"elt_0_0\", 20.0], \n PARAMETER[\"elt_0_2\", 699960.0], \n PARAMETER[\"elt_1_1\", -20.0], \n PARAMETER[\"elt_1_2\", 5300040.0]]",
+          "source_B4_nominal_m": 10,
+          "source_B4_transform": "PARAM_MT[\"Affine\", \n PARAMETER[\"num_row\", 3], \n PARAMETER[\"num_col\", 3], \n PARAMETER[\"elt_0_0\", 10.0], \n PARAMETER[\"elt_0_2\", 699960.0], \n PARAMETER[\"elt_1_1\", -10.0], \n PARAMETER[\"elt_1_2\", 5300040.0]]",
+          "source_crs": "EPSG:32647"
+        },
+        "error": null
+      },
+      {
+        "label": "resampling:composite_then_resample",
+        "status": "OK",
+        "value": {
+          "B4": 780,
+          "B8": 2642
+        },
+        "error": null
+      },
+      {
+        "label": "resampling:resample_then_composite",
+        "status": "OK",
+        "value": {
+          "B4": 780,
+          "B8": 2537
+        },
+        "error": null
+      },
+      {
+        "label": "resampling:difference",
+        "status": "OK",
+        "value": {
+          "B4": 0,
+          "B8": 105
+        },
+        "error": null
+      }
+    ],
+    "interpretation": [
+      "The raster affine matches the production projection call. Ground distances and areas differ from nominal projected units.",
+      "The impulse support matches integer disks in projected units at both tested latitudes. The annulus is not a latitude-invariant ground-distance buffer.",
+      "Resampling before versus after the median changes the sampled B8 value in this collection. This is a raw-band order diagnostic, not the frozen index-compositor A/B comparison.",
+      "Native B4 and B11 projection metadata are captured; full band-alignment and categorical-interpolation behavior remain untested."
+    ],
+    "attempt_note": "An intermediate run used Projection.atScale with a positive y axis. Its callbacks overlapped the next run. Final observations here were recaptured in a fresh Code Editor tab from the committed probe, with no earlier callbacks.",
+    "sha256": "217d4e88902de24146dcdb8e277dd6d77fb098f7606a3b0719325efa0e9b957c"
+  },
+  "phase1_qa": {
+    "status": "EXPORTS_RUNNING",
+    "source_revision": "c238450337a97ae9cf195659dd648aa750503f7d",
+    "path": "gee/ndvi_change.js",
+    "source_script": "https://code.earthengine.google.com/64476c6b9736e42a60992154defd1724",
+    "site_id": "dev-01-braided",
+    "site_verified": false,
+    "console": "\n- button \"Console\"\n- button \"Tasks\"\n- button \"chat_spark_2 Ask\":\n  - generic: chat_spark_2\n  - text: Ask\n- text: Use\n- code: print(...)\n- text: to write to this console.\n- separator\n- generic: JSON\n- generic: \"UNVERIFIED QA ONLY — do not report this as a Phase-1 gate result: dev-01-braided\"\n- separator\n- generic: JSON\n- generic: Object (7 properties)\n- separator\n- generic: JSON\n- generic: Object (3 properties)\n- separator\n- generic: JSON\n- generic: Object (2 properties)\n- separator\n- generic: JSON\n- generic: Object (21 properties)\n- generic: \"analysis_crs:\"\n- text: EPSG:3857\n- generic: \"analysis_scale_m:\"\n- text: \"10\"\n- generic: \"aoi_km2:\"\n- text: \"254.58560813524664\"\n- generic: \"control_annulus_m:\"\n- text: \"[200,800]\"\n- generic: \"early_years:\"\n- text: \"[2018,2019,2020,2021]\"\n- generic: \"export_name:\"\n- text: qa_unverified_dev-01-braided_2023-2026\n- generic: \"message_type:\"\n- text: RUN MANIFEST\n- generic: \"min_component_pixels:\"\n- text: \"50\"\n- generic: \"min_valid_recent_years:\"\n- text: \"2\"\n- generic: \"month:\"\n- text: \"7\"\n- generic: \"persistence_min:\"\n- text: \"0.6666666666666666\"\n- generic: \"recent_years:\"\n- text: \"[2023,2024,2025,2026]\"\n- generic: \"reference_imagery_date:\"\n- text: TBD\n- generic: \"scenes_per_early_year:\"\n- text: Object (4 properties)\n- generic: \"2018:\"\n- text: \"1\"\n- generic: \"2019:\"\n- text: \"10\"\n- generic: \"2020:\"\n- text: \"11\"\n- generic: \"2021:\"\n- text: \"14\"\n- generic: \"scenes_per_recent_year:\"\n- text: Object (4 properties)\n- generic: \"2023:\"\n- text: \"10\"\n- generic: \"2024:\"\n- text: \"12\"\n- generic: \"2025:\"\n- text: \"23\"\n- generic: \"2026:\"\n- text: \"17\"\n- generic: \"site_id:\"\n- text: dev-01-braided\n- generic: \"site_provenance:\"\n- text: starting guess, central-Mongolia steppe\n- generic: \"site_stratum:\"\n- text: development\n- generic: \"site_verified:\"\n- text: \"false\"\n- generic: \"yearly_effect_min:\"\n- text: \"0.02\"\n- generic: \"z_min:\"\n- text: \"1\"\n- separator\n- generic: JSON\n- generic: \"NEXT: run this frozen configuration at each VERIFIED development site and negative-01; run each *_gate_metrics table export and compare the CSV large_component_fraction values exactly as specified by REGISTERED GATE. Do not infer the gate from the rendered map.\"\n- separator\n",
+    "exports": [
+      {
+        "type": "image",
+        "id": "LMFXHPYZHFRKQ3VOXQHPCEUN",
+        "state": "RUNNING"
+      },
+      {
+        "type": "table",
+        "id": "254F3FV67X6QNLNGXXFDZOSM",
+        "state": "RUNNING"
+      }
+    ],
+    "gate_verdict": "NOT_EVALUATED_UNVERIFIED",
+    "remaining": "Dated reference imagery and owner site judgment are absent. Other registered sites and the holdout were not run.",
+    "sha256": "8e8f87bdebeaa63c9fc061c14d85d22119782349113f55476e6a8773ba3a29f5",
+    "export_states_checked_at_utc": "2026-09-29T20:57:00Z"
+  },
+  "validation": {
+    "analysis_tests": {
+      "command": "python -m pytest analysis/tests -q",
+      "passed": 149
+    },
+    "other_checks": [
+      "Python compileall",
+      "node tools/validate_phase1.mjs",
+      "node tools/test_temporal_qa.mjs",
+      "python -m catanroads.site_worksheet --check",
+      "python tools/check_presentation.py . 'Informal Road Mapping' informal-road-mapping",
+      "python tools/test_presentation.py",
+      "node --check evidence/task-2026-09-25/grid_runtime_probe.js"
+    ],
+    "independent_grid_check": {
+      "command": "python tools/check_grid_runtime.py",
+      "status": "PASS",
+      "checks": {
+        "dev-01-braided-lat:east": {
+          "expected": 6.793893762380245,
+          "relative_error": 0.000001877839939468439,
+          "tolerance": 0.001,
+          "passed": true
+        },
+        "dev-01-braided-lat:north": {
+          "expected": 6.772897242121478,
+          "relative_error": 0.00000973975203652455,
+          "tolerance": 0.001,
+          "passed": true
+        },
+        "dev-01-braided-lat:pixel_area": {
+          "expected": 46.014344326491475,
+          "relative_error": 5.571764307312618e-7,
+          "tolerance": 0.001,
+          "passed": true
+        },
+        "dev-01-braided-lat:geometry_area": {
+          "expected": 2299.4947005851604,
+          "relative_error": 0.0022344562550220986,
+          "tolerance": 0.01,
+          "passed": true
+        },
+        "dev-01-braided-lat:raster_area": {
+          "expected": 2299.4947005851604,
+          "relative_error": 0.0005276408017077844,
+          "tolerance": 0.01,
+          "passed": true
+        },
+        "dev-01-braided-lat:ring_min": {
+          "expected": 200.24984394500788,
+          "relative_error": 0,
+          "tolerance": 0.000001,
+          "passed": true
+        },
+        "dev-01-braided-lat:ring_max": {
+          "expected": 800,
+          "relative_error": 0,
+          "tolerance": 0.000001,
+          "passed": true
+        },
+        "equator-control:east": {
+          "expected": 9.999999998356522,
+          "relative_error": 0,
+          "tolerance": 0.001,
+          "passed": true
+        },
+        "equator-control:north": {
+          "expected": 9.933056199875955,
+          "relative_error": 0.000011317100327736308,
+          "tolerance": 0.001,
+          "passed": true
+        },
+        "equator-control:pixel_area": {
+          "expected": 99.33056198243479,
+          "relative_error": 3.227183310409081e-8,
+          "tolerance": 0.001,
+          "passed": true
+        },
+        "equator-control:geometry_area": {
+          "expected": 4999.999999946739,
+          "relative_error": 0.0022344562388272337,
+          "tolerance": 0.01,
+          "passed": true
+        },
+        "equator-control:raster_area": {
+          "expected": 4999.999999946739,
+          "relative_error": 0.006694412220864439,
+          "tolerance": 0.01,
+          "passed": true
+        },
+        "equator-control:ring_min": {
+          "expected": 200.24984394500788,
+          "relative_error": 0,
+          "tolerance": 0.000001,
+          "passed": true
+        },
+        "equator-control:ring_max": {
+          "expected": 800,
+          "relative_error": 0,
+          "tolerance": 0.000001,
+          "passed": true
+        }
+      }
+    },
+    "environment": "macOS; isolated Python 3.13 environment; analysis[dev] installed without changing dependency declarations"
+  }
+}

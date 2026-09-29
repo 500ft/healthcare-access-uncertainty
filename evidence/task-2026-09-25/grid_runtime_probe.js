@@ -1,124 +1,101 @@
-/**
- * Grid / support runtime probe — Earth Engine Code Editor script.
- *
- * STATUS WHEN COMMITTED: PREPARED_UNEXECUTED. Nothing here has been run.
- * It inspects NO registered site imagery and NEVER touches holdout-01.
- *
- * Purpose: measure what this project's analysis grid physically is, rather than assuming it.
- * Expected values are in grid_runtime_expectations.json, computed independently (inverse
- * projection + geodesic), NOT read back from the same Earth Engine operation.
- *
- * Run: paste into https://code.earthengine.google.com with an authorized project, press Run,
- * copy the console output into the observed-results table in README.md, and export the tasks.
+/** Grid/support probe. Run in the Earth Engine Code Editor.
+ * Console records are JSON prefixed GRID_PROBE; each evaluation retains its error.
+ * Geometry uses synthetic rasters. Final checks read public Sentinel-2 bands at
+ * one unverified development point, not reference imagery or the holdout.
+ * No site verification, gate verdict, threshold change, or export is performed.
+ * Executed evidence: results/earth_engine_runtime_2026-09-29.json.
  */
-
-var ANALYSIS_CRS = 'EPSG:3857';      // mirrors gee/ndvi_change.js
+var ANALYSIS_CRS = 'EPSG:3857';
 var ANALYSIS_SCALE_M = 10;
-
-// A registered development latitude, and an equatorial control where Web Mercator is ~1:1.
+var metric = ee.Projection(ANALYSIS_CRS); // unscaled projected metres for geometry
+// Obtain the delivered affine exactly as the production helper does, including y sign.
+var grid = ee.Image.constant(0).reproject({crs: ANALYSIS_CRS,
+  scale: ANALYSIS_SCALE_M}).projection();
 var PROBE_POINTS = {
   'dev-01-braided-lat': ee.Geometry.Point([102.3, 47.3]),
-  'equator-control':    ee.Geometry.Point([102.3, 0.0])
+  'equator-control': ee.Geometry.Point([102.3, 0])
 };
 
-// ---------------------------------------------------------------- 1. projection and transform
-function reportProjection(label, img) {
-  var p = img.projection();
-  print(label + ' :: crs', p.crs());
-  print(label + ' :: nominalScale (m)', p.nominalScale());
-  print(label + ' :: transform', p.getInfo().transform);
-}
-
-// ---------------------------------------------------------------- 2. pixel area and spacing
-function reportPixelGeometry(label, pt) {
-  var area = ee.Image.pixelArea()
-    .reproject({crs: ANALYSIS_CRS, scale: ANALYSIS_SCALE_M})
-    .reduceRegion({reducer: ee.Reducer.first(), geometry: pt, scale: ANALYSIS_SCALE_M});
-  print(label + ' :: pixelArea at point (m2)', area);
-
-  // Neighbour-centre distance: offset one pixel east in PROJECTED units, measure on the ground.
-  var c = pt.coordinates();
-  var proj = ee.Projection(ANALYSIS_CRS).atScale(ANALYSIS_SCALE_M);
-  var here = pt.transform(proj, 0.001);
-  var east = ee.Geometry.Point(
-    ee.List([ee.Number(here.coordinates().get(0)).add(ANALYSIS_SCALE_M),
-             here.coordinates().get(1)]), proj);
-  print(label + ' :: one-pixel-east ground distance (m)',
-        here.transform('EPSG:4326', 0.001).distance(east.transform('EPSG:4326', 0.001), 0.001));
-  print(label + ' :: lon/lat', c);
-}
-
-// ---------------------------------------------------------------- 3. 50-pixel footprint
-function reportComponentFootprint(label, pt) {
-  // A known shape: a 5x10 block of analysis pixels = the min_component_pixels = 50 threshold.
-  var proj = ee.Projection(ANALYSIS_CRS).atScale(ANALYSIS_SCALE_M);
-  var box = pt.transform(proj, 0.001).buffer(ANALYSIS_SCALE_M * 5, 0.001, proj).bounds(0.001, proj);
-  print(label + ' :: 50-px-equivalent box area on the ground (m2)', box.area(0.001));
-}
-
-// ---------------------------------------------------------------- 4. the ring kernel's support
-function reportRingKernel(label) {
-  // CONTROL_INNER_M = 200, CONTROL_OUTER_M = 800 in gee/ndvi_change.js.
-  // Competing interpretations: metres on the ground, versus projected units on this grid.
-  // Record which one the measured support matches, and its boundary convention.
-  var outer = ee.Kernel.circle({radius: 800, units: 'meters'});
-  var inner = ee.Kernel.circle({radius: 200, units: 'meters'});
-  print(label + ' :: outer kernel weights (rows)', ee.List(outer.weights()).length());
-  print(label + ' :: inner kernel weights (rows)', ee.List(inner.weights()).length());
-}
-
-// ---------------------------------------------------------------- 5. resample-on-composites
-// gee/ndvi_change.js::atAnalysisScale calls .resample('bilinear') on DERIVED images, including
-// collection medians. Earth Engine documents that resample needs a meaningful default projection
-// and warns against applying it to composites, which have none.
-// https://developers.google.com/earth-engine/apidocs/ee-image-resample
-// This reproduces BOTH orders and prints the projections at each step so the difference is
-// observed rather than argued. An error here is an OBSERVED FAILURE to record, not a licence to
-// change the live helper during closeout.
-function reportResampleOrder(pt) {
-  var coll = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
-    .filterBounds(pt).filterDate('2023-07-01', '2023-08-01')
-    .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 40))
-    .select(['B4', 'B8']);
-
-  print('resample :: source image projection', ee.Image(coll.first()).projection().crs());
-  print('resample :: source nominalScale', ee.Image(coll.first()).projection().nominalScale());
-
-  // Order 1 — what the repository does today: composite, THEN resample.
-  var compositeFirst = coll.median();
-  print('resample :: composite projection BEFORE resample (expect a default/WGS84-like projection)',
-        compositeFirst.projection().crs());
-  var afterComposite = compositeFirst.resample('bilinear')
-    .reproject({crs: ANALYSIS_CRS, scale: ANALYSIS_SCALE_M});
-  print('resample :: order-1 (composite -> resample) result projection', afterComposite.projection().crs());
-
-  // Order 2 — resample each source image first, then composite.
-  var beforeComposite = coll.map(function (img) { return img.resample('bilinear'); }).median()
-    .reproject({crs: ANALYSIS_CRS, scale: ANALYSIS_SCALE_M});
-  print('resample :: order-2 (resample -> composite) result projection', beforeComposite.projection().crs());
-
-  // Numeric difference at the probe point, if both evaluate.
-  var diff = afterComposite.subtract(beforeComposite)
-    .reduceRegion({reducer: ee.Reducer.first(), geometry: pt, scale: ANALYSIS_SCALE_M});
-  print('resample :: order-1 minus order-2 at probe point (B4, B8)', diff);
-}
-
-// ---------------------------------------------------------------- 6. band alignment
-function reportBandAlignment(pt) {
-  var img = ee.Image(ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
-    .filterBounds(pt).filterDate('2023-07-01', '2023-08-01').first());
-  ['B2', 'B4', 'B8', 'B11'].forEach(function (b) {
-    print('alignment :: ' + b + ' nominalScale (m)', img.select(b).projection().nominalScale());
+function report(label, value) {
+  value.evaluate(function (result, error) {
+    print('GRID_PROBE ' + JSON.stringify({label: label,
+      status: error ? 'ERROR' : 'OK', value: error ? null : result,
+      error: error || null}));
   });
 }
 
-// ---------------------------------------------------------------- run
+function first(image, point) {
+  return image.reduceRegion({reducer: ee.Reducer.first(), geometry: point,
+    crs: grid, maxPixels: 1000000});
+}
+
+function reportGeometry(label, point) {
+  var xy = point.transform(metric, 0.001).coordinates();
+  var x = ee.Number(xy.get(0)).divide(10).floor().multiply(10);
+  var y = ee.Number(xy.get(1)).divide(10).floor().multiply(10);
+  var center = ee.Geometry.Point([x.add(5), y.add(5)], metric);
+  var east = ee.Geometry.Point([x.add(15), y.add(5)], metric);
+  var north = ee.Geometry.Point([x.add(5), y.add(15)], metric);
+  // A grid-aligned non-square rectangle: ten columns by five rows, exactly 50 cells.
+  var box = ee.Geometry.Rectangle([x, y, x.add(100), y.add(50)], metric, false);
+  var stats = ee.Image.pixelArea().rename('area').addBands(ee.Image.constant(1).rename('cells'))
+    .reduceRegion({reducer: ee.Reducer.sum(), geometry: box, crs: grid, maxPixels: 1000000});
+  report(label + ':geometry', ee.Dictionary({
+    crs: grid.crs(), transform: grid.transform(), nominal_scale_m: grid.nominalScale(),
+    center_lonlat: center.transform('EPSG:4326', 0.001).coordinates(),
+    east_lonlat: east.transform('EPSG:4326', 0.001).coordinates(),
+    north_lonlat: north.transform('EPSG:4326', 0.001).coordinates(),
+    east_distance_m: center.distance(east, 0.001),
+    north_distance_m: center.distance(north, 0.001),
+    pixel_area_m2: first(ee.Image.pixelArea(), center).get('area'),
+    footprint_projected_bounds: ee.List([x, y, x.add(100), y.add(50)]),
+    footprint_area_m2: box.area(0.001), raster_footprint: stats
+  }));
+
+  // Observe a metre-kernel's actual support on the analysis grid using an impulse.
+  var coords = ee.Image.pixelCoordinates(grid);
+  var cell = first(coords, center);
+  var dx = coords.select('x').subtract(ee.Number(cell.get('x')));
+  var dy = coords.select('y').subtract(ee.Number(cell.get('y')));
+  var impulse = dx.eq(0).and(dy.eq(0));
+  var outer = impulse.reduceNeighborhood(ee.Reducer.sum(),
+    ee.Kernel.circle({radius: 800, units: 'meters', normalize: false}));
+  var inner = impulse.reduceNeighborhood(ee.Reducer.sum(),
+    ee.Kernel.circle({radius: 200, units: 'meters', normalize: false}));
+  var ring = outer.subtract(inner).gt(0).rename('ring');
+  var region = ee.Geometry.Rectangle([x.subtract(1500), y.subtract(1500),
+    x.add(1500), y.add(1500)], metric, false);
+  var support = ring.addBands(outer.gt(0).rename('outer')).addBands(inner.gt(0).rename('inner'))
+    .reduceRegion({reducer: ee.Reducer.sum(), geometry: region, crs: grid, maxPixels: 1000000});
+  var radial = dx.hypot(dy).multiply(10).rename('radius_projected_m').updateMask(ring);
+  report(label + ':ring', ee.Dictionary({counts: support,
+    radial_extent: radial.reduceRegion({reducer: ee.Reducer.minMax(), geometry: region,
+      crs: grid, maxPixels: 1000000})}));
+}
+
 Object.keys(PROBE_POINTS).forEach(function (label) {
-  var pt = PROBE_POINTS[label];
-  reportProjection(label, ee.Image.pixelArea().reproject({crs: ANALYSIS_CRS, scale: ANALYSIS_SCALE_M}));
-  reportPixelGeometry(label, pt);
-  reportComponentFootprint(label, pt);
+  reportGeometry(label, PROBE_POINTS[label]);
 });
-reportRingKernel('kernel');
-reportResampleOrder(PROBE_POINTS['dev-01-braided-lat']);
-reportBandAlignment(PROBE_POINTS['dev-01-braided-lat']);
+
+// Preserve the original prepared collection, dates and development point.
+// Evaluate each order separately so an order-1 failure cannot hide order 2.
+var point = PROBE_POINTS['dev-01-braided-lat'];
+var collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+  .filterBounds(point).filterDate('2023-07-01', '2023-08-01')
+  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 40));
+var source = ee.Image(collection.sort('system:index').first());
+var bands = collection.select(['B4', 'B8']);
+var composite = bands.median();
+var order1 = composite.resample('bilinear').reproject(grid);
+var order2 = bands.map(function (img) { return img.resample('bilinear'); }).median().reproject(grid);
+report('resampling:metadata', ee.Dictionary({scene_count: collection.size(),
+  scene_ids: collection.aggregate_array('system:index'),
+  source_crs: source.select('B4').projection().crs(),
+  composite_crs: composite.select('B4').projection().crs(),
+  source_B4_transform: source.select('B4').projection().transform(),
+  source_B11_transform: source.select('B11').projection().transform(),
+  source_B4_nominal_m: source.select('B4').projection().nominalScale(),
+  source_B11_nominal_m: source.select('B11').projection().nominalScale()}));
+report('resampling:composite_then_resample', first(order1, point));
+report('resampling:resample_then_composite', first(order2, point));
+report('resampling:difference', first(order1.subtract(order2), point));
