@@ -1,6 +1,25 @@
 # CatanRoads — partial handoff, local software ready for review
 
+## Runtime follow-up — 2026-09-29
+
+The grid probe and the unchanged default Phase-1 script were executed in the
+signed-in Earth Engine Code Editor. The probe's geometry-unit, footprint and
+unsupported-kernel-method defects are fixed. Its measured support and resampling
+order findings, the original failure, and the QA console/export states live in
+[the runtime record](../results/earth_engine_runtime_2026-09-29.json).
+Recheck the captured geometry with `python tools/check_grid_runtime.py`; this
+local check does not rerun Earth Engine.
+
+CR-08 remains blocked on dated reference imagery and owner site judgment.
+The default development run is unverified QA; it establishes no screen verdict.
+Production configuration and verification flags are unchanged. The compositor
+order experiment is a raw-band diagnostic, not completion of the index-based
+real-data A/B comparison.
+
 ## Closeout — 2026-09-25 (Day 6, completed 2026-09-25 not 2026-09-24)
+
+The following is the historical preparation snapshot; the runtime record above
+supersedes its access and execution status.
 
 Preparation work for this repository is complete. **Research completion is not claimed.** No site is
 verified, no Earth Engine run has occurred, and the registered Phase-1 screen has never been
