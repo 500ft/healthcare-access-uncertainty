@@ -1,105 +1,94 @@
-# Sprint progress — CatanRoads
+# Progress log
 
-## 2026-09-29 — first Earth Engine runtime evidence
+What changed and when, newest first, one line per change that matters. The
+plan is in the [roadmap](../ROADMAP.md). The earlier, longer version of this
+log is kept at
+[commit 033c951](https://github.com/500ft/informal-road-mapping/blob/033c9513db32b670cd56ae229f1afe4c390e0f9a/docs/SPRINT_PROGRESS.md).
 
-Executed the grid probe and default development QA script in the Code Editor.
-Fixed the probe failures encountered during execution and checked the resulting
-geometry independently. Console measurements, source identity, export states and
-remaining limitations are in the [canonical runtime record](../results/earth_engine_runtime_2026-09-29.json).
-CR-08 still requires dated reference imagery and owner judgment; no site was verified.
+## Week of 2026-09-28
 
-## 2026-09-25 — preparation closeout
+- **09-30** One roadmap: run the frozen Phase-1 gate on verified sites, then
+  write up whichever way it goes. README rewritten
+  ([#47](https://github.com/500ft/informal-road-mapping/pull/47)).
+- **09-30** First real Earth Engine run. The grid probe failed on its first
+  try (scaled projection units, a bad buffer call, a missing kernel method), was
+  fixed and rerun. It confirmed that a nominal 10 m pixel is 6.79 m × 6.77 m on
+  the ground at 47.3°N. The first Phase-1 exports were submitted on unverified
+  sites as a QA run ([#46](https://github.com/500ft/informal-road-mapping/pull/46)).
+- **09-29** Owner instruction recorded: run Earth Engine tests in the signed-in
+  browser Code Editor ([#41](https://github.com/500ft/informal-road-mapping/pull/41)).
 
-Corrected PR #37's "independent samples" overclaim before merge (area equivalents are not sample
-counts). Completed the owner-independent packages: the 176-pair missingness enumeration
-(MODEL_CHECKED), the frozen compositor variant-B contract (OFFLINE_COMPLETE), the Earth Engine grid
-probe with independent expectations and the resample-on-composites experiment (PREPARED_UNEXECUTED),
-and the CR-08 response design (RESPONSE_DESIGN_COMPLETE). Day 6 packet assembled last so it reflects
-today's actual artifacts. New ledger row `CR-P01` scopes preparation separately; **CR-08 itself
-remains blocked** and its acceptance criteria are untouched. CAD is recorded as external to this
-repository. [Closeout evidence](../evidence/task-2026-09-25/README.md).
+## Week of 2026-09-21
 
+- **09-26** Missing years are not neutral. Across 176 enumerated cases,
+  dropping only quiet years turned 18 fails into passes, and dropping only
+  disturbed years turned 12 passes into fails. The compositor comparison was
+  frozen and the grid probe prepared
+  ([#38](https://github.com/500ft/informal-road-mapping/pull/38)).
+- **09-26** Parameter provenance audit: most thresholds were fixed before any
+  result existed, but few have a recorded reason for their value
+  ([#39](https://github.com/500ft/informal-road-mapping/pull/39)). The link
+  between two pixel-count limits in the Earth Engine script is now documented
+  and guarded ([#40](https://github.com/500ft/informal-road-mapping/pull/40)).
+- **09-24 to 09-26** Literature corrections: seven overstated claims fixed, and
+  the grid-scale problem recorded as claim C19, then copied into the design and
+  runbook ([#36](https://github.com/500ft/informal-road-mapping/pull/36),
+  [#37](https://github.com/500ft/informal-road-mapping/pull/37)).
+- **09-24** Phase-1 evaluation packet template and a design note for the later
+  topology work ([#35](https://github.com/500ft/informal-road-mapping/pull/35)).
+- **09-22** Literature review mapped to the project's own claims
+  ([#29](https://github.com/500ft/informal-road-mapping/pull/29)). The site
+  worksheet now asks for three confounds (drainage channels, fence lines,
+  animal paths) and a named recovery variable
+  ([#34](https://github.com/500ft/informal-road-mapping/pull/34)).
+- **09-20 to 09-21** Week plan and site-check packet; the stress-case gallery,
+  stranded on an old branch, recovered to main
+  ([#25](https://github.com/500ft/informal-road-mapping/pull/25),
+  [#26](https://github.com/500ft/informal-road-mapping/pull/26),
+  [#27](https://github.com/500ft/informal-road-mapping/pull/27)).
+- **09-21** Curved corridors delivered as paths: every curved case that failed
+  as a straight chord (recall 0.11, 0.25, 0.44) now passes at 0.93 or better
+  ([#22](https://github.com/500ft/informal-road-mapping/pull/22)), with a
+  five-figure gallery ([#24](https://github.com/500ft/informal-road-mapping/pull/24)).
 
-## 2026-09-12 → 2026-09-16 — stress cases, editing convention, CR-09
+## Week of 2026-09-14
 
-- **2026-09-12/13, CR-R03 → R03c** (PRs #12, #13, #14; merged 2026-09-13): the extractor is
-  stress-tested beyond its favourable demo on ten fixed constructions; two review repairs moved
-  the line layer from the component mask to the exported geometry, then to reference
-  centerlines. Finding carried forward: curved corridors passed the component layer and failed
-  the exported straight chord. [Evidence](../evidence/task-2026-09-12/README.md).
-- **2026-09-14, ponytail** (PRs #15, #16): [AGENTS.md](../AGENTS.md) adopted as the editing
-  convention; two refactor passes, −44 lines, records unchanged.
-- **2026-09-14/15, CR-09 plan**: #17 (agent draft) superseded by the owner's reviewed #18
-  (merged). #19 was built from #17 by mistake and reverted in #20, which also built the reviewed
-  contract to its T08 feasibility stop (A3 failed on the wide strip, 0.9688 < 0.98); #21 fixed
-  the ledger row.
-- **2026-09-16, CR-09 build** (#22, awaiting owner review): amendment A to the endpoint rule
-  adopted by the owner; A1–A8 pass; `path_px` delivered through one selector to GeoJSON,
-  scoring and the demo; v4 record with chord comparison; 116 tests.
-  [Plan](PLAN_2026-09-14_CR09.md) · [Evidence](../evidence/task-2026-09-14/README.md).
-- **CR-08** unchanged: all six sites unverified; no imagery inspected; the intake path was
-  re-checked on 2026-09-16 (see [REVIEW_READY.md](REVIEW_READY.md)).
+- **09-15 to 09-16** Path export planned, built early, reverted, and rebuilt
+  under the reviewed plan to a feasibility checkpoint
+  ([#17](https://github.com/500ft/informal-road-mapping/pull/17) to
+  [#21](https://github.com/500ft/informal-road-mapping/pull/21)).
+- **09-14** Code simplified in two passes, behaviour unchanged
+  ([#15](https://github.com/500ft/informal-road-mapping/pull/15),
+  [#16](https://github.com/500ft/informal-road-mapping/pull/16)).
 
+## Week of 2026-09-07
 
-## 2026-09-11 — evidence-gap correction
+- **09-13** Extractor stress-tested beyond its favourable demo: ten synthetic
+  cases, scored first on the component, then on the exported line, then
+  against a reference centreline
+  ([#12](https://github.com/500ft/informal-road-mapping/pull/12),
+  [#13](https://github.com/500ft/informal-road-mapping/pull/13),
+  [#14](https://github.com/500ft/informal-road-mapping/pull/14)).
+- **09-10 to 09-12** Site inspection worksheets generated with the holdout
+  excluded; worksheet preparation kept separate from actual verification
+  ([#8](https://github.com/500ft/informal-road-mapping/pull/8),
+  [#11](https://github.com/500ft/informal-road-mapping/pull/11)).
+- **09-11** README and presentation rewrite
+  ([#9](https://github.com/500ft/informal-road-mapping/pull/9)).
+- **09-09** Missing-year schemas preserved and temporal QA enforced
+  ([#6](https://github.com/500ft/informal-road-mapping/pull/6)); export paths
+  rehearsed ([#7](https://github.com/500ft/informal-road-mapping/pull/7)).
+- **09-07** Phase-1 evidence intake: the gate refuses malformed or unverified
+  exports ([#5](https://github.com/500ft/informal-road-mapping/pull/5)).
 
-The [current correction](COMPLETION_RECONCILIATION.md) supersedes any interpretation that earlier preparation closed a physical, approval, or source-review gate. Work is on `fix/evidence-gaps-20260911` from current renamed main; historical entries below retain their original dates and PR snapshots. The original day-3 and presentation PRs are now merged, but this correction is a new reviewable change, not an asserted merge or publication.
+## Week of 2026-08-31
 
-Each omitted or incomplete recommendation is accounted for separately in the current correction and existing task ledgers. No owner signature, measurement, PI conversation, imagery judgment, disclosure approval or independent review was fabricated. Exact tests, scope and next inputs are linked from the correction record; actual delivery state is established by its PR.
+- **09-03** Figure manifest added and the synthetic demo gated on its numbers
+  ([#1](https://github.com/500ft/informal-road-mapping/pull/1)); dependency
+  ranges bounded ([#2](https://github.com/500ft/informal-road-mapping/pull/2)).
 
-## Day-3 work — 2026-09-09
+## Before September
 
-Delivery update: the preparation was committed as 500ft and pushed; [day-3 PR](https://github.com/500ft/informal-road-mapping/pull/8) is open against main. Initial implementation source: `b3e7797f62ac2a8b1c0cd630b5d2455a9bfb2b52` (later review/documentation commits are visible in the PR). This supersedes the pre-push stopping state below. Original day-1/day-2 PRs are merged; this new PR is not merged. Resume from the named unresolved project gates in [DAY3_PLAN.md](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/DAY3_PLAN.md), not from the already completed push step.
-
-Both reviewed PR layers merged into main; new work starts from `346b942b6de2ade58d40f2dfe367cbd086370d87` on `task/day-three-20260909`. Five generated-worksheet tests cover holdout omission, unchanged eligibility, future site inclusion, duplicate IDs and committed output consistency. 63 analysis tests and both Node checks pass. All six sites remain unverified; no imagery or Earth Engine evaluation occurred.
-
-The [evidence record](../evidence/task-day3-2026-09-09/README.md) contains checks and limits. Work is locally verified and not yet recorded here as pushed/merged. Current edits belong to this task; original checkouts were preserved. Next: finish verification, commit the bounded change and open the new PR; preserve all stated external gates.
-
-## 2026-09-09 — review amendment to CR-D02
-
-Reproduced three filename-handling failures in the rehearsal; fixed literal
-argument substitution and clarified that importability is not package-install
-validation. Full suite now 58 passed; both Node checks, compile and whitespace
-pass. Enabled CI for the existing manual stack's base; hosted status remains
-separate until observed. [Review evidence](../evidence/review-2026-09-09/README.md).
-CR-08 and all site/measurement flags remain unchanged. Review branch
-`review/day-two-20260909`; delivery will amend PR #7, not merge either layer.
-
-## 2026-09-09 — CR-D02 runbook rehearsal
-
-Executed the Phase-1 runbook's gate command *as written in the document* against synthetic
-fixtures, through a subprocess, in [7 tests](../analysis/tests/test_runbook_rehearsal.py): synthetic
-→ `DEVELOPMENT_ONLY` (3); the committed unverified manifest → `INCONCLUSIVE` (2) even with good
-metrics; missing export → `INCONCLUSIVE`, no traceback; exit table equals the CLI mapping. Renaming a
-flag or altering the exit table in the runbook fails the suite. Full suite 55 passed. Software
-preparation only; CR-08 unchanged. [Verification](../evidence/task-2026-09-09/README.md).
-Branch `task/priority-two-20260909`.
-
-## 2026-09-08 — CR-D01 temporal QA follow-up
-
-Completed one bounded P1 software task after the original 30h sprint; its original
-rows and evidence are preserved. Base `b4cee1fcb2d6e0cc62b4c48699fa692e7b774ef9`,
-branch `task/priority-one-20260908`, isolated worktree under
-`/Users/redhose/Developer/daily-prs/2026-09-08/CatanRoads`.
-[Review and reproduction](../evidence/task-2026-09-08/README.md): 48 Python tests,
-Node branch/schema and static checks pass. Empty annual collections retain
-masked bands; exported scene QA is required at intake. Candidate commit/push
-identity is recorded in the PR. CR-08 remains owner-blocked; no imagery run.
-Next command: `node tools/test_temporal_qa.mjs`; next external task CR-08.
-
-## 2026-09-06 — Partial handoff
-
-- Sprint start2026-09-05; canonical checkout `/Users/redhose/Developer/research-sprints/2026-09-05/CatanRoads` (historical path; the repository was renamed and the current canonical clone is `~/Developer/repo-professionalization-20260910/informal-road-mapping`).
-- Branch `sprint/evidence-integrity-20260905`; HEAD/base `690c2fcf88bbe689bd006cce91863821a39edb2a`.
-- Seven Agent tasks done with linked evidence; CR-08 blocked on: Dated imagery/site verification and Earth Engine runtime credentials are not supplied. The existing unverified sites remain unverified. Hosted Actions requires a separately authorized push.
-- 35 tests passed (9 existing plus26 intake cases); static GEE validator passed; 6/6 installed-CLI cases matched.
-- [Final checks](../evidence/sprint-2026-09-05/final-checks.json), [candidate](../evidence/sprint-2026-09-05/candidate.json), [original expectations](../evidence/sprint-2026-09-05/evaluation-plan.md), [outcomes](../evidence/sprint-2026-09-05/evaluation.json).
-- These are developer software checks; no physical/new scientific results. Catan's real-data arm, where applicable, stays blocked despite its software fallback evaluation.
-- Handoff was prepared before commit; the PR records the final commit and push. Original user changes remain untouched.
-- Next verification command: `python evidence/sprint-2026-09-05/evaluate_candidate.py`.
-- Exact next task: CR-08: provide dated site verification and actual GEE exports per docs/PHASE1_RUNBOOK.md.
-- Owner action moved to Day1 (2h); Day1 now7h, Day6 now2h, total30h. External turnaround is not accelerated.
-
-## Baseline and interrupted execution
-
-Baseline commands, outputs and identity remain in [evidence](../evidence/sprint-2026-09-05/baseline.json). Plans were saved before behavior changes. Runtime-limit pauses were followed by resuming the existing worktree; no baseline or external reply was invented. Original failing cases and corrected behavior are linked in [REVIEW_READY.md](REVIEW_READY.md).
+Repository created 2026-08-10 with the Earth Engine screening script, the
+Python extractor and a known-truth synthetic demonstration. The Phase-1 gate
+was frozen on 2026-08-23.

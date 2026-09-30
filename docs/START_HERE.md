@@ -1,82 +1,79 @@
 # Start here
 
-## Two-minute project review
+The [README](../README.md) is the overview and the [roadmap](../ROADMAP.md) is
+the plan. This guide is for reading the work quickly or rerunning it.
 
-1. Read the [overview and evidence boundary](../README.md).
-2. Inspect the [synthetic demonstration](../results/method_demo_synthetic.png).
-3. Read the [Phase-1 runbook](PHASE1_RUNBOOK.md) and [review index](REVIEW_READY.md).
-   The contribution so far is tested screening/extraction tooling and a
-   falsifiable evaluation design—not a demonstrated road map.
+## Two-minute review
+
+1. Read the [README](../README.md) and the [roadmap](../ROADMAP.md).
+2. Look at the [stress-case results](../results/README.md) and the
+   [Earth Engine runtime record](../results/earth_engine_runtime_2026-09-29.json).
+3. Read the [frozen Phase-1 gate](design.md#pre-registered-phase-1-gate-frozen-2026-08-23)
+   and the [review index](REVIEW_READY.md).
+
+So far the project has tested screening and extraction code and a gate fixed in
+advance. It has not produced a road map of any real site.
 
 ## Reproduce the local checks
 
-Follow the [README setup](../README.md#getting-started), from the repository root.
-The import name remains `catanroads`, even though the repository is now
-`informal-road-mapping`.
+Set up as in the [README](../README.md#getting-started). The Python import name
+is still `catanroads`. The checks are the Python tests and the two Node scripts
+in [CI](../.github/workflows/ci.yml); none of them contacts Earth Engine.
 
-The maintained checks are the Python tests and both Node scripts in
-[CI](../.github/workflows/ci.yml). They use synthetic fixtures and static
-configuration checks; none queries Earth Engine.
-
-If this workstation's known `readline` import issue prevents pytest startup,
-the explicit local workaround is:
+If pytest crashes while importing `readline` on your machine, this works around
+it:
 
 ```sh
 PYTHONPATH=analysis python -c 'import sys,types; sys.modules["readline"]=types.ModuleType("readline"); import pytest; raise SystemExit(pytest.main(["analysis/tests","-q"]))'
 ```
 
-This is a local runtime workaround, not a missing or skipped suite.
-
-## Optional synthetic demonstration
+## Synthetic demonstration
 
 After installing `analysis[dev]`:
 
 ```sh
 python analysis/demo_synthetic.py
+MPLBACKEND=Agg PYTHONPATH=analysis python analysis/plot_stress_cases.py
 ```
 
-This **regenerates** `results/method_demo_synthetic.png`. Run it in a disposable
-clone or inspect the resulting diff; do not mistake regeneration for fresh
-evaluation. The [figure guide](data-and-figures.md) records its source and role.
+The first command overwrites `results/method_demo_synthetic.png`; the second
+rewrites the five figures in `results/figures/`. Run them in a spare clone, or
+check the diff afterwards. The [figure guide](data-and-figures.md) says where
+each figure comes from.
 
-The existing [method illustration](../assets/method.png) depicts the intended
-full pipeline. Its network-conditioning and confirmation stages are plans,
-not an implemented end-to-end detector.
+The [method illustration](../assets/method.png) shows the full intended
+pipeline. Its network-conditioning and confirmation stages are plans that have
+not been built.
 
-## Real-imagery route
+## Real imagery
 
-Use [the generated inspection form](SITE_VERIFICATION_WORKSHEET.md), not model
-output, to record source-image judgments. The form excludes the holdout.
-An absent or ambiguous image is an unresolved input, not a negative label.
+Record what each site actually contains from dated imagery, using the
+[site worksheet](SITE_VERIFICATION_WORKSHEET.md), before looking at any model
+output. The worksheet leaves out the holdout site; don't open its imagery until
+the candidate and the evaluation are frozen. A missing or unclear image leaves
+the site unverified; it is not a negative.
 
-Only after evidence-backed development/control verification should an authorized
-Earth Engine user execute [the Phase-1 runbook](PHASE1_RUNBOOK.md).
-Exported numeric metrics—not map colors—determine the gate. Keep the primary
-configuration intact before sensitivity studies.
+Once sites are verified, run the [Phase-1 runbook](PHASE1_RUNBOOK.md) in the
+signed-in Earth Engine Code Editor. The exported numbers decide the gate, not
+the map colours. Run the primary configuration before any sensitivity study,
+and don't swap sites after seeing a result.
 
-The positive-disturbance gate is not a test for recovery, traffic volume or
-all stable bare tracks. Preserve the recovering-site mismatch and any failed
-comparison rather than swapping sites after results.
+The gate looks for new disturbance. It won't find a stable bare road or one
+that is recovering, and it doesn't measure traffic.
 
-## Contributor route
+## Where to make a change
 
-Read [Contributing](../CONTRIBUTING.md), then identify the source of the change:
-
-| Layer | Canonical location |
+| Change | Where |
 | --- | --- |
-| Study design and admission rules | [Design](design.md), [runbook](PHASE1_RUNBOOK.md) |
-| Reference manifest and inspection form | [Site manifest](../config/sites.geojson), [worksheet](SITE_VERIFICATION_WORKSHEET.md) |
+| Study design and gate rules | [Design](design.md), [runbook](PHASE1_RUNBOOK.md) |
+| Sites and the inspection form | [Site manifest](../config/sites.geojson), [worksheet](SITE_VERIFICATION_WORKSHEET.md) |
 | Earth Engine screening | [gee/ndvi_change.js](../gee/ndvi_change.js) |
-| Extraction and gate implementation | [Python package](../analysis/catanroads/) |
-| Regression and counterexample tests | [Analysis tests](../analysis/tests/) |
-| Figures and their interpretation | [Figure guide](data-and-figures.md), [results](../results/README.md) |
+| Extraction and the gate code | [Python package](../analysis/catanroads/) |
+| Tests | [analysis/tests](../analysis/tests/) |
+| Figures | [Figure guide](data-and-figures.md), [results](../results/README.md) |
 
-Do not fill verification fields from assumptions or treat this reading guide
-as permission to inspect the held-out site.
-
-See [repository identity notes](REPOSITORY_IDENTITY.md) for the rename,
-unchanged package names and presentation references.
-
-## September 11 completion correction
-
-Read the [item-by-item correction](COMPLETION_RECONCILIATION.md) before interpreting a prepared protocol, software check, or search export as a completed research gate. It identifies actual deliverables and the remaining measurement, review, or source-reading work separately.
+Read [CONTRIBUTING.md](../CONTRIBUTING.md) first. Never fill a site's
+verification fields from assumptions. The [identity note](REPOSITORY_IDENTITY.md)
+explains the rename, and the September 11
+[completion correction](COMPLETION_RECONCILIATION.md) explains which early
+deliverables were preparation rather than finished work.
