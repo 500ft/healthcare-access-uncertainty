@@ -12,10 +12,10 @@ comparison with dated high-resolution imagery.
 [How it works](#how-it-works) · [Results so far](#results-so-far) ·
 [Roadmap](ROADMAP.md) · [Getting started](#getting-started)
 
-![Illustrative overhead terrain with branching informal-road candidates](docs/media/hero.jpg)
+![Synthetic test scene: known-truth corridors on the left, extracted paths on the right; path recall 0.93 and precision 1.00 against 0.44 and 0.45 for the old straight chord](results/figures/01_demo_paths_vs_chords.png)
 
-*Synthetic landscape (AI-generated), not a satellite result.
-[Visual provenance](docs/REPOSITORY_IDENTITY.md#visual-provenance).*
+*Synthetic test scene, not satellite imagery.
+[How the figure is made](docs/data-and-figures.md).*
 
 ## How it works
 
@@ -39,11 +39,6 @@ strips of disturbed ground.
 
 Everything below is synthetic or a QA run. No site has been verified and the
 gate has not run.
-
-![Known-truth synthetic scene and candidate corridor extraction; not real Mongolia imagery](results/method_demo_synthetic.png)
-
-*Synthetic test scene with curved, braided and broken corridors and a round
-blob as a decoy. Not real imagery.*
 
 - **Extractor stress tests.** Ten synthetic cases, each with a known
   centreline. Curved corridors that the old straight-line output missed

@@ -1,177 +1,49 @@
-# CatanRoads — partial handoff, local software ready for review
+# Review index
 
-## Runtime follow-up — 2026-09-29
+What to review, and where each piece of evidence lives. The plan is in the
+[roadmap](../ROADMAP.md) and the history in the [progress log](SPRINT_PROGRESS.md).
+The earlier, longer version of this index is kept at
+[commit 033c951](https://github.com/500ft/informal-road-mapping/blob/033c9513db32b670cd56ae229f1afe4c390e0f9a/docs/REVIEW_READY.md).
 
-The grid probe and the unchanged default Phase-1 script were executed in the
-signed-in Earth Engine Code Editor. The probe's geometry-unit, footprint and
-unsupported-kernel-method defects are fixed. Its measured support and resampling
-order findings, the original failure, and the QA console/export states live in
-[the runtime record](../results/earth_engine_runtime_2026-09-29.json).
-Recheck the captured geometry with `python tools/check_grid_runtime.py`; this
-local check does not rerun Earth Engine.
+Nothing here has had an independent review. No site is verified and the
+Phase-1 gate has not run.
 
-CR-08 remains blocked on dated reference imagery and owner site judgment.
-The default development run is unverified QA; it establishes no screen verdict.
-Production configuration and verification flags are unchanged. The compositor
-order experiment is a raw-band diagnostic, not completion of the index-based
-real-data A/B comparison.
+## Review now
 
-## Closeout — 2026-09-25 (Day 6, completed 2026-09-25 not 2026-09-24)
-
-The following is the historical preparation snapshot; the runtime record above
-supersedes its access and execution status.
-
-Preparation work for this repository is complete. **Research completion is not claimed.** No site is
-verified, no Earth Engine run has occurred, and the registered Phase-1 screen has never been
-executed on real data.
-
-| area | state | evidence |
-|---|---|---|
-| CR-09 path export | done | [evidence/task-2026-09-14](../evidence/task-2026-09-14/README.md) · [v4 record](../results/extractor_stress_cases.json) · v1/v3 archives in `results/` · [five gallery figures](../results/figures/) |
-| Literature review and its corrections | done | [literature/](../literature/) · [claim ledger](../literature/claim-ledger.md) · [gaps](../literature/gaps.md) |
-| Grid and support (C19) | recorded, runtime probe unexecuted | [design amendment](design.md#amendment--2026-09-24--the-analysis-grids-units) · [probe](../evidence/task-2026-09-25/grid_runtime_probe.js) |
-| Missingness sensitivity (D) | MODEL_CHECKED | [enumeration](../evidence/task-2026-09-25/missingness_sensitivity.json) |
-| Compositor comparison (C) | OFFLINE_COMPLETE / REAL_COMPARISON_PENDING | [protocol](specs/compositor-ab/plan.md) |
-| Grid probe (B) | PREPARED_UNEXECUTED | [expectations](../evidence/task-2026-09-25/grid_runtime_expectations.json) |
-| CR-08 response design (E) | RESPONSE_DESIGN_COMPLETE | [packet](../evidence/task-2026-09-19/cr08-first-site-packet.md) |
-| CR-08 itself | **blocked** | all six `verified` flags `false`; no runtime access |
-| Topology | deferred | [design note](specs/phase-2-topology-followup/plan.md) |
-
-Full closeout detail: [evidence/task-2026-09-25/README.md](../evidence/task-2026-09-25/README.md).
-
-**The one next focus:** acquire the missing reference and runtime evidence, then execute the
-registered Phase-1 screen when eligible. Topology is not scheduled merely because data access takes
-longer; if access stalls, reassess access feasibility rather than substituting algorithm work.
-
-**What is still required, and from whom.** One authorized dated scene reference and an actual
-judgment for `dev-01-braided`, or an explicit statement of which registered control is available
-instead. Access to an authorized Earth Engine project, or the completed export artifacts from the
-prepared probe. Review of the corrected #37 and of the closeout PR.
-
-
-## Latest follow-up — 2026-09-16 (CR-R03 stack and CR-09)
-
-- **CR-R03 → R03c** (PRs #12–#14, merged 2026-09-13): ten fixed synthetic stress cases with
-  their own truth masks and reference centerlines; component layer and delivered-line layer
-  scored separately. [Evidence](../evidence/task-2026-09-12/README.md).
-- **Editing convention** (PRs #15–#16, 2026-09-14): [ponytail ruleset](../AGENTS.md); two
-  refactor passes, behaviour and records unchanged.
-- **CR-09** (plan #17 superseded by the reviewed #18; build #19 reverted in #20; feasibility
-  stop #20/#21; completed build **#22, pending owner review**): each accepted component is
-  delivered as one interior-biased `path_px` route; curved corridors pass the frozen line-layer
-  targets; component layer unchanged. [Plan](PLAN_2026-09-14_CR09.md) ·
-  [Evidence](../evidence/task-2026-09-14/README.md).
-- **CR-08 intake path re-checked 2026-09-16** (no site inspected): worksheet regenerates
-  consistently, the manifest admission fields (`verified`, `ref_imagery_date`, `provenance`) are
-  mirrored in `gee/ndvi_change.js` and statically validated, the runbook's gate command is
-  exercised end to end by tests, and all six site flags remain `false`. The first dated
-  development/control judgment can be applied as a reviewable manifest diff, then the worksheet
-  regenerated and the Earth Engine `SITES` block mirrored, per
-  [COMPLETION_RECONCILIATION.md](COMPLETION_RECONCILIATION.md).
-
-Counts below are historical snapshots; the current suite is 116 tests on PR #22.
-
-## Day-3 preparation — 2026-09-09
-
-Five generated-worksheet tests cover holdout omission, unchanged eligibility, future site inclusion, duplicate IDs and committed output consistency. 63 analysis tests and both Node checks pass. All six sites remain unverified; no imagery or Earth Engine evaluation occurred.
-
-Review [DAY3_PLAN.md](https://github.com/500ft/informal-road-mapping/blob/20303f6f9c707a7daa691e0c821ce4a46bec2005/docs/DAY3_PLAN.md), [deliverable](SITE_VERIFICATION_WORKSHEET.md), and [commands/evidence](../evidence/task-day3-2026-09-09/README.md). Base: `346b942b6de2ade58d40f2dfe367cbd086370d87`; new PR branch: `task/day-three-20260909`. No original Owner/External gate is closed. Final source identity is the PR head, reported in its delivery record rather than embedded circularly here.
-
-No feature confirmation without seeing the dated source image; no Earth Engine or holdout evaluation implied.
-
-## Review follow-up — 2026-09-09
-
-The day-2 rehearsal now preserves literal file paths; 58 tests pass locally.
-See [review evidence and limitations](../evidence/review-2026-09-09/README.md).
-Older counts below are historical snapshots, not the amended candidate.
-
-## Latest follow-up — 2026-09-09
-
-[CR-D02 runbook rehearsal](../evidence/task-2026-09-09/README.md): the documented Phase-1
-gate command is now executed by tests on synthetic fixtures, so runbook and CLI cannot drift
-apart; 55 tests pass. No real-data result; CR-08 remains the gate.
-
-## Latest follow-up — 2026-09-08
-
-[CR-D01 temporal QA review](../evidence/task-2026-09-08/README.md) supersedes the
-old intake interface for current use. Eight scene-count columns are now required;
-48 Python tests and two Node checks pass locally. Original sprint evidence below
-is historical and hash-bound. Real-data evaluation remains blocked on CR-08.
-
-Prepared 2026-09-05; resumed and checked 2026-09-06. Budget: six workload days,
-30 focused hours per repository; estimates are not recorded time spent.
-
-Canonical checkout: `/Users/redhose/Developer/research-sprints/2026-09-05/CatanRoads` (historical path; the repository was renamed and the current canonical clone is `~/Developer/repo-professionalization-20260910/informal-road-mapping`).
-Remote: https://github.com/500ft/informal-road-mapping (then named CatanRoads).
-Branch: `sprint/evidence-integrity-20260905`.
-Base commit: `690c2fcf88bbe689bd006cce91863821a39edb2a`.
-Final commit: this review packet's containing commit; its SHA is reported in the PR
-because a commit cannot embed its own identity. No deployment, publication,
-outreach or spending occurred. Original checkout/user changes were preserved.
-
-[Roadmap](https://github.com/500ft/informal-road-mapping/blob/cfafb442119315ec19306e2cba8a346490ed1845/docs/SPRINT_ROADMAP.md) · [Authoritative ledger](SPRINT_TASKS.csv) ·
-[Progress](SPRINT_PROGRESS.md) · [Selected candidate hashes](../evidence/sprint-2026-09-05/candidate.json).
-
-## Completed deliverables and evidence
-
-The new intake rejects unverified references, missing/duplicate metrics, non-finite values, mismatched settings, invalid AOIs, impossible component/coverage fractions and malformed CSV headers/rows. Registered thresholds and site flags are unchanged. Workflow is installed locally.
-
-Implementation: [intake](../analysis/catanroads/phase1_gate.py), [tests](../analysis/tests/test_phase1_gate.py), [runbook](PHASE1_RUNBOOK.md), [workflow](../.github/workflows/ci.yml).
-
-- [Baseline identity, commands and outputs](../evidence/sprint-2026-09-05/baseline.json).
-- [Original failing evidence](../evidence/sprint-2026-09-05/intake-red.json).
-- [Implementation checks](../evidence/sprint-2026-09-05/implementation-green.json).
-- [Final verification](../evidence/sprint-2026-09-05/final-checks.json).
-- [Predeclared evaluation procedure](../evidence/sprint-2026-09-05/evaluation-plan.md),
-  [retained replay](../evidence/sprint-2026-09-05/evaluate_candidate.py),
-  [actual outputs](../evidence/sprint-2026-09-05/evaluation.json).
-- [Three review-discovered failures, now regressions](../evidence/sprint-2026-09-05/reviewer-red.json).
-
-- [Consumer delivery evidence](../evidence/sprint-2026-09-05/consumer.json).
-
-35 tests passed (9 existing plus26 intake cases); static GEE validator passed; 6/6 installed-CLI cases matched.
-
-No Earth Engine run, verified Mongolia site, road accuracy estimate or hosted Actions execution. Metadata labels/hashes cannot authenticate imagery. Positive disturbance is not recovery or stable-track detection.
+1. **The first Earth Engine run**
+   ([runtime record](../results/earth_engine_runtime_2026-09-29.json)). The
+   grid probe's fixes, the measured 6.79 m pixel at 47.3°N, and the QA exports.
+   Recheck the captured geometry offline with `python tools/check_grid_runtime.py`.
+2. **The frozen gate** ([design](design.md#pre-registered-phase-1-gate-frozen-2026-08-23))
+   against the grid-scale amendment. Worth checking: whether the 50-pixel
+   component minimum, about 2,300 m² of ground rather than 5,000 m², still
+   makes sense for corridor-scale roads.
+3. **The missingness enumeration**
+   ([record](../evidence/task-2026-09-25/missingness_sensitivity.json)).
+   Dropping years that aren't missing at random can flip the gate either way.
+   These are enumerated cases, not a probability model of cloud cover.
 
 ## Reproduce
 
-Run from the canonical checkout using the recorded Python3.11 environment and
-repository dependencies. The local pytest workaround stubs readline before import;
-it is not a skipped test or changed product requirement.
+Run the [README checks](../README.md#getting-started). None of them contacts
+Earth Engine. Running Earth Engine itself needs the signed-in Code Editor and
+the [Phase-1 runbook](PHASE1_RUNBOOK.md).
 
-```sh
-PYTHONPATH=analysis python -c 'import sys, types; sys.modules["readline"] = types.ModuleType("readline"); import pytest; raise SystemExit(pytest.main(["-q"]))'
-node tools/validate_phase1.mjs
-python evidence/sprint-2026-09-05/evaluate_candidate.py
-git diff --check
-```
+## Evidence records
 
+| Folder | What it holds |
+| --- | --- |
+| [task-2026-09-25](../evidence/task-2026-09-25/README.md) | Closeout: missingness enumeration, compositor contract, grid probe and its expectations |
+| [task-2026-09-19](../evidence/task-2026-09-19/README.md) | Week of 2026-09-19: intake, stack review and the first-site packet |
+| [task-2026-09-14](../evidence/task-2026-09-14/README.md) | Path export built to the feasibility checkpoint |
+| [task-2026-09-12](../evidence/task-2026-09-12/README.md) | Extractor stress test beyond the favourable demo |
+| [correction-2026-09-11](../evidence/correction-2026-09-11/README.md) | Correction of what earlier work had and had not finished |
+| [presentation-2026-09-10](../evidence/presentation-2026-09-10/README.md) | README presentation checks |
+| [review-2026-09-09](../evidence/review-2026-09-09/README.md) | Review of the first two days' work |
+| [task-2026-09-09](../evidence/task-2026-09-09/README.md) | Export-path rehearsal |
+| [task-day3-2026-09-09](../evidence/task-day3-2026-09-09/README.md) | Site worksheet preparation |
+| [task-2026-09-08](../evidence/task-2026-09-08/README.md) | Temporal evidence QA |
+| [sprint-2026-09-05](../evidence/sprint-2026-09-05/) | First integrity sprint baseline |
 
-Delivery route: editable catanroads0.1.0 installed with `python -m pip install -e ./analysis --no-deps --no-build-isolation`; dependencies were already available. CLI replay launches from temporary consumer directories. This is not a fresh-environment or registry-publication claim.
-
-
-No separate configured lint/typecheck is claimed. Syntax checks are compilation,
-not static typing. Saved output truncation, if present, is indicated by the tool
-result metadata; no omitted output is called a full log.
-
-## Evaluation meaning and remaining work
-
-Selected implementation/protocol hashes and expectations were saved before the
-additional cases ran. Existing tests, reviewed fixtures and reviewer-discovered
-bugs are development material. All additional cases were retained. These small
-developer-selected checks establish behavior on those inputs, not independent
-scientific validation or general accuracy. Another agent is not a human reviewer.
-External feedback: pending.
-
-1. Owner verifies dated imagery for existing development/control sites before gate predictions; no post-hoc site swap.
-2. Obtain actual GEE exports and scene/coverage provenance; real-data evaluation remains blocked.
-3. Hosted workflow needs an authorized push with workflow permission; network-conditioned detection is future research.
-
-Next action: CR-08: provide dated site verification and actual GEE exports per docs/PHASE1_RUNBOOK.md.
-
-Evidence-supported portfolio bullet: “Implemented and tested a fail-closed satellite-screening intake that separates unverified QA and synthetic examples from eligible disturbance-screen results.”
-This concerns engineering quality, not adoption or measured scientific performance.
-
-## Ready-to-send review request
-
-“Review informal-road-mapping (formerly CatanRoads) against docs/SPRINT_ROADMAP.md. Repository: https://github.com/500ft/informal-road-mapping (canonical clone ~/Developer/repo-professionalization-20260910/informal-road-mapping). Base commit: 690c2fcf88bbe689bd006cce91863821a39edb2a. Final commit: PR head (see GitHub PR). Review index: docs/REVIEW_READY.md. Incomplete work: Owner verifies dated imagery for existing development/control sites before gate predictions; no post-hoc site swap. Obtain actual GEE exports and scene/coverage provenance; real-data evaluation remains blocked. Hosted workflow needs an authorized push with workflow permission; network-conditioned detection is future research. Reproduce the changed behaviors and counterexamples, rerun appropriate checks, and assess the code and evidence independently. Review first; make further changes only if requested.”
+Results live in [results/](../results/README.md): the stress-case records,
+the gallery and the Earth Engine runtime record.

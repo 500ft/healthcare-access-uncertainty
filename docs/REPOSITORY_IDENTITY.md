@@ -35,19 +35,17 @@ does not replace the authoritative protocol or task ledger.
 
 ## Visual provenance
 
-The README lead image, [`media/hero.jpg`](media/hero.jpg), is an AI-generated
-synthetic landscape. The visible tracks are illustrative and are not imagery,
-detected candidates, or a validated study site.
+The README leads with
+[`results/figures/01_demo_paths_vs_chords.png`](../results/figures/01_demo_paths_vs_chords.png),
+one of the five stress-case figures made by `analysis/plot_stress_cases.py`
+([figure guide](data-and-figures.md)). It is a synthetic construction with a
+known answer, not satellite imagery or a site result. A real Earth Engine
+output should replace it once the Phase-1 gate has run on verified sites.
 
-[`media/project-overview.svg`](media/project-overview.svg) is an original,
-editable conceptual diagram created for the repository presentation. It contains
-no measured values, synthetic plots or purported hardware photographs.
-Sources for its relationships: [Method design](design.md), [Phase-1 runbook](PHASE1_RUNBOOK.md) and [synthetic extractor](../analysis/README.md).
-
-Each stage carries an explicit text label. Meaning does not depend on red/green
-color differences. The diagram has an SVG title and description; its caption and
-the adjacent README text state the evidence limits. Existing analytical figures
-retain their original files, generators and provenance contracts.
+[`media/project-overview.svg`](media/project-overview.svg) is an editable
+diagram of the method. It contains no measured values. Each stage has a text
+label, so the meaning doesn't depend on colour, and the SVG has a title and
+description for screen readers.
 
 ## Keeping navigation reproducible
 
