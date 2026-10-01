@@ -7,6 +7,10 @@ log is kept at
 
 ## Week of 2026-09-28
 
+- **09-30** Site inspection decided: the owner inspects the four gate sites,
+  negative-01 first, in Google Earth historical imagery (Esri Wayback as the
+  fallback), in one two-hour sitting before any model output is opened.
+  confound-01 waits; the holdout stays closed.
 - **09-30** One roadmap: run the frozen Phase-1 gate on verified sites, then
   write up whichever way it goes. README rewritten
   ([#47](https://github.com/500ft/informal-road-mapping/pull/47)).
