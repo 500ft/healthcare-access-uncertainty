@@ -89,10 +89,10 @@ Earth Engine route, see [Start here](docs/START_HERE.md).
 
 ## What's next
 
-The next step is the owner's: check five of the six registered sites in
-Google Earth's historical imagery and record what is actually there, before
-looking at any model output. The holdout stays unopened. Then the frozen gate
-can run. The [roadmap](ROADMAP.md) has the rest.
+The next step is the owner's: check the four sites the gate reads
+(negative-01 first, then the three development sites) in Google Earth's
+historical imagery and record what is actually there, before looking at any
+model output. The holdout stays unopened. Then the frozen gate can run. The [roadmap](ROADMAP.md) has the rest.
 
 ## Limits
 
