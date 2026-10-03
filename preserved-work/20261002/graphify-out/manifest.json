@@ -1,0 +1,37 @@
+{
+  "gee/ndvi_change.js": {
+    "mtime": 1786348391.6792831,
+    "ast_hash": "6965bb78086006e9fda3f2cd59195633",
+    "semantic_hash": "6965bb78086006e9fda3f2cd59195633"
+  },
+  "tools/compose_figure.py": {
+    "mtime": 1786348391.679823,
+    "ast_hash": "ddd8a7d82d00449ee5ccad0d9da728e1",
+    "semantic_hash": "ddd8a7d82d00449ee5ccad0d9da728e1"
+  },
+  "README.md": {
+    "mtime": 1786348391.6785057,
+    "ast_hash": "8997ba29ee7ca25ed3f94afa203f3c47",
+    "semantic_hash": "8997ba29ee7ca25ed3f94afa203f3c47"
+  },
+  "docs/design.md": {
+    "mtime": 1786348391.679097,
+    "ast_hash": "9daa413a65df845a8061888fadbb594c",
+    "semantic_hash": "9daa413a65df845a8061888fadbb594c"
+  },
+  "results/README.md": {
+    "mtime": 1786348391.6793864,
+    "ast_hash": "5b789acf19fe0871e92260b4c498dd24",
+    "semantic_hash": "5b789acf19fe0871e92260b4c498dd24"
+  },
+  "assets/method.png": {
+    "mtime": 1786348391.6788824,
+    "ast_hash": "48cd31582166b7a9ca1d0a496e7d8280",
+    "semantic_hash": "48cd31582166b7a9ca1d0a496e7d8280"
+  },
+  "results/ndvi_change.png": {
+    "mtime": 1786348391.679616,
+    "ast_hash": "27001f46cb094e28f2a9a67fa967d484",
+    "semantic_hash": "27001f46cb094e28f2a9a67fa967d484"
+  }
+}
