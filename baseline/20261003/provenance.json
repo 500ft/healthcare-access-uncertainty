@@ -1,0 +1,40 @@
+{
+  "files": {
+    "candidates-unopened.zip": "4a27bf2f5c7ddffc76832c8bbf03760933b93341c96bf64b93e049156c06f33b",
+    "locations.json": "4658775306f5a0da545cb6ad0ba57ef233e2f78b28fe0a268915a5e4b1e2ea31"
+  },
+  "microsoft": {
+    "catalog": "https://github.com/microsoft/RoadDetections",
+    "catalog_archive_url": "https://usaminedroads.z19.web.core.windows.net/drops/2025.04.28/Eastern_Asia.zip",
+    "input_filename": "microsoft-eastern-asia.zip",
+    "license": "ODbL-1.0",
+    "member": "Eastern_Asia.tsv",
+    "published_content_md5_match": true,
+    "sha256": "a910c619309f8c9281ee3e161b8d9022662b568967199ab6b4e0c810dc7eaabc",
+    "source_http_metadata": "microsoft-source.json inside candidates-unopened.zip"
+  },
+  "osm": {
+    "as_of": "2026-09-30T20:22:42Z",
+    "license": "ODbL-1.0",
+    "published_md5_match": true,
+    "raw_subsets": "Per-site osm-raw.json inside candidates-unopened.zip",
+    "snapshot_url": "https://download.geofabrik.de/asia/mongolia-260930.osm.pbf",
+    "source_metadata_and_selection": "osm-source.json and osm-selection.txt inside candidates-unopened.zip",
+    "source_sha256": "fd560ef597878bc15f702c152385c2d48fe4ae053264b8ae52fc516b4790229c"
+  },
+  "preparation_script_sha256": "0947d243deff04c1084d9bbfcc572ee43047957fd20fa07bd474a232767552ef",
+  "projection": {
+    "check": "Regular grid over each baseline footprint; meridional and parallel scale factors",
+    "definition": "+proj=lcc +lat_1=45 +lat_2=49 +lat_0=47 +lon_0=103 +datum=WGS84 +units=m +no_defs +type=crs",
+    "sampled_max_scale_error": 0.0006043632291449219
+  },
+  "settings_sha256": "ac42718c6817d34cb03f2f56da3f17ef81feaef91242874e8b463292eec9b9d1",
+  "source_manifest_sha256": "137f00927a8d46bcb55bb95f75a33ebf71c704905a24b2777577d52355cc88c1",
+  "status": "BASELINES_PREPARED_UNRENDERED",
+  "versions": {
+    "PROJ": "9.8.1",
+    "osmium": "4.3.1",
+    "pyproj": "3.8.0",
+    "shapely": "2.1.2"
+  }
+}

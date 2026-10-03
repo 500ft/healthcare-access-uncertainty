@@ -1,0 +1,44 @@
+{
+  "site_order": [
+    "negative-01",
+    "dev-01-braided",
+    "dev-02-recovering",
+    "dev-03-gobi",
+    "confound-01"
+  ],
+  "osm_as_of": "2026-09-30T20:22:42Z",
+  "osm_selection": "From the complete Mongolia snapshot, select ways with a highway tag and area != yes whose full line intersects a selected footprint. Retain all highway values, access restrictions, IDs, versions, timestamps and tags; clip in the metric CRS. Do not require a node inside the footprint.",
+  "metric_crs": "+proj=lcc +lat_1=45 +lat_2=49 +lat_0=47 +lon_0=103 +datum=WGS84 +units=m +no_defs +type=crs",
+  "metric_crs_reason": "A common Lambert conformal conic centred on the non-holdout sites avoids a UTM zone boundary and Web Mercator's latitude-dependent scale. Projection factors are checked across each footprint before clipping.",
+  "maximum_scale_error": 0.005,
+  "footprint": "WGS84 geodesic-circle bounding box using each unchanged manifest center and half_km. This baseline footprint is explicit and independent of the historical Earth Engine spherical buffer approximation.",
+  "circle_azimuth_step_deg": 0.25,
+  "geographic_edge_step_deg": 0.005,
+  "matching": {
+    "primary_tolerance_m": 10,
+    "sensitivity_tolerances_m": [
+      5,
+      20
+    ],
+    "basis": "Prospective engineering screening tolerance, pending reference positional-uncertainty assessment. Do not select a radius by looking at baseline matches. If imagery geolocation or labeling uncertainty makes it unsuitable, amend before revealing candidates and report why.",
+    "target": "Owner-drawn visible corridor centerlines within owner-inspected usable areas, with explicit ambiguous/obscured polygons excluded from both prediction and reference denominators.",
+    "overlap": "At each tolerance, intersect each line set with the round buffer of the other set. Matched predicted length / total predicted length is precision; matched reference length / total reference length is recall. Clip both sets to the same eligible footprint first.",
+    "duplicates": "Use a geometric line union within each source and for the MS+OSM union, so coincident duplicates count once. Retain distinct parallel lines and branch arms. Partial intersections contribute only their matched length. Source rows and IDs remain available for audit.",
+    "empty_sets": "Report zero denominators as undefined with the empty-set condition. Do not award perfect precision or recall to an empty prediction/reference pair.",
+    "width": "Use centerline distances; retain Microsoft's WidthMeters as source metadata without using it to enlarge tolerance.",
+    "independence": "Report per-site descriptive lengths and fractions after owner labels. Adjacent segments and pixels are not independent samples.",
+    "interpretation": "Buffered length overlap does not prove road identity or network connectivity. Baseline gaps do not establish new roads. Neither the MS+OSM union nor a baseline mask is ground truth."
+  },
+  "microsoft_catalog": "https://github.com/microsoft/RoadDetections",
+  "microsoft_catalog_archive_url": "https://usaminedroads.z19.web.core.windows.net/drops/2025.04.28/Eastern_Asia.zip",
+  "microsoft_archive_member": "Eastern_Asia.tsv",
+  "microsoft_date_limit": "Archive release and file modification dates are not per-feature imagery acquisition dates; this archive cannot establish new-since dates.",
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "reference_zoom": 17,
+  "reference_metadata_layer": 6,
+  "early_wayback_release_on_or_before": "2021-12-31",
+  "wayback_catalog_url": "https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json",
+  "osm_snapshot_url": "https://download.geofabrik.de/asia/mongolia-260930.osm.pbf",
+  "osm_checksum_url": "https://download.geofabrik.de/asia/mongolia-260930.osm.pbf.md5"
+}
