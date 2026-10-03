@@ -5,6 +5,9 @@ method looks for ground disturbance that persists across years, checks it
 against a road-free control site, and then traces line-like candidates for
 comparison with dated high-resolution imagery.
 
+The detector responds to disturbance between periods; old roads unchanged across
+both periods are invisible to it.
+
 [![CI](https://github.com/500ft/informal-road-mapping/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/500ft/informal-road-mapping/actions/workflows/ci.yml)
 ![Evidence: synthetic prototype](https://img.shields.io/badge/evidence-synthetic_prototype-475569)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
@@ -89,18 +92,19 @@ Earth Engine route, see [Start here](docs/START_HERE.md).
 
 ## What's next
 
-The next step is the owner's: check the four sites the gate reads
-(negative-01 first, then the three development sites) in Google Earth's
-historical imagery and record what is actually there, before looking at any
-model output. The holdout stays unopened. Then the frozen gate can run. The [roadmap](ROADMAP.md) has the rest.
+The [baseline packet](baseline/20261003/README.md) prepares Microsoft and OSM
+comparisons for the non-holdout sites. The owner still needs to decide whether
+to commit labeling time. Reference corridors must be drawn from dated imagery
+before candidate layers are revealed, beginning with negative-01 and then the
+development sites. The historical gate waits for the baseline decision. See the
+[roadmap](ROADMAP.md).
 
 ## Limits
 
 - Vegetation and bare-soil indices share bands, so their agreement is not
   independent confirmation.
-- A stable bare road may not change at all, and a recovering road changes in
-  the opposite direction to the disturbance the gate looks for. The
-  recovering-site role does not test recovery detection.
+- A recovering road changes in the opposite direction to the disturbance the
+  gate looks for. The recovering-site role does not test recovery detection.
 - Synthetic tests say nothing about accuracy in Mongolia or robustness to
   farming.
 - Reference imagery stays under its provider's terms.
@@ -117,6 +121,9 @@ model output. The holdout stays unopened. Then the frozen gate can run. The [roa
 | [Data and figures](docs/data-and-figures.md) | Sources and generators for each figure |
 
 ## Contributing and license
+
+Baseline extracts retain [Microsoft and OpenStreetMap ODbL attribution and
+derivative terms](baseline/20261003/ATTRIBUTION.md).
 
 See [Contributing](CONTRIBUTING.md) for the check sequence. Use a
 [reproducibility report](https://github.com/500ft/informal-road-mapping/issues/new/choose)

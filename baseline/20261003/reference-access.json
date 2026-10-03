@@ -1,0 +1,1581 @@
+{
+  "catalog_sha256": "8569f0ddd86567b0ce576f405a7be7b5a5aedec59afbf55f140300cb9e1dfda0",
+  "catalog_url": "https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json",
+  "checked_utc": "2026-10-03T20:10:10.915335+00:00",
+  "date_rule": "SRC_DATE/SRC_DATE2 describe acquisition; the Wayback item title describes archive publication. Do not substitute release dates for acquisition dates.",
+  "route": "Esri World Imagery Wayback public metadata and tile endpoints",
+  "scope": "Site-center access probes only. Whole-footprint coverage, image clarity, legal permission for label redistribution, and temporal eligibility require owner review. No AI labels or verification.",
+  "sites": {
+    "confound-01": [
+      {
+        "acquisition_dates_utc": [
+          "2019-08-07"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": null,
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Maxar",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 764342,
+                "ReleaseName": null,
+                "SAMP_RES": 0.5,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20190807,
+                "SRC_DATE2": 1565136000000,
+                "SRC_DESC": "WV02",
+                "SRC_RES": 0.5,
+                "Shape_Area": 1812686821,
+                "Shape_Length": 498084.90006029466
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 15,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "early",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer/6/query?f=json&geometry=106.2%2C48.6&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2021-12-21",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 5217,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "e8b0950ba9f15456d770957fe7e30178d6f8c0f9c870eb11aab8a0b35009fc79",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/17/45234/104202"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26120&mapCenter=106.2%2C48.6%2C17",
+        "wayback_item": {
+          "itemID": "534b917ee7c7472aa416f4b2f8b24f80",
+          "itemTitle": "World Imagery (Wayback 2021-12-21)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2021_R17",
+          "metadataLayerItemID": "93d4780f5a344f719a7190e11ea47869",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer"
+        }
+      },
+      {
+        "acquisition_dates_utc": [
+          "2025-04-30"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": "Vivid_Standard_MN03_25Q3",
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Vantor",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 4058021,
+                "ReleaseName": "Raster Basemaps 2026.R04",
+                "SAMP_RES": 1.2,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20250430,
+                "SRC_DATE2": 1745971200000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 1461449498.5,
+                "Shape_Length": 204126.9386176272
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 30,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "recent",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer/6/query?f=json&geometry=106.2%2C48.6&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2026-08-05",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 7397,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "d0e27a41e19619a3dbb6d6849d488945834bb0c3fd7278f78fc88409c1c12867",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/17/45234/104202"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26334&mapCenter=106.2%2C48.6%2C17",
+        "wayback_item": {
+          "itemID": "106760699ba242daab4885c9b062a133",
+          "itemTitle": "World Imagery (Wayback 2026-08-05)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2026_R07",
+          "metadataLayerItemID": "b90fd4a2f39046bca2d6c04d884439e4",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer"
+        }
+      }
+    ],
+    "dev-01-braided": [
+      {
+        "acquisition_dates_utc": [
+          "2019-04-29"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": null,
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Maxar",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 770883,
+                "ReleaseName": null,
+                "SAMP_RES": 0.5,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20190429,
+                "SRC_DATE2": 1556496000000,
+                "SRC_DESC": "GE01",
+                "SRC_RES": 0.46,
+                "Shape_Area": 5332022680.5,
+                "Shape_Length": 750360.6985994725
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 15,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "early",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer/6/query?f=json&geometry=102.3%2C47.3&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2021-12-21",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 5807,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "c6ac701828894f87cefed020c8442900a16ca2219dc3b4841bea8c89d55318f7",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/17/45940/102782"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26120&mapCenter=102.3%2C47.3%2C17",
+        "wayback_item": {
+          "itemID": "534b917ee7c7472aa416f4b2f8b24f80",
+          "itemTitle": "World Imagery (Wayback 2021-12-21)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2021_R17",
+          "metadataLayerItemID": "93d4780f5a344f719a7190e11ea47869",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer"
+        }
+      },
+      {
+        "acquisition_dates_utc": [
+          "2024-09-09"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": "Vivid_Standard_MN02_25Q3",
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Vantor",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 4056270,
+                "ReleaseName": "Raster Basemaps 2026.R04",
+                "SAMP_RES": 1.2,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20240909,
+                "SRC_DATE2": 1725840000000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 1758351459.5,
+                "Shape_Length": 229674.79226382988
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 30,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "recent",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer/6/query?f=json&geometry=102.3%2C47.3&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2026-08-05",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 4172,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "48af71abfa639ab5330c4cb30ee005f62db6afcd3a9166f513ff7cec7902c168",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/17/45940/102782"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26334&mapCenter=102.3%2C47.3%2C17",
+        "wayback_item": {
+          "itemID": "106760699ba242daab4885c9b062a133",
+          "itemTitle": "World Imagery (Wayback 2026-08-05)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2026_R07",
+          "metadataLayerItemID": "b90fd4a2f39046bca2d6c04d884439e4",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer"
+        }
+      }
+    ],
+    "dev-02-recovering": [
+      {
+        "acquisition_dates_utc": [
+          "2021-04-04"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": null,
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Maxar",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 771012,
+                "ReleaseName": null,
+                "SAMP_RES": 0.5,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20210404,
+                "SRC_DATE2": 1617494400000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 3631619370,
+                "Shape_Length": 445553.73683642346
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 15,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "early",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer/6/query?f=json&geometry=104.6%2C46.2&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2021-12-21",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 2672,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "10d1fedcfeb6891e6620c9c5c40153677adf7342f401678aabbb08a62fa7e9c8",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/17/46525/103619"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26120&mapCenter=104.6%2C46.2%2C17",
+        "wayback_item": {
+          "itemID": "534b917ee7c7472aa416f4b2f8b24f80",
+          "itemTitle": "World Imagery (Wayback 2021-12-21)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2021_R17",
+          "metadataLayerItemID": "93d4780f5a344f719a7190e11ea47869",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer"
+        }
+      },
+      {
+        "acquisition_dates_utc": [
+          "2024-10-26"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": "Vivid_Standard_MN06_25Q1",
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Vantor",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 3994927,
+                "ReleaseName": "Raster Basemaps 2026.R04",
+                "SAMP_RES": 1.2,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20241026,
+                "SRC_DATE2": 1729900800000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 630760032,
+                "Shape_Length": 125257.82549500251
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 30,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "recent",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer/6/query?f=json&geometry=104.6%2C46.2&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2026-08-05",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 5591,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "d1f66e5fc2d9e78dd66eaef33470dba814ecb4f730699a943f025eed27a62929",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/17/46525/103619"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26334&mapCenter=104.6%2C46.2%2C17",
+        "wayback_item": {
+          "itemID": "106760699ba242daab4885c9b062a133",
+          "itemTitle": "World Imagery (Wayback 2026-08-05)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2026_R07",
+          "metadataLayerItemID": "b90fd4a2f39046bca2d6c04d884439e4",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer"
+        }
+      }
+    ],
+    "dev-03-gobi": [
+      {
+        "acquisition_dates_utc": [
+          "2017-04-08"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": null,
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Maxar",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 760219,
+                "ReleaseName": null,
+                "SAMP_RES": 0.5,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20170408,
+                "SRC_DATE2": 1491609600000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 1867657233,
+                "Shape_Length": 312122.88243970706
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 15,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "early",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer/6/query?f=json&geometry=100.1%2C45.4&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2021-12-21",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 8644,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "56d4f3efc01a48314a87f68df681ca79b74728fbadbc389289d30ba6322c03fd",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/17/46943/101981"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26120&mapCenter=100.1%2C45.4%2C17",
+        "wayback_item": {
+          "itemID": "534b917ee7c7472aa416f4b2f8b24f80",
+          "itemTitle": "World Imagery (Wayback 2021-12-21)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2021_R17",
+          "metadataLayerItemID": "93d4780f5a344f719a7190e11ea47869",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer"
+        }
+      },
+      {
+        "acquisition_dates_utc": [
+          "2025-07-04"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": "Vivid_Standard_MN05_25Q3",
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Vantor",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 4000921,
+                "ReleaseName": "Raster Basemaps 2026.R05",
+                "SAMP_RES": 1.2,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20250704,
+                "SRC_DATE2": 1751587200000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 1378792224.5,
+                "Shape_Length": 226494.31625334264
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 30,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "recent",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer/6/query?f=json&geometry=100.1%2C45.4&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2026-08-05",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 8563,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "8533ff35b4dc6e028b7e7e6c0d835d84c6933f22cc75ca7f23f6b375ffc8381f",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/17/46943/101981"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26334&mapCenter=100.1%2C45.4%2C17",
+        "wayback_item": {
+          "itemID": "106760699ba242daab4885c9b062a133",
+          "itemTitle": "World Imagery (Wayback 2026-08-05)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2026_R07",
+          "metadataLayerItemID": "b90fd4a2f39046bca2d6c04d884439e4",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer"
+        }
+      }
+    ],
+    "negative-01": [
+      {
+        "acquisition_dates_utc": [
+          "2014-10-18"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": null,
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Maxar",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 770858,
+                "ReleaseName": null,
+                "SAMP_RES": 0.5,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20141018,
+                "SRC_DATE2": 1413590400000,
+                "SRC_DESC": "WV02",
+                "SRC_RES": 0.5,
+                "Shape_Area": 4030987477,
+                "Shape_Length": 480906.5491489605
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 15,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "early",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer/6/query?f=json&geometry=99.5%2C46.8&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2021-12-21",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 10446,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "eecf841c23859b94a10bf71572c37ebe86a1803ed8308311039eb28963387fc7",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/17/46208/101762"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26120&mapCenter=99.5%2C46.8%2C17",
+        "wayback_item": {
+          "itemID": "534b917ee7c7472aa416f4b2f8b24f80",
+          "itemTitle": "World Imagery (Wayback 2021-12-21)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26120/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2021_R17",
+          "metadataLayerItemID": "93d4780f5a344f719a7190e11ea47869",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r17/MapServer"
+        }
+      },
+      {
+        "acquisition_dates_utc": [
+          "2023-06-29"
+        ],
+        "metadata_response": {
+          "displayFieldName": "NICE_NAME",
+          "features": [
+            {
+              "attributes": {
+                "BlockName": "Vivid_Standard_MN02_25Q3",
+                "DrawOrder": 80,
+                "MaxMapLevel": 17,
+                "MinMapLevel": 12,
+                "NICE_DESC": "Vantor",
+                "NICE_NAME": "Vivid",
+                "OBJECTID": 4052624,
+                "ReleaseName": "Raster Basemaps 2026.R04",
+                "SAMP_RES": 1.2,
+                "SRC_ACC": 5,
+                "SRC_DATE": 20230629,
+                "SRC_DATE2": 1687996800000,
+                "SRC_DESC": "WV03",
+                "SRC_RES": 0.31,
+                "Shape_Area": 871183013.5,
+                "Shape_Length": 206676.62833056183
+              }
+            }
+          ],
+          "fieldAliases": {
+            "BlockName": "BlockName",
+            "DrawOrder": "DrawOrder",
+            "MaxMapLevel": "MaxMapLevel",
+            "MinMapLevel": "MinMapLevel",
+            "NICE_DESC": "NICE_DESC",
+            "NICE_NAME": "NICE_NAME",
+            "OBJECTID": "OBJECTID",
+            "ReleaseName": "ReleaseName",
+            "SAMP_RES": "SAMP_RES",
+            "SRC_ACC": "SRC_ACC",
+            "SRC_DATE": "SRC_DATE",
+            "SRC_DATE2": "SRC_DATE2",
+            "SRC_DESC": "SRC_DESC",
+            "SRC_RES": "SRC_RES",
+            "Shape_Area": "Shape_Area",
+            "Shape_Length": "Shape_Length"
+          },
+          "fields": [
+            {
+              "alias": "OBJECTID",
+              "name": "OBJECTID",
+              "type": "esriFieldTypeOID"
+            },
+            {
+              "alias": "Shape_Length",
+              "name": "Shape_Length",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "Shape_Area",
+              "name": "Shape_Area",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DATE",
+              "name": "SRC_DATE",
+              "type": "esriFieldTypeInteger"
+            },
+            {
+              "alias": "SRC_RES",
+              "name": "SRC_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_ACC",
+              "name": "SRC_ACC",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SAMP_RES",
+              "name": "SAMP_RES",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "alias": "SRC_DESC",
+              "length": 25,
+              "name": "SRC_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "MinMapLevel",
+              "name": "MinMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "MaxMapLevel",
+              "name": "MaxMapLevel",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "NICE_NAME",
+              "length": 50,
+              "name": "NICE_NAME",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "DrawOrder",
+              "name": "DrawOrder",
+              "type": "esriFieldTypeSmallInteger"
+            },
+            {
+              "alias": "SRC_DATE2",
+              "length": 8,
+              "name": "SRC_DATE2",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "alias": "NICE_DESC",
+              "length": 25,
+              "name": "NICE_DESC",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "BlockName",
+              "length": 100,
+              "name": "BlockName",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "alias": "ReleaseName",
+              "length": 30,
+              "name": "ReleaseName",
+              "type": "esriFieldTypeString"
+            }
+          ]
+        },
+        "period_probe": "recent",
+        "query_url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer/6/query?f=json&geometry=99.5%2C46.8&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+        "release_date": "2026-08-05",
+        "status": "DATED_METADATA_AND_TILE_REACHABLE",
+        "tile_delivery": {
+          "bytes": 6752,
+          "content_type": "image/jpeg",
+          "retained_or_rendered": false,
+          "sha256": "d3d60654498f0d3fb970ea1bc797285a94a43595749581aa2d3c886dd9088816",
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/17/46208/101762"
+        },
+        "viewer_url": "https://livingatlas.arcgis.com/wayback/#active=26334&mapCenter=99.5%2C46.8%2C17",
+        "wayback_item": {
+          "itemID": "106760699ba242daab4885c9b062a133",
+          "itemTitle": "World Imagery (Wayback 2026-08-05)",
+          "itemURL": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/26334/{level}/{row}/{col}",
+          "layerIdentifier": "WB_2026_R07",
+          "metadataLayerItemID": "b90fd4a2f39046bca2d6c04d884439e4",
+          "metadataLayerUrl": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r07/MapServer"
+        }
+      }
+    ]
+  },
+  "status": "ACCESS_CONFIRMED_AT_PROBED_CENTERS"
+}

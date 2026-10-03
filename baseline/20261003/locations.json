@@ -1,0 +1,195 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              99.6047951856312,
+              46.72803570406261
+            ],
+            [
+              99.6047951856312,
+              46.87196338686743
+            ],
+            [
+              99.3952048143688,
+              46.87196338686743
+            ],
+            [
+              99.3952048143688,
+              46.72803570406261
+            ],
+            [
+              99.6047951856312,
+              46.72803570406261
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "center_lonlat": [
+          99.5,
+          46.8
+        ],
+        "purpose": "Reference labeling boundary; no candidate overlay",
+        "site_id": "negative-01"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              102.40577913312399,
+              47.22804201695784
+            ],
+            [
+              102.40577913312399,
+              47.371957075215015
+            ],
+            [
+              102.19422086687601,
+              47.371957075215015
+            ],
+            [
+              102.19422086687601,
+              47.22804201695784
+            ],
+            [
+              102.40577913312399,
+              47.22804201695784
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "center_lonlat": [
+          102.3,
+          47.3
+        ],
+        "purpose": "Reference labeling boundary; no candidate overlay",
+        "site_id": "dev-01-braided"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              104.70364873256104,
+              46.12802811954159
+            ],
+            [
+              104.70364873256104,
+              46.27197097026217
+            ],
+            [
+              104.49635126743895,
+              46.27197097026217
+            ],
+            [
+              104.49635126743895,
+              46.12802811954159
+            ],
+            [
+              104.70364873256104,
+              46.12802811954159
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "center_lonlat": [
+          104.6,
+          46.2
+        ],
+        "purpose": "Reference labeling boundary; no candidate overlay",
+        "site_id": "dev-02-recovering"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              100.202175911166,
+              45.32801799695688
+            ],
+            [
+              100.202175911166,
+              45.471981091965766
+            ],
+            [
+              99.997824088834,
+              45.471981091965766
+            ],
+            [
+              99.997824088834,
+              45.32801799695688
+            ],
+            [
+              100.202175911166,
+              45.32801799695688
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "center_lonlat": [
+          100.1,
+          45.4
+        ],
+        "purpose": "Reference labeling boundary; no candidate overlay",
+        "site_id": "dev-03-gobi"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              106.30846576791839,
+              48.52805838402408
+            ],
+            [
+              106.30846576791839,
+              48.67194071267071
+            ],
+            [
+              106.09153423208161,
+              48.67194071267071
+            ],
+            [
+              106.09153423208161,
+              48.52805838402408
+            ],
+            [
+              106.30846576791839,
+              48.52805838402408
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "center_lonlat": [
+          106.2,
+          48.6
+        ],
+        "purpose": "Reference labeling boundary; no candidate overlay",
+        "site_id": "confound-01"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}
