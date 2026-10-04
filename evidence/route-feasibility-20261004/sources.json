@@ -1,0 +1,53 @@
+{
+  "dataset": "GPS Trajectories, UCI dataset 354",
+  "doi": "10.24432/C54S5Z",
+  "attribution": "Cruz, M., Macedo, H., Barreto, R., & Guimares, A. (2015). GPS Trajectories. UCI Machine Learning Repository.",
+  "data_license": "CC-BY-4.0",
+  "data_license_url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+  "license_evidence": "uci-dataset.html explicitly licenses this dataset, independently of parser software.",
+  "software_license": "MIT for the new local scripts; data retain CC BY 4.0.",
+  "modifications": "Deterministic development subset, timing and distance summaries; no raw trace redistribution.",
+  "files": {
+    "uci-gps-trajectories.zip": {
+      "url": "https://archive.ics.uci.edu/static/public/354/gps+trajectories.zip",
+      "retrieved_utc": "2026-10-04T23:04:12.906731+00:00",
+      "sha256": "0e19d39a7562722b8aaa02580deade3ae0893921f9dc28d14dedacbde2c2cc94",
+      "bytes": 220824
+    },
+    "uci-dataset.html": {
+      "url": "https://archive.ics.uci.edu/dataset/354/gps+trajectories",
+      "retrieved_utc": "2026-10-04T23:05:33.419974+00:00",
+      "sha256": "4a6285ac25ced236540828397631bc9231145ab8eb9854eac0b3d8b44e25282a",
+      "bytes": 77719
+    },
+    "cc-by-4.0.html": {
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "retrieved_utc": "2026-10-04T23:05:33.498243+00:00",
+      "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+      "bytes": 48742
+    },
+    "uci-privacy.html": {
+      "url": "https://archive.ics.uci.edu/privacy",
+      "retrieved_utc": "2026-10-04T23:05:33.934422+00:00",
+      "sha256": "b1358b60b27e23645613b2c24d72f16f76d1637589827d60c375809632ad1583",
+      "bytes": 62305
+    },
+    "osm-visibility.html": {
+      "url": "https://wiki.openstreetmap.org/w/index.php?title=Visibility_of_GPS_traces&oldid=3071050",
+      "read_via": "Web tool; direct curl archival capture unavailable",
+      "capture_status": "HTTP 403 during direct archival capture; documentation read through web tool"
+    },
+    "osm-privacy.html": {
+      "url": "https://osmfoundation.org/wiki/Privacy_Policy",
+      "retrieved_utc": "2026-10-04T23:07:42.708421+00:00",
+      "sha256": "6774c0a259c3e6aa03b3a33d682b1261b58571da0872db3cbf9154b04893817c",
+      "bytes": 76566
+    },
+    "osm-gpx-license-minutes.html": {
+      "url": "https://osmfoundation.org/wiki/Licensing_Working_Group/Minutes/2024-10-07",
+      "retrieved_utc": "2026-10-04T23:07:43.467911+00:00",
+      "sha256": "e7edb145cdaace9d12a90a98a8fc047ea2dff4017ea0fcb4fee98e97e0d45e4f",
+      "bytes": 118641
+    }
+  }
+}

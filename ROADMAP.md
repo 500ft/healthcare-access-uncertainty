@@ -1,6 +1,28 @@
 # Roadmap
 
-## Finish line
+## Direction and current step
+
+The owner adopted public-data-first route-planner feasibility as a separate
+investigation. The [executed trip probe](evidence/route-feasibility-20261004/README.md)
+records the sample, parsing result and data limitations. Acquisition and analysis
+ran in an external local workspace. Detailed traces and source linkage remain
+outside this repository; the committed record contains aggregate evidence and
+the reproducible probe only.
+
+The first evidence task is complete. The next owner decision is whether to create
+a separate route-planning repository and approve its name. The proposed
+`off-road-route-planning` destination is an implementation proposal, not an
+approved rename. No repository was created or renamed. The probe supports
+basic ingestion; usable off-road vehicle/condition evidence is still missing.
+No terrain cost surface or candidate route was built.
+
+For that separate study, the finish line is candidate routes and travel-time
+estimates compared with independent actual vehicle trips under known conditions,
+with trips/corridors held out. Travel time on a driven route and passability of an
+undriven suggested route are separate claims. Any next evidence task needs a new
+authorization.
+
+## Paused detector finish line
 
 The next result is a baseline-coverage note comparing Microsoft RoadDetections,
 OSM and their union against independently drawn, dated reference corridors.
@@ -12,7 +34,7 @@ baselines. If those targets are absent, stop or obtain approval for a prospectiv
 site redesign. Lack of eligible labels is inadequate evidence for that study,
 not a measured resolution limit of Sentinel-2.
 
-## Current state
+## Detector state
 
 - The [baseline packet](baseline/20261003/README.md) contains clipped candidate
   layers, a dated OSM snapshot with an exact selection, input and output hashes,
@@ -28,12 +50,12 @@ not a measured resolution limit of Sentinel-2.
   The earlier gate is paused until the baseline decision; its configuration is
   unchanged. History is in [the progress log](docs/SPRINT_PROGRESS.md).
 
-## What's left
+## Detector work remaining
 
 | Step | Who | Done when |
 |---|---|---|
 | Baseline preparation | Agent | Prepared files and reproducible code are in the baseline packet; imagery access is recorded. Complete for the scoped preparation task. |
-| Decide whether to spend time labeling | Owner | Explicit commitment or a decision to close. **Current step.** |
+| Decide whether to spend time labeling | Owner | Explicit commitment or a decision to close. Required before resuming detector evaluation. |
 | Draw references with candidate layers hidden | Owner | Dated centerlines, inspected extents, ambiguous regions and judgments are committed. Start with negative-01, then the development sites; inspect confound-01 separately if time permits. |
 | Check baseline coverage | Agent | After labels are committed, reveal and compare Microsoft, OSM and their union under the packet's matching rules. Publish the baseline-coverage note. |
 | Choose the endpoint | Owner | Close with the coverage note, or authorize a temporal-change study with eligible dated changes and unresolved baseline need. |
