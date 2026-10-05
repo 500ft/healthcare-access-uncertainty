@@ -1,0 +1,22 @@
+{
+  "scope": "Exploratory acquisition and parsing only. No final-test evaluation or route generation.",
+  "selection": "Read only trip metadata to choose the lowest numeric trip IDs: up to 10 declared cars and 10 declared buses. Inventory all other mode labels and quarantine them. All selected trips are development; unselected trips are outside this probe, not a reserved test set.",
+  "trips_per_declared_mode": 10,
+  "mode_codes": {"1": "car", "2": "bus"},
+  "ordering": "Point ID ascending within each trip, then check timestamps. Do not sort away a clock reversal, interpolate gaps, or relabel mode from speed.",
+  "timestamp_timezone": "UTC-03:00, following the UCI dataset documentation; convert explicitly to UTC.",
+  "timestamped_trip_usable": "Declared car/bus, at least two points, finite in-range latitude/longitude, parseable timestamps, strictly increasing time and positive duration. This is parser usability, not vehicle-type validation or suitability for off-road evaluation.",
+  "maximum_observed_interval_s": 60,
+  "gap_rule": "Intervals above this are marked unobserved for motion classification. Report their duration and endpoint chord separately. The one-minute ceiling defines observation granularity for this diagnostic, not a proven GPS sampling requirement. Trips with gaps remain timestamped but are excluded from continuous timing examples.",
+  "distance": "Sum adjacent-point spherical great-circle chords, with gap chords reported separately. No map matching or route reconstruction. Coordinate datum is undocumented; WGS84-like latitude/longitude is an explicit provisional assumption. Chord distance can undercount turns and GPS jitter can overcount distance.",
+  "earth_radius_m": 6371008.8,
+  "stop_speed_m_s": 0.5,
+  "minimum_stop_run_s": 30,
+  "stop_rule": "Consecutive observed intervals below the speed threshold lasting at least the minimum duration are low-motion estimates. Gaps interrupt runs. This suppresses brief jitter but does not establish physical stops. Stop-adjusted elapsed equals elapsed minus estimated low-motion time, and is not validated moving time.",
+  "speed_consistency_flag_km_h": 200,
+  "speed_rule": "Flag an observed interval above this broad consistency screen for inspection. Never infer mode from it or silently delete it. No road speed limit or passability inference.",
+  "exercise_baseline_speed_km_h": 30,
+  "baseline_rule": "An uncalibrated constant-speed arithmetic example only: time = observed chord distance / speed; residual = stop-adjusted elapsed minus that time. No fitting, pass threshold or generalization claim.",
+  "privacy": "Raw traces, trip/device IDs, exact dates, coordinates, endpoints and per-trip metrics stay local outside git. Public output is corpus-level counts and pooled summaries only, without per-trip examples. No maps rendered.",
+  "final_test": "None. Future evaluation must freeze trip/corridor and season groups before evaluation, including device/repeated-route dependence. Existing detector holdouts remain unopened."
+}

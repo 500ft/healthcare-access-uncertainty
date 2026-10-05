@@ -92,12 +92,15 @@ Earth Engine route, see [Start here](docs/START_HERE.md).
 
 ## What's next
 
-The [baseline packet](baseline/20261003/README.md) prepares Microsoft and OSM
-comparisons for the non-holdout sites. The owner still needs to decide whether
-to commit labeling time. Reference corridors must be drawn from dated imagery
-before candidate layers are revealed, beginning with negative-01 and then the
-development sites. The historical gate waits for the baseline decision. See the
-[roadmap](ROADMAP.md).
+The disturbance detector remains paused. The [baseline packet](baseline/20261003/README.md)
+keeps candidate layers unrendered until the owner commits independent labels;
+labeling time is still unapproved.
+
+A separate public-data feasibility probe parsed 19 of 20 selected timestamped
+car/bus trips. It found no validated off-road trips. The
+[executed probe](evidence/route-feasibility-20261004/README.md) preserves aggregate
+evidence and reproducible code. A separate route-planning repository is proposed;
+its creation and name require owner approval. See the [roadmap](ROADMAP.md).
 
 ## Limits
 

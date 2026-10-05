@@ -1,0 +1,105 @@
+{
+  "attribution": "Cruz, M., Macedo, H., Barreto, R., & Guimares, A. (2015). GPS Trajectories. UCI Machine Learning Repository.",
+  "counts": {
+    "ambiguous_mode_trips_quarantined": 0,
+    "continuous_timing_examples_eligible": 12,
+    "development_trips_selected": 20,
+    "exclusion_reasons": {
+      "fewer_than_two_points": 1
+    },
+    "offroad_condition_validated_trips": 0,
+    "orphan_point_rows": 0,
+    "selected_distinct_devices": 5,
+    "selected_point_rows": 2266,
+    "source_declared_modes": {
+      "bus": 76,
+      "car": 87
+    },
+    "source_metadata_trips": 163,
+    "source_point_rows": 18107,
+    "timestamped_trips_excluded": 1,
+    "timestamped_trips_usable": 19,
+    "trips_with_gaps": 6,
+    "trips_with_speed_consistency_flags": 1,
+    "unselected_known_mode_trips": 143,
+    "usable_by_declared_mode": {
+      "bus": 9,
+      "car": 10
+    }
+  },
+  "data_license": "CC-BY-4.0",
+  "inventory": {
+    "conditions": "Traffic/weather/bus-rating code frequencies are inventoried. Zero is undocumented and cannot establish clear weather or an observed condition. No surface, ford, bridge or passability observations.",
+    "coordinates": "Latitude/longitude columns; datum, horizontal accuracy and sensor calibration undocumented. Spherical distances assume WGS84-like degrees.",
+    "elevation": "Not supplied; elevation resolution and slope unknown.",
+    "geographic_coverage": "Only pooled extent rounded outward to whole degrees is public. No Mongolia or off-road representativeness established.",
+    "mode_method": "Use declared car_or_bus labels. Speed is a consistency flag only; ambiguous labels quarantined.",
+    "privacy": "No individual trip IDs, device IDs, endpoints, dates or coordinates in public output.",
+    "stops": "Low-motion estimates under protocol, not labeled physical stops.",
+    "vehicle_type": "Declared car/bus only; no make, drivetrain, load or off-road configuration."
+  },
+  "limits": [
+    "Observed chord distance and low-motion time are provisional estimates at the supplied sampling resolution.",
+    "Declared modes do not independently validate the vehicle; the sample does not establish route quality or passability.",
+    "Repeated trips/devices require grouped future splits; there is no independent test result here."
+  ],
+  "observations": {
+    "chord_distance_m_pooled_usable": {
+      "maximum": 17322.48251559077,
+      "median": 3382.099647111714,
+      "minimum": 9.477065683335043
+    },
+    "coarse_extent_lonlat_whole_degrees": [
+      -38,
+      -11,
+      -37,
+      -10
+    ],
+    "collection_years": [
+      2014
+    ],
+    "condition_metadata_codes": {
+      "rating": {
+        "1": 1,
+        "2": 9,
+        "3": 10
+      },
+      "rating_bus": {
+        "0": 20
+      },
+      "rating_weather": {
+        "0": 20
+      }
+    },
+    "coordinate_decimal_digits": {
+      "maximum": 15,
+      "median": 8.0,
+      "minimum": 3
+    },
+    "elapsed_s_pooled_usable": {
+      "maximum": 6994.0,
+      "median": 841.0,
+      "minimum": 10.0
+    },
+    "estimated_low_motion_s": 3395.0,
+    "gap_intervals": 16,
+    "gap_time_s": 5833.0,
+    "speed_consistency_flags": 2,
+    "time_interval_s_pooled_usable": {
+      "maximum": 1368.0,
+      "median": 6.0,
+      "minimum": 4.0
+    },
+    "timestamp_fractional_digits": {
+      "maximum": 0,
+      "median": 0.0,
+      "minimum": 0
+    }
+  },
+  "parser_sha256": "ba3234527f002ade1954b7915baf5c3ee7175abc39029cef34a64f4eb747e7ea",
+  "protocol_sha256": "9cd0f4635d43efb3a9ed75b249274b1a869fdc6d61dd66c8c1b71813f2b95daa",
+  "result": "Timestamped vehicle sample parsed; off-road route evaluation remains unsupported.",
+  "source_doi": "10.24432/C54S5Z",
+  "source_sha256": "0e19d39a7562722b8aaa02580deade3ae0893921f9dc28d14dedacbde2c2cc94",
+  "split": "Development only; no test set or final evaluation."
+}
