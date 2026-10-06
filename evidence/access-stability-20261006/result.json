@@ -1,0 +1,102 @@
+{
+  "evidence_type": "toy graph; no geography or observed travel times",
+  "units": "minutes",
+  "config": "demo.json",
+  "threshold": 10,
+  "bounds": {
+    "original": [
+      {
+        "node": "A",
+        "lower": 5,
+        "upper": 8,
+        "classification": "definite_access"
+      },
+      {
+        "node": "B",
+        "lower": 18,
+        "upper": 25,
+        "classification": "definite_exclusion"
+      },
+      {
+        "node": "C",
+        "lower": 7,
+        "upper": 11,
+        "classification": "unresolved"
+      },
+      {
+        "node": "D",
+        "lower": 4,
+        "upper": "infinity",
+        "classification": "unresolved"
+      },
+      {
+        "node": "E",
+        "lower": "infinity",
+        "upper": "infinity",
+        "classification": "definite_exclusion"
+      },
+      {
+        "node": "Clinic",
+        "lower": 0,
+        "upper": 0,
+        "classification": "definite_access"
+      }
+    ],
+    "widened": [
+      {
+        "node": "A",
+        "lower": 3,
+        "upper": 12,
+        "classification": "unresolved"
+      },
+      {
+        "node": "B",
+        "lower": 8,
+        "upper": 30,
+        "classification": "unresolved"
+      },
+      {
+        "node": "C",
+        "lower": 4,
+        "upper": 17,
+        "classification": "unresolved"
+      },
+      {
+        "node": "D",
+        "lower": 2,
+        "upper": "infinity",
+        "classification": "unresolved"
+      },
+      {
+        "node": "E",
+        "lower": "infinity",
+        "upper": "infinity",
+        "classification": "definite_exclusion"
+      },
+      {
+        "node": "Clinic",
+        "lower": 0,
+        "upper": 0,
+        "classification": "definite_access"
+      }
+    ]
+  },
+  "exhaustive": {
+    "graphs": 46656,
+    "worlds": 1000000,
+    "classifications": 1679616,
+    "widening_checks": 1679616,
+    "failures": 0
+  },
+  "speed_example_minutes": [
+    10.0,
+    30.0
+  ],
+  "python": "3.11.5",
+  "sha256": {
+    "evidence/access-stability-20261006/demo.json": "7e14f263631f359c4237f483bf6db1d2a4e657448b4780e4fad456876de7a741",
+    "analysis/run_access_demo.py": "43a6118ac879a941e81992280a6f11bc586bc101f289ac98646e9570f28b5557",
+    "analysis/catanroads/access_bounds.py": "c9213860f8178379216cd1b0ec9a6479afc96b64ab7462b001df4a143bc54c0d",
+    "analysis/tests/test_access_bounds.py": "61a939e8c0838c5a069322c062f080cc6212bef4b3902dd7a364751904f0fa96"
+  }
+}

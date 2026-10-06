@@ -1,0 +1,66 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "node": "26.8.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.2"
+  },
+  "scope": "local software checks; no Earth Engine runtime or field evaluation",
+  "commands": [
+    {
+      "command": "MPLCONFIGDIR=/private/tmp/road-mpl MPLBACKEND=Agg PYTHONPATH=analysis .venv/bin/python analysis/run_access_demo.py",
+      "exit_status": 0,
+      "result": "result.json; final figure visually inspected"
+    },
+    {
+      "command": "MPLCONFIGDIR=/private/tmp/road-mpl MPLBACKEND=Agg PYTHONPATH=analysis .venv/bin/python -m pytest analysis/tests -q",
+      "exit_status": 0,
+      "passed": 171
+    },
+    {
+      "command": "node tools/validate_phase1.mjs",
+      "exit_status": 0
+    },
+    {
+      "command": "node tools/test_temporal_qa.mjs",
+      "exit_status": 0
+    },
+    {
+      "command": ".venv/bin/python tools/test_prepare_baselines.py",
+      "exit_status": 0,
+      "passed": 8
+    },
+    {
+      "command": "PYTHONPATH=analysis .venv/bin/python -m catanroads.site_worksheet --check",
+      "exit_status": 0
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q analysis/catanroads analysis/tests analysis/run_access_demo.py",
+      "exit_status": 0
+    },
+    {
+      "command": ".venv/bin/python tools/check_presentation.py . \"Informal Road Mapping\" informal-road-mapping",
+      "exit_status": 0,
+      "issues": []
+    },
+    {
+      "command": ".venv/bin/python tools/test_presentation.py",
+      "exit_status": 0,
+      "passed": 4
+    },
+    {
+      "command": "git diff --check",
+      "exit_status": 0
+    }
+  ],
+  "separate_review": [
+    "SHA-256 checks of metadata freeze and result input/code hashes",
+    "Independent combinatorial count and toy path arithmetic",
+    "Local paths in every changed Markdown file checked",
+    "Protected baseline, config, gee, assets and historical figures unchanged against PR #52 head",
+    "Final bounds.png visually inspected for labels, units and readability"
+  ],
+  "initial_environment_failure": "Default conda Python 3.11.8 segfaulted in pytest readline startup (exit 139), including retry with plugin autoload disabled. No tests ran in that interpreter. All reported passes used isolated .venv with existing declared dependencies; dependency pins unchanged."
+}

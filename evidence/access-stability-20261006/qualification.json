@@ -1,0 +1,172 @@
+{
+  "scope": "metadata-only qualification; no baseline reproduced; no evaluation rows fetched or viewed",
+  "upstream_repository": "https://github.com/GIScience/healthcare-access-idai",
+  "upstream_commit": "69bbe253b4dcd926a630b557251b5f65688301d5",
+  "source_records": {
+    "wfp-metadata.json": {
+      "file": "wfp-metadata.json",
+      "url": "https://data.humdata.org/api/3/action/package_show?id=mozambique-road-access-constraints-cyclone-idai",
+      "sha256": "825274e09695b0264989d3115b70e4ac82b55ddae83087d3d500b28c62297d87",
+      "bytes": 12085,
+      "retrieved_utc": "2026-10-06T17:11:55.759513+00:00"
+    },
+    "upstream-license.txt": {
+      "file": "upstream-license.txt",
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/LICENSE.md",
+      "sha256": "585e25ef8f5946a52bf2aed68d5becfc38be94a8663aa01c1b31d88aa57f1de3",
+      "bytes": 34904,
+      "retrieved_utc": "2026-10-06T17:11:55.918666+00:00"
+    },
+    "upstream-inputs.R": {
+      "file": "upstream-inputs.R",
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/1_data_preparation/1.1_datapreparation.R",
+      "sha256": "41aaca730ad3e4a757d6e1b57e871179e3143420fa51e1c96f25f9db80c72036",
+      "bytes": 6943,
+      "retrieved_utc": "2026-10-06T17:11:56.061610+00:00"
+    },
+    "upstream-floods.R": {
+      "file": "upstream-floods.R",
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/1_data_preparation/1.2_floods_data_preparation.R",
+      "sha256": "3c3447f30cd746d548e8654d7207f3ebdd1aa0b91a24488f44b440f0e4e1facf",
+      "bytes": 6558,
+      "retrieved_utc": "2026-10-06T17:11:56.221682+00:00"
+    },
+    "upstream-network.R": {
+      "file": "upstream-network.R",
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/1_data_preparation/2._create_impacted_pbf.R",
+      "sha256": "e91d463f5f795376734eae41c1f1d7748853a2a320b29b27ab960a7c1e213adb",
+      "bytes": 7671,
+      "retrieved_utc": "2026-10-06T17:11:56.363651+00:00"
+    },
+    "upstream-readme.md": {
+      "sha256": "ea1c4b8dad0c8e849c26a0a61ea0856c330f3ca71a9137060208945fbfe21728",
+      "bytes": 21739,
+      "pinned_commit": "69bbe253b4dcd926a630b557251b5f65688301d5"
+    },
+    "upstream-tree.json": {
+      "sha256": "77f5a9912178a945f588d58a97219d59edfa43d07cbba9cfb27e0ac77318e79c",
+      "bytes": 17630,
+      "pinned_commit": "69bbe253b4dcd926a630b557251b5f65688301d5"
+    }
+  },
+  "development_baseline": {
+    "target": "published pre/post Idai driving-car healthcare access baseline",
+    "status": "blocked",
+    "code_license": "GPL-3.0; inspected upstream LICENSE.md; no upstream code redistributed or incorporated",
+    "inputs": [
+      {
+        "input": "road network",
+        "source": "OpenStreetMap via osmextract / Geofabrik",
+        "qualification": "upstream uses geofabrik_mozambique-latest.osm.pbf; no historical input bytes or checksum in pinned tree; data ODbL attribution must accompany any future extract"
+      },
+      {
+        "input": "facilities",
+        "source": "OSM via ohsome",
+        "snapshot_in_script": "2021-07-01",
+        "qualification": "not incident-time observations; availability/service capability not established by map tags"
+      },
+      {
+        "input": "population",
+        "source": "WorldPop",
+        "product_in_script": "2020 UN-adjusted constrained Maxar v1",
+        "qualification": "HEAD reachable; exact product redistribution license not qualified; payload not acquired"
+      },
+      {
+        "input": "boundary",
+        "source": "geoBoundaries SSCGS via rgeoboundaries",
+        "qualification": "version not pinned; exact input terms and bytes not qualified"
+      },
+      {
+        "input": "floods",
+        "source": "UNOSAT plus ARC/WFP",
+        "qualification": "UNOSAT HEAD reachable; WFP archive HEAD HTTP 403; exact input terms and bytes not qualified"
+      }
+    ],
+    "availability_probes": [
+      {
+        "name": "UNOSAT archive",
+        "url": "https://unosat-maps.web.cern.ch/unosat-maps/MZ/TC20190312MOZ/TC20190312MOZ_SHP.zip",
+        "method": "HEAD",
+        "checked_utc": "2026-10-06T17:12:20.787308+00:00",
+        "body_read": false,
+        "status": 200,
+        "final_url": "https://unosat.docs.cern.ch/unosat-maps/MZ/TC20190312MOZ/TC20190312MOZ_SHP.zip",
+        "headers": {
+          "date": "Tue, 06 Oct 2026 17:12:22 GMT",
+          "server": "Apache",
+          "last-modified": "Mon, 15 Apr 2019 14:54:57 GMT",
+          "accept-ranges": "bytes",
+          "content-length": "17372752",
+          "content-type": "application/zip",
+          "cache-control": "private",
+          "connection": "close"
+        },
+        "headers_omitted": [
+          "set-cookie"
+        ]
+      },
+      {
+        "name": "WFP development flood archive",
+        "url": "https://data.humdata.org/dataset/4b3930dc-21a4-43b3-9257-e1f552a969a6/resource/9a3f23c6-0cc3-4e99-bb72-0b4e099847df/download/moz_totalfloodextent.zip",
+        "method": "HEAD",
+        "checked_utc": "2026-10-06T17:12:22.310746+00:00",
+        "body_read": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "name": "WorldPop input",
+        "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/maxar_v1/MOZ/moz_ppp_2020_UNadj_constrained.tif",
+        "method": "HEAD",
+        "checked_utc": "2026-10-06T17:12:23.030421+00:00",
+        "body_read": false,
+        "status": 200,
+        "final_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/maxar_v1/MOZ/moz_ppp_2020_UNadj_constrained.tif",
+        "headers": {
+          "Date": "Tue, 06 Oct 2026 17:12:23 GMT",
+          "Server": "Apache",
+          "Last-Modified": "Mon, 07 Sep 2020 09:52:46 GMT",
+          "ETag": "\"228fdae-5aeb62e37ece9\"",
+          "Accept-Ranges": "bytes",
+          "Content-Length": "36240814",
+          "Content-Disposition": "attachment",
+          "Connection": "close",
+          "Content-Type": "image/tiff"
+        },
+        "headers_omitted": [
+          "set-cookie"
+        ]
+      },
+      {
+        "name": "WFP reserved metadata server",
+        "url": "https://geonode.wfp.org/",
+        "method": "HEAD",
+        "checked_utc": "2026-10-06T17:12:23.461733+00:00",
+        "body_read": false,
+        "error": "<urlopen error timed out>"
+      }
+    ],
+    "lineage_review": "Pinned input scripts use OSM roads/facilities and union of UNOSAT plus ARC/WFP flood extents. They do not explicitly import the reserved road-constraint layer. This does not establish independent partner observation lineage."
+  },
+  "evaluation_registration": {
+    "status": "reserved_candidate_ineligible_pending_metadata",
+    "metadata_sha256": "825274e09695b0264989d3115b70e4ac82b55ddae83087d3d500b28c62297d87",
+    "candidate_id": "1fd18272-438b-46a4-88ea-a414e264ddb6",
+    "resource_policy": "All listed constraint resources remain reserved; exclude WMS map from row evaluation; no selection by observed outcome.",
+    "eligible_resources": [],
+    "outcome_sha256": null,
+    "outcome_hash_status": "not downloaded; provider hash fields are empty; originalHash is not a cryptographic content freeze",
+    "vehicle_class": "not established by catalog; generic schema speed fields do not establish observed speed or mode",
+    "observation_dates": "catalog date and file update dates are not row observation times",
+    "coverage": "Only roads with access-constraint information; unreported roads remain unknown, never passable negatives.",
+    "lineage": "Shared OSM geometry and same event as development. Partner reports may overlap development flood evidence; independence not established.",
+    "eligibility_rules": [
+      "Obtain immutable licensed bytes through a custodian; hash raw archives before anyone opens outcome rows.",
+      "Before outcome access, record metadata-supported observation window, transport mode, spatial coverage, status definitions and exclusions.",
+      "Exclude entries lacking time/mode/locatable road linkage or explicit observation provenance; freeze rule and excluded-reason vocabulary before outcomes are opened.",
+      "Require documented observation lineage independent of development inputs and model-generated flood closures. Shared geometry alone is not independent validation.",
+      "Freeze development input hashes, at least two independently sourced bound families, models, sampling policies, costs, metrics and matching rules before outcome access.",
+      "Do not tune or choose widths, corridors or dates from reserved outcomes. If lineage cannot be separated, retain as development-only or seek a separate event.",
+      "A future amendment with evidence and new hashes is required to change ineligibility. This file does not claim a frozen row-level evaluation set."
+    ]
+  }
+}

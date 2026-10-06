@@ -2,8 +2,8 @@
 
 This is a dated review of the historical detector design. Assessment dates apply
 to its evidence-state statements; later QA status is in the
-[README](../README.md#results-so-far). Suggested actions below are not active
-work while the detector is paused; the [roadmap](../ROADMAP.md) controls scope.
+[historical overview](../docs/history/detector-overview.md#results-so-far).
+Suggested actions below are not active work while the detector is inactive; the [roadmap](../ROADMAP.md) controls scope.
 The separate [UCI probe](../evidence/route-feasibility-20261004/README.md) establishes
 parsing feasibility only. This ledger does not establish global travel-time
 validation or novelty for a replacement study.

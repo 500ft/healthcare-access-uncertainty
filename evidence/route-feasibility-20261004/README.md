@@ -82,17 +82,17 @@ constant-speed baseline. This is an arithmetic exercise, not a validated model.
 
 ## Scope after the executed probe
 
-The `off-road-route-planning` destination was an earlier, unapproved proposal.
-No repository was created or renamed, and this documentation task authorizes
-neither action. The [roadmap](../../ROADMAP.md#direction-and-current-step)
-records the outstanding owner decisions. A proposed replacement study remains
-in the external handoff until the owner adopts its finish line.
+The [owner decision](../../docs/ACCESS_STABILITY.md#owner-decision) supersedes the
+separate route-planning proposal with healthcare-access software work in this
+repository. No repository was created or renamed. This UCI sample is explicitly
+non-Mongolian and provides no field validation.
 
 This probe has no independent capture-reference comparison. Its worked timing
 example reuses the source observations and cannot qualify their accuracy.
 Likewise, two capture apps sharing a phone's GNSS or clock are not automatically
 independent ground truth. Any successful qualification against a separate
 reference would apply only to the tested setup.
-The detector remains paused with its artifacts and blind labeling requirement
+
+The detector is inactive with its artifacts and blind labeling requirement
 intact. No new drive, map matching, country-transfer test or route experiment
-was performed in this documentation reconciliation.
+was performed during the software pivot.

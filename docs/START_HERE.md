@@ -1,83 +1,39 @@
 # Start here
 
-The [README](../README.md) is the overview and the [roadmap](../ROADMAP.md) is
-the plan. The detector is paused; the instructions below preserve its historical
-workflow. The [UCI trip probe](../evidence/route-feasibility-20261004/README.md)
-is a separate parsing result, with no established Mongolian or off-road validation.
-Current owner decisions are listed in the roadmap.
+Read the [current question and result](../README.md),
+[method and adoption decision](ACCESS_STABILITY.md), then the
+[roadmap](../ROADMAP.md). The [qualification record](../evidence/access-stability-20261006/qualification.json)
+is the source for real-data blockers and the reserved candidate's eligibility.
 
-## Two-minute review
+## Reproduce the software result
 
-1. Read the [README](../README.md) and the [roadmap](../ROADMAP.md).
-2. Look at the [stress-case results](../results/README.md) and the
-   [Earth Engine runtime record](../results/earth_engine_runtime_2026-09-29.json).
-3. Read the [frozen Phase-1 gate](design.md#pre-registered-phase-1-gate-frozen-2026-08-23)
-   and the [review index](REVIEW_READY.md).
-
-So far the project has tested screening and extraction code and a gate fixed in
-advance. It has not produced a road map of any real site.
-
-## Reproduce the local checks
-
-Set up as in the [README](../README.md#getting-started). The Python import name
-is still `catanroads`. The checks are the Python tests and the two Node scripts
-in [CI](../.github/workflows/ci.yml); none of them contacts Earth Engine.
-
-If pytest crashes while importing `readline` on your machine, this works around
-it:
+Install the existing dependencies as described in the
+[README](../README.md#getting-started), then run from the repository root:
 
 ```sh
-PYTHONPATH=analysis python -c 'import sys,types; sys.modules["readline"]=types.ModuleType("readline"); import pytest; raise SystemExit(pytest.main(["analysis/tests","-q"]))'
+MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
+PYTHONPATH=analysis python -m pytest analysis/tests -q
+(cd evidence/access-stability-20261006 && shasum -a 256 -c metadata-freeze.sha256)
+python tools/check_presentation.py . "Informal Road Mapping" informal-road-mapping
+python tools/test_presentation.py
 ```
 
-## Synthetic demonstration
+The generator runs the toy example and exhaustive finite-world oracle. It writes
+[result.json](../evidence/access-stability-20261006/result.json) and the
+[figure](../evidence/access-stability-20261006/bounds.png).
 
-After installing `analysis[dev]`:
+## Retained checks and history
+
+The [history index](history/README.md) labels the inactive detector work. Its
+software regression checks remain useful:
 
 ```sh
-python analysis/demo_synthetic.py
-MPLBACKEND=Agg PYTHONPATH=analysis python analysis/plot_stress_cases.py
+node tools/validate_phase1.mjs
+node tools/test_temporal_qa.mjs
+python tools/test_prepare_baselines.py
+PYTHONPATH=analysis python -m catanroads.site_worksheet --check
 ```
 
-The first command overwrites `results/method_demo_synthetic.png`; the second
-rewrites the five figures in `results/figures/`. Run them in a spare clone, or
-check the diff afterwards. The [figure guide](data-and-figures.md) says where
-each figure comes from.
-
-The [method illustration](../assets/method.png) shows the full intended
-pipeline. Its network-conditioning and confirmation stages are plans that have
-not been built.
-
-## Real imagery
-
-If the owner commits to labeling, record what each site contains using the
-[site worksheet](SITE_VERIFICATION_WORKSHEET.md), before looking at any model
-output. The worksheet leaves out the holdout site; don't open its imagery until
-the candidate and the evaluation are frozen. A missing or unclear image leaves
-the site unverified; it is not a negative.
-
-Site verification alone does not authorize a gate run. The
-[baseline decision](../ROADMAP.md#detector-work-remaining) and explicit resumption
-must come first. The [Phase-1 runbook](PHASE1_RUNBOOK.md) preserves the historical
-configuration; keep baseline/detector outputs and the holdout closed under the
-roadmap's inspection rules.
-
-The gate looks for new disturbance. It won't find a stable bare road or one
-that is recovering, and it doesn't measure traffic.
-
-## Where to make a change
-
-| Change | Where |
-| --- | --- |
-| Study design and gate rules | [Design](design.md), [runbook](PHASE1_RUNBOOK.md) |
-| Sites and the inspection form | [Site manifest](../config/sites.geojson), [worksheet](SITE_VERIFICATION_WORKSHEET.md) |
-| Earth Engine screening | [gee/ndvi_change.js](../gee/ndvi_change.js) |
-| Extraction and the gate code | [Python package](../analysis/catanroads/) |
-| Tests | [analysis/tests](../analysis/tests/) |
-| Figures | [Figure guide](data-and-figures.md), [results](../results/README.md) |
-
-Read [CONTRIBUTING.md](../CONTRIBUTING.md) first. Never fill a site's
-verification fields from assumptions. The [identity note](REPOSITORY_IDENTITY.md)
-explains the rename, and the September 11
-[completion correction](COMPLETION_RECONCILIATION.md) explains which early
-deliverables were preparation rather than finished work.
+These are local software/static checks. They do not establish Earth Engine
+runtime behavior or authorize opening detector candidate layers and holdouts.
+The new WFP candidate's outcome rows also remain reserved.

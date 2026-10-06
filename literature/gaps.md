@@ -1,7 +1,7 @@
 # Gaps — what the literature does not settle
 
 These are gaps from the historical detector review, not an active task queue.
-The detector remains paused under the [roadmap](../ROADMAP.md). The
+The detector is inactive and superseded under the [roadmap](../ROADMAP.md). The
 [UCI trip probe](../evidence/route-feasibility-20261004/README.md) is separate
 parsing evidence and does not resolve independent speed-label qualification,
 geographic transfer or Mapillary metadata reuse rights. Current metadata terms

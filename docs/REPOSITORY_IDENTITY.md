@@ -35,17 +35,14 @@ does not replace the authoritative protocol or task ledger.
 
 ## Visual provenance
 
-The README leads with
-[`results/figures/01_demo_paths_vs_chords.png`](../results/figures/01_demo_paths_vs_chords.png),
-one of the five stress-case figures made by `analysis/plot_stress_cases.py`
-([figure guide](data-and-figures.md)). It is a synthetic construction with a
-known answer, not satellite imagery or a site result. A real Earth Engine
-output should replace it once the Phase-1 gate has run on verified sites.
+The README now shows the executed toy graph bounds described in the
+[figure guide](data-and-figures.md). The repository name and existing Python
+package remain unchanged for the healthcare-access software pivot.
 
-[`media/project-overview.svg`](media/project-overview.svg) is an editable
-diagram of the method. It contains no measured values. Each stage has a text
-label, so the meaning doesn't depend on colour, and the SVG has a title and
-description for screen readers.
+The detector stress plots and [`media/project-overview.svg`](media/project-overview.svg)
+remain [historical artifacts](history/README.md). The SVG is a conceptual detector
+diagram with text labels and accessibility metadata; it is not a current access
+result or a proposed figure for real geography.
 
 ## Keeping navigation reproducible
 
