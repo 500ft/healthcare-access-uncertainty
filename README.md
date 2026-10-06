@@ -1,7 +1,7 @@
 # Informal Road Mapping
 
-Finding unmapped dirt-road corridors in Mongolia from Sentinel-2 imagery. The
-method looks for ground disturbance that persists across years, checks it
+Paused prototype for finding unmapped dirt-road corridors in Mongolia from
+Sentinel-2 imagery. The method looks for ground disturbance that persists across years, checks it
 against a road-free control site, and then traces line-like candidates for
 comparison with dated high-resolution imagery.
 
@@ -40,8 +40,8 @@ strips of disturbed ground.
 
 ## Results so far
 
-Everything below is synthetic or a QA run. No site has been verified and the
-gate has not run.
+The detector results below are synthetic or QA work. No site has been verified
+and the gate has not run.
 
 - **Extractor stress tests.** Ten synthetic cases, each with a known
   centreline. Curved corridors that the old straight-line output missed
@@ -96,11 +96,16 @@ The disturbance detector remains paused. The [baseline packet](baseline/20261003
 keeps candidate layers unrendered until the owner commits independent labels;
 labeling time is still unapproved.
 
-A separate public-data feasibility probe parsed 19 of 20 selected timestamped
-car/bus trips. It found no validated off-road trips. The
-[executed probe](evidence/route-feasibility-20261004/README.md) preserves aggregate
-evidence and reproducible code. A separate route-planning repository is proposed;
-its creation and name require owner approval. See the [roadmap](ROADMAP.md).
+The [UCI GPS Trajectories probe](evidence/route-feasibility-20261004/README.md)
+found 19 structurally usable trips from 20 selected: 10 declared car and 9 bus.
+This is parsing evidence, with no established Mongolian, off-road or global
+journey-time validation. The [result record](evidence/route-feasibility-20261004/summary.json)
+holds the counts and limitations.
+
+The replacement finish line and the detector's disposition remain owner
+decisions. The earlier separate-repository proposal is unapproved; neither
+creation nor renaming is approved. See the
+[roadmap](ROADMAP.md#direction-and-current-step).
 
 ## Limits
 

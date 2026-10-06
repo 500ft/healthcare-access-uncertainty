@@ -1,7 +1,10 @@
 # Start here
 
 The [README](../README.md) is the overview and the [roadmap](../ROADMAP.md) is
-the plan. This guide is for reading the work quickly or rerunning it.
+the plan. The detector is paused; the instructions below preserve its historical
+workflow. The [UCI trip probe](../evidence/route-feasibility-20261004/README.md)
+is a separate parsing result, with no established Mongolian or off-road validation.
+Current owner decisions are listed in the roadmap.
 
 ## Two-minute review
 
@@ -47,16 +50,17 @@ not been built.
 
 ## Real imagery
 
-Record what each site actually contains from dated imagery, using the
+If the owner commits to labeling, record what each site contains using the
 [site worksheet](SITE_VERIFICATION_WORKSHEET.md), before looking at any model
 output. The worksheet leaves out the holdout site; don't open its imagery until
 the candidate and the evaluation are frozen. A missing or unclear image leaves
 the site unverified; it is not a negative.
 
-Once sites are verified, run the [Phase-1 runbook](PHASE1_RUNBOOK.md) in the
-signed-in Earth Engine Code Editor. The exported numbers decide the gate, not
-the map colours. Run the primary configuration before any sensitivity study,
-and don't swap sites after seeing a result.
+Site verification alone does not authorize a gate run. The
+[baseline decision](../ROADMAP.md#detector-work-remaining) and explicit resumption
+must come first. The [Phase-1 runbook](PHASE1_RUNBOOK.md) preserves the historical
+configuration; keep baseline/detector outputs and the holdout closed under the
+roadmap's inspection rules.
 
 The gate looks for new disturbance. It won't find a stable bare road or one
 that is recovering, and it doesn't measure traffic.

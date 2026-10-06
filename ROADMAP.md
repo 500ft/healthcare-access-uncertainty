@@ -9,14 +9,23 @@ ran in an external local workspace. Detailed traces and source linkage remain
 outside this repository; the committed record contains aggregate evidence and
 the reproducible probe only.
 
-The first evidence task is complete. The next owner decision is whether to create
-a separate route-planning repository and approve its name. The proposed
-`off-road-route-planning` destination is an implementation proposal, not an
-approved rename. No repository was created or renamed. The probe supports
-basic ingestion; usable off-road vehicle/condition evidence is still missing.
-No terrain cost surface or candidate route was built.
+The first evidence task is complete. Its source is UCI GPS Trajectories; the
+[aggregate record](evidence/route-feasibility-20261004/summary.json) establishes
+parsing feasibility only. No Mongolian or off-road validation was performed.
+The detector remains paused and its artifacts are preserved.
 
-For that separate study, the finish line is candidate routes and travel-time
+The current step is the owner's direction decision. The documentation handoff
+does not answer the outstanding choices: R1, whether to replace this repository's
+finish line; R2, whether to close or keep the detector paused; R3, the commitment
+and usable independent drive records; and R4, the relevant data terms. No such
+approval is recorded here. The proposed replacement remains in the external
+handoff until R1 is answered; this active roadmap has not adopted it.
+
+The earlier `off-road-route-planning` proposal remains unapproved. No repository
+creation or rename is authorized by this documentation task. The study described
+below records that earlier proposal, rather than a new work authorization.
+
+For that earlier proposed study, the finish line is candidate routes and travel-time
 estimates compared with independent actual vehicle trips under known conditions,
 with trips/corridors held out. Travel time on a driven route and passability of an
 undriven suggested route are separate claims. Any next evidence task needs a new

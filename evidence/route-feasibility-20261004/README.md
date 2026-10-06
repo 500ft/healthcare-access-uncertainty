@@ -1,9 +1,10 @@
 # Timestamped trip feasibility probe
 
 The [executed result](summary.json) contains usable/excluded counts for a small
-development sample of GPS Trajectories. Timestamped car/bus data can support a
+development sample of UCI GPS Trajectories. Timestamped car/bus data can support a
 parsing and travel-time prototype. This probe supplies no validated off-road
-trips and makes no claim about suggested-route passability.
+trips, no established Mongolian validation and no global journey-time model.
+It makes no claim about suggested-route passability.
 
 The analysis ran in an external local workspace. This directory preserves the
 code, selection rules, source metadata and aggregate result. Raw data, exact
@@ -79,15 +80,19 @@ example. Independently compute its adjacent-point distance, estimated low-motion
 time, stop-adjusted elapsed time and residual against the protocol's illustrative
 constant-speed baseline. This is an arithmetic exercise, not a validated model.
 
-## Implementation proposal
+## Scope after the executed probe
 
-Basic timestamped-trip ingestion is feasible. Proposed destination:
-`off-road-route-planning`, a separate repository, subject to owner approval of
-creation and name. Start it with this executed probe rather than an empty plan.
-The present sample supports a parser demonstration only. Before terrain costs
-or route claims, a later authorized task must obtain trips with suitable vehicle
-and surface/condition evidence. The eventual finish line is candidate routes and
-travel-time estimates evaluated against independent actual trips under known
-conditions. Timing on driven routes cannot establish that an undriven ford,
-bridge or suggested route is passable. The existing disturbance detector remains
-paused with its blind labeling requirement intact.
+The `off-road-route-planning` destination was an earlier, unapproved proposal.
+No repository was created or renamed, and this documentation task authorizes
+neither action. The [roadmap](../../ROADMAP.md#direction-and-current-step)
+records the outstanding owner decisions. A proposed replacement study remains
+in the external handoff until the owner adopts its finish line.
+
+This probe has no independent capture-reference comparison. Its worked timing
+example reuses the source observations and cannot qualify their accuracy.
+Likewise, two capture apps sharing a phone's GNSS or clock are not automatically
+independent ground truth. Any successful qualification against a separate
+reference would apply only to the tested setup.
+The detector remains paused with its artifacts and blind labeling requirement
+intact. No new drive, map matching, country-transfer test or route experiment
+was performed in this documentation reconciliation.

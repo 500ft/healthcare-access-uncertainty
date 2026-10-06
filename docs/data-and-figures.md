@@ -11,6 +11,20 @@ A project overview is not an empirical result.
 | [Original method illustration](../assets/method.png) | Hand-authored concept | Depicts the intended pipeline, including planned network conditioning; no generator or measurement is asserted. |
 | [New project overview](media/project-overview.svg) | Hand-authored concept | Editable SVG; source relationships and accessibility notes in [repository identity](REPOSITORY_IDENTITY.md#visual-provenance). |
 
+## Other evidence
+
+The [UCI GPS Trajectories probe](../evidence/route-feasibility-20261004/README.md)
+contains a parsing result for declared car/bus trips. Its
+[aggregate record](../evidence/route-feasibility-20261004/summary.json) and
+[source record](../evidence/route-feasibility-20261004/sources.json) define the
+sample and licence. It is not a Mongolian field study, an off-road validation or
+a global journey-time model. No trace map or Mapillary-derived labels were produced. Exact trip linkage and raw traces remain local.
+
+The [baseline packet](../baseline/20261003/README.md) is prepared candidate data;
+its layers remain unrendered pending independent owner labels. Use its blind
+entry point rather than opening the candidate archive. Current work status and
+holdout restrictions are in the [roadmap](../ROADMAP.md).
+
 ## What counts as reproduction
 
 The [numeric comparison policy](figure-manifest.json) gates the synthetic

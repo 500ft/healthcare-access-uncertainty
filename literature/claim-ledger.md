@@ -1,5 +1,13 @@
 # Claim ledger
 
+This is a dated review of the historical detector design. Assessment dates apply
+to its evidence-state statements; later QA status is in the
+[README](../README.md#results-so-far). Suggested actions below are not active
+work while the detector is paused; the [roadmap](../ROADMAP.md) controls scope.
+The separate [UCI probe](../evidence/route-feasibility-20261004/README.md) establishes
+parsing feasibility only. This ledger does not establish global travel-time
+validation or novelty for a replacement study.
+
 Each row is a claim the repository **already makes**, with its source, and the literature that
 supports or challenges it. Filled in 2026-09-22 from [bibliography.md](bibliography.md).
 
