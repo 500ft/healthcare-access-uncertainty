@@ -1,5 +1,8 @@
 # Literature
 
+> Retained detector history. Its active questions are superseded by the
+> healthcare-access software pivot. See the [history index](../docs/history/README.md).
+
 Why this folder exists: as of 2026-09-22 the repository contained **no citations at all**, while
 [docs/design.md](../docs/design.md) made a dozen specific, checkable methodological claims — that a
 2.5–3 m track is sub-pixel at 10 m, that abandoned tracks stay visible for years, that NDVI and

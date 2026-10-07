@@ -1,5 +1,8 @@
 # catanroads — Phase 2 candidate extraction
 
+> Retained detector history. Its active questions are superseded by the
+> healthcare-access software pivot. See the [history index](../docs/history/README.md).
+
 Turns a surface-disturbance raster into **candidate corridor line-segments**. This
 is the Phase-2 baseline from [`../docs/design.md`](../docs/design.md): a multiscale
 Hessian **ridge filter** enhances elongated features, then **connected components**

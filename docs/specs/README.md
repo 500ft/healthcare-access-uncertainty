@@ -1,5 +1,8 @@
 # Specifications
 
+> Retained detector history. Its active questions are superseded by the
+> healthcare-access software pivot. See the [history index](../history/README.md).
+
 A plain index of the files in this folder. They keep their original wording on
 purpose: a comparison frozen before any real output is only useful if it is
 unchanged since then, and dated plans describe what was intended at the time.

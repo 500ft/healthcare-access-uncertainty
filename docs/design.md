@@ -1,8 +1,9 @@
 # Design — Catan Roads
 
-This is the historical detector design. The detector is paused; dated statements
-below describe their recorded state, including the pre-runtime grid amendment.
-The [README](../README.md#results-so-far) records later QA work. The
+This is the historical detector design, inactive and superseded by the software
+pivot. Dated statements below describe their recorded state, including the
+pre-runtime grid amendment.
+The [historical overview](history/detector-overview.md#results-so-far) records later QA work. The
 [roadmap](../ROADMAP.md) controls any resumption, baseline decision and owner
 labeling. No frozen site, gate or projection setting changes in this
 reconciliation. Proposed phases below are not completed results or authorization

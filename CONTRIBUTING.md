@@ -27,8 +27,9 @@ These are local software checks, not Earth Engine or physical validation.
 - Regenerate figures from their documented source; do not retouch result pixels.
 - Do not commit credentials, restricted imagery or unapproved personal information.
 
-The [runbook](docs/PHASE1_RUNBOOK.md), [design](docs/design.md) and
-[figure guide](docs/data-and-figures.md) define the detailed contracts.
+The [access method](docs/ACCESS_STABILITY.md) and [figure guide](docs/data-and-figures.md)
+define current claims. The detector runbook and design are retained history;
+its holdout and the reserved WFP candidate remain unopened.
 
 ## Editing convention
 
