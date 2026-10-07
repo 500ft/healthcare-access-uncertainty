@@ -1,5 +1,11 @@
 # Phase-1 intake and external run boundary
 
+Historical detector procedure, currently paused. Site verification alone does
+not authorize these commands: follow the [roadmap](../ROADMAP.md) and its
+baseline decision first. Keep candidate layers and holdout evidence closed.
+The dated sprint status below predates the later QA work linked from the
+[README](../README.md#results-so-far).
+
 Updated 2026-09-08. No verified Mongolia result or Earth Engine execution is
 supplied by this sprint. Site flags remain false.
 

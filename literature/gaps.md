@@ -1,5 +1,13 @@
 # Gaps — what the literature does not settle
 
+These are gaps from the historical detector review, not an active task queue.
+The detector remains paused under the [roadmap](../ROADMAP.md). The
+[UCI trip probe](../evidence/route-feasibility-20261004/README.md) is separate
+parsing evidence and does not resolve independent speed-label qualification,
+geographic transfer or Mapillary metadata reuse rights. Current metadata terms
+remain unresolved; an imagery licence cannot be assumed to cover every metadata
+use. No commercial data product is established.
+
 Absence of found evidence is not evidence of absence. Everything below is either a search failure
 or a real hole in the literature, and the two are distinguished where possible.
 
