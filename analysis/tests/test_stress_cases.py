@@ -9,7 +9,7 @@ import hashlib, json, math, subprocess, sys
 from pathlib import Path
 import numpy as np
 import pytest
-from catanroads import extract_candidates, to_geojson
+from catanroads.extract import extract_candidates, to_geojson
 from catanroads import stress_cases as SC
 
 ROOT = Path(__file__).resolve().parents[2]

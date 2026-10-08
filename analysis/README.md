@@ -1,4 +1,11 @@
-# catanroads — Phase 2 candidate extraction
+# Analysis modules
+
+The current module is `catanroads.access_bounds`, reproduced through
+[`run_access_demo.py`](run_access_demo.py). Follow the repository
+[README](../README.md#getting-started) for current installation and commands,
+and [ROADMAP.md](../ROADMAP.md) for prerequisites.
+
+## Retained detector reproduction
 
 > Retained detector history. Its active questions are superseded by the
 > healthcare-access software pivot. See the [history index](../docs/history/README.md).
@@ -16,9 +23,9 @@ loops and braided topology are not resolved. `to_geojson` emits the path; endpoi
 candidate dictionaries still export, and a malformed present `path_px` raises
 `ValueError` rather than falling back to the chord.
 
-Core runs on **numpy + scipy only**. The fuller pipeline (skeleton + graph tracing,
-richer geometry, raster/vector I/O via scikit-image / shapely / rasterio / geopandas)
-is the `full` optional extra.
+Reproduction requires `python -m pip install -e "analysis[dev,detector]"` from
+the repository root. The optional detector stack retains numpy and scipy.
+The unused future-pipeline dependency bundle has been removed.
 
 > **Gate.** Per the project's go/no-go rule, this extractor is **not** applied to
 > real imagery until the Phase-1 disturbance signal survives its negative control.
@@ -37,7 +44,8 @@ python demo_synthetic.py
 ## Use
 
 ```python
-from catanroads import make_scene, extract_candidates, to_geojson
+from catanroads.extract import extract_candidates, to_geojson
+from catanroads.synthetic import make_scene
 
 disturbance, _ = make_scene()          # or your own 2-D array
 candidates = extract_candidates(disturbance)

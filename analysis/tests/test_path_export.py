@@ -15,7 +15,7 @@ import json, math
 from pathlib import Path
 import numpy as np
 import pytest
-from catanroads import extract_candidates
+from catanroads.extract import extract_candidates
 from catanroads import stress_cases as SC
 from catanroads.extract import _component_path_px
 

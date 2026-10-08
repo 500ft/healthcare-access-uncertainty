@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main, 'task/priority-one-*']
+    branches: [main]
 
 jobs:
   analysis-tests:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "22"
       - name: Install analysis dependencies
-        run: python -m pip install -e "analysis[dev,baseline]"
+        run: python -m pip install -e "analysis[dev,baseline,detector]"
       - name: Python syntax
         run: python -m compileall -q analysis/catanroads analysis/tests
       - name: Run analysis tests
@@ -28,11 +28,11 @@ jobs:
           PYTHONPATH: analysis
           MPLBACKEND: Agg
         run: python -m pytest analysis/tests -q
-      - name: Validate Earth Engine configuration statically
+      - name: Check retained Earth Engine source statically
         run: node tools/validate_phase1.mjs
       - name: Check captured baseline preparation without rendering or network access
         run: python tools/test_prepare_baselines.py
-      - name: Test temporal QA branches locally (not Earth Engine runtime)
+      - name: Check retained temporal QA branches locally
         run: node tools/test_temporal_qa.mjs
       - name: Check README links, identity and negative controls
         run: |

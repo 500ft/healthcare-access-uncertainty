@@ -106,7 +106,7 @@ documentation; **no runtime failure has been observed here.**
 
 ## E — response design complete
 
-Addendum in [cr08-first-site-packet.md](cr08-first-site-packet.md). **RESPONSE_DESIGN_COMPLETE.**
+Addendum in [cr08-first-site-packet.md](../task-2026-09-19/cr08-first-site-packet.md). **RESPONSE_DESIGN_COMPLETE.**
 Provisional preparation order `dev-01-braided` then `negative-01`, documented without another ask:
 it changes no site, stratum, coordinate or threshold, and the owner can override it when supplying
 evidence. Adds an explicit `unknown` class distinct from `uncertain`, the paired-dated-evidence
@@ -160,7 +160,7 @@ corrected #37, and this closeout. Their merge SHAs are recorded once they land.
 
 | input | who | what exactly | resumes |
 |---|---|---|---|
-| dated scene reference + judgment for `dev-01-braided`, or the name of an available registered control instead | owner | the form in [cr08-first-site-packet.md](cr08-first-site-packet.md); never a credential in this repository | CR-08 intake |
+| dated scene reference + judgment for `dev-01-braided`, or the name of an available registered control instead | owner | the form in [cr08-first-site-packet.md](../task-2026-09-19/cr08-first-site-packet.md); never a credential in this repository | CR-08 intake |
 | authorized Earth Engine project/operator, **or** completed export artifacts from the prepared probe | owner | `grid_runtime_probe.js` + the expectations file | package B execution, then compositor A/B on real imagery |
 | review of corrected #37 and of this closeout | owner | — | merge |
 

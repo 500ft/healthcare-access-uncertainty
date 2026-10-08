@@ -7,7 +7,7 @@ Run from the repository root:  PYTHONPATH=analysis python evidence/task-2026-09-
 import json, sys, time
 from pathlib import Path
 import numpy as np
-from catanroads import extract_candidates
+from catanroads.extract import extract_candidates
 from catanroads import stress_cases as SC
 
 ROOT = Path(__file__).resolve().parents[2]

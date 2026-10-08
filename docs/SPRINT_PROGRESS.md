@@ -1,3 +1,5 @@
+> Retained detector evidence and contract history. [ROADMAP.md](../ROADMAP.md) is the only active plan; instructions below do not authorize resumption.
+
 # Progress log
 
 What changed and when, newest first, one line per change that matters. The

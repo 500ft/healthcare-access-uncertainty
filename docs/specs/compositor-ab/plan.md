@@ -1,3 +1,5 @@
+> Retained detector evidence and contract history. [ROADMAP.md](../../../ROADMAP.md) is the only active plan; instructions below do not authorize resumption.
+
 # Compositor A/B — frozen offline protocol
 
 Prepared 2026-09-25. **Status: OFFLINE_COMPLETE / REAL_COMPARISON_PENDING.** Nothing in production

@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DOC = (ROOT / "docs/PARAMETER_PROVENANCE.md").read_text()
-GEE = (ROOT / "gee/ndvi_change.js").read_text()
+GEE = (ROOT / "history/detector/gee/ndvi_change.js").read_text()
 EXTRACT = (ROOT / "analysis/catanroads/extract.py").read_text()
 
 

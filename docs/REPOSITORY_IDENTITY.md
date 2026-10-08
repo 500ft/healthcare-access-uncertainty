@@ -10,8 +10,9 @@ repository, not a new project or release.
 The public name, GitHub description, README navigation and active repository
 links use the new identity. Historical commits, paper titles, preregistrations,
 data, release artifacts, measurements and approval records retain their original
-meaning. Legacy package/module names remain valid; repository branding does not
-rename an import or command-line API.
+meaning. Historical module names remain available for reproduction. The cleanup
+removed detector exports from the package root; the [history index](history/README.md)
+records the explicit imports now used by retained callers.
 
 To update an existing clone without moving its files:
 
@@ -39,10 +40,8 @@ The README now shows the executed toy graph bounds described in the
 [figure guide](data-and-figures.md). The repository name and existing Python
 package remain unchanged for the healthcare-access software pivot.
 
-The detector stress plots and [`media/project-overview.svg`](media/project-overview.svg)
-remain [historical artifacts](history/README.md). The SVG is a conceptual detector
-diagram with text labels and accessibility metadata; it is not a current access
-result or a proposed figure for real geography.
+The detector stress plots remain reproducible [historical evidence](history/README.md).
+Obsolete conceptual and placeholder figures were removed from the working tree.
 
 ## Keeping navigation reproducible
 
@@ -55,9 +54,9 @@ python tools/test_presentation.py
 
 CI runs these checks alongside the existing project gates. They check the README,
 reading guide, identity note, contribution guide and figure guide: local paths,
-anchors, canonical title/CI badge, image alternative text and SVG accessibility.
+anchors, canonical title/CI badge and image alternative text.
 Four offline cases confirm valid input passes while missing links, wrong anchors
-and identity/accessibility errors fail. This is a bounded presentation checker,
+and identity errors fail. This is a bounded presentation checker,
 not an exhaustive Markdown parser, external-link crawler or scientific validator.
 
 ## Presentation references
@@ -71,7 +70,7 @@ The organization is informed by these examples, reviewed September 10, 2026:
 - [gym-pybullet-drones](https://github.com/learnsyslab/gym-pybullet-drones):
   reproducible use, environment boundaries and source/citation entry points.
 
-The text and overview diagram are project-specific; no template screenshot,
+The text is project-specific; no template screenshot,
 branding, claim of adoption or unrelated technology badge is borrowed.
 These presentation changes do not change this repository's existing licensing,
 grant permission for hardware tests, or establish a publication/validation verdict.

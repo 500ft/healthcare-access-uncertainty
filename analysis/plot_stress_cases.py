@@ -14,7 +14,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from catanroads import candidate_coordinates_px, extract_candidates
+from catanroads.extract import candidate_coordinates_px, extract_candidates
 from catanroads import stress_cases as SC
 
 ROOT = Path(__file__).resolve().parents[1]

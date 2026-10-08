@@ -12,8 +12,9 @@ work.
 
 PR [#52](https://github.com/500ft/informal-road-mapping/pull/52) was reviewed at
 `14f3e8d37f399fec08868ea1ce331fe52de84f95`. Its scope corrections are retained.
-This implementation is based on that head and depends on #52; it does not amend,
-merge or close that PR.
+The initial implementation incorporated those scope corrections in
+[#53](https://github.com/500ft/informal-road-mapping/pull/53). Both PRs are merged;
+the cleanup starts from that merged state.
 
 | Previous active question | Disposition |
 | --- | --- |
@@ -23,6 +24,15 @@ merge or close that PR.
 | R4 former route-study data terms | Superseded as an active question; unresolved historical terms remain in the UCI record. Each new access input still requires qualification. |
 | Separate route-planning repository/name | Superseded within this task; none created or renamed. |
 | Temporal detector gate and baseline labeling | Inactive. Evidence and blind restrictions remain in the [history index](history/README.md). |
+
+## Dependency plan and cleanup adoption
+
+The owner authorized the dependency-based [roadmap](../ROADMAP.md) and removal
+of obsolete detector execution and reporting surfaces. This does not qualify
+real data or authorize research runs. The [history index](history/README.md)
+records removals and necessary retained reproduction dependencies. Reserved
+outcomes and detector holdouts remain closed. Physical work, funding, naming
+and publication decisions remain unprovided.
 
 ## Model and argument
 
