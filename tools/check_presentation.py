@@ -1,6 +1,6 @@
 """Read-only presentation audit; run: python tools/check_presentation.py REPO TITLE SLUG.
 
-Checks local documentation, anchors and the conceptual SVG. Not a Markdown
+Checks local documentation and anchors. Not a Markdown
 standard validator, external-link crawler or scientific validation.
 """
 import html
@@ -9,7 +9,6 @@ import re
 import sys
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
-import xml.etree.ElementTree as ET
 
 root = Path(sys.argv[1]).resolve()
 title, slug = sys.argv[2:4]
@@ -72,16 +71,6 @@ if expected not in readme:
 for image_alt in re.findall(r"!\[([^]]*)\]\(", readme):
     if not image_alt.strip():
         issues.append("README image has empty alternative text")
-svg = root / "docs/media/project-overview.svg"
-try:
-    tree = ET.parse(svg)
-    ns = "{http://www.w3.org/2000/svg}"
-    if not tree.findtext(ns + "title") or not tree.findtext(ns + "desc"):
-        issues.append("Conceptual SVG is missing title/description")
-    if tree.findall(".//" + ns + "script"):
-        issues.append("Conceptual SVG contains script")
-except (ET.ParseError, FileNotFoundError) as exc:
-    issues.append(f"Invalid SVG: {exc}")
 result = {"repository": slug, "files_checked": len(paths),
           "local_links_checked": len(checked),
           "external_links_not_fetched": len(external), "issues": issues,

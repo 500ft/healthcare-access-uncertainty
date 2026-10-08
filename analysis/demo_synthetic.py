@@ -11,7 +11,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from catanroads import candidate_coordinates_px, extract_candidates, make_scene
+from catanroads.extract import candidate_coordinates_px, extract_candidates
+from catanroads.synthetic import make_scene
 
 INK, ACCENT, RED, MUTED = "#1b2a24", "#2d6a4f", "#b2182b", "#6b7671"
 

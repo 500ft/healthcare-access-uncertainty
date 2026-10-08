@@ -6,9 +6,11 @@ distinction between synthetic tests, source imagery and real-site evaluation.
 ## Set up and check
 
 Follow the [README](README.md#getting-started) for the Python environment,
-editable `analysis[dev]` install and Node.js prerequisite. From the root:
+editable `analysis[dev]` install. To check retained detector evidence as well,
+install its optional dependencies and use Node.js 22 or newer. From the root:
 
 ```sh
+python -m pip install -e "analysis[dev,baseline,detector]"
 PYTHONPATH=analysis python -m pytest analysis/tests -q
 node tools/validate_phase1.mjs
 node tools/test_temporal_qa.mjs

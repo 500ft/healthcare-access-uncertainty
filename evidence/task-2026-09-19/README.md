@@ -341,14 +341,14 @@ one dated source-image judgment, and the first-site order (`dev-01-braided` prop
 Base: `main` at `2dd6992`. Two design documents, no implementation, no code change.
 
 ## Artifacts
-- [docs/PHASE1_EVALUATION_PACKET.md](../../docs/PHASE1_EVALUATION_PACKET.md) — the blank template a
+- [docs/PHASE1_EVALUATION_PACKET.md](https://github.com/500ft/informal-road-mapping/blob/f6d485d5434d7797d1b42855ea3f524e64eed37e/docs/PHASE1_EVALUATION_PACKET.md) — the blank template a
   real Phase-1 run fills in: identity and hashes, Earth Engine task ids with their **terminal state**
   (a launch is not a completed export), per-site metrics against the frozen settings read from
   `phase1_gate.py`, the primary decision recorded **before** any sensitivity run, exclusions, and an
   explicit list of what a SCREEN_PASS does not establish. It restates the collection check found on
   2026-09-22: the Processing Baseline 04.00 offset falls between the two analysis windows, so a
   non-harmonized collection would inject a false step change into exactly this comparison.
-- [docs/specs/phase-2-topology-followup/plan.md](../../docs/specs/phase-2-topology-followup/plan.md) —
+- [docs/specs/phase-2-topology-followup/plan.md](https://github.com/500ft/informal-road-mapping/blob/f6d485d5434d7797d1b42855ea3f524e64eed37e/docs/specs/phase-2-topology-followup/plan.md) —
   Options A, B and C for the one-path-per-component ceiling, each with its required input,
   dependency, exposing synthetic cases, invariant metrics, false-positive modes, cost and promotion
   trigger.

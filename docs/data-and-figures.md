@@ -20,8 +20,8 @@ real geography is represented. The [method](ACCESS_STABILITY.md) defines the bou
 The detector's [figure manifest](figure-manifest.json),
 [results narrative](history/detector-results.md) and
 [historical overview](history/detector-overview.md) retain the generators,
-limitations and provenance of its synthetic plots, placeholder NDVI rendering
-and conceptual illustrations. Those figures are absent from the current narrative.
+limitations and provenance of its synthetic plots. Placeholder and conceptual
+figures were removed; the history index links their pre-cleanup revision.
 No Earth Engine or candidate imagery was rendered in this task.
 
 The [history index](history/README.md) also retains the UCI parsing evidence and

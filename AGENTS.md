@@ -79,8 +79,8 @@ critical path below, or record an owner decision. If it does none, don't open it
 
 **Plan:** [ROADMAP.md](ROADMAP.md) is the only plan. It holds the finish line,
 the current step and what is left. Update it in the same PR as any change to
-those. `docs/SPRINT_PROGRESS.md` and `docs/REVIEW_READY.md` are history logs,
-not plans; don't add status there that belongs in the roadmap.
+those. `docs/SPRINT_PROGRESS.md` and `docs/SPRINT_TASKS.csv` are retained history,
+not active plans; don't add status there that belongs in the roadmap.
 
 
 ## Writing — owner rule, 2026-09-30

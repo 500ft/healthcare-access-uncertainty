@@ -163,7 +163,7 @@ duplicated here**; this is navigation only.
 | Persistence rule and minimum valid years | [enumeration](../evidence/task-2026-09-25/missingness_sensitivity.json) | real per-pixel clear-observation counts | MODEL_CHECKED |
 | Compositing order for NDVI and BSI | [compositor protocol](specs/compositor-ab/plan.md) | A/B on real imagery | OFFLINE_COMPLETE |
 | Ridge filter family and its scale range | [C12](../literature/claim-ledger.md) | stage-by-stage crossing trace | **suspected, unattributed** |
-| One path per component | [topology note](specs/phase-2-topology-followup/plan.md) | confirmation task that needs junctions | deferred, Option C |
+| One path per component | [topology note](https://github.com/500ft/informal-road-mapping/blob/f6d485d5434d7797d1b42855ea3f524e64eed37e/docs/specs/phase-2-topology-followup/plan.md) | confirmation task that needs junctions | deferred, Option C |
 | Line-layer scoring and its tolerance | [C17](../literature/claim-ledger.md) · [results guide](../results/README.md) | second metric on a labelled graph | SYNTHETIC_ONLY |
 | Negative control as falsification gate | [design.md](design.md) + [C18](../literature/claim-ledger.md) | the gate run on real exports | blocked on CR-08 |
 | Site selection and verification | [CR-08 packet](../evidence/task-2026-09-19/cr08-first-site-packet.md) | one dated image judgment | RESPONSE_DESIGN_COMPLETE, inputs pending |

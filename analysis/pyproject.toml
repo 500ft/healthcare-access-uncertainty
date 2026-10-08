@@ -1,20 +1,15 @@
 [project]
 name = "catanroads"
 version = "0.1.0"
-description = "Candidate corridor extraction from surface-disturbance rasters (Catan Roads, Phase 2)."
+description = "Healthcare-access interval bounds with retained detector reproduction modules."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-# Core baseline runs on numpy + scipy only (no heavy geospatial stack required).
-# Upper bounds so a major release cannot change extraction results silently.
-# tests/test_demo_reproducibility.py is what would CATCH such a change; these bounds
-# are what stop it arriving unannounced. Both ends of the range are verified good:
-# the numeric gate passes at numpy 2.1.3 / scipy 1.14.1 and at numpy 2.4.6 / scipy 1.17.1.
-dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
+dependencies = []
 
 [project.optional-dependencies]
-# The fuller pipeline (skeleton + graph tracing, richer geometry, raster/vector I/O).
-full = ["scikit-image>=0.22", "shapely>=2.0", "geopandas>=0.14", "rasterio>=1.3", "networkx>=3.0"]
+# Retained synthetic detector evidence needs the original numerical stack.
+detector = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
 dev = ["pytest>=7.0", "matplotlib>=3.6"]
 baseline = ["shapely>=2,<3", "pyproj>=3.6,<4", "osmium>=4,<5"]
 

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
-const source = fs.readFileSync(new URL('../gee/ndvi_change.js', import.meta.url), 'utf8');
+const source = fs.readFileSync(new URL('../history/detector/gee/ndvi_change.js', import.meta.url), 'utf8');
 let sceneCount = 0;
 let selectedDataset = '';
 class Image {

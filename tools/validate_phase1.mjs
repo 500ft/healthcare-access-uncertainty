@@ -7,7 +7,7 @@ import vm from 'node:vm';
 import {fileURLToPath} from 'node:url';
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const geePath = path.join(repo, 'gee', 'ndvi_change.js');
+const geePath = path.join(repo, 'history', 'detector', 'gee', 'ndvi_change.js');
 const sitesPath = path.join(repo, 'config', 'sites.geojson');
 const extractPath = path.join(repo, 'analysis', 'catanroads', 'extract.py');
 

@@ -1,16 +1,13 @@
-# Specifications
+# Retained detector contracts
 
-> Retained detector history. Its active questions are superseded by the
-> healthcare-access software pivot. See the [history index](../history/README.md).
+These contracts explain existing reproducible checks. They are historical;
+[ROADMAP.md](../../ROADMAP.md) is the only active plan.
 
-A plain index of the files in this folder. They keep their original wording on
-purpose: a comparison frozen before any real output is only useful if it is
-unchanged since then, and dated plans describe what was intended at the time.
-For the current plan, read the [roadmap](../../ROADMAP.md). The frozen Phase-1
-gate itself is in [design.md](../design.md#pre-registered-phase-1-gate-frozen-2026-08-23).
+- [Compositor comparison](compositor-ab/plan.md): frozen estimator and joint-support
+  definitions used by offline arithmetic tests. No real-data comparison was run.
+- [Path-routing contract](../PLAN_2026-09-14_CR09.md): algorithm and acceptance
+  definitions used by retained extractor results and tests.
 
-| File | Status | What it is |
-| --- | --- | --- |
-| [compositor-ab/plan.md](compositor-ab/plan.md) | Frozen 2026-09-25 | The comparison of two ways to build yearly composites, fixed before any real output. Tested offline; the real-data comparison is pending |
-| [phase-2-topology-followup/plan.md](phase-2-topology-followup/plan.md) | Design note | Later work on network topology. Not implemented, and not part of this version |
-| [evidence-gap-correction/plan.md](evidence-gap-correction/plan.md) | Finished plan | The 2026-09-11 correction and preparation work |
+Unimplemented topology proposals and the finished correction task plan were
+removed. The [history index](../history/README.md) links the prior revision and
+retains the scientific correction and completed evidence.

@@ -7,11 +7,11 @@ software inputs, with no geographic coordinates or measured travel times.
 
 ## Reproduce
 
-From the repository root, after installing `analysis[dev,baseline]`:
+From the repository root, after installing `analysis[dev]`:
 
 ```sh
 MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
-PYTHONPATH=analysis python -m pytest analysis/tests -q
+PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py -q
 (cd evidence/access-stability-20261006 && shasum -a 256 -c metadata-freeze.sha256)
 ```
 

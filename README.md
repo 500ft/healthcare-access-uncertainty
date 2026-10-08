@@ -35,18 +35,22 @@ Use Python 3.10+ and the existing analysis dependencies:
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e "analysis[dev,baseline]"
+python -m pip install -e "analysis[dev]"
 MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
-PYTHONPATH=analysis python -m pytest analysis/tests -q
+PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py -q
 ```
 
 The demo reruns the exhaustive oracle and regenerates the result and figure.
-It uses no network or reserved data. See [Start here](docs/START_HERE.md) for
+It uses no network or reserved data. Retained detector checks require the
+optional dependencies listed in the history guide. See [Start here](docs/START_HERE.md) for
 metadata hashes and the retained detector checks.
 
 ## What's next
 
-The [roadmap](ROADMAP.md) is the only plan. Real-area claims require licensed,
+The [roadmap](ROADMAP.md) orders prerequisites and completion evidence without
+a schedule. Qualified inputs and an estimand precede development replication,
+bounds, route-cost measurement selection and independent evaluation.
+Real-area claims require licensed,
 pinned development inputs and independently sourced bound families. The WFP
 candidate also needs observation dates, vehicle scope and independent lineage
 before evaluation can be registered at row level.

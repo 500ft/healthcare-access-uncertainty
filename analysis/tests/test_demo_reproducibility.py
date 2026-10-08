@@ -19,7 +19,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from catanroads import extract_candidates, make_scene
+from catanroads.extract import extract_candidates
+from catanroads.synthetic import make_scene
 
 RECORD = Path(__file__).resolve().parents[2] / "results" / "method_demo_synthetic.numeric.json"
 

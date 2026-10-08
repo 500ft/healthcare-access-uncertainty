@@ -1,5 +1,5 @@
 {
-  "note": "Provenance for every committed image. evidence_type says what kind of claim the figure can support; a figure whose inputs are not in the repository is marked so explicitly rather than given a command that cannot run.",
+  "note": "Retained detector evidence figures. Placeholder and conceptual figures were removed; the pre-cleanup manifest is linked from docs/history/README.md. Current access figure provenance is in docs/data-and-figures.md.",
   "figures": [
     {
       "id": "method-demo-synthetic",
@@ -17,47 +17,6 @@
       "reproducibility": "Deterministic given the seed. Numeric output (scene fingerprint and candidate geometry) is pinned in results/method_demo_synthetic.numeric.json and gated by analysis/tests/test_demo_reproducibility.py. Do NOT gate on PNG bytes: font rasterisation differs between freetype builds, so the text bands change while every data pixel is identical -- see results/method_demo_synthetic.env.json. The rendered path geometry (path_px, path_length_px, candidate ids and order) is pinned in results/extractor_stress_cases.json under cases.demo_reference.exported_paths_px and checked by the same test module; method_demo_synthetic.numeric.json is retained as the legacy chord/scene record.",
       "numeric_record": "results/method_demo_synthetic.numeric.json",
       "path_record": "results/extractor_stress_cases.json#cases.demo_reference.exported_paths_px"
-    },
-    {
-      "id": "ndvi-change-placeholder",
-      "evidence_type": "placeholder",
-      "generator": "tools/compose_figure.py",
-      "command": null,
-      "inputs": [
-        "a manual Google Earth Engine raster export (not in this repository)"
-      ],
-      "outputs": [
-        "results/ndvi_change.png"
-      ],
-      "boundary": "Legacy full-field-rendering placeholder retained in results/; not displayed as the README's main evidence and not a claimed Phase-1 result.",
-      "status": "validation pending",
-      "blocking_dependency": "dated reference-imagery provenance frozen for all three development sites and negative-01 in config/sites.geojson, then the pre-registered Phase-1 gate run per results/README.md"
-    },
-    {
-      "id": "method-overview-diagram",
-      "evidence_type": "hand_authored",
-      "generator": null,
-      "command": null,
-      "inputs": [],
-      "outputs": [
-        "assets/method.png"
-      ],
-      "boundary": "Explanatory diagram retained through docs/START_HERE.md; no generator and no underlying measurement."
-    },
-    {
-      "id": "project-overview-2026-09-10",
-      "evidence_type": "hand_authored",
-      "generator": null,
-      "command": null,
-      "inputs": [
-        "docs/design.md",
-        "docs/PHASE1_RUNBOOK.md",
-        "analysis/README.md"
-      ],
-      "outputs": [
-        "docs/media/project-overview.svg"
-      ],
-      "boundary": "Original conceptual overview; source and accessibility notes in docs/REPOSITORY_IDENTITY.md. No imagery result, model output or site verification."
     },
     {
       "id": "stress-case-gallery",

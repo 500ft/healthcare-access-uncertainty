@@ -12,7 +12,7 @@ Install the existing dependencies as described in the
 
 ```sh
 MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
-PYTHONPATH=analysis python -m pytest analysis/tests -q
+PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py -q
 (cd evidence/access-stability-20261006 && shasum -a 256 -c metadata-freeze.sha256)
 python tools/check_presentation.py . "Informal Road Mapping" informal-road-mapping
 python tools/test_presentation.py
@@ -28,6 +28,8 @@ The [history index](history/README.md) labels the inactive detector work. Its
 software regression checks remain useful:
 
 ```sh
+python -m pip install -e "analysis[dev,baseline,detector]"
+PYTHONPATH=analysis python -m pytest analysis/tests -q
 node tools/validate_phase1.mjs
 node tools/test_temporal_qa.mjs
 python tools/test_prepare_baselines.py

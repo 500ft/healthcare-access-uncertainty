@@ -14,7 +14,7 @@ This is a software preparation task, not completion of CR-08.
 
 ## Deliverable and acceptance
 
-- [Annual composites](../../gee/ndvi_change.js) use a fully masked expected-band
+- [Annual composites](../../history/detector/gee/ndvi_change.js) use a fully masked expected-band
   fallback for empty S2 and Dynamic World collections. No zero-reflectance data
   is fabricated and the chosen years, sites and mask thresholds are unchanged.
 - CSV exports retain all eight S2 scene counts. The

@@ -12,12 +12,9 @@ class PresentationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        (self.root / "docs/media").mkdir(parents=True)
+        (self.root / "docs").mkdir()
         for name in ("docs/START_HERE.md", "docs/REPOSITORY_IDENTITY.md", "CONTRIBUTING.md"):
             (self.root / name).write_text("# Guide\n")
-        (self.root / "docs/media/project-overview.svg").write_text(
-            '<svg xmlns="http://www.w3.org/2000/svg"><title>Concept</title>'
-            '<desc>Not measured</desc></svg>')
         self.readme = (
             "# Test Project\n\n"
             "![CI](https://github.com/500ft/test-project/actions/workflows/ci.yml/badge.svg?branch=main)\n\n"
@@ -47,13 +44,11 @@ class PresentationTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn("missing anchor #absent", result.stdout)
 
-    def test_inaccessible_svg_and_wrong_identity_fail(self):
+    def test_wrong_identity_fails(self):
         (self.root / "README.md").write_text(self.readme.replace("# Test Project", "# Wrong"))
-        (self.root / "docs/media/project-overview.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg"/>')
         result = self.check()
         self.assertEqual(result.returncode, 1)
         self.assertIn("heading does not match", result.stdout)
-        self.assertIn("missing title/description", result.stdout)
 
 if __name__ == "__main__":
     unittest.main()

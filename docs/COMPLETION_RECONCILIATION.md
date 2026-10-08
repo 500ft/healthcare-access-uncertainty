@@ -1,3 +1,5 @@
+> Retained detector evidence and contract history. [ROADMAP.md](../ROADMAP.md) is the only active plan; instructions below do not authorize resumption.
+
 # Completion reconciliation and imagery return
 Prepared 2026-09-11. A worksheet is not inspected imagery; an inspected image is not a detector evaluation. Task status authority: [SPRINT_TASKS.csv](SPRINT_TASKS.csv), CR-08 and CR-COR-01.
 

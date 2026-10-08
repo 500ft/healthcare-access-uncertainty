@@ -3,7 +3,8 @@ import json
 import math
 
 import numpy as np
-from catanroads import extract_candidates, make_scene, to_geojson
+from catanroads.extract import extract_candidates, to_geojson
+from catanroads.synthetic import make_scene
 
 
 def _hits_truth(cand, truth, tol=3):

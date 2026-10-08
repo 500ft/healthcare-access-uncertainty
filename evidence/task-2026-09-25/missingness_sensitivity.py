@@ -20,7 +20,7 @@ from fractions import Fraction
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-GEE = ROOT / "gee" / "ndvi_change.js"
+GEE = ROOT / "history/detector/gee/ndvi_change.js"
 YEARS = (2023, 2024, 2025, 2026)
 
 
