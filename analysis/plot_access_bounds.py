@@ -154,6 +154,9 @@ def main():
     fig.savefig(OUT / 'bounds.png', dpi=180, facecolor='white')
     with plt.rc_context({'svg.fonttype': 'none', 'svg.hashsalt': 'access-bounds'}):
         fig.savefig(OUT / 'bounds.svg', facecolor='white', metadata={'Date': None})
+    # Matplotlib emits trailing spaces in SVG path attributes; retain newlines.
+    svg = OUT / 'bounds.svg'
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
     plt.close(fig)
     write_tables(report, qualification, OUT)
     files = [SOURCE / 'result.json', SOURCE / 'qualification.json', Path(__file__).resolve()]
