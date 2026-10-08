@@ -4,6 +4,8 @@ The current module is `catanroads.access_bounds`, reproduced through
 [`run_access_demo.py`](run_access_demo.py). Follow the repository
 [README](../README.md#getting-started) for current installation and commands,
 and [ROADMAP.md](../ROADMAP.md) for prerequisites.
+[`plot_access_bounds.py`](plot_access_bounds.py) renders the existing result and
+qualification tables without running the model.
 
 ## Retained detector reproduction
 

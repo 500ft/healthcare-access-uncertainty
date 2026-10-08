@@ -1,0 +1,13 @@
+scenario,node,lower_min,upper_min,threshold_min,classification
+original,A,5,8,10,definite_access
+original,B,18,25,10,definite_exclusion
+original,C,7,11,10,unresolved
+original,D,4,infinity,10,unresolved
+original,E,infinity,infinity,10,definite_exclusion
+original,Clinic,0,0,10,definite_access
+widened,A,3,12,10,unresolved
+widened,B,8,30,10,unresolved
+widened,C,4,17,10,unresolved
+widened,D,2,infinity,10,unresolved
+widened,E,infinity,infinity,10,definite_exclusion
+widened,Clinic,0,0,10,definite_access
