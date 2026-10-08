@@ -28,9 +28,13 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
 - Done: interval bounds, optional closures, inverse speed conversion and nested
   widening verified on toy graphs by an independent exhaustive oracle.
 - Done: development source and WFP catalog metadata inspected and hashed.
-- Current, blocked: qualify historical development inputs and define the
-  estimand. Neither a reproduced Idai baseline nor usable WFP observations are
-  established by the metadata probe.
+- Done: acquired and hashed the published population product and both
+  development flood archives; matched an archived boundary candidate to its
+  immutable archive object. The [input record](evidence/idai-development-inputs/README.md)
+  separates qualified reuse from unresolved historical identity and flood terms.
+- Current, blocked: recover the historical road extract, resolve the facility
+  snapshot and flood membership, confirm the boundary version and flood license
+  versions, and define the estimand. No Idai baseline has been reproduced.
 - Future: real-area stability, policy comparison and independent evaluation.
 
 ## M1. Qualify and reproduce the development baseline
@@ -42,8 +46,10 @@ No choice is inferred from an example in the external proposal.
 
 1. Pin road snapshot, facility list, population, boundary and impact inputs with
    source, rights, acquisition/snapshot timing and content hashes. Resolve the
-   moving road extract and unavailable flood input in the
-   [qualification record](docs/ACCESS_STABILITY.md#limits-and-open-evidence-questions).
+   moving road extract and historical input discrepancies in the
+   [acquired-input record](evidence/idai-development-inputs/README.md).
+   The development flood download is recovered; its historical identity and
+   rights qualification remain open.
 2. State the target population, origin units, facility eligibility, departure
    conditions and treatment of missing connections and disconnected origins.
    Identify which published Idai quantity is being reproduced and predeclare
@@ -128,8 +134,10 @@ Publication, external contact and field collection remain separate decisions.
 
 ## Owner inputs and retained safeguards
 
-The next unblocking input is access to pinned, licensed historical development
-inputs and metadata adequate to define the target and evaluate independence.
+The next unblocking input is the original road extract or its exact historical
+identity, resolution of the facility snapshot and flood membership discrepancies,
+and confirmation of boundary version and flood license terms. The owner must
+also specify the target and comparison tolerance before replication.
 Substitution of the study, acquisition commitments and any physical work require
 an explicit owner decision. No purchase, naming change or publication is adopted.
 
