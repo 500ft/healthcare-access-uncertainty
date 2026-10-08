@@ -14,7 +14,7 @@ Install the existing dependencies as described in the
 MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
 PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py -q
 (cd evidence/access-stability-20261006 && shasum -a 256 -c metadata-freeze.sha256)
-python tools/check_presentation.py . "Informal Road Mapping" informal-road-mapping
+python tools/check_presentation.py . "Healthcare Access Uncertainty" healthcare-access-uncertainty
 python tools/test_presentation.py
 ```
 

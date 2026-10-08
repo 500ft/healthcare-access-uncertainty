@@ -1,4 +1,4 @@
-# Informal Road Mapping
+# Healthcare Access Uncertainty
 
 Which healthcare-access decisions remain stable across credible road-time,
 closure and facility uncertainty, and which observations resolve the most
@@ -8,7 +8,7 @@ The first executed result verifies shortest-path interval bounds on **toy graphs
 It does not measure access accuracy in any country. Global applicability is the
 research question; geographic validation remains open.
 
-[![CI](https://github.com/500ft/informal-road-mapping/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/500ft/informal-road-mapping/actions/workflows/ci.yml)
+[![CI](https://github.com/500ft/healthcare-access-uncertainty/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/500ft/healthcare-access-uncertainty/actions/workflows/ci.yml)
 
 ## Results so far
 
