@@ -9,6 +9,10 @@ Retrieved 2026-09-22 by eight parallel searches. The session's web-search budget
 partway through; several clusters finished verification through the Crossref API, which confirms
 bibliographic fields precisely but discovers less well than full-text search. See [gaps.md](gaps.md).
 
+Sections 1 to 14 predate the 2026-10-08 rename and have not been re-assessed against the current
+question; see the [2026-10-09 note](README.md#note-2026-10-09). Section 15 holds the entries added
+for the current question.
+
 ---
 
 ## 1. The application — informal, unpaved and off-road track detection
@@ -491,3 +495,19 @@ bibliographic fields precisely but discovers less well than full-text search. Se
   - Power-line corridors are an independently studied detectable class — evidence that this confound is real and mappable, not hypothetical. **A2 · EA · high**
 - **Lu, W.; Shi, X.; Lu, Z.** | 2024 | *A new two-step road extraction method in high resolution remote sensing images* | PLoS ONE 19(7):e0305933 | doi:10.1371/journal.pone.0305933
   - Motivated explicitly by many ground objects presenting road-like linear features (**rivers, city walls**) causing misclassification — a recent statement inside the road-extraction literature that this project's fabrication result is a field-wide failure, not an implementation bug. **A2 · EC · high on citation, medium on the specific sentence**
+
+## 15. Healthcare access under road-closure uncertainty (added 2026-10-09)
+
+Added 2026-10-09 from a separate review for the current question. Review scope: abstract-level, web
+search only, forward citations not searched. Citation fields are from CrossRef records; findings are
+from abstracts.
+
+- **Petricola, S.; Reinmuth, M.; Lautenbach, S.; Hatfield, C.; Zipf, A.** | 2022 | *Assessing road criticality and loss of healthcare accessibility during floods: the case of Cyclone Idai, Mozambique 2019* | International Journal of Health Geographics 21(1) | doi:10.1186/s12942-022-00315-2
+  - Road criticality and loss of healthcare accessibility during Cyclone Idai, Mozambique 2019.
+  - The development baseline for this repository's access-loss computation. It was cited by DOI in the [Idai input record](../evidence/idai-development-inputs/README.md) and the plans but missing from this bibliography until 2026-10-09. No baseline has been reproduced here. **A3 · EC · high on citation, finding from abstract only**
+- **Li, H.; Song, X.; Li, Y.** | 2026 | *Bayesian active verification of lifeline roads for risk aware emergency logistics with trucks and drones* | Discover Artificial Intelligence 6(1) | doi:10.1007/s44163-026-02033-1
+  - Bayesian active verification of lifeline roads; verifying a flooded road is treated as buying information.
+  - The nearest method to this repository's measurement-selection question, and the greedy decision-theoretic (value-of-information) baseline the [M3 comparison](../ROADMAP.md#m3-compare-measurement-selection-at-route-based-cost) must include. **A3 · EC · high on citation, finding from abstract only**
+- **Robert, B.N.; Muchiri, S.K.; Kahoro, E.W.; Hindada, B.H.; Kiarie, H.; Okiro, E.A.; Macharia, P.M.** | 2026 | *Impact analysis of flood-induced changes in geographical accessibility and coverage to healthcare in both public and private sector, 2024, Kenya* | International Journal of Health Geographics 25(1) | doi:10.1186/s12942-026-00461-x
+  - Publishes real-flood changes in travel-time accessibility and coverage to healthcare in public and private facilities (Kenya, 2024).
+  - Two roles: prior art for flood impact envelopes, and a candidate source of real-flood data for this repository. Whether its data are released or usable has not been checked. **A3 · EC · high on citation, finding from abstract only**

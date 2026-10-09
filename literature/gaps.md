@@ -11,6 +11,17 @@ use. No commercial data product is established.
 Absence of found evidence is not evidence of absence. Everything below is either a search failure
 or a real hole in the literature, and the two are distinguished where possible.
 
+## Gaps for the current question (2026-10-09)
+
+1. Per-origin decisions (definite, excluded, unresolved) for a real flood, with bounds justified by
+   data and closures that are correlated, were not found in the 2026-10-09 review (abstract-level,
+   web search only, forward citations not searched). The nearest work found is Petricola 2022
+   (development baseline), Li 2026 (active verification as information purchase) and Robert 2026
+   (real-flood accessibility change); see
+   [bibliography section 15](bibliography.md#15-healthcare-access-under-road-closure-uncertainty-added-2026-10-09).
+2. Whether the Robert et al. 2026 data are released or usable for this repository has not been
+   checked.
+
 ## Things this project must establish itself
 
 1. **Not located in this review: any paper quantifying the effect of missing years on a bi-temporal

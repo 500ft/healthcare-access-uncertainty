@@ -354,3 +354,47 @@ Two further support questions, unresolved:
 ellipsoidal geometry, the delivered affine transform and neighbourhood-kernel behaviour all need a
 runtime probe, which requires Earth Engine access this project does not have. `path_length_px` must
 never be converted to metres using an assumed 10.
+
+
+---
+
+## Current question, added 2026-10-09
+
+C1 to C19 are retained detector history. The entries below map claims the repository makes for the
+current question (decision stability under road-closure uncertainty and measurement selection) to the
+three sources added on 2026-10-09. Review scope: abstract-level, web search only, forward citations
+not searched.
+
+## C20: The access-loss computation reproduces a published Idai development baseline
+**Source:** ROADMAP.md M1, [Idai input record](../evidence/idai-development-inputs/README.md) · **Confidence: moderate, no reproduction executed**
+
+Petricola et al. 2022 is the development baseline (road criticality and loss of healthcare
+accessibility during Cyclone Idai, Mozambique 2019). It was cited by DOI in the input record but
+missing from this bibliography until 2026-10-09. The roadmap records that no Idai baseline has been
+reproduced; the warrant is the cited paper and the pinned upstream source revision, with no executed
+comparison.
+
+## C21: Decision-focused measurement selection is compared against simple policies at equal route cost
+**Source:** ROADMAP.md M3 · **Confidence: moderate, baseline list was incomplete**
+
+Li, Song and Li 2026 (Bayesian active verification of lifeline roads, treating verification of a
+flooded road as buying information) is the nearest method found. A greedy value-of-information
+verification rule in its style is a required baseline; the roadmap's M3 list was extended on
+2026-10-09 to include it. Comparing only against random, near-threshold, road-class/length and
+centrality policies would omit the nearest prior method.
+
+## C22: Real-area stability needs real-flood closure data and justified bound families
+**Source:** ROADMAP.md M2 and M4 · **Confidence: low, data usability not checked**
+
+Robert et al. 2026 publishes real-flood changes in travel-time accessibility and coverage to
+healthcare in public and private facilities (Kenya, 2024). It is prior art for flood impact
+envelopes and a candidate source of real-flood data for this repository. Whether its data are
+released or usable has not been checked. Per-origin decisions (definite, excluded, unresolved) for a
+real flood, with bounds justified by data and closures that are correlated, were not found in the
+2026-10-09 review (abstract-level, web search only, forward citations not searched); see
+[gaps.md](gaps.md).
+
+Interval shortest-path computation (shortest paths at the lower and upper edge-time endpoints
+bounding the true shortest path, [ACCESS_STABILITY.md](../docs/ACCESS_STABILITY.md)) is textbook
+material and must not be presented as a contribution. No textbook reference was added in this
+review.

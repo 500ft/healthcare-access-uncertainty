@@ -97,6 +97,9 @@ return/access constraints and failed or inaccessible observations.
 1. Freeze budgets and scoring before comparing decision-focused, random,
    near-threshold, road-class/length and feasible centrality policies. Use the
    same route-based budgets, starting conditions and feasible observation set.
+   Include a greedy value-of-information verification rule (Li et al. 2026
+   style), added 2026-10-09 from the literature review under owner instruction;
+   see [bibliography section 15](literature/bibliography.md#15-healthcare-access-under-road-closure-uncertainty-added-2026-10-09).
 2. Specify how each observation updates bounds and how unresolved decisions,
    incorrect definite decisions and service consequences enter the comparison.
 3. Run development comparisons. Synthetic hidden truth may test the procedure,
