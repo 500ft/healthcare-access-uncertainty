@@ -11,7 +11,7 @@ Intervals are deterministic assumptions. Infinity denotes unreachable or unbound
 travel time, not missing data. Clinic is the fixed destination. Integers retain
 the precision of the source. [Download bounds CSV](bounds.csv).
 
-| Node | Original [min] | Decision | Widened [min] | Decision |
+| Node | Original interval [min] | Original decision | Widened interval [min] | Widened decision |
 | :--- | ---: | :--- | ---: | :--- |
 | A | [5, 8] | Definite access | [3, 12] | Unresolved |
 | B | [18, 25] | Definite exclusion | [8, 30] | Unresolved |

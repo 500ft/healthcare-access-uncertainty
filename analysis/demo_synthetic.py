@@ -13,35 +13,38 @@ import matplotlib.pyplot as plt
 
 from catanroads.extract import candidate_coordinates_px, extract_candidates
 from catanroads.synthetic import make_scene
-
-INK, ACCENT, RED, MUTED = "#1b2a24", "#2d6a4f", "#b2182b", "#6b7671"
+from figstyle import COLORS, MUTED, TICK, WIDTH_IN, apply, letter, save
+from plot_stress_cases import EDGE, show_input
 
 d, truth = make_scene(size=256, seed=1)
 cands = extract_candidates(d)
 
-fig, axes = plt.subplots(1, 2, figsize=(12.4, 6.4), dpi=130)
-fig.patch.set_facecolor("white")
+apply()
+fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 4.1), gridspec_kw=dict(width_ratios=[1.09, 1]))
+fig.subplots_adjust(left=.03, right=.98, top=.83, bottom=.17, wspace=.12)
 
-axes[0].imshow(d, cmap="BrBG_r", vmin=-2, vmax=2)
-axes[0].set_title("Input: synthetic surface-disturbance", fontsize=13, color=INK)
+show_input(fig, axes[0], d)
+axes[0].set_title("Input: synthetic surface disturbance", pad=4)
 
 axes[1].imshow(d, cmap="Greys", vmin=-1, vmax=3)
-for c in cands:
-    axes[1].plot(*zip(*candidate_coordinates_px(c)), color=RED, lw=2.2)
-axes[1].set_title(f"Extracted candidate corridors (n={len(cands)})", fontsize=13, color=INK)
+for k, c in enumerate(cands):
+    axes[1].plot(*zip(*candidate_coordinates_px(c)), color=COLORS["path"], lw=1.4, path_effects=EDGE,
+                 label="Delivered path (path_px)" if k == 0 else None)
+axes[1].set_title(f"Extracted candidate corridors (n = {len(cands)})", pad=4)
+axes[1].set_xticks([]); axes[1].set_yticks([])
+axes[1].spines[:].set_visible(True); axes[1].spines[:].set_color("#808080")
+for ax, tag in zip(axes, "ab"):
+    letter(ax, tag)
 
-for ax in axes:
-    ax.set_xticks([]); ax.set_yticks([])
-
-fig.suptitle("Catan Roads — synthetic method demonstration (Phase 2 extractor)",
-             fontsize=15, fontweight="bold", color=INK, y=0.98)
-fig.text(0.5, 0.02,
-         "Known-truth synthetic scene: each accepted component is delivered as one interior-biased path (CR-09); "
-         "curved, braided and\nbroken corridors are traced, the round blob and noise rejected. One route per component, "
-         "no branch or junction recovery. Not a real-imagery result.",
-         ha="center", fontsize=9.5, color=MUTED)
-fig.subplots_adjust(top=0.90, bottom=0.13)
+fig.text(.02, .975, f"Synthetic method demo: {len(cands)} delivered paths trace the curved and braided corridors "
+         "and part of\nthe broken one; the round blob is rejected", fontsize=9, fontweight="bold", va="top",
+         linespacing=1.3)
+fig.legend(loc="lower left", bbox_to_anchor=(.02, .085), borderaxespad=0, handlelength=2.4)
+fig.text(.02, .015,
+         "Known-truth scene make_scene(size=256, seed=1). One interior-biased path per accepted component (CR-09); "
+         "no branch or\njunction recovery. Not a real-imagery result.",
+         fontsize=TICK, color=MUTED, linespacing=1.4)
 
 out = Path(__file__).resolve().parents[1] / "results" / "method_demo_synthetic.png"
-fig.savefig(out, facecolor="white")
+save(fig, out)
 print(f"wrote {out}  ({len(cands)} candidates)")

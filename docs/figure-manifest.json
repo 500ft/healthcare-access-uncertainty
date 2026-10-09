@@ -8,7 +8,8 @@
       "command": "MPLBACKEND=Agg python analysis/plot_access_bounds.py",
       "inputs": [
         "evidence/access-stability-20261006/result.json",
-        "evidence/access-stability-20261006/qualification.json"
+        "evidence/access-stability-20261006/qualification.json",
+        "analysis/figstyle.py"
       ],
       "outputs": [
         "results/access-stability/bounds.png",
@@ -28,13 +29,14 @@
       "command": "python analysis/demo_synthetic.py",
       "inputs": [
         "analysis/catanroads/synthetic.py",
-        "analysis/catanroads/extract.py"
+        "analysis/catanroads/extract.py",
+        "analysis/figstyle.py"
       ],
       "outputs": [
         "results/method_demo_synthetic.png"
       ],
-      "boundary": "Synthetic scene from make_scene(size=256, seed=1); demonstrates the extractor's behaviour, not performance on real imagery. Since CR-09 (2026-09-16) the red lines are each candidate's delivered path_px (one interior-biased route per accepted component; no branch or junction recovery), not the legacy straight chord.",
-      "reproducibility": "Deterministic given the seed. Numeric output (scene fingerprint and candidate geometry) is pinned in results/method_demo_synthetic.numeric.json and gated by analysis/tests/test_demo_reproducibility.py. Do NOT gate on PNG bytes: font rasterisation differs between freetype builds, so the text bands change while every data pixel is identical -- see results/method_demo_synthetic.env.json. The rendered path geometry (path_px, path_length_px, candidate ids and order) is pinned in results/extractor_stress_cases.json under cases.demo_reference.exported_paths_px and checked by the same test module; method_demo_synthetic.numeric.json is retained as the legacy chord/scene record.",
+      "boundary": "Synthetic scene from make_scene(size=256, seed=1); demonstrates the extractor's behaviour, not performance on real imagery. Since CR-09 (2026-09-16) the orange lines are each candidate's delivered path_px (one interior-biased route per accepted component; no branch or junction recovery), not the legacy straight chord.",
+      "reproducibility": "Deterministic given the seed. Numeric output (scene fingerprint and candidate geometry) is pinned in results/method_demo_synthetic.numeric.json and gated by analysis/tests/test_demo_reproducibility.py. Do NOT gate on PNG bytes: font rasterisation differs between freetype builds, so the text bands change while every data pixel is identical -- see results/method_demo_synthetic.env.json. The rendered path geometry (path_px, path_length_px, candidate ids and order) is pinned in results/extractor_stress_cases.json under cases.demo_reference.exported_paths_px and checked by the same test module; method_demo_synthetic.numeric.json is retained as the legacy chord/scene record. results/method_demo_synthetic.env.json describes the pixel comparison of the render made before analysis/figstyle.py; the numeric gate it motivates is unchanged.",
       "numeric_record": "results/method_demo_synthetic.numeric.json",
       "path_record": "results/extractor_stress_cases.json#cases.demo_reference.exported_paths_px"
     },
@@ -46,7 +48,8 @@
       "inputs": [
         "analysis/catanroads/stress_cases.py",
         "analysis/catanroads/extract.py",
-        "results/extractor_stress_cases.json"
+        "results/extractor_stress_cases.json",
+        "analysis/figstyle.py"
       ],
       "outputs": [
         "results/figures/01_demo_paths_vs_chords.png",
