@@ -36,5 +36,5 @@ jobs:
         run: node tools/test_temporal_qa.mjs
       - name: Check README links, identity and negative controls
         run: |
-          python tools/check_presentation.py . "Informal Road Mapping" informal-road-mapping
+          python tools/check_presentation.py . "Healthcare Access Uncertainty" healthcare-access-uncertainty
           python tools/test_presentation.py
