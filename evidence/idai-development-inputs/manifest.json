@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "scope": "Historical DEVELOPMENT input qualification only. No baseline run, outcome rows, holdouts or owner estimand choices.",
+  "upstream": {
+    "paper": "https://doi.org/10.1186/s12942-022-00315-2",
+    "repository": "https://github.com/GIScience/healthcare-access-idai",
+    "commit": "69bbe253b4dcd926a630b557251b5f65688301d5",
+    "code_license": "GPL-3.0; reviewed as source evidence, no upstream code incorporated. This does not license the datasets.",
+    "source_paths": [
+      "src/1_data_preparation/1.1_datapreparation.R",
+      "src/1_data_preparation/1.2_floods_data_preparation.R",
+      "src/1_data_preparation/2._create_impacted_pbf.R"
+    ]
+  },
+  "qualification": "Partial. Population product acquired and reusable. Archived boundary candidate acquired and reusable; study version unconfirmed. Both development flood archives acquired; historical identity and exact license versions remain unresolved. Roads and facilities remain unqualified.",
+  "metadata": {
+    "population": {
+      "filename": "worldpop-product.json",
+      "url": "https://hub.worldpop.org/rest/data/pop/cic2020_UNadj_100m?iso3=MOZ",
+      "retrieved_utc": "2026-10-08T22:31:22.741609+00:00",
+      "bytes": 4473,
+      "sha256": "c8ace261c2ea62c9ad7e9813fe48ce20c6e84491c88fd6b0f25d56f6acceeff0",
+      "status": 200,
+      "selected_fields": {
+        "id": "49702",
+        "title": "The spatial distribution of population in 2020 with country total adjusted to match the corresponding UNPD estimate, Mozambique",
+        "doi": "10.5258/SOTON/WP00683",
+        "date": "2020-09-12",
+        "popyear": "2020",
+        "data_file": "GIS/Population/Global_2000_2020_Constrained/2020/maxar_v1/MOZ/moz_ppp_2020_UNadj_constrained.tif",
+        "license": "https://hub.worldpop.org/data/licence.txt",
+        "citation": "Bondarenko M., Kerr D., Sorichetta A., and Tatem, A.J.  2020. Census/projection-disaggregated gridded population datasets, adjusted to match the corresponding UNPD 2020 estimates, for 51 countries across sub-Saharan Africa using building footprints. WorldPop, University of Southampton, UK. doi:10.5258/SOTON/WP00683",
+        "desc": "Estimated total number of people per grid-cell. The dataset is available to download in Geotiff format at a resolution of 3 arc (approximately 100m at the equator). The projection is Geographic Coordinate System, WGS84. The units are number of people per pixel with country totals adjusted to match the corresponding official United Nations population estimates that have been prepared by the Population Division of the Department of Economic and Social Affairs of the United Nations Secretariat (2019 Revision of World Population Prospects). \"NoData\" values represent areas that were mapped as unsettled based on building footprints provided by the Digitize Africa project of Ecopia.AI and Maxar Technologies (2020). The mapping approach is the Random Forests-based dasymetric redistribution developed by Stevens et al. (2015).  The disaggregation was done by Maksym Bondarenko (WorldPop) and David Kerr (WorldPop), using the Random Forests population modelling R scripts (Bondarenko et al., 2020), with oversight from Alessandro Sorichetta (WorldPop).SOURCE DATA:This dataset was produced based on the 2020 population census/projection-based estimates for 2020  (information and sources of the input population data can be found here).Building footprints were provided by the Digitize Africa project of Ecopia.AI and Maxar Technologies (2020) and gridded building patterns derived from the datasets produced by Dooley et al. 2020.Geospatial covariates representing factors related to population distribution, were obtained from the \"Global High Resolution Population Denominators Project\"(OPP1134076)REFERENCES:- Stevens FR, Gaughan AE, Linard C, Tatem AJ (2015) Disaggregating Census Data for Population Mapping Using Random Forests with Remotely-Sensed and Ancillary Data. PLoS ONE 10(2): e0107042. https://doi.org/10.1371/journal.pone.0107042- WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076).- Dooley, C. A., Boo, G., Leasure, D.R. and Tatem, A.J. 2020. Gridded maps of building patterns throughout sub-Saharan Africa, version 1.1. University of Southampton: Southampton, UK. Source of building footprints \"Ecopia Vector Maps Powered by Maxar Satellite Imagery\"&#169; 2020. doi:10.5258/SOTON/WP00677- Bondarenko M., Nieves J. J., Stevens F. R., Gaughan A. E., Tatem A. and Sorichetta A. 2020. wpgpRFPMS: Random Forests population modelling R scripts, version 0.1.0. University of Southampton: Southampton, UK. https://dx.doi.org/10.5258/SOTON/WP00665- Ecopia.AI and Maxar Technologies. 2020. Digitize Africa data. http://digitizeafrica.ai"
+      },
+      "representation": "Selected metadata fields; sha256 above hashes original response bytes, not this projection."
+    },
+    "boundary": {
+      "filename": "boundary-metadata.json",
+      "url": "https://www.geoboundaries.org/data/geoBoundariesSSCGS-3_0_0/MOZ/ADM0/geoBoundariesSSCGS-3_0_0-MOZ-ADM0-metaData.json",
+      "retrieved_utc": "2026-10-08T22:31:43.063100+00:00",
+      "bytes": 572,
+      "sha256": "862039457fc8c4c31dc13724d0ccf5186cc198aad80c28a1334d1e03bc1ee0d9",
+      "status": 200,
+      "selected_fields": {
+        "boundaryID": "MOZ-ADM0-3_0_0-G379",
+        "boundaryISO": "MOZ",
+        "boundaryYear": 2017.0,
+        "boundaryType": "ADM0",
+        "boundarySource-1": "OpenStreetMap",
+        "boundarySource-2": "Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "licenseDetail": "Open Data Commons Open Database License 1.0",
+        "licenseSource": "https://www.openstreetmap.org/copyright",
+        "boundarySourceURL": "https://wambachers-osm.website/boundaries/",
+        "boundaryUpdate": "2020-05-25",
+        "downloadURL": "https://geoboundaries.org/data/geoBoundaries-3_0_0/MOZ/ADM0/geoBoundaries-3_0_0-MOZ-ADM0-all.zip"
+      },
+      "representation": "Selected metadata fields; sha256 above hashes original response bytes, not this projection."
+    },
+    "wfp_development_flood": {
+      "filename": "flood-catalog.json",
+      "url": "https://data.humdata.org/api/3/action/package_show?id=mozambique-flood-detected-waters-cyclone-idai",
+      "retrieved_utc": "2026-10-08T22:28:36.489904+00:00",
+      "bytes": 9139,
+      "sha256": "f9d33fd678e16d85f6b474977d5ca436b7b9572082895104770d615304de05a2",
+      "status": 200,
+      "selected_fields": {
+        "id": "4b3930dc-21a4-43b3-9257-e1f552a969a6",
+        "title": "Mozambique satellite detected waters, Cyclone Idai",
+        "license_id": "cc-by",
+        "license_title": "Creative Commons Attribution International (CC BY)",
+        "license_url": "http://www.opendefinition.org/licenses/cc-by",
+        "dataset_date": "[2019-03-21T00:00:00 TO 2019-03-21T23:59:59]",
+        "notes": "This dataset is a compilation of various sources such as Copernicus, Sentinel-1 and Atmospheric and Environmental Research, A Verisk Business, & African Risk Capacity using several days to calculate the maximum flood extent for the whole event."
+      },
+      "representation": "Selected metadata fields; sha256 above hashes original response bytes, not this projection."
+    },
+    "unosat_development_flood": {
+      "filename": "unosat-catalog.json",
+      "url": "https://data.humdata.org/api/3/action/package_show?id=unosat-analysis-on-floods-in-mozambique-march-2019",
+      "retrieved_utc": "2026-10-08T22:28:36.509800+00:00",
+      "bytes": 7622,
+      "sha256": "13250b6fd71c7b583f71750ce0ec5a99d6c08cfb6cf8881a96c9b8d8eddaf9e2",
+      "status": 200,
+      "selected_fields": {
+        "id": "63990e37-c6da-40b0-ab6f-27b6b843e24c",
+        "title": "UNOSAT Geospatial Data on Floods in Mozambique - March 2019",
+        "license_id": "cc-by-sa",
+        "license_title": "Creative Commons Attribution Share-Alike (CC BY-SA)",
+        "license_url": "http://www.opendefinition.org/licenses/cc-by-sa",
+        "dataset_date": "[2019-03-13T00:00:00 TO 2019-03-20T23:59:59]",
+        "notes": "This data illustrates the satellite detected surface waters in Manica, Sofala, and Tete Provinces in Mozambique, as observed from Sentinel-1 imagery acquired on 13, 14, 19 and 20 March 2019."
+      },
+      "representation": "Selected metadata fields; sha256 above hashes original response bytes, not this projection."
+    }
+  },
+  "terms_reviewed": {
+    "worldpop-license.txt": {
+      "filename": "worldpop-license.txt",
+      "url": "https://hub.worldpop.org/data/licence.txt",
+      "retrieved_utc": "2026-10-08T22:31:22.759203+00:00",
+      "bytes": 19271,
+      "sha256": "cb0b6ac8fb7d24e900d3bcba5474cf022a6fef3646fa5b94e6019b54f63be25f",
+      "status": 200
+    },
+    "cc-by.html": {
+      "filename": "cc-by.html",
+      "url": "https://opendefinition.org/licenses/cc-by/",
+      "retrieved_utc": "2026-10-08T22:31:22.569580+00:00",
+      "bytes": 28666,
+      "sha256": "5d10afd069e4ecbfbbfeb28def7c1b66af4a444ac24437ac0eba87c96097753b",
+      "status": 200
+    },
+    "cc-by-sa.html": {
+      "filename": "cc-by-sa.html",
+      "url": "https://opendefinition.org/licenses/cc-by-sa/",
+      "retrieved_utc": "2026-10-08T22:31:22.790628+00:00",
+      "bytes": 28895,
+      "sha256": "05a45e03d60d97e7e4e25cf92566ddcf4bf61d4981c4f98df38477b324df013e",
+      "status": 200
+    },
+    "cc-by-legal.html": {
+      "filename": "cc-by-legal.html",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "retrieved_utc": "2026-10-08T22:32:13.453714+00:00",
+      "bytes": 48742,
+      "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+      "status": 200
+    },
+    "cc-by-sa-legal.html": {
+      "filename": "cc-by-sa-legal.html",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "retrieved_utc": "2026-10-08T22:32:13.444312+00:00",
+      "bytes": 51645,
+      "sha256": "47c0a954c88d793bdefe92fb007ae3c038fb3807f1a27083433d01aa7542c0d8",
+      "status": 200
+    },
+    "odbl.txt": {
+      "filename": "odbl.txt",
+      "url": "https://opendatacommons.org/licenses/odbl/1-0/index.html",
+      "retrieved_utc": "2026-10-08T22:32:13.553035+00:00",
+      "bytes": 51543,
+      "sha256": "1879937103eecd9837a86d1a52132b8b2f42855e90d89409bee54103ffc5d5b6",
+      "status": 200
+    }
+  },
+  "assets": [
+    {
+      "filename": "moz_ppp_2020_UNadj_constrained.tif",
+      "url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/maxar_v1/MOZ/moz_ppp_2020_UNadj_constrained.tif",
+      "retrieved_utc": "2026-10-08T22:31:34.858836+00:00",
+      "bytes": 36240814,
+      "sha256": "48cd6e325a9cf178cd16aeee4b476794a53149e771062c737106da9f49424612",
+      "status": 200,
+      "transformations": [],
+      "role": "population",
+      "qualification": "Qualified source product and reuse rights; no claim of equality to an unavailable author-side hash",
+      "identifier": "10.5258/SOTON/WP00683",
+      "source_time": {
+        "population_year": 2020,
+        "catalog_publication_date": "2020-09-12",
+        "version": "maxar_v1, UN-adjusted constrained"
+      },
+      "rights": {
+        "license": "CC-BY-4.0",
+        "attribution": "Bondarenko M., Kerr D., Sorichetta A., and Tatem, A.J.  2020. Census/projection-disaggregated gridded population datasets, adjusted to match the corresponding UNPD 2020 estimates, for 51 countries across sub-Saharan Africa using building footprints. WorldPop, University of Southampton, UK. doi:10.5258/SOTON/WP00683",
+        "terms": "https://hub.worldpop.org/data/licence.txt",
+        "obligations": "Retain attribution, license and notices; identify modifications. License applies to this population raster, not separate Maxar building footprints."
+      },
+      "inspection": {
+        "format": "GeoTIFF",
+        "size_pixels": [
+          12746,
+          19678
+        ],
+        "crs": "EPSG:4326",
+        "nodata": -99999,
+        "unit": "people per grid cell",
+        "method": "Pillow header inspection only; no aggregation or population result computed"
+      }
+    },
+    {
+      "filename": "geoBoundariesSSCGS-3_0_0-MOZ-ADM0.geojson",
+      "url": "https://www.geoboundaries.org/data/geoBoundariesSSCGS-3_0_0/MOZ/ADM0/geoBoundariesSSCGS-3_0_0-MOZ-ADM0.geojson",
+      "retrieved_utc": "2026-10-08T22:31:43.163006+00:00",
+      "bytes": 1250877,
+      "sha256": "88d960b6cd2f40cd96378873ba9756b0202d774e2c8de5221760a8f0adcf5273",
+      "status": 200,
+      "transformations": [],
+      "role": "boundary_candidate",
+      "qualification": "Reusable archived candidate; upstream call did not pin its geoBoundaries version",
+      "identifier": "MOZ-ADM0-3_0_0-G379",
+      "source_time": {
+        "boundary_year": 2017,
+        "boundary_update": "2020-05-25",
+        "release": "3.0.0",
+        "release_date": "2020-06-05"
+      },
+      "rights": {
+        "license": "ODbL-1.0",
+        "attribution": "OpenStreetMap contributors; Wambacher; geoBoundaries, William & Mary geoLab",
+        "terms": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "obligations": "Retain notices and attribution. Public use of derivative databases requires share-alike and an offer of the database or alterations under section 4.6; produced works require attribution."
+      },
+      "immutable_archive": {
+        "commit": "7c8dbc599e312d9204e450aecfa66c204b8cf9b8",
+        "lfs_pointer": {
+          "filename": "boundary-pinned.geojson",
+          "url": "https://raw.githubusercontent.com/wmgeolab/geoBoundariesArchive_3_0_0/7c8dbc599e312d9204e450aecfa66c204b8cf9b8/releaseData/otherReleases/geoBoundariesSSCGS-3_0_0/MOZ/ADM0/geoBoundariesSSCGS-3_0_0-MOZ-ADM0.geojson",
+          "retrieved_utc": "2026-10-08T22:32:13.523269+00:00",
+          "bytes": 132,
+          "sha256": "8d96a162b3e117eddc31efda7a2f10f4f6036eae1bea9e9d4166e6d8c352c7c6",
+          "status": 200
+        },
+        "lfs_oid_matches_downloaded_sha256": true
+      },
+      "inspection": {
+        "format": "GeoJSON FeatureCollection",
+        "feature_count": 1
+      }
+    },
+    {
+      "filename": "moz_totalfloodextent.zip",
+      "url": "https://data.humdata.org/dataset/4b3930dc-21a4-43b3-9257-e1f552a969a6/resource/9a3f23c6-0cc3-4e99-bb72-0b4e099847df/download/moz_totalfloodextent.zip",
+      "retrieved_utc": "2026-10-08T22:31:12.647107+00:00",
+      "bytes": 668190,
+      "sha256": "3c53f2bc8fc2e317584312b616a6492895c6b0dac61b81a7ea2c12a99a58339b",
+      "status": 200,
+      "transformations": [],
+      "role": "wfp_development_flood",
+      "qualification": "Original source URL acquired and content-pinned; historical byte identity and exact license version remain unqualified",
+      "identifier": "HDX resource 9a3f23c6-0cc3-4e99-bb72-0b4e099847df",
+      "source_time": {
+        "paper_description": "Paper: observations 2019-03-12 through 2019-03-20; release 2019-03-21",
+        "retrieval_time_is_not_observation_time": true
+      },
+      "rights": {
+        "catalog_license": "CC BY International; exact version not explicitly stated by catalog",
+        "attribution": "WFP, Atmospheric and Environmental Research, African Risk Capacity and contributing sources",
+        "terms_review": "Catalog links to an Open Definition license-family page listing multiple versions. Current overview points to 4.0; this alone does not establish the version granted for this resource. Do not redistribute or combine until resolved. Attribution and, for UNOSAT adaptations, share-alike must be retained."
+      },
+      "inspection": {
+        "zip_crc": "passed",
+        "members": [
+          {
+            "path": "MOZ_TotalFloodExtent12to2.tif",
+            "bytes": 68029951,
+            "sha256": "bd1a9856f65948edb61bb5afc2f0e241a2ffc4d361f177e6146ccd0b43a7850a"
+          },
+          {
+            "path": "MOZ_TotalFloodExtent12to2.tif.vat.dbf",
+            "bytes": 128,
+            "sha256": "f79582e48259a7218620576abbe59be8fc2ee5362555feced7dcb53d1eb1e71d"
+          }
+        ],
+        "raster": {
+          "path": "MOZ_TotalFloodExtent12to2.tif",
+          "size_pixels": [
+            8610,
+            7757
+          ],
+          "crs": "EPSG:3857",
+          "nodata": 255,
+          "method": "Pillow header inspection only"
+        }
+      },
+      "caveat": "GET succeeds where the earlier HEAD probe returned 403. Catalog format says SHP, but the archive contains the TIFF expected by upstream. No author-side checksum establishes byte identity."
+    },
+    {
+      "filename": "TC20190312MOZ_SHP.zip",
+      "url": "https://unosat-maps.web.cern.ch/unosat-maps/MZ/TC20190312MOZ/TC20190312MOZ_SHP.zip",
+      "retrieved_utc": "2026-10-08T22:31:14.634425+00:00",
+      "bytes": 17372752,
+      "sha256": "1f62554ac423758b80e57ef2fe2c622d74a8a7c76a5d3bfe5e71b65b66f0f4de",
+      "status": 200,
+      "transformations": [],
+      "role": "unosat_development_flood",
+      "qualification": "Original source URL acquired and content-pinned; historical byte identity and exact license version remain unqualified",
+      "identifier": "HDX resource 9453aa3b-5bd1-4bd2-a68c-2577fc0c8142; activation TC20190312MOZ",
+      "source_time": {
+        "paper_description": "Paper: observations 2019-03-13,14,19,20,26; release 2019-03-26",
+        "retrieval_time_is_not_observation_time": true
+      },
+      "rights": {
+        "catalog_license": "CC BY-SA; exact version not explicitly stated by catalog",
+        "attribution": "UNITAR-UNOSAT and named Sentinel-1/Copernicus source providers",
+        "terms_review": "Catalog links to an Open Definition license-family page listing multiple versions. Current overview points to 4.0; this alone does not establish the version granted for this resource. Do not redistribute or combine until resolved. Attribution and, for UNOSAT adaptations, share-alike must be retained."
+      },
+      "inspection": {
+        "zip_crc": "passed",
+        "members": [
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190313_AnalysisExtent_SofalaProvince.dbf",
+            "bytes": 1057,
+            "sha256": "e92ac1c1b3cee472f8ac897386812c173d21de013d4c46dd2c81e1c0285eb00b"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190313_AnalysisExtent_SofalaProvince.shp",
+            "bytes": 236,
+            "sha256": "796f285381b31f799008538278c7c5fb269f03826560e42b7567b4a184e29c4a"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190313_WaterExtent_SofalaProvince.dbf",
+            "bytes": 2880518,
+            "sha256": "582b5fc2821ce89f8b90cf6d32c63daa71f64449dfc2726ce982fbcb8368cfa9",
+            "dbf_header_record_count": 1388
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190313_WaterExtent_SofalaProvince.shp",
+            "bytes": 1668536,
+            "sha256": "d486a251eb3bcef8f25b668c2d6cf665529dc47d47af85626aa002e4381d786c"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190314_WaterExtent_SofalaProvince.dbf",
+            "bytes": 3467743,
+            "sha256": "b2cdd01f0a2ac7469c27928fc6e03df8c1a770772a959913616528519d71af1b",
+            "dbf_header_record_count": 1671
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190314_WaterExtent_SofalaProvince.shp",
+            "bytes": 1830444,
+            "sha256": "f4cf584df5c6fbb0ad87810373166247f6c4c76688a174df6d41c1edc62b472b"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_AnalysisExtent_ManicaSofalaProvinces.dbf",
+            "bytes": 1057,
+            "sha256": "545b5b99e7fd6ebfe076ff5d02d784c179c06b5681261417d2ed58458755b457"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_AnalysisExtent_ManicaSofalaProvinces.shp",
+            "bytes": 380,
+            "sha256": "42b3f37630870344d27764e3150e429f01d72e284625e93bb1e80fc9686149ba"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_AnalysisExtent_SofalaProvince.dbf",
+            "bytes": 1057,
+            "sha256": "1a9f6d7de13c487d6e6c8980a410e5a1e6889696d985a7e4d87ae7e8a801d201"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_AnalysisExtent_SofalaProvince.shp",
+            "bytes": 236,
+            "sha256": "36180f33ef754b57e6a9b9394d9e7660a4cdb626375e4c862a2e270b02c317d6"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_WaterExtent_ManicaSofalaProvinces.dbf",
+            "bytes": 102982668,
+            "sha256": "29e63c055d71a92e8d657dc177f25b63fdd41310c6453c389d6d417e04974212",
+            "dbf_header_record_count": 49630
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_WaterExtent_ManicaSofalaProvinces.shp",
+            "bytes": 38195844,
+            "sha256": "5dad10085aea5fea6c5154d76cd6837dc0562a403218403cc95af4649a7d1423"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_WaterExtent_SofalaProvince.dbf",
+            "bytes": 8831618,
+            "sha256": "a1d476d77e48c7e63e9a33fd598f9e2bd47c7308ff3366735abc4550ac19963c",
+            "dbf_header_record_count": 4256
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190319_WaterExtent_SofalaProvince.shp",
+            "bytes": 1516800,
+            "sha256": "40948875c28b73c99ffb99d5dcc825d06d8a0f38353a5b98f97ba083770a551a"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_AnalysisExtent_SofalaProvince.dbf",
+            "bytes": 1057,
+            "sha256": "a4069dc8ef5ba74305fcd46774e4a023a6f94cf82afd540208ec3e7f79951192"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_AnalysisExtent_SofalaProvince.shp",
+            "bytes": 252,
+            "sha256": "d0c96c47ce8a2cb8b1d5960b4a537613a42339a8f6fd66acaddda4c290a80bd6"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_AnalysisExtent_TeteZambeziaProvinces.dbf",
+            "bytes": 1057,
+            "sha256": "bc0cab727af5a5d36f68b7e644c42318d8b4cfb486d1ccd72b1aaafdd89c9fa8"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_AnalysisExtent_TeteZambeziaProvinces.shp",
+            "bytes": 236,
+            "sha256": "f8e86929cd13c6331311f81157e8556a336163c4127c5bd49451b4759c05378b"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_WaterExtent_SofalaProvince.dbf",
+            "bytes": 9319243,
+            "sha256": "d943217d6d4753c24a62e0430793e6823e47a13c1c6f1ed90b052d785fcfbca9",
+            "dbf_header_record_count": 4491
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_WaterExtent_SofalaProvince.shp",
+            "bytes": 1418808,
+            "sha256": "f53d51fbf13141312af157829acf8af6f8a85e79d72a197ba57ac7a858f5a00f"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_WaterExtent_TeteZambeziaProvinces.dbf",
+            "bytes": 3077643,
+            "sha256": "cdbc1f0684004c94db7969c12afbbd2ef3123fe8bd607184f7f724b59e0f731e",
+            "dbf_header_record_count": 1483
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190320_WaterExtent_TeteZambeziaProvinces.shp",
+            "bytes": 474208,
+            "sha256": "be75417593ace7eb149bca2407261d7d8b30b98fa9ce85573fba0194ccc11d5f"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190326_WaterExtent_SofalaProvince.dbf",
+            "bytes": 13751443,
+            "sha256": "2148d054014df13311a00ae1421de2465d00001bae1ffb47d1c4b8804546fa20",
+            "dbf_header_record_count": 6627
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST1_20190326_WaterExtent_SofalaProvince.shp",
+            "bytes": 1504104,
+            "sha256": "2ee04c56799a88f13cb05435f2b801875586693d9ef66b3c78b8ce66c8f14a7a"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190319_Analysis_Extent_Dombe_Grudja.dbf",
+            "bytes": 1057,
+            "sha256": "b18874c60cc64bd6b48f49b1e1c80d08b6e740d8ee7a2e014ab72cde453509ab"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190319_Analysis_Extent_Dombe_Grudja.shp",
+            "bytes": 236,
+            "sha256": "afb4a8a709794ca15cb5192afd03ececadc0dea860078d7335632eb4f2bc2966"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190319_Flood_Water_Dombe_Grudja.dbf",
+            "bytes": 1232968,
+            "sha256": "55d4181c28073f313b8fc52ed15413b0a06f2a02ee0af033ef1ae0fdff3f3996",
+            "dbf_header_record_count": 594
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190319_Flood_Water_Dombe_Grudja.shp",
+            "bytes": 324692,
+            "sha256": "bcfebc33ebc22c55e2abd2cc6c9b5a9ae4db362e02bad87388ff1af8b827d813"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190407_Analysis_Extent_Tete_Zambezia_Provinces.dbf",
+            "bytes": 1057,
+            "sha256": "a98047f40dfdfe3e82992fc4328f1b4cd7aa6b20f0cb4967f5b3aa1345a549a8"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190407_Analysis_Extent_Tete_Zambezia_Provinces.shp",
+            "bytes": 236,
+            "sha256": "f8e86929cd13c6331311f81157e8556a336163c4127c5bd49451b4759c05378b"
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190407_WaterExtent_Tete_Zambezia_Provinces.dbf",
+            "bytes": 10690818,
+            "sha256": "a529d81701e60f2e69e81c41fc8d2f37cc8474776df42e0988e06565662c21de",
+            "dbf_header_record_count": 5152
+          },
+          {
+            "path": "TC20190312MOZ_SHP/ST_20190407_WaterExtent_Tete_Zambezia_Provinces.shp",
+            "bytes": 872044,
+            "sha256": "9829cbf324a9c9c8b08fe467e9f4dd70e3b4a329ee86e5a946a200fe0cf741bc"
+          }
+        ]
+      },
+      "caveat": "Archive contains ST_20190407_WaterExtent_Tete_Zambezia_Provinces with nonzero DBF header count, beyond paper observation dates. Pinned upstream Water.+.shp$ selection would include it. No filtering or flood union performed; historical membership requires resolution."
+    }
+  ],
+  "unacquired": [
+    {
+      "role": "roads",
+      "status": "Historical identity unresolved; no substitute acquired",
+      "source": "https://download.geofabrik.de/africa/mozambique.html",
+      "catalog_response": {
+        "filename": "geofabrik.html",
+        "url": "https://download.geofabrik.de/africa/mozambique.html",
+        "retrieved_utc": "2026-10-08T22:28:37.280657+00:00",
+        "bytes": 21767,
+        "sha256": "8197588a2b5efbac42a71db4eed962a1b5910744c7abb966b363d4c043cd09a1",
+        "status": 200
+      },
+      "paper_snapshot": "April 2021; exact day and original byte hash not supplied",
+      "code_request": "oe_match(country_name)$url then oe_download; moving mozambique-latest.osm.pbf",
+      "archive_findings": "Public index lists annual January snapshots, including 2021 and 2022, and recent rolling extracts. No April 2021 extract is listed. The upstream preparation directory has one source commit, 29327dd53ddbdaba21b22d387ac0f7262fe8c1a1, and no GitHub release archive was listed. This is not proof that no private archive exists.",
+      "rights": "OSM contributors, ODbL-1.0. Source license does not establish historical identity.",
+      "next_input": "Original study PBF with provenance, or exact extraction timestamp and an approved reconstruction method. No current or January snapshot substituted."
+    },
+    {
+      "role": "facilities",
+      "status": "Snapshot conflict; no list acquired",
+      "paper_snapshot": "April 2021",
+      "code_snapshot": "2021-07-01",
+      "code_comment": "2021-04-01 is commented out",
+      "source_path": "src/1_data_preparation/1.1_datapreparation.R",
+      "rights": "OSM contributors, ODbL-1.0",
+      "next_input": "Resolve paper/code snapshot discrepancy and boundary version, then pin the complete historical ohsome request and returned bytes. OSM tags alone do not establish service availability."
+    }
+  ],
+  "unresolved_owner_inputs": [
+    "Healthcare service and eligible facilities",
+    "Transport mode and departure conditions",
+    "Study period and target population/origin units",
+    "Published baseline quantity, threshold, denominator and tolerance",
+    "Scope decision before any substitute historical study"
+  ],
+  "reserved_inputs": "WFP road-constraint outcome resources and detector holdouts remain unopened. The WFP asset below is only the flood-mask input explicitly downloaded by the published development code."
+}

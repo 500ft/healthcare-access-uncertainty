@@ -81,8 +81,13 @@ access also depends on graph completeness, transport mode, correlated conditions
 and whether a facility actually provides the required service. Marginal interval
 coverage cannot establish joint route or population coverage.
 
-The [source qualification](../evidence/access-stability-20261006/qualification.json)
-records the development reproduction blockers and WFP candidate ineligibility.
+The [initial source qualification](../evidence/access-stability-20261006/qualification.json)
+retains the metadata probe and WFP candidate ineligibility. The
+[acquired development inputs](../evidence/idai-development-inputs/README.md) now
+resolve the population and flood download access checks, pin an archived boundary
+candidate, and record historical identity and license questions. The initial
+probe remains historical evidence; its failed flood HEAD request no longer
+describes GET availability.
 No outcome rows were fetched or inspected, no observation policy was evaluated,
 and no synthetic agreement is reported as observed accuracy. Metadata hashes
 freeze this qualification decision; they do not freeze unavailable outcome bytes.
