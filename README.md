@@ -16,11 +16,16 @@ The [executed record](evidence/access-stability-20261006/result.json) reports
 exhaustive small-graph checks, demonstration classifications and widening checks.
 The [method](docs/ACCESS_STABILITY.md) states the assumptions and proof.
 
-![Toy graph shortest-time intervals before and after widening, with access, exclusion and unresolved classifications; minutes to a fixed clinic](evidence/access-stability-20261006/bounds.png)
+![Deterministic toy travel-time bounds in minutes, before and after widening. The 10-minute access threshold is marked in both panels. A and B become unresolved; D may disconnect, E has no path, and Clinic stays at zero. Shapes and line styles distinguish decisions.](results/access-stability/bounds.png)
 
-*Toy verification only. Dashed lines mark the demonstration threshold.
-D has an optional edge; E has no path. Inputs, units and generator are in the
-[figure guide](docs/data-and-figures.md). No real geography is shown.*
+*Deterministic assumptions on a toy graph. The vertical line marks the recorded
+access threshold, including equality. Arrows indicate an unbounded upper time;
+no confidence intervals or geographic validation are shown.*
+
+[Bounds and qualification tables](results/access-stability/README.md) ·
+[Bounds CSV](results/access-stability/bounds.csv) ·
+[Vector figure](results/access-stability/bounds.svg) ·
+[Figure guide](docs/data-and-figures.md)
 
 The [Idai qualification record](evidence/access-stability-20261006/qualification.json)
 identifies a development baseline, checks its input links and records the
@@ -36,14 +41,14 @@ Use Python 3.10+ and the existing analysis dependencies:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e "analysis[dev]"
-MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
-PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py -q
+MPLBACKEND=Agg python analysis/plot_access_bounds.py
+PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py analysis/tests/test_access_figure.py -q
 ```
 
-The demo reruns the exhaustive oracle and regenerates the result and figure.
-It uses no network or reserved data. Retained detector checks require the
-optional dependencies listed in the history guide. See [Start here](docs/START_HERE.md) for
-metadata hashes and the retained detector checks.
+The renderer reads the committed result and qualification metadata, then writes
+the active figure and tables. It uses no network or reserved data.
+[Start here](docs/START_HERE.md) lists metadata hashes and the optional dependencies
+for retained detector checks.
 
 ## What's next
 

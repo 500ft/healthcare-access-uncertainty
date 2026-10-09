@@ -1,0 +1,6 @@
+input,source,snapshot_in_script,product_in_script,qualification
+road network,OpenStreetMap via osmextract / Geofabrik,,,upstream uses geofabrik_mozambique-latest.osm.pbf; no historical input bytes or checksum in pinned tree; data ODbL attribution must accompany any future extract
+facilities,OSM via ohsome,2021-07-01,,not incident-time observations; availability/service capability not established by map tags
+population,WorldPop,,2020 UN-adjusted constrained Maxar v1,HEAD reachable; exact product redistribution license not qualified; payload not acquired
+boundary,geoBoundaries SSCGS via rgeoboundaries,,,version not pinned; exact input terms and bytes not qualified
+floods,UNOSAT plus ARC/WFP,,,UNOSAT HEAD reachable; WFP archive HEAD HTTP 403; exact input terms and bytes not qualified
