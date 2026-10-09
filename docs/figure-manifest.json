@@ -1,6 +1,26 @@
 {
-  "note": "Retained detector evidence figures. Placeholder and conceptual figures were removed; the pre-cleanup manifest is linked from docs/history/README.md. Current access figure provenance is in docs/data-and-figures.md.",
+  "note": "Current access views and retained detector evidence figures. Source data and archived outputs are preserved; docs/data-and-figures.md inventories the active and retained visuals.",
   "figures": [
+    {
+      "id": "access-bounds-readable",
+      "evidence_type": "deterministic toy assumptions; no observed travel times",
+      "generator": "analysis/plot_access_bounds.py",
+      "command": "MPLBACKEND=Agg python analysis/plot_access_bounds.py",
+      "inputs": [
+        "evidence/access-stability-20261006/result.json",
+        "evidence/access-stability-20261006/qualification.json"
+      ],
+      "outputs": [
+        "results/access-stability/bounds.png",
+        "results/access-stability/bounds.svg",
+        "results/access-stability/bounds.csv",
+        "results/access-stability/qualification.csv",
+        "results/access-stability/README.md",
+        "results/access-stability/provenance.json"
+      ],
+      "boundary": "Deterministic shortest-time bounds and metadata qualification. No confidence intervals, real-area replication or observed accuracy. Reserved outcomes remain unopened.",
+      "reproducibility": "Read committed records only. Numeric marks and CSV exports checked against the existing result. Source and generator hashes recorded in the derived provenance file; original evidence and its hashed generator unchanged."
+    },
     {
       "id": "method-demo-synthetic",
       "evidence_type": "simulation",

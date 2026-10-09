@@ -11,16 +11,17 @@ Install the existing dependencies as described in the
 [README](../README.md#getting-started), then run from the repository root:
 
 ```sh
-MPLBACKEND=Agg PYTHONPATH=analysis python analysis/run_access_demo.py
-PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py -q
+MPLBACKEND=Agg python analysis/plot_access_bounds.py
+PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py analysis/tests/test_access_figure.py -q
 (cd evidence/access-stability-20261006 && shasum -a 256 -c metadata-freeze.sha256)
-python tools/check_presentation.py . "Informal Road Mapping" informal-road-mapping
+python tools/check_presentation.py . "Healthcare Access Uncertainty" healthcare-access-uncertainty
 python tools/test_presentation.py
 ```
 
-The generator runs the toy example and exhaustive finite-world oracle. It writes
-[result.json](../evidence/access-stability-20261006/result.json) and the
-[figure](../evidence/access-stability-20261006/bounds.png).
+The renderer reads the [committed numerical result](../evidence/access-stability-20261006/result.json)
+and qualification metadata. It writes the [active figure and tables](../results/access-stability/README.md)
+without recomputing scientific results. The original exhaustive reproduction
+command remains in the [evidence record](../evidence/access-stability-20261006/README.md).
 
 ## Retained checks and history
 

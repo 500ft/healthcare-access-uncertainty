@@ -1,8 +1,9 @@
 # Repository identity and reading conventions
 
-Updated September 10, 2026. The project is now **Informal Road Mapping**, at
-[`500ft/informal-road-mapping`](https://github.com/500ft/informal-road-mapping).
-Its previous repository name was `CatanRoads`; this is a rename of the same
+Updated October 8, 2026. The project is now **Healthcare Access Uncertainty**, at
+[`500ft/healthcare-access-uncertainty`](https://github.com/500ft/healthcare-access-uncertainty). The name states the
+current research question in the [roadmap](../ROADMAP.md). Its previous
+repository names were `informal-road-mapping` and `CatanRoads`; each is a rename of the same
 repository, not a new project or release.
 
 ## What the rename changes
@@ -17,7 +18,7 @@ records the explicit imports now used by retained callers.
 To update an existing clone without moving its files:
 
 ```sh
-git remote set-url origin https://github.com/500ft/informal-road-mapping.git
+git remote set-url origin https://github.com/500ft/healthcare-access-uncertainty.git
 git remote -v
 ```
 
@@ -48,7 +49,7 @@ Obsolete conceptual and placeholder figures were removed from the working tree.
 From the repository root:
 
 ```sh
-python tools/check_presentation.py . "Informal Road Mapping" informal-road-mapping
+python tools/check_presentation.py . "Healthcare Access Uncertainty" healthcare-access-uncertainty
 python tools/test_presentation.py
 ```
 
