@@ -1,5 +1,20 @@
 # Literature
 
+## Note, 2026-10-09
+
+The 82 entries that [references.bib](references.bib) held before 2026-10-09 and the
+longer list in [bibliography.md](bibliography.md) were collected on 2026-09-22 for the repository's
+earlier question (informal road detection), before the 2026-10-08 rename. Which of
+them still support the current question (decision stability under road-closure
+uncertainty and measurement selection) has not been re-assessed. Nothing was deleted.
+Three sources for the current question were added on 2026-10-09: bibliography
+section 15, ledger C20 to C22, and the matching references.bib entries. That review
+was abstract-level, web search only, with forward citations not searched.
+
+Interval shortest-path computation (shortest paths at the lower and upper edge-time
+endpoints bounding the true shortest path) is textbook material and must not be
+presented as a contribution.
+
 > Retained detector history. Its active questions are superseded by the
 > healthcare-access software pivot. See the [history index](../docs/history/README.md).
 
