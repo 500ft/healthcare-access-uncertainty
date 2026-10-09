@@ -66,8 +66,8 @@ rather than rotting silently. Units are stated because several are not what thei
 
 ### Phase-1 screen — `gee/ndvi_change.js`, mirrored in `phase1_gate.py::CONFIG`
 
-| quantity | value | units | provenance | status | note |
-|---|---|---|---|---|---|
+| Quantity | Value | Units | Provenance | Status | Note |
+|---|---:|---|---|---|---|
 | `MONTH` | 7 | month index | selected design value | FROZEN_UNDERIVED | same-season comparison; why July specifically is unrecorded |
 | `ANALYSIS_SCALE_M` | 10 | **nominal projected**, not ground | selected design value | RETRO_ASSESSED | ~6.6–7.0 m ground at site latitudes — see [C19](../literature/claim-ledger.md) |
 | `CONTROL_INNER_M` | 200 | m (kernel-specified) | selected design value | FROZEN_UNDERIVED | whether the kernel carries the grid's distortion is **untested** |
@@ -87,8 +87,8 @@ rather than rotting silently. Units are stated because several are not what thei
 
 ### Phase-2 extractor — `analysis/catanroads/extract.py`
 
-| quantity | value | units | provenance | status | note |
-|---|---|---|---|---|---|
+| Quantity | Value | Units | Provenance | Status | Note |
+|---|---:|---|---|---|---|
 | `disturb_thresh` | 1.0 | z units | selected design value | SYNTHETIC_ONLY | mirrors `Z_MIN`; static validator enforces the match |
 | `ridge_sigmas` | (1, 2, 3) | **pixels** | selected design value | UNVERIFIED | ~6.8–20 m ground; measured Mongolian corridors span ~26–164 m. **No documented link to any measured width** |
 | `ridge_quantile` | 0.85 | quantile | selected design value | UNVERIFIED | no recorded basis |
@@ -100,8 +100,8 @@ rather than rotting silently. Units are stated because several are not what thei
 
 ### Site manifest — `config/sites.geojson`
 
-| quantity | value | provenance | status |
-|---|---|---|---|
+| Quantity | Value | Provenance | Status |
+|---|---:|---|---|
 | `half_km` (all six sites) | 8 | selected design value | FROZEN_UNDERIVED |
 | site coordinates | six positions | **provisional estimate** | UNVERIFIED — every `verified` flag is `false` |
 | `ref_imagery_date`, `provenance` | unset | provisional estimate | UNVERIFIED |

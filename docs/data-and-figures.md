@@ -10,11 +10,12 @@ scale and fixed clinic. The [method](ACCESS_STABILITY.md) defines their meaning.
 
 - Horizontal units are minutes. The threshold comes from the result; equality
   counts as access. It is a demonstration choice, not a real-area service target.
-- Blue circles and solid lines mean definite access. Red squares and dashed lines
-  mean definite exclusion. Purple diamonds and dash-dot lines mean unresolved.
+- Blue circles and solid lines mean definite access. Vermilion squares and dashed
+  lines mean definite exclusion. Reddish-purple diamonds and dash-dot lines mean unresolved.
   The key, shapes and styles support reading without color.
-- Endpoint labels reproduce the source precision. No probability or confidence
-  level is assigned to these deterministic intervals.
+- Minor ticks are 1 min apart. Exact endpoints at source precision are in the
+  generated table. No probability or confidence level is assigned to these
+  deterministic intervals.
 - An arrow indicates an infinite upper bound; its displayed endpoint is not a
   finite travel time. The common axis includes zero and all finite endpoints,
   with space beyond the largest endpoint for the arrow. A disconnected node gets
@@ -53,6 +54,13 @@ The redesign uses their white scientific background, coordinated panels, readabl
 sans-serif type, restrained grid, stable colors, redundant markers and visible
 evidence status. The interval layout is specific to the access question.
 
+All active plotting scripts import [figstyle.py](../analysis/figstyle.py). It sets
+three font sizes by role, outward ticks, frameless legends and 300-dpi PNG output,
+and gives each entity one Okabe-Ito color in every figure. In the detector figures
+the delivered path is orange with a dark outline, the legacy chord is dark grey and
+dashed, and the reference centerline is sky blue. Titles state the result and read
+their numbers from the committed records.
+
 ## Inventory and retention
 
 | Visual or table | Use | Disposition |
@@ -61,7 +69,9 @@ evidence status. The interval layout is specific to the access question.
 | Bounds and qualification tables | Current results | Generated Markdown and CSV; units and unknowns explicit. |
 | Adoption/disposition table | Access method note | Retained as text: it records decisions, not quantitative evidence. |
 | Original toy figure and generator | Dated evidence | Retained unchanged to preserve original hashes and reproduction. |
-| Detector synthetic figures and result tables | History | Retained unchanged; the detector is inactive and superseded. |
+| Detector stress-case and demo figures | History | Redrawn with the shared figure rules from the same synthetic cases and stress record. |
+| Detector result tables | History | Retained unchanged; the detector is inactive and superseded. |
+| Parameter register | Detector parameters | Value column right-aligned; values unchanged and still checked by `test_parameter_register.py`. |
 | UCI aggregate tables | Historical parser probe | Retained unchanged; the trajectories are non-Mongolian and supply no field validation. |
 
 The [figure manifest](figure-manifest.json) lists active and retained generators.
