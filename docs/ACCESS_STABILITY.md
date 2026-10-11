@@ -87,7 +87,9 @@ retains the metadata probe and WFP candidate ineligibility. The
 resolve the population and flood download access checks, pin an archived boundary
 candidate, and record historical identity and license questions. The initial
 probe remains historical evidence; its failed flood HEAD request no longer
-describes GET availability.
+describes GET availability. The [subsequent source review](../evidence/idai-development-inputs/source-review.json)
+corrects incomplete period provenance and checks flood dates inside that archive.
+Robert remains a candidate with unresolved source rights; it has not been adopted.
 No outcome rows were fetched or inspected, no observation policy was evaluated,
 and no synthetic agreement is reported as observed accuracy. Metadata hashes
 freeze this qualification decision; they do not freeze unavailable outcome bytes.

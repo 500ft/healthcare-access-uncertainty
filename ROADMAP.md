@@ -32,6 +32,10 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   development flood archives; matched an archived boundary candidate to its
   immutable archive object. The [input record](evidence/idai-development-inputs/README.md)
   separates qualified reuse from unresolved historical identity and flood terms.
+- Done: inspected the paper supplements and source requests, confirmed actual
+  flood sensor dates in the acquired archive, and corrected incomplete snapshot
+  provenance. The [source review](evidence/idai-development-inputs/source-review.json)
+  also records why the Robert candidate remains ineligible.
 - Current, blocked: recover the historical road extract, resolve the facility
   snapshot and flood membership, confirm the boundary version and flood license
   versions, and define the estimand. No Idai baseline has been reproduced.
@@ -62,8 +66,11 @@ No choice is inferred from an example in the external proposal.
 Completion evidence: input hashes and permissions, a precise estimand, runnable
 commands and a source-linked comparison within the declared tolerance, or an
 explained discrepancy. Software tests alone do not complete this milestone.
-If exact historical inputs cannot be qualified, stop replication and request a
-scope decision before substituting a new development study.
+Original road bytes remain unrecovered. A historical reconstruction must be
+labeled separately from exact replication and needs a scope decision. The
+[source request](evidence/idai-development-inputs/source-review.json#needed_source_request)
+identifies missing author artifacts. Stop before replication or substitution
+until source eligibility and the target are settled.
 
 ## M2. Establish real-area decision stability
 
@@ -98,8 +105,7 @@ return/access constraints and failed or inaccessible observations.
    near-threshold, road-class/length and feasible centrality policies. Use the
    same route-based budgets, starting conditions and feasible observation set.
    Include a greedy value-of-information verification rule (Li et al. 2026
-   style), added 2026-10-09 from the literature review under owner instruction;
-   see [bibliography section 15](literature/bibliography.md#15-healthcare-access-under-road-closure-uncertainty-added-2026-10-09).
+   style); see [bibliography section 15](literature/bibliography.md#15-healthcare-access-under-road-closure-uncertainty-added-2026-10-09).
 2. Specify how each observation updates bounds and how unresolved decisions,
    incorrect definite decisions and service consequences enter the comparison.
 3. Run development comparisons. Synthetic hidden truth may test the procedure,

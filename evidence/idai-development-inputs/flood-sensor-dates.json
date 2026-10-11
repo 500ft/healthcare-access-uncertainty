@@ -1,0 +1,69 @@
+{
+  "source_asset": "manifest.json#/assets/3",
+  "selection": "Upstream Water.+.shp$ filename rule; inspection only, no union or exclusion",
+  "layers": [
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190313_WaterExtent_SofalaProvince.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190313": 1388
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190314_WaterExtent_SofalaProvince.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190314": 1671
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190319_WaterExtent_ManicaSofalaProvinces.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190319": 49630
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190319_WaterExtent_SofalaProvince.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190319": 4256
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190320_WaterExtent_SofalaProvince.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190320": 4491
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190320_WaterExtent_TeteZambeziaProvinces.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190320": 1483
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST1_20190326_WaterExtent_SofalaProvince.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190326": 6627
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST_20190319_Flood_Water_Dombe_Grudja.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190319": 594
+      },
+      "deleted_records": 0
+    },
+    {
+      "dbf_member": "TC20190312MOZ_SHP/ST_20190407_WaterExtent_Tete_Zambezia_Provinces.dbf",
+      "sensor_dates_yyyymmdd": {
+        "20190407": 5152
+      },
+      "deleted_records": 0
+    }
+  ]
+}
