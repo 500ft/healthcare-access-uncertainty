@@ -1,0 +1,245 @@
+{
+  "status": "executed",
+  "purpose": "Software scaling on current Beira-area Sofala OSM topology; synthetic time and closure assumptions only. No clinical estimand adoption or historical replication.",
+  "protocol_sha256": "6e142e1bfd8d3e9d64e5b1488271c337086b9d61bdacf29d58e7f059cfe17363",
+  "source_sha256": "95446925a6a81001c2a8ae996fb208448a2685f62a687594aa2ee7e93da535e0",
+  "seed": 61011,
+  "environment": {
+    "python": "3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "scipy": "1.17.1",
+    "numpy": "2.4.6",
+    "platform": "macOS-14.7.3-arm64-arm-64bit"
+  },
+  "fixed_synthetic_target_osm_ids": [
+    5635088131,
+    5648120883,
+    6352129291
+  ],
+  "skipped": {
+    "bbox_segments": 751,
+    "access": 55
+  },
+  "self_check_worlds": 108,
+  "small_oracle": [
+    {
+      "osm_nodes": [
+        3339421455,
+        5624668475,
+        5624668627,
+        5624957602
+      ],
+      "arcs": 6,
+      "worlds": 729,
+      "widened_worlds": 972,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        568013320,
+        567933758,
+        663132015,
+        663132017
+      ],
+      "arcs": 6,
+      "worlds": 729,
+      "widened_worlds": 972,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        5653739471,
+        5653739470,
+        5653739472,
+        5653745276
+      ],
+      "arcs": 6,
+      "worlds": 729,
+      "widened_worlds": 972,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        3783040014,
+        3269322207,
+        5647448640,
+        5647423859
+      ],
+      "arcs": 6,
+      "worlds": 243,
+      "widened_worlds": 324,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        6395728524,
+        6395728523,
+        6395728525,
+        6395728522
+      ],
+      "arcs": 6,
+      "worlds": 729,
+      "widened_worlds": 972,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        5654279509,
+        5654202077,
+        5654202078,
+        5654279510
+      ],
+      "arcs": 6,
+      "worlds": 729,
+      "widened_worlds": 972,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        5648106078,
+        5648106065,
+        5648106079,
+        5648106077
+      ],
+      "arcs": 6,
+      "worlds": 729,
+      "widened_worlds": 972,
+      "failures": 0
+    },
+    {
+      "osm_nodes": [
+        7811972690,
+        3887804981,
+        7811972689,
+        13661005752
+      ],
+      "arcs": 6,
+      "worlds": 972,
+      "widened_worlds": 1296,
+      "failures": 0
+    }
+  ],
+  "sizes": [
+    {
+      "nodes": 128,
+      "arcs": 243,
+      "weak_components": 3,
+      "strong_components": 17,
+      "lower_unreachable": 25,
+      "upper_unreachable": 42,
+      "narrow_and_wide_seconds": [
+        0.00034433300606906414,
+        0.0002911249757744372,
+        0.0002797499764710665,
+        0.000276917009614408,
+        0.000277582963462919
+      ],
+      "median_seconds": 0.0002797499764710665,
+      "min_seconds": 0.000276917009614408,
+      "max_seconds": 0.00034433300606906414,
+      "peak_process_rss_mib": 131.796875,
+      "endpoint_max_abs_error_minutes": 0.0,
+      "widening_failures": 0,
+      "endpoint_values_checked": 512,
+      "result_sha256": "df028ffb1e85a2b038ce0fe8655f72f6f422c7deb52f74d10d901f94e884ee06"
+    },
+    {
+      "nodes": 512,
+      "arcs": 987,
+      "weak_components": 3,
+      "strong_components": 53,
+      "lower_unreachable": 49,
+      "upper_unreachable": 134,
+      "narrow_and_wide_seconds": [
+        0.0013340410077944398,
+        0.0012703750398941338,
+        0.0012212919536978006,
+        0.001248000015038997,
+        0.0012208749540150166
+      ],
+      "median_seconds": 0.001248000015038997,
+      "min_seconds": 0.0012208749540150166,
+      "max_seconds": 0.0013340410077944398,
+      "peak_process_rss_mib": 131.984375,
+      "endpoint_max_abs_error_minutes": 0.0,
+      "widening_failures": 0,
+      "endpoint_values_checked": 2048,
+      "result_sha256": "a4d432d3e6554269bf704b2b22605a1147fb0fe38918a72ae27c4d4fbd41bd16"
+    },
+    {
+      "nodes": 2048,
+      "arcs": 4193,
+      "weak_components": 3,
+      "strong_components": 45,
+      "lower_unreachable": 138,
+      "upper_unreachable": 756,
+      "narrow_and_wide_seconds": [
+        0.005532707960810512,
+        0.005445625050924718,
+        0.005396916996687651,
+        0.00539674999890849,
+        0.005459624982904643
+      ],
+      "median_seconds": 0.005445625050924718,
+      "min_seconds": 0.00539674999890849,
+      "max_seconds": 0.005532707960810512,
+      "peak_process_rss_mib": 133.046875,
+      "endpoint_max_abs_error_minutes": 0.0,
+      "widening_failures": 0,
+      "endpoint_values_checked": 8192,
+      "result_sha256": "e5a26bb3d19e4095d1d04f28627fb065170166ec5bd6bd49e8d0b8f7340711eb"
+    },
+    {
+      "nodes": 8192,
+      "arcs": 16848,
+      "weak_components": 3,
+      "strong_components": 45,
+      "lower_unreachable": 525,
+      "upper_unreachable": 5915,
+      "narrow_and_wide_seconds": [
+        0.05571829102700576,
+        0.021706167026422918,
+        0.021601082989946008,
+        0.02171825000550598,
+        0.05589224997675046
+      ],
+      "median_seconds": 0.02171825000550598,
+      "min_seconds": 0.021601082989946008,
+      "max_seconds": 0.05589224997675046,
+      "peak_process_rss_mib": 142.03125,
+      "endpoint_max_abs_error_minutes": 0.0,
+      "widening_failures": 0,
+      "endpoint_values_checked": 32768,
+      "result_sha256": "fb8f3109da9892ef21a98d35ccfc323ff5fe7c688f6673721135b8f06e524dae"
+    },
+    {
+      "nodes": 32577,
+      "arcs": 67290,
+      "weak_components": 17,
+      "strong_components": 25,
+      "lower_unreachable": 3113,
+      "upper_unreachable": 29782,
+      "narrow_and_wide_seconds": [
+        0.14004154194844887,
+        0.09750875004101545,
+        0.1396159580326639,
+        0.16878654202446342,
+        0.1085823749890551
+      ],
+      "median_seconds": 0.1396159580326639,
+      "min_seconds": 0.09750875004101545,
+      "max_seconds": 0.16878654202446342,
+      "peak_process_rss_mib": 170.734375,
+      "endpoint_max_abs_error_minutes": 0.0,
+      "widening_failures": 0,
+      "endpoint_values_checked": 130308,
+      "result_sha256": "60a605bf9bb80efcfcbc745358f753422d85af8ccdd88867b4de2c3279e1a583"
+    }
+  ],
+  "rss_scope": "Process high-water RSS including imports, full source/graph, oracle and preceding sizes; macOS bytes converted to MiB.",
+  "length_m": {
+    "min": 0.21212408364064628,
+    "max": 1716.5105032258082
+  },
+  "graph_sha256": "5b9299a7ea4b4b1993fad047a063ae14ad82486ca80006b87adf23f4d6e8a602",
+  "elapsed_seconds": 2.2272732079727575
+}

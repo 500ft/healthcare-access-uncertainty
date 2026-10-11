@@ -1,0 +1,69 @@
+{
+  "registered_utc": "2026-10-11T22:41:45.849778+00:00",
+  "purpose": "Software scaling on current Beira-area Sofala OSM topology; synthetic time and closure assumptions only. No clinical estimand adoption or historical replication.",
+  "seed": 61011,
+  "bbox_south_west_north_east": [
+    -19.9,
+    34.78,
+    -19.7,
+    34.98
+  ],
+  "snapshot_utc": "2026-10-11T00:00:00Z",
+  "highways": [
+    "motorway",
+    "trunk",
+    "primary",
+    "secondary",
+    "tertiary",
+    "unclassified",
+    "residential",
+    "service",
+    "living_street",
+    "motorway_link",
+    "trunk_link",
+    "primary_link",
+    "secondary_link",
+    "tertiary_link"
+  ],
+  "sizes_nodes": [
+    128,
+    512,
+    2048,
+    8192,
+    "all"
+  ],
+  "repetitions": 5,
+  "facilities": "Three fixed synthetic targets chosen by ascending OSM node ID at full-graph quartiles. Include these in every nested node set; every retained node is an origin. No healthcare tags queried.",
+  "node_order": "Undirected breadth-first traversal from first fixed target with sorted neighbors, then remaining components by smallest OSM ID. Induced nested graphs with all targets inserted first.",
+  "graph": "WGS84 bbox node-induced segments of road ways; preserve every OSM node, parallel arcs, explicit oneway yes/1/true and -1; motorway and roundabout imply forward unless explicitly oneway=no/0/false. Exclude access or motor_vehicle no/private. Exclude unrecognized/conditional oneway ways. Turn restrictions and all other access/time rules unmodeled. No completeness or legal routing claim.",
+  "length": "WGS84 geodesic meters via pyproj.Geod; synthetic times independent of length",
+  "weights": "Per directed arc in deterministic way/segment/direction order: seeded integer lower 1..9 and upper lower+1..9 minutes. These are intentionally synthetic; not calibrated speeds.",
+  "closures": "Every 17th directed arc optional; every 101st arc always closed. Independent arc uncertainty, including opposing directions.",
+  "widening": "lower/2, upper*2; additionally every 13th arc optional; fixed node set and targets; permanent closures unchanged.",
+  "threshold_minutes": 30,
+  "threshold_status": "Synthetic software test parameter only, not owner clinical target.",
+  "small_oracle": "First 8 seeded undirected connected samples up to 4 nodes, induced up to 6 directed arcs. Enumerate every product of lower, midpoint, upper, and absent for optional arcs; always-closed domain infinity. Enumerate all simple directed paths independently for every origin and fixed sample target. Cap 4096 worlds per sample, deterministic truncation to first six arcs. Check widened case too.",
+  "larger_oracle": "SciPy directed sparse Dijkstra on reversed graph with explicit minimum parallel-edge aggregation and super-target. Compare every lower and upper result including infinity with rtol=1e-12,atol=1e-10 minutes; algorithm floating comparison only.",
+  "tests": [
+    "finite positive active weights",
+    "direction fixture",
+    "disconnection fixture",
+    "optional closure fixture",
+    "fixed facilities",
+    "all-node endpoint equality",
+    "nested widening classifications cannot gain certainty"
+  ],
+  "metrics": [
+    "nodes",
+    "directed arcs",
+    "weak/strong components",
+    "lower/upper unreachable origins",
+    "median/min/max wall time seconds",
+    "process peak RSS MiB",
+    "endpoint max absolute difference",
+    "widening failures",
+    "oracle worlds and failures"
+  ],
+  "stop": "Run self-check and small oracle first; stop campaign on any mismatch preserving minimal sample. Pilot 128 nodes, then stop expansion if peak RSS exceeds 1.5 GiB or estimated total exceeds 4 hours. Single worker/thread, 5 GiB new artifact ceiling. Checkpoint after each graph size. No performance target or favorable sample selection.",
+  "upstream": "Pinned original Petricola GPL-3 source in separate external workspace. Run minimal permitted input/schema compatibility only; record missing R/packages/ORS and distinguish adapters. Do not run acquisition scripts, flood processing or historical study."
+}

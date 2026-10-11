@@ -1,8 +1,14 @@
 # Results
 
-The executed result verifies deterministic travel-time bounds on a toy graph.
+Executed results verify deterministic travel-time bounds on toy graphs and
+software scaling on a current Sofala OSM fixture with synthetic weights.
 No real-area Idai baseline or independent WFP evaluation has been qualified.
 [ROADMAP.md](../ROADMAP.md) remains the active plan.
+
+[Current-network timing table](sofala-scaling.md) and
+[executed source, scaling and upstream compatibility record](../evidence/sofala-scaling/README.md)
+cover software behavior only. Historical replication and independent evaluation
+retain their existing gates.
 
 ![Original and widened toy travel-time bounds against the recorded access threshold, with distinct markers for access, exclusion and unresolved decisions; infinity and disconnection remain explicit.](access-stability/bounds.png)
 
