@@ -69,13 +69,16 @@ and runtime questions; neither resolves the historical calculation.
 The owner adopted a precision-based reproduction comparison rule. Obtain the
 unrounded reference output if possible, match its statistic, units, denominator
 and inputs, and derive numerical allowance from independent arithmetic,
-raster extraction and geometry error bounds. For a rounded published aggregate, the rounding
-interval is half its last reported unit; any geometric or raster extraction
-error needs a separate justified bound. The paper's travel-time band width is
+raster extraction and geometry error bounds. Half the last reported unit is a
+rounding interval only when round-to-nearest at that precision is established.
+If publication truncates, derive the interval for that rule. If the display
+convention is unknown, obtain it or leave the display interval unresolved.
+Geometric and raster extraction errors need separate justified bounds. The
+paper's travel-time band width is
 not a permitted error in population coverage. No numerical tolerance can be
 frozen until reference precision and the relevant numerical error bounds are
-established. Keep
-this reproduction check separate from any clinical acceptance rule.
+established. Keep this reproduction check separate from any clinical acceptance
+rule.
 
 The [exact-source request](../evidence/idai-development-inputs/source-review.json#needed_source_request)
 remains unsent. The author must identify original roads, facilities, boundary,
