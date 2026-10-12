@@ -460,7 +460,7 @@
           }
         ]
       },
-      "caveat": "Archive contains ST_20190407_WaterExtent_Tete_Zambezia_Provinces with nonzero DBF header count, beyond paper observation dates. Pinned upstream Water.+.shp$ selection would include it. No filtering or flood union performed; historical membership requires resolution."
+      "caveat": "Actual sensor-date fields and the alternative March catalog were inspected. See flood-sensor-dates.json and source-review.json#/petricola/flood_membership. No filtering or union performed; historical membership remains unresolved."
     }
   ],
   "unacquired": [
@@ -476,7 +476,7 @@
         "sha256": "8197588a2b5efbac42a71db4eed962a1b5910744c7abb966b363d4c043cd09a1",
         "status": 200
       },
-      "paper_snapshot": "April 2021; exact day and original byte hash not supplied",
+      "paper_snapshot": "See source-review.json#/petricola/road_identity for the paper period statements.",
       "code_request": "oe_match(country_name)$url then oe_download; moving mozambique-latest.osm.pbf",
       "archive_findings": "Public index lists annual January snapshots, including 2021 and 2022, and recent rolling extracts. No April 2021 extract is listed. The upstream preparation directory has one source commit, 29327dd53ddbdaba21b22d387ac0f7262fe8c1a1, and no GitHub release archive was listed. This is not proof that no private archive exists.",
       "rights": "OSM contributors, ODbL-1.0. Source license does not establish historical identity.",
@@ -485,12 +485,12 @@
     {
       "role": "facilities",
       "status": "Snapshot conflict; no list acquired",
-      "paper_snapshot": "April 2021",
+      "paper_snapshot": "See source-review.json#/petricola/road_identity for the paper period statements.",
       "code_snapshot": "2021-07-01",
       "code_comment": "2021-04-01 is commented out",
       "source_path": "src/1_data_preparation/1.1_datapreparation.R",
       "rights": "OSM contributors, ODbL-1.0",
-      "next_input": "Resolve paper/code snapshot discrepancy and boundary version, then pin the complete historical ohsome request and returned bytes. OSM tags alone do not establish service availability."
+      "next_input": "Resolve paper/code periods and the final facility inventory; the performance supplement count also differs from the main paper. Recover the boundary and complete ohsome request. See source-review.json."
     }
   ],
   "unresolved_owner_inputs": [

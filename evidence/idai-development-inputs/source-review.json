@@ -1,0 +1,239 @@
+{
+  "scope": "Executed source review and DEVELOPMENT archive-date inspection only. No real-area replication or reserved observation access. Recommendations remain external and unapproved.",
+  "sources": {
+    "petricola.html": {
+      "url": "https://link.springer.com/article/10.1186/s12942-022-00315-2",
+      "retrieved_utc": "2026-10-11T17:07:36.425896+00:00",
+      "bytes": 474722,
+      "sha256": "891f90b8a0499423c40465ce092162ee6ff7861d0c70917edfd356ba3b296b12",
+      "status": 200
+    },
+    "petricola-supp1.pdf": {
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs12942-022-00315-2/MediaObjects/12942_2022_315_MOESM1_ESM.pdf",
+      "retrieved_utc": "2026-10-11T17:07:54.954148+00:00",
+      "bytes": 2498955,
+      "sha256": "fc96e7103eaad216cf42c65a9432265d3daedf6afb4671aa2a7b2e18af3878eb",
+      "status": 200
+    },
+    "petricola-supp2.pdf": {
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs12942-022-00315-2/MediaObjects/12942_2022_315_MOESM2_ESM.pdf",
+      "retrieved_utc": "2026-10-11T17:07:51.136114+00:00",
+      "bytes": 3323111,
+      "sha256": "a8d012278203ea9fac3b757ca099c907df6eb6c847584903d6ee890df741d460",
+      "status": 200
+    },
+    "petricola-supp3.pdf": {
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs12942-022-00315-2/MediaObjects/12942_2022_315_MOESM3_ESM.pdf",
+      "retrieved_utc": "2026-10-11T17:07:44.485807+00:00",
+      "bytes": 72664,
+      "sha256": "5119130e541da0f27fc0d37a033171f1142722874a329c9cbb48139e0781998e",
+      "status": 200
+    },
+    "inputs.R": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/1_data_preparation/1.1_datapreparation.R",
+      "retrieved_utc": "2026-10-11T17:07:32.933244+00:00",
+      "bytes": 6943,
+      "sha256": "41aaca730ad3e4a757d6e1b57e871179e3143420fa51e1c96f25f9db80c72036",
+      "status": 200
+    },
+    "ohsome.R": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/1_data_preparation/1.0_download_ohsome.R",
+      "retrieved_utc": "2026-10-11T17:07:32.922140+00:00",
+      "bytes": 4093,
+      "sha256": "40e19e51d99731f70d77a84d7dda1761b8d85118e0107e8d93790f7ee68a5a6f",
+      "status": 200
+    },
+    "install.R": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/install_packages.R",
+      "retrieved_utc": "2026-10-11T17:07:32.955322+00:00",
+      "bytes": 1816,
+      "sha256": "7c4c1a1d6adb84c6290122f92be111c90f01dce58b7ab21f842399f1ed43f6fa",
+      "status": 200
+    },
+    "docs.md": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/docs/README.md",
+      "retrieved_utc": "2026-10-11T17:07:32.922225+00:00",
+      "bytes": 3716,
+      "sha256": "fe95222a05083857f14ea77ea7c71c895ab01ac62eca04f2a0d9dd25338315ed",
+      "status": 200
+    },
+    "gitignore.txt": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/.gitignore",
+      "retrieved_utc": "2026-10-11T17:07:33.107176+00:00",
+      "bytes": 790,
+      "sha256": "b9c70490af3d8c96eaa36cbc0feb361b04b5bfd112deddda0ad25d7e733b9e8f",
+      "status": 200
+    },
+    "geofabrik.html": {
+      "url": "https://download.geofabrik.de/africa/mozambique.html",
+      "retrieved_utc": "2026-10-11T17:09:28.321536+00:00",
+      "bytes": 21761,
+      "sha256": "6fed40d592d01c5027d7dddcd0c3c8644211c3b06e613542fbd633e252af0375",
+      "status": 200
+    },
+    "geofabrik-technical.html": {
+      "url": "https://download.geofabrik.de/technical.html",
+      "retrieved_utc": "2026-10-11T17:10:43.356231+00:00",
+      "bytes": 9288,
+      "sha256": "03e1721761b739ca247682e6bd98cdfd9d5a394117900ce8a03522b9452d1d82",
+      "status": 200
+    },
+    "geofabrik-terms.html": {
+      "url": "https://www.geofabrik.de/en/data/download.html",
+      "retrieved_utc": "2026-10-11T17:09:28.282108+00:00",
+      "bytes": 12068,
+      "sha256": "bb5c9377140864e6d00e15b57826f7bc9a913311f7f780ffc7bce6acad7bd2af",
+      "status": 200
+    },
+    "gitlab-project.html": {
+      "url": "https://gitlab.gistools.geog.uni-heidelberg.de/giscience/disaster-tools/health_access/local_ors_accessibility",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "retrieved_utc": "2026-10-11T17:10:43.494870+00:00"
+    },
+    "hdx-licenses.json": {
+      "url": "https://data.humdata.org/api/3/action/license_list",
+      "retrieved_utc": "2026-10-11T17:09:27.895049+00:00",
+      "bytes": 3167,
+      "sha256": "6532f0b0269a0073cb0e8a08956f097a388445f94002fa73378d206b7affe28a",
+      "status": 200
+    },
+    "unosat-march26-catalog.json": {
+      "url": "https://data.humdata.org/api/3/action/package_show?id=cumulative-satellite-detected-waters-extent-13-26-march-2019-over-sofala-province-mozambique",
+      "retrieved_utc": "2026-10-11T17:10:43.105326+00:00",
+      "bytes": 8441,
+      "sha256": "9eb92e5dad7b637a398b501ae7cfac5e52227b07b44b3dd23f7994398d65b198",
+      "status": 200
+    },
+    "robert.html": {
+      "url": "https://link.springer.com/article/10.1186/s12942-026-00461-x",
+      "retrieved_utc": "2026-10-11T17:07:34.525474+00:00",
+      "bytes": 472511,
+      "sha256": "e154b3c821aaad26befeb8167b23e16b3676c515b540e161d4b739eed0abe4d4",
+      "status": 200
+    },
+    "robert-supp.docx": {
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs12942-026-00461-x/MediaObjects/12942_2026_461_MOESM1_ESM.docx",
+      "retrieved_utc": "2026-10-11T17:11:09.905294+00:00",
+      "bytes": 20080456,
+      "sha256": "080953bb565458356d6c38852c9cbd6ecc93d3b7e87dede358a5115975744020",
+      "status": 200
+    },
+    "kenya-arcgis-item.json": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/bce5234218c547439ce2a71f7cbeb4e2?f=pjson",
+      "retrieved_utc": "2026-10-11T17:07:33.075000+00:00",
+      "bytes": 1442,
+      "sha256": "5b94cd0f2c6611980206314d9092a34c150118cefb8c29f2136b43f25adcb3cc",
+      "status": 200
+    },
+    "kenya-moh.html": {
+      "url": "https://www.health.go.ke/contact-us",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)>",
+      "retrieved_utc": "2026-10-11T17:09:29.724549+00:00"
+    },
+    "kenya-roads-portal.html": {
+      "url": "https://maps.krb.go.ke/kenya-roads-board12769/maps",
+      "retrieved_utc": "2026-10-11T17:11:54.502103+00:00",
+      "bytes": 50560,
+      "sha256": "e18e421759c4f2b6cdefe1c350f6a57cedf61e61843bc279a7655de316d215ce",
+      "status": 200
+    },
+    "population-estimates.R": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/2_healthcare_access/vector_analysis/1.4_population_estimates.R",
+      "retrieved_utc": "2026-10-11T17:12:25.868277+00:00",
+      "bytes": 648,
+      "sha256": "25721923e81323382a2378306023e7c2dddca7717a96d22be13e400c42f3c720",
+      "status": 200
+    },
+    "isochrones.R": {
+      "url": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/2_healthcare_access/vector_analysis/1.1_isochrones_local.R",
+      "retrieved_utc": "2026-10-11T17:12:25.866251+00:00",
+      "bytes": 1791,
+      "sha256": "de499fea450de83c85be5dbe3b40368fa0b4f5716b2077235ce59ab44bb3dfe4",
+      "status": 200
+    },
+    "upstream-tree.json": {
+      "capture": "GitHub API response body through gh api",
+      "url": "https://api.github.com/repos/GIScience/healthcare-access-idai/git/trees/69bbe253b4dcd926a630b557251b5f65688301d5?recursive=1",
+      "bytes": 17630,
+      "sha256": "77f5a9912178a945f588d58a97219d59edfa43d07cbba9cfb27e0ac77318e79c"
+    },
+    "upstream-releases.json": {
+      "capture": "GitHub API response body through gh api",
+      "url": "https://api.github.com/repos/GIScience/healthcare-access-idai/releases",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "petricola": {
+    "road_identity": {
+      "methods_period": "April 2021",
+      "discussion_period": "April-May 2021",
+      "paper_sections": [
+        "Methods and data / Data availability and completeness",
+        "Discussion / Data availability and completeness"
+      ],
+      "correction": "The previous manifest recorded only the Methods period. Neither passage provides a day, PBF checksum or replication sequence.",
+      "repository_archive_search": "Pinned tree contains no PBF, data payload or lockfile; data/ is ignored; releases list is empty. The README clone URL points to the older Heidelberg GitLab host, which failed DNS resolution in this review.",
+      "archive_index": "No April-May study-year PBF listed in the inspected Mozambique directory. Absence from these sources does not prove an author archive does not exist.",
+      "replication_status": "Original road bytes not recovered. A timestamp reconstruction from OSM history is not byte-identical replication. It also requires the historical clipping polygon, extraction rules and replication state. No reconstruction run."
+    },
+    "facilities": {
+      "main_paper_count": 1059,
+      "performance_supplement_count": 1060,
+      "count_sources": [
+        "petricola.html Methods and data",
+        "petricola-supp3.pdf page 1; docs.md parameter table"
+      ],
+      "interpretation": "The performance example need not be the final analysis list. Neither count proves which dated facility list produced the publication.",
+      "request_source": "inputs.R and ohsome.R",
+      "request_geometry": "POST /v1/elements/centroid with boundary bbox, tags and active timestamp; then centroid intersection with boundary in R. Boundary identity therefore affects facility membership.",
+      "active_timestamp_reference": "manifest.json#/unacquired/1/code_snapshot",
+      "supplement_quality_analysis_timestamp": "2021-09-20",
+      "quality_timestamp_source": "petricola-supp1.pdf page 1",
+      "quality_timestamp_scope": "Separate Ohsome Quality Analyst completeness assessment; not the facility or road extraction timestamp.",
+      "pinned_input_script_matches_previous_capture": true
+    },
+    "boundary": {
+      "finding": "Supplement 2 page 4 has a blank rgeoboundaries citation/version cell; visually checked. install.R installs the unpinned GitHub package. The archived SSCGS candidate remains a candidate.",
+      "version_resolved": false
+    },
+    "flood_membership": {
+      "executed_result": "flood-sensor-dates.json",
+      "finding": "Actual Sensor_Dat values confirm the extra April water observations. All selected date fields were read from the already hashed DEVELOPMENT archive; none were excluded or unioned.",
+      "alternate_catalog": "unosat-march26-catalog.json",
+      "alternate_catalog_resource_id": "65c538f6-888b-403e-8573-5b19937094a1",
+      "alternate_catalog_link_matches_acquired_archive": true,
+      "finding_catalog": "The March-only catalog linked in the upstream README resolves to the same cumulative archive URL, not a separately pinned March edition.",
+      "historical_membership_resolved": false
+    },
+    "rights": {
+      "code": "GPL-3.0 source reviewed; no R code incorporated or executed. The date inspector is independently written.",
+      "dataset_terms": "Existing WorldPop and boundary terms retained. HDX license_list still supplies versionless CC BY and CC BY-SA family URLs for the flood catalogs. No exact historical flood grant recovered. Catalog/API software licenses do not grant dataset rights.",
+      "terms_resolved": false
+    }
+  },
+  "robert2026": {
+    "doi": "10.1186/s12942-026-00461-x",
+    "title": "Impact analysis of flood-induced changes in geographical accessibility and coverage to healthcare in both public and private sector, 2024, Kenya",
+    "review_scope": "Primary article methods, discussion, availability and source references; supplement text; linked portal metadata and terms. Published model summaries were read, not treated as independent observations.",
+    "method_limit": "AccessMod potential travel-time modeling with flood/closure inputs and assumed speed changes. Sensitivity ranges are not confidence intervals or observed journey times.",
+    "facility_availability": "Paper refers to Ministry of Health contact page for the census input; no immutable eligible facility list or reuse grant found there. The page request failed certificate validation; verification was not disabled.",
+    "roads_provenance": "Supplement describes a 2018 road survey classified using the proposed 2023 register. This distinguishes observation year from classification vintage.",
+    "roads_rights": "Linked KRB portal requires prior written consent, limits use to the stated purpose, and restricts transfer. No consent supplied. No road layers acquired.",
+    "flood_metadata": {
+      "id": "bce5234218c547439ce2a71f7cbeb4e2",
+      "title": "Kenya Flood Extent Layer",
+      "type": "GeoJson",
+      "access": "public",
+      "created": 1756988726000,
+      "modified": 1756988726000,
+      "snippet": "This is a flood extent layer generated from Sentinel 1 SAR imagery aggregagated over a period of time (March - May 2024). ",
+      "licenseInfo": null,
+      "accessInformation": null
+    },
+    "flood_qualification": "Public item access is not a reuse grant. No item data endpoint requested. Methods and item metadata identify Sentinel-1; article availability text says Sentinel-2. Acquisition dates must be resolved separately from portal timestamps.",
+    "repositories": "Article availability lists source portals, not a pinned study code/data release. No GitHub link appears in article or supplement. UNOSAT link is a general products catalog, not an immutable input inventory.",
+    "eligibility": "Unqualified candidate only; no substitution or validation-set adoption. Rights, snapshots and observation independence remain unresolved."
+  },
+  "needed_source_request": "Ask the Petricola corresponding author for original normal-road PBF and SHA-256, exact OSM timestamp/replication sequence and clipping boundary; final facility export with request and exclusions; boundary file and package/release; exact flood archive or union with member inventory; dataset license versions and redistribution terms. Request unrounded baseline output, CRS, routing direction, engine/profile and raster-extraction settings. Draft only; no message sent."
+}

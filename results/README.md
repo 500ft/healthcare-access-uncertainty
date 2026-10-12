@@ -19,7 +19,9 @@ Rebuild these views with `MPLBACKEND=Agg python analysis/plot_access_bounds.py`.
 The [figure guide](../docs/data-and-figures.md) explains scales, encodings and retention.
 
 The [acquired development input record](../evidence/idai-development-inputs/README.md)
-updates source availability without claiming a real-area replication.
+updates source availability. Its [executed sensor-date check](../evidence/idai-development-inputs/flood-sensor-dates.json)
+and [source review](../evidence/idai-development-inputs/source-review.json) leave
+real-area replication blocked.
 
 The detector JSON records, exports and figures in this directory are retained
 history. Their [previous results index and reproduction runbook](../docs/history/detector-results.md)
