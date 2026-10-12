@@ -1,0 +1,23 @@
+{
+  "one_worker": true,
+  "thread_limits": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "upstream_wall_seconds": 1.03,
+  "upstream_peak_rss_bytes": 236322816,
+  "r_packages_download_bytes": 245520249,
+  "r_environment_disk_kib": 1156480,
+  "scaling_script_sha256": "1586919922dfc319441fc6965fcaadc262be1bcaa0926731d5adc0425a778920",
+  "upstream_harness_sha256": "486b056b56bd45ab032808b83fa7f508987ea19ecddca0fc78bbca703c495572",
+  "protocol_sha256": "6e142e1bfd8d3e9d64e5b1488271c337086b9d61bdacf29d58e7f059cfe17363",
+  "upstream_process_exit": 0,
+  "scaling_process_exit": 0,
+  "remaining_process_or_checkpoint": null,
+  "resource_note": "No long campaign needed after the full modest fixture completed. R environment downloaded as binaries, no local parallel build. Local package cache also retained, outside git.",
+  "upstream_original_log_sha256": "92a9b0a0d8169ae019f15aaaab0656163ca89c8aced5d884a1735d1366a9b42e",
+  "public_log_normalization": "Trailing whitespace removed; exact original log retained in external task workspace."
+}

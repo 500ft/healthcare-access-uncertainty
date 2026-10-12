@@ -27,6 +27,12 @@ no confidence intervals or geographic validation are shown.*
 [Vector figure](results/access-stability/bounds.svg) ·
 [Figure guide](docs/data-and-figures.md)
 
+The [current-network compute result](evidence/sofala-scaling/README.md) checks
+software scaling on a dated Sofala OSM fixture with synthetic times and closures.
+[Timings and memory](results/sofala-scaling.md) accompany independent routing
+checks and an isolated upstream compatibility probe. Clinical accuracy remains
+unqualified.
+
 The [Idai qualification record](evidence/access-stability-20261006/qualification.json)
 identifies a development baseline, checks its input links and records the
 reproduction blockers. No published baseline has been reproduced here.
@@ -75,9 +81,13 @@ No route-planning repository was created or renamed.
 
 ## License
 
-Original code is [MIT](LICENSE). Third-party inputs retain their own terms,
+Original production code is [MIT](LICENSE). The separate
+[upstream compatibility harness](tools/probe_petricola.R) is
+[GPL-3.0-only](tools/PETRICOLA_PROBE_LICENSE.md). Third-party inputs retain their
+own terms,
 including the [baseline packet's ODbL attribution](baseline/20261003/ATTRIBUTION.md).
-No Idai GPL code is incorporated. A future combined derived program must meet
+No Idai GPL code is incorporated into the production implementation. A future
+combined derived program must meet
 its applicable GPL obligations; placing it in a separate folder is insufficient.
 See [qualification](evidence/access-stability-20261006/README.md) and
 [contributing](CONTRIBUTING.md).

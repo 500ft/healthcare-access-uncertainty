@@ -36,6 +36,12 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   flood sensor dates in the acquired archive, and corrected incomplete snapshot
   provenance. The [source review](evidence/idai-development-inputs/source-review.json)
   also records why the Robert candidate remains ineligible.
+- Done: current Sofala topology fixture executed with synthetic intervals, closures,
+  exhaustive small-subgraph checks, independent endpoint checks and measured
+  scaling. The [compute record](evidence/sofala-scaling/README.md) also records
+  actual isolated upstream schema and runtime failures. This owner-authorized
+  software fixture does not replace the historical baseline or adopt a clinical
+  target.
 - Current, blocked: recover the historical road extract, resolve the facility
   snapshot and flood membership, confirm the boundary version and flood license
   versions, and define the estimand. No Idai baseline has been reproduced.

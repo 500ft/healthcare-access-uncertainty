@@ -1,0 +1,21 @@
+{
+  "url": "https://overpass-api.de/api/interpreter",
+  "query": "[out:json][timeout:90][maxsize:134217728][date:\"2026-10-11T00:00:00Z\"];way[\"highway\"~\"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link)$\"](-19.9,34.78,-19.7,34.98);(._;>;);out body;",
+  "retrieved_utc": "2026-10-11T22:42:08.834672+00:00",
+  "snapshot_utc": "2026-10-11T00:00:00Z",
+  "response_sha256": "95446925a6a81001c2a8ae996fb208448a2685f62a687594aa2ee7e93da535e0",
+  "response_bytes": 3992691,
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-11T22:40:21Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": 38044,
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "note": "Original response pinned by content hash; timestamped query freezes requested OSM state, not future service response formatting. Source snapshot is current development only.",
+  "compressed_original_file": "sofala-osm.json.gz",
+  "compressed_bytes": 529673,
+  "compressed_sha256": "07d52347df11bd2490341b98fc1173841a1833832e0c66cad731d65b9f8570dd",
+  "compression": "gzip, mtime=0, decompression restores exact original response bytes"
+}

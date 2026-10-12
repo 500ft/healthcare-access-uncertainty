@@ -1,0 +1,27 @@
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C"
+2: Setting LC_COLLATE failed, using "C"
+3: Setting LC_TIME failed, using "C"
+4: Setting LC_MESSAGES failed, using "C"
+5: Setting LC_MONETARY failed, using "C"
+Linking to GEOS 3.14.1, GDAL 3.13.3, PROJ 9.9.0; sf_use_s2() is TRUE
+Cannot open layer all
+Compatibility probe completed; missing dependencies and adapters remain explicit.
+        1.03 real         0.73 user         0.11 sys
+           236322816  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               15147  page reclaims
+                1719  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 544  voluntary context switches
+                1324  involuntary context switches
+          6893441257  instructions retired
+          2241806215  cycles elapsed
+           200182016  peak memory footprint

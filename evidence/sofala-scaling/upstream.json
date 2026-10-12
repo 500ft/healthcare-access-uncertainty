@@ -1,0 +1,131 @@
+{
+  "runtime": "R version 4.5.3 (2026-03-11)",
+  "sf": "1.1.3",
+  "libraries": {
+    "GEOS": "3.14.1",
+    "GDAL": "3.13.3",
+    "proj.4": "9.9.0",
+    "GDAL_with_GEOS": "true",
+    "USE_PROJ_H": "true",
+    "PROJ": "9.9.0"
+  },
+  "scope": "Unmodified upstream helper and selected input read; synthetic service adapter. No ORS route or population computation.",
+  "driver": {
+    "status": "error",
+    "message": "there is no package called 'rgeoboundaries'",
+    "call": "library(rgeoboundaries)"
+  },
+  "without_backend_package": {
+    "status": "error",
+    "message": "object 'raw_isochrones' not found",
+    "call": "getIsochrones(points[1, ], 600, \"driving-car\", \"normal\")"
+  },
+  "original_input_read": {
+    "status": "error",
+    "message": "Opening layer failed.\n",
+    "call": "eval(read_expr[[1]])"
+  },
+  "available_layers": "health_facilities",
+  "input_read_expression": "health_facilities <- st_read(dsn = \"data/download/health_facilities.gpkg\",      layer = scope)",
+  "adapter_wgs84": {
+    "status": "returned",
+    "value": {
+      "rows": 1,
+      "columns": [
+        "value",
+        "geometry"
+      ],
+      "crs": 4326
+    }
+  },
+  "adapter_wgs84_calls": [
+    {
+      "locations": [
+        [
+          34.8831421,
+          -19.7792898
+        ]
+      ],
+      "range": 600,
+      "profile": "driving-car",
+      "output": "sf",
+      "url": "http://ors-app-normal:8080/ors"
+    }
+  ],
+  "adapter_projected": {
+    "status": "returned",
+    "value": {
+      "rows": 1,
+      "columns": [
+        "value",
+        "geometry"
+      ]
+    }
+  },
+  "adapter_projected_calls": [
+    {
+      "locations": [
+        [
+          697287.1758590842,
+          7811844.7772167325
+        ]
+      ],
+      "range": 600,
+      "profile": "driving-car",
+      "output": "sf",
+      "url": "http://ors-app-normal:8080/ors"
+    }
+  ],
+  "adapter_backend_failure": {
+    "status": "error",
+    "message": "object 'raw_isochrones' not found",
+    "call": "getIsochrones(points[1, ], 600, \"driving-car\", \"normal\")"
+  },
+  "adapter_geometry_name": {
+    "status": "error",
+    "message": "undefined columns selected",
+    "call": "`[.data.frame`(x, i, j, drop = drop)"
+  },
+  "empty_source": {
+    "status": "returned",
+    "value": {
+      "rows": 2
+    }
+  },
+  "empty_source_adapter_calls": [
+    {
+      "locations": [
+        [
+          "NA",
+          "NA"
+        ]
+      ],
+      "range": 600,
+      "profile": "driving-car",
+      "output": "sf",
+      "url": "http://ors-app-normal:8080/ors"
+    },
+    {
+      "locations": [],
+      "range": 600,
+      "profile": "driving-car",
+      "output": "sf",
+      "url": "http://ors-app-normal:8080/ors"
+    }
+  ],
+  "upstream": {
+    "url": "https://github.com/GIScience/healthcare-access-idai",
+    "commit": "69bbe253b4dcd926a630b557251b5f65688301d5",
+    "license": "GPL-3.0",
+    "source_files": {
+      "LICENSE.md": "585e25ef8f5946a52bf2aed68d5becfc38be94a8663aa01c1b31d88aa57f1de3",
+      "src/1_data_preparation/1.1_datapreparation.R": "41aaca730ad3e4a757d6e1b57e871179e3143420fa51e1c96f25f9db80c72036",
+      "src/2_healthcare_access/vector_analysis/isochrones_main.R": "46d295ffd5e2013c55b6ea4a8c2f7f1a41f5dec2257502ab911abc020292cfcd",
+      "src/2_healthcare_access/vector_analysis/1.1_isochrones_local.R": "de499fea450de83c85be5dbe3b40368fa0b4f5716b2077235ce59ab44bb3dfe4"
+    }
+  },
+  "adapter_disclosure": "Synthetic ORS stub returns a fixed point with value, never an isochrone. Input points are current OSM node coordinates selected as computational targets, not actual facilities. Projected input is a test variant in EPSG:32736. The layer-read test evaluates one unchanged parsed driver expression after writing a fixture in the preparation-script layer.",
+  "end_to_end_status": "blocked: original driver lacks rgeoboundaries and other original dependencies; no ORS backend or qualified historical/flood inputs. No acquisition script, fork cluster or impact analysis executed.",
+  "initial_probe_correction": "First probe used a malformed sf geometry-name adapter; preserved local log. Corrected sf_column attribute before the recorded run. No upstream source changed.",
+  "runtime_log_file": "upstream.log"
+}
