@@ -25,6 +25,64 @@ the cleanup starts from that merged state.
 | Separate route-planning repository/name | Superseded within this task; none created or renamed. |
 | Temporal detector gate and baseline labeling | Inactive. Evidence and blind restrictions remain in the [history index](history/README.md). |
 
+### Reproduction target adopted by the owner
+
+On 2026-10-12 the owner selected the published 60-minute network-driving
+potential-access quantity as the first Idai reproduction target. The first
+comparison is normal-condition population coverage by the study's mapped
+healthcare facilities. The paper reports population beyond one hour of driving.
+Use its complement as a comparison only after confirming the same denominator
+and an exhaustive partition of the modeled area. A flood-loss contrast follows only
+when its historical input membership is qualified. This choice concerns modeled
+geographical access; it sets no clinical service or acceptability threshold.
+
+The [paper's Methods](https://doi.org/10.1186/s12942-022-00315-2)
+uses driving-car isochrones around OSM healthcare sites, with ten-minute bands
+through one hour. The [pinned facility request](https://github.com/GIScience/healthcare-access-idai/blob/69bbe253b4dcd926a630b557251b5f65688301d5/src/1_data_preparation/1.1_datapreparation.R)
+selects healthcare and amenity tags without a service-level filter. The final
+eligible facility export, exclusions and snapshot are still unknown. The paper
+places the road extraction in April 2021 in Methods and April to May 2021 in
+Discussion. The active code requests facilities as of July 2021; an April
+request is commented out. These later map snapshots describe a retrospective
+analysis of the 2019 event, not incident-time observations.
+
+For the normal-condition quantity, use the paper's national 2020 WorldPop
+raster support. The [population helper](https://github.com/GIScience/healthcare-access-idai/blob/69bbe253b4dcd926a630b557251b5f65688301d5/src/2_healthcare_access/vector_analysis/1.4_population_estimates.R)
+sums valid raster cells for the denominator and uses fractional cell overlap
+with isochrone polygons for the covered population. Unreached area contributes
+no covered population; raster nodata remains outside the denominator. The
+polygon union, boundary clipping, grid, nodata rule and any published outer
+band need confirmation from the original outputs. A node-origin count would be
+a different statistic. Disconnected locations outside the modeled isochrones
+are part of the denominator when their raster cells are valid. Missing road
+mapping cannot be read as an observed absence of access.
+
+The paper describes travel **to** the nearest facility, while the pinned
+[isochrone helper](https://github.com/GIScience/healthcare-access-idai/blob/69bbe253b4dcd926a630b557251b5f65688301d5/src/2_healthcare_access/vector_analysis/1.1_isochrones_local.R)
+passes facility coordinates to openrouteservice. On one-way streets, an
+outward isochrone can differ from a resident-to-facility route. The original
+routing direction, ORS build and profile settings must be established before
+comparison. The [source review](../evidence/idai-development-inputs/source-review.json)
+and [compute probe](../evidence/sofala-scaling/README.md) record further input
+and runtime questions; neither resolves the historical calculation.
+
+The owner adopted a precision-based reproduction comparison rule. Obtain the
+unrounded reference output if possible, match its statistic, units, denominator
+and inputs, and derive numerical allowance from independent arithmetic,
+raster extraction and geometry error bounds. For a rounded published aggregate, the rounding
+interval is half its last reported unit; any geometric or raster extraction
+error needs a separate justified bound. The paper's travel-time band width is
+not a permitted error in population coverage. No numerical tolerance can be
+frozen until reference precision and the relevant numerical error bounds are
+established. Keep
+this reproduction check separate from any clinical acceptance rule.
+
+The [exact-source request](../evidence/idai-development-inputs/source-review.json#needed_source_request)
+remains unsent. The author must identify original roads, facilities, boundary,
+flood membership, routing configuration and reference outputs. Data custodians
+must establish the applicable reuse grants. The owner cannot assign a license
+to third-party data. The original historical baseline has not been reproduced.
+
 ## Dependency plan and cleanup adoption
 
 The owner authorized the dependency-based [roadmap](../ROADMAP.md) and removal

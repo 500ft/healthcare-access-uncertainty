@@ -74,7 +74,9 @@ input licenses. This fetcher is original code and incorporates no upstream code.
 The [paper](https://doi.org/10.1186/s12942-022-00315-2), pinned source and retrieved
 archive disagree on parts of the historical input identity. No layer has been
 silently excluded to resolve that disagreement. Baseline replication requires
-those identities and the owner-defined estimand and tolerance. Reserved WFP
+those identities and the
+[adopted reproduction target](../../docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
+with a source-derived numerical tolerance. Reserved WFP
 road-constraint outcomes and detector holdouts remain unopened. The acquired WFP
 flood mask is the explicitly referenced development input.
 

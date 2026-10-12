@@ -59,10 +59,11 @@ for retained detector checks.
 ## What's next
 
 The [roadmap](ROADMAP.md) orders prerequisites and completion evidence without
-a schedule. Qualified inputs and an estimand precede development replication,
-bounds, route-cost measurement selection and independent evaluation.
-Real-area claims require licensed,
-pinned development inputs and independently sourced bound families. The WFP
+a schedule. The [selected reproduction target](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
+now has a clear published quantity. Historical input identities and a derived
+numerical comparison rule precede development replication, bounds,
+route-cost measurement selection and independent evaluation. Real-area claims
+require licensed, pinned development inputs and independently sourced bound families. The WFP
 candidate also needs observation dates, vehicle scope and independent lineage
 before evaluation can be registered at row level.
 
