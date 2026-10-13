@@ -50,10 +50,13 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   first fallback if original historical inputs cannot be recovered. Candidate
   substitutions still need identity, rights and sensitivity checks; see the
   [decision record](docs/ACCESS_STABILITY.md#reconstruction-fallback-adopted-by-the-owner).
-- Current, blocked: recover the historical road extract and final facility list,
-  settle boundary and flood membership, confirm rights, and obtain reference
-  output and routing settings to derive a numerical comparison tolerance. No
-  Idai baseline has been reproduced.
+- Done: sent the author and flood-custodian source and rights requests. The
+  [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
+  records the pending evidence.
+- Current, blocked: await responses to recover the historical road extract and
+  final facility list, settle boundary and flood membership, confirm rights,
+  and obtain reference output and routing settings to derive a numerical
+  comparison tolerance. No Idai baseline has been reproduced.
 - Future: real-area stability, policy comparison and independent evaluation.
 
 ## M1. Qualify and reproduce the development baseline

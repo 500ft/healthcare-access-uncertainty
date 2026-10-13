@@ -37,7 +37,9 @@ Original road bytes were not recovered from the public tree, release listing or
 extract index. Rebuilding a dated OSM state would be a reconstruction. Exact
 replication requires the author's original bytes and processing identity. The
 [source request](source-review.json#needed_source_request) identifies what is
-missing; no request was sent.
+missing. The author and WFP and UNOSAT custodians were contacted; responses
+and rights confirmation are pending. The source-review field retains the
+original draft status as historical evidence.
 
 ## Conditional reconstruction inputs
 
