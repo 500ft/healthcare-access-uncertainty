@@ -42,17 +42,29 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   actual isolated upstream schema and runtime failures. This owner-authorized
   software fixture does not replace the historical baseline or adopt a clinical
   target.
-- Current, blocked: recover the historical road extract, resolve the facility
-  snapshot and flood membership, confirm the boundary version and flood license
-  versions, and define the estimand. No Idai baseline has been reproduced.
+- Done: owner selected the published network-driving potential-access quantity
+  at the paper's maximum driving horizon for first reproduction. The
+  [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
+  defines its scope and a precision-based comparison rule.
+- Done: owner accepted a documented reconstruction of that quantity as the
+  first fallback if original historical inputs cannot be recovered. Candidate
+  substitutions still need identity, rights and sensitivity checks; see the
+  [decision record](docs/ACCESS_STABILITY.md#reconstruction-fallback-adopted-by-the-owner).
+- Current, blocked: recover the historical road extract and final facility list,
+  settle boundary and flood membership, confirm rights, and obtain reference
+  output and routing settings to derive a numerical comparison tolerance. No
+  Idai baseline has been reproduced.
 - Future: real-area stability, policy comparison and independent evaluation.
 
 ## M1. Qualify and reproduce the development baseline
 
-Prerequisites: access to immutable, legally usable development inputs and a
-specific healthcare service, transport mode, study period and access threshold.
-The target must distinguish network travel time from actual service availability.
-No choice is inferred from an example in the external proposal.
+Prerequisites: immutable, legally usable development inputs and the original
+routing configuration. The owner selected the paper's network-driving
+potential-access quantity at its maximum driving horizon; see the
+[decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner).
+Facility membership, input periods, direction and numerical comparison details
+need original-source confirmation. This target measures modeled geographical
+coverage, not actual service availability.
 
 1. Pin road snapshot, facility list, population, boundary and impact inputs with
    source, rights, acquisition/snapshot timing and content hashes. Resolve the
@@ -60,23 +72,26 @@ No choice is inferred from an example in the external proposal.
    [acquired-input record](evidence/idai-development-inputs/README.md).
    The development flood download is recovered; its historical identity and
    rights qualification remain open.
-2. State the target population, origin units, facility eligibility, departure
-   conditions and treatment of missing connections and disconnected origins.
-   Identify which published Idai quantity is being reproduced and predeclare
-   its tolerance and denominator before comparing results.
+2. Confirm the final mapped facility list, source snapshots, routing direction,
+   raster denominator, boundary clipping and treatment of disconnected areas
+   against the original calculation. Derive the reproduction tolerance from
+   reference precision and checked numerical error before comparing results.
+   Keep it separate from clinical acceptability.
 3. Reproduce that baseline independently from its qualified inputs. Keep modeled
    flood closures distinct from observed passability. If upstream GPL code is
    incorporated into a distributed combined program, satisfy the applicable
    license obligations; a separate folder is insufficient.
 
-Completion evidence: input hashes and permissions, a precise estimand, runnable
-commands and a source-linked comparison within the declared tolerance, or an
-explained discrepancy. Software tests alone do not complete this milestone.
-Original road bytes remain unrecovered. A historical reconstruction must be
-labeled separately from exact replication and needs a scope decision. The
+Completion evidence: input hashes and permissions, a fully specified version of
+the adopted estimand, runnable commands and a source-linked comparison within
+the declared tolerance, or an explained discrepancy. Software tests alone do not complete this milestone.
+Original road bytes remain unrecovered. A historical reconstruction is an
+accepted conditional fallback and must be labeled separately from exact
+replication. Its actual input substitutions still need qualification. Changes
+to the published estimand require a new-study scope decision. The
 [source request](evidence/idai-development-inputs/source-review.json#needed_source_request)
 identifies missing author artifacts. Stop before replication or substitution
-until source eligibility and the target are settled.
+until source eligibility and remaining target details are settled.
 
 ## M2. Establish real-area decision stability
 
@@ -150,11 +165,13 @@ Publication, external contact and field collection remain separate decisions.
 ## Owner inputs and retained safeguards
 
 The next unblocking input is the original road extract or its exact historical
-identity, resolution of the facility snapshot and flood membership discrepancies,
-and confirmation of boundary version and flood license terms. The owner must
-also specify the target and comparison tolerance before replication.
-Substitution of the study, acquisition commitments and any physical work require
-an explicit owner decision. No purchase, naming change or publication is adopted.
+identity, the final facility export, boundary and flood member versions,
+routing configuration and unrounded reference outputs. Custodians must confirm
+the applicable dataset terms. Derive and freeze the numerical reproduction
+tolerance from those sources before comparison; the target itself is selected.
+Changing the study or its estimand, acquisition commitments and any physical
+work require an explicit owner decision. No purchase, naming change or
+publication is adopted.
 
 The detector question is inactive and superseded; its scientific outcome remains
 unresolved. The [history index](docs/history/README.md) identifies retained
