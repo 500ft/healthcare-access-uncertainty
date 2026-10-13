@@ -46,6 +46,10 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   at the paper's maximum driving horizon for first reproduction. The
   [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
   defines its scope and a precision-based comparison rule.
+- Done: owner accepted a documented reconstruction of that quantity as the
+  first fallback if original historical inputs cannot be recovered. Candidate
+  substitutions still need identity, rights and sensitivity checks; see the
+  [decision record](docs/ACCESS_STABILITY.md#reconstruction-fallback-adopted-by-the-owner).
 - Current, blocked: recover the historical road extract and final facility list,
   settle boundary and flood membership, confirm rights, and obtain reference
   output and routing settings to derive a numerical comparison tolerance. No
@@ -81,8 +85,10 @@ coverage, not actual service availability.
 Completion evidence: input hashes and permissions, a fully specified version of
 the adopted estimand, runnable commands and a source-linked comparison within
 the declared tolerance, or an explained discrepancy. Software tests alone do not complete this milestone.
-Original road bytes remain unrecovered. A historical reconstruction must be
-labeled separately from exact replication and needs a scope decision. The
+Original road bytes remain unrecovered. A historical reconstruction is an
+accepted conditional fallback and must be labeled separately from exact
+replication. Its actual input substitutions still need qualification. Changes
+to the published estimand require a new-study scope decision. The
 [source request](evidence/idai-development-inputs/source-review.json#needed_source_request)
 identifies missing author artifacts. Stop before replication or substitution
 until source eligibility and remaining target details are settled.
@@ -163,8 +169,9 @@ identity, the final facility export, boundary and flood member versions,
 routing configuration and unrounded reference outputs. Custodians must confirm
 the applicable dataset terms. Derive and freeze the numerical reproduction
 tolerance from those sources before comparison; the target itself is selected.
-Substitution of the study, acquisition commitments and any physical work require
-an explicit owner decision. No purchase, naming change or publication is adopted.
+Changing the study or its estimand, acquisition commitments and any physical
+work require an explicit owner decision. No purchase, naming change or
+publication is adopted.
 
 The detector question is inactive and superseded; its scientific outcome remains
 unresolved. The [history index](docs/history/README.md) identifies retained

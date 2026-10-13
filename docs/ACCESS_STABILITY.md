@@ -86,6 +86,22 @@ flood membership, routing configuration and reference outputs. Data custodians
 must establish the applicable reuse grants. The owner cannot assign a license
 to third-party data. The original historical baseline has not been reproduced.
 
+### Reconstruction fallback adopted by the owner
+
+If the original historical inputs cannot be recovered, the owner accepts a
+documented reconstruction of the same published driving potential-access
+quantity as the first fallback. Report it as a reconstruction. Each replacement
+needs a traceable snapshot, content hash and qualified reuse terms before use.
+Record how it changes population support, period, facility membership and road
+semantics, then compare the selected quantity under justified input variants.
+The [input comparison](../evidence/idai-development-inputs/README.md#conditional-reconstruction-inputs)
+lists available candidates and missing sources. These are candidates, not
+approved substitutes. Do not select versions by agreement with the published
+headline. A change to the target population, facility eligibility, routing
+direction, mode or access statistic requires a separate new-study scope decision.
+The current Sofala software fixture has a smaller area and synthetic times; it
+does not supply the national road input.
+
 ## Dependency plan and cleanup adoption
 
 The owner authorized the dependency-based [roadmap](../ROADMAP.md) and removal

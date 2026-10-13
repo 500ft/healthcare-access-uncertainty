@@ -39,6 +39,33 @@ replication requires the author's original bytes and processing identity. The
 [source request](source-review.json#needed_source_request) identifies what is
 missing; no request was sent.
 
+## Conditional reconstruction inputs
+
+The owner accepts a documented reconstruction of the same published quantity
+if the original historical inputs cannot be recovered. This table compares
+available candidates with the original roles. The [manifest](manifest.json)
+holds each acquired file's full SHA-256, source, snapshot and terms in one
+place. The [current-network source](../sofala-scaling/source.json) separately
+holds the exact hash and ODbL notice for the software fixture. No candidate is
+selected for a baseline run here.
+
+| Original role | Available candidate and source, hash, terms | Effect on comparison | Proposed sensitivity check |
+| --- | --- | --- | --- |
+| National road extract used by the routing engine | No suitable national replacement is acquired. The current Beira-area OSM fixture is pinned in the current-network source under ODbL and contains synthetic times. | Its limited area, later road state and assumed times change reachability and the driving model. | Once an eligible national historical reconstruction exists, compare road coverage, direction rules, connectivity and covered population against any recovered author extract or nearby qualified snapshots. |
+| Final mapped healthcare facilities | No final export is acquired. The pinned ohsome query and ODbL terms are in the [source review](source-review.json); the code's active date conflicts with the paper's account. | Facility locations, eligibility and count alter every isochrone. | Compare facility IDs, tags and locations across the author export and any justified dated rebuild. Report coverage changes without tuning the chosen snapshot to the published total. |
+| Population denominator and cell weights | The acquired original WorldPop product has a content hash, product identifier and CC BY 4.0 terms in the manifest. Author-side byte equality remains unconfirmed. | Different cells, nodata or totals change both numerator and denominator. | Check author bytes if supplied; otherwise report cell support, nodata and aggregate sensitivity for any eligible alternative product. |
+| National clipping boundary | The archived SSCGS candidate has a content hash and ODbL terms in the manifest. Its match to the author's unpinned boundary call is unknown. | Clipping changes eligible facilities, road edges and population support. | Compare boundary geometry, included facilities and population support against a recovered author file or another qualified release. |
+| Development WFP flood mask | The acquired ZIP is hash-pinned in the manifest. Historical byte identity and its resource-specific CC BY version remain open. | Normal-condition coverage is unaffected; a later flood-loss comparison could change. | After rights and membership are established, compare the impacted area and route closures under the original and eligible alternative mask. |
+| Development UNOSAT flood members | The acquired ZIP is hash-pinned in the manifest. Its selected water layers include a later observation; historical membership and CC BY-SA version remain open. | The modeled impact union and later road removal could change. | Compare the author member list with each justified eligible member set before any flood-loss calculation. |
+
+The [decision record](../../docs/ACCESS_STABILITY.md#reconstruction-fallback-adopted-by-the-owner)
+retains the published estimand for reconstruction. A material change to its
+population, facility eligibility, routing direction, mode or access statistic
+needs a new-study decision. Source eligibility comes before any substitution
+run. The isolated [upstream probe](../sofala-scaling/README.md#actual-upstream-compatibility-result)
+already exposed layer, coordinate and backend dependencies; rerunning it cannot
+recover historical inputs.
+
 Requires Python 3.11 or later with working HTTPS trust certificates. From the
 repository root, choose an external directory:
 
