@@ -80,11 +80,13 @@ frozen until reference precision and the relevant numerical error bounds are
 established. Keep this reproduction check separate from any clinical acceptance
 rule.
 
-The [exact-source request](../evidence/idai-development-inputs/source-review.json#needed_source_request)
-remains unsent. The author must identify original roads, facilities, boundary,
-flood membership, routing configuration and reference outputs. Data custodians
-must establish the applicable reuse grants. The owner cannot assign a license
-to third-party data. The original historical baseline has not been reproduced.
+The author and WFP and UNOSAT custodians were contacted about the
+[missing sources](../evidence/idai-development-inputs/source-review.json#needed_source_request).
+Sending is confirmed; delivery and responses are not. The author still needs
+to identify original roads, facilities, boundary, flood membership, routing
+configuration and reference outputs. The custodians must establish the
+applicable reuse grants. The owner cannot assign a license to third-party
+data. The original historical baseline has not been reproduced.
 
 ### Reconstruction fallback adopted by the owner
 
