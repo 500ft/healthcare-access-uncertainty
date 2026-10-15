@@ -7,6 +7,25 @@ facility snapshot remain unresolved. The [source review](source-review.json) cor
 the paper-period record and confirms flood dates from the acquired archive. M1
 is incomplete.
 
+The [reconstruction source check](reconstruction-qualification.json) verified
+the available OSM history route and the downloaded Mao/Danso artifact hashes.
+The paper used a later road extract for its retrospective event analysis and
+notes the resulting time bias. The pinned author script downloads a moving PBF,
+so neither that script nor an arbitrary event-time snapshot recovers its
+original input. A tiny historical Overpass request failed at both tested
+endpoints; no road extract was acquired. The full-history OSM route retains
+raw nodes, ways and relations before clipping, but the author's timestamp,
+extract rules and routing import remain unknown. Any newly built road input
+would be a documented reconstruction.
+
+The Mao/Danso code uses road distance in kilometers as model impedance and
+snaps onto its largest strongly connected component. The Nigeria travel times
+are Google-derived estimates checked against Google. Neither supplies
+independent Idai driving-time observations. WFP road constraints and the
+aerial survey were checked at catalog level only. Their outcome rows remain
+reserved, and the WFP road catalog's terms do not settle the separate flood
+archive grants.
+
 ## Qualification result
 
 | Input | Acquired evidence | Remaining qualification |
