@@ -14,6 +14,7 @@
       "outputs": [
         "results/access-stability/bounds.png",
         "results/access-stability/bounds.svg",
+        "results/access-stability/bounds.caption.md",
         "results/access-stability/bounds.csv",
         "results/access-stability/qualification.csv",
         "results/access-stability/README.md",

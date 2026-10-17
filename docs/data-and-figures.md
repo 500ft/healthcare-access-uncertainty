@@ -10,16 +10,20 @@ scale and fixed clinic. The [method](ACCESS_STABILITY.md) defines their meaning.
 
 - Horizontal units are minutes. The threshold comes from the result; equality
   counts as access. It is a demonstration choice, not a real-area service target.
-- Blue circles and solid lines mean definite access. Vermilion squares and dashed
-  lines mean definite exclusion. Reddish-purple diamonds and dash-dot lines mean unresolved.
-  The key, shapes and styles support reading without color.
+- Filled circles with solid lines mean definite access. Filled squares with
+  dashed lines mean definite exclusion. Hollow diamonds with dash-dot lines mean
+  unresolved. The figure uses no colour; shape, fill and line style carry the
+  decision.
 - Minor ticks are 1 min apart. Exact endpoints at source precision are in the
   generated table. No probability or confidence level is assigned to these
   deterministic intervals.
-- An arrow indicates an infinite upper bound; its displayed endpoint is not a
-  finite travel time. The common axis includes zero and all finite endpoints,
-  with space beyond the largest endpoint for the arrow. A disconnected node gets
-  text instead of a misleading finite mark. Clinic is the fixed destination.
+- A line that runs to the right edge with a marker only at its left end has no
+  finite upper time. The common axis includes zero and all finite endpoints. A
+  disconnected node has no mark on its row; the caption names it. Clinic is the
+  fixed destination.
+- Words that used to sit on the canvas (title, threshold label, "No path" note,
+  footer) are in the [caption file](../results/access-stability/bounds.caption.md),
+  which the generator writes and the README repeats under the image.
 
 The [generated Markdown tables](../results/access-stability/README.md) preserve
 node order and right-align minute intervals. [Bounds CSV](../results/access-stability/bounds.csv)
