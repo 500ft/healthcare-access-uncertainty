@@ -14,6 +14,7 @@
       "outputs": [
         "results/access-stability/bounds.png",
         "results/access-stability/bounds.svg",
+        "results/access-stability/bounds.caption.md",
         "results/access-stability/bounds.csv",
         "results/access-stability/qualification.csv",
         "results/access-stability/README.md",
@@ -33,9 +34,10 @@
         "analysis/figstyle.py"
       ],
       "outputs": [
-        "results/method_demo_synthetic.png"
+        "results/method_demo_synthetic.png",
+        "results/method_demo_synthetic.caption.md"
       ],
-      "boundary": "Synthetic scene from make_scene(size=256, seed=1); demonstrates the extractor's behaviour, not performance on real imagery. Since CR-09 (2026-09-16) the orange lines are each candidate's delivered path_px (one interior-biased route per accepted component; no branch or junction recovery), not the legacy straight chord.",
+      "boundary": "Synthetic scene from make_scene(size=256, seed=1); demonstrates the extractor's behaviour, not performance on real imagery. Since CR-09 (2026-09-16) the white lines with a black edge are each candidate's delivered path_px (one interior-biased route per accepted component; no branch or junction recovery), not the legacy straight chord.",
       "reproducibility": "Deterministic given the seed. Numeric output (scene fingerprint and candidate geometry) is pinned in results/method_demo_synthetic.numeric.json and gated by analysis/tests/test_demo_reproducibility.py. Do NOT gate on PNG bytes: font rasterisation differs between freetype builds, so the text bands change while every data pixel is identical -- see results/method_demo_synthetic.env.json. The rendered path geometry (path_px, path_length_px, candidate ids and order) is pinned in results/extractor_stress_cases.json under cases.demo_reference.exported_paths_px and checked by the same test module; method_demo_synthetic.numeric.json is retained as the legacy chord/scene record. results/method_demo_synthetic.env.json describes the pixel comparison of the render made before analysis/figstyle.py; the numeric gate it motivates is unchanged.",
       "numeric_record": "results/method_demo_synthetic.numeric.json",
       "path_record": "results/extractor_stress_cases.json#cases.demo_reference.exported_paths_px"
@@ -53,13 +55,18 @@
       ],
       "outputs": [
         "results/figures/01_demo_paths_vs_chords.png",
+        "results/figures/01_demo_paths_vs_chords.caption.md",
         "results/figures/02_hairpin_chord_vs_path.png",
+        "results/figures/02_hairpin_chord_vs_path.caption.md",
         "results/figures/03_wide_corridor_centred_endpoints.png",
+        "results/figures/03_wide_corridor_centred_endpoints.caption.md",
         "results/figures/04_low_snr_curve.png",
-        "results/figures/05_misses_and_confound.png"
+        "results/figures/04_low_snr_curve.caption.md",
+        "results/figures/05_misses_and_confound.png",
+        "results/figures/05_misses_and_confound.caption.md"
       ],
-      "boundary": "Five views of the CR-09 stress cases: the delivered path_px against the legacy endpoints_px chord and each case's reference centerline. Synthetic constructions with known truth; nothing here is imagery or a site result. Panel numbers are read from the v4 stress record, not typed.",
-      "reproducibility": "Deterministic given the fixed seeds in stress_cases.py. analysis/tests/test_plot_stress_cases.py checks the script runs and writes all five files; pixels are not compared (font rasterisation differs between machines)."
+      "boundary": "Five views of the CR-09 stress cases: the delivered path_px against the legacy endpoints_px chord and each case's reference centerline. Synthetic constructions with known truth; nothing here is imagery or a site result. Caption numbers are read from the v4 stress record, not typed.",
+      "reproducibility": "Deterministic given the fixed seeds in stress_cases.py. analysis/tests/test_plot_stress_cases.py checks the script writes all five files with captions, the drawn demo paths equal the record, the canvas holds no words beyond letters, colourbar and legend, and the overlap audit is empty; pixels are not compared (font rasterisation differs between machines)."
     }
   ],
   "figure_comparison_policy": {

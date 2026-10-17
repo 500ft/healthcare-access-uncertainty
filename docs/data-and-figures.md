@@ -10,16 +10,20 @@ scale and fixed clinic. The [method](ACCESS_STABILITY.md) defines their meaning.
 
 - Horizontal units are minutes. The threshold comes from the result; equality
   counts as access. It is a demonstration choice, not a real-area service target.
-- Blue circles and solid lines mean definite access. Vermilion squares and dashed
-  lines mean definite exclusion. Reddish-purple diamonds and dash-dot lines mean unresolved.
-  The key, shapes and styles support reading without color.
+- Filled circles with solid lines mean definite access. Filled squares with
+  dashed lines mean definite exclusion. Hollow diamonds with dash-dot lines mean
+  unresolved. The figure uses no colour; shape, fill and line style carry the
+  decision.
 - Minor ticks are 1 min apart. Exact endpoints at source precision are in the
   generated table. No probability or confidence level is assigned to these
   deterministic intervals.
-- An arrow indicates an infinite upper bound; its displayed endpoint is not a
-  finite travel time. The common axis includes zero and all finite endpoints,
-  with space beyond the largest endpoint for the arrow. A disconnected node gets
-  text instead of a misleading finite mark. Clinic is the fixed destination.
+- A line that runs to the right edge with a marker only at its left end has no
+  finite upper time. The common axis includes zero and all finite endpoints. A
+  disconnected node has no mark on its row; the caption names it. Clinic is the
+  fixed destination.
+- Words that used to sit on the canvas (title, threshold label, "No path" note,
+  footer) are in the [caption file](../results/access-stability/bounds.caption.md),
+  which the generator writes and the README repeats under the image.
 
 The [generated Markdown tables](../results/access-stability/README.md) preserve
 node order and right-align minute intervals. [Bounds CSV](../results/access-stability/bounds.csv)
@@ -46,20 +50,18 @@ execution is needed. The [original scientific generator](../analysis/run_access_
 and its evidence remain unchanged; its reproduction instructions are retained in
 [the evidence record](../evidence/access-stability-20261006/README.md).
 
-The visual reference is the owner's pinned enclosure
-[steady-state figure](https://github.com/500ft/sensor-enclosure-thermal-design/blob/bad572fc0902437445a5446bb5bc43098cc6211f/analysis/figures/thermal_bias.png),
-[transient figure](https://github.com/500ft/sensor-enclosure-thermal-design/blob/bad572fc0902437445a5446bb5bc43098cc6211f/analysis/figures/thermal_transient_prediction.png)
-and [generator](https://github.com/500ft/sensor-enclosure-thermal-design/blob/bad572fc0902437445a5446bb5bc43098cc6211f/analysis/thermal_bias.py).
-The redesign uses their white scientific background, coordinated panels, readable
-sans-serif type, restrained grid, stable colors, redundant markers and visible
-evidence status. The interval layout is specific to the access question.
-
 All active plotting scripts import [figstyle.py](../analysis/figstyle.py). It sets
-three font sizes by role, outward ticks, frameless legends and 300-dpi PNG output,
-and gives each entity one Okabe-Ito color in every figure. In the detector figures
-the delivered path is orange with a dark outline, the legacy chord is dark grey and
-dashed, and the reference centerline is sky blue. Titles state the result and read
-their numbers from the committed records.
+Computer Modern type (matplotlib's bundled cmr10) at three sizes by role, outward
+ticks, one framed legend and 600-dpi PNG output. The canvas holds only data,
+axes, panel letters, a colourbar where a field is shown, and the legend. Titles,
+scores and notes are in a `<stem>.caption.md` file beside each image, written by
+the generator from the committed records. Shape, fill and line style tell series
+apart; grey is used only for the synthetic disturbance field, with a colourbar.
+In the detector figures the delivered path is a white line with a black edge, the
+legacy chord is dash-dot and the reference centerline is a thin solid line of
+pixels. `figstyle.save` refuses to write a figure where printed items touch. The
+rules follow the owner-approved sample in
+[evidence-sufficiency-benchmark PR #26](https://github.com/500ft/evidence-sufficiency-benchmark/pull/26).
 
 ## Inventory and retention
 
@@ -69,7 +71,7 @@ their numbers from the committed records.
 | Bounds and qualification tables | Current results | Generated Markdown and CSV; units and unknowns explicit. |
 | Adoption/disposition table | Access method note | Retained as text: it records decisions, not quantitative evidence. |
 | Original toy figure and generator | Dated evidence | Retained unchanged to preserve original hashes and reproduction. |
-| Detector stress-case and demo figures | History | Redrawn with the shared figure rules from the same synthetic cases and stress record. |
+| Detector stress-case and demo figures | History | Redrawn with the shared figure rules from the same synthetic cases and stress record; captions beside each image. |
 | Detector result tables | History | Retained unchanged; the detector is inactive and superseded. |
 | Parameter register | Detector parameters | Value column right-aligned; values unchanged and still checked by `test_parameter_register.py`. |
 | UCI aggregate tables | Historical parser probe | Retained unchanged; the trajectories are non-Mongolian and supply no field validation. |

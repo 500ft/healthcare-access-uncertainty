@@ -16,11 +16,25 @@ The [executed record](evidence/access-stability-20261006/result.json) reports
 exhaustive small-graph checks, demonstration classifications and widening checks.
 The [method](docs/ACCESS_STABILITY.md) states the assumptions and proof.
 
-![Deterministic toy travel-time bounds in minutes, before and after widening. The 10-minute access threshold is marked in both panels. A and B become unresolved; D may disconnect, E has no path, and Clinic stays at zero. Shapes and line styles distinguish decisions.](results/access-stability/bounds.png)
+![Toy travel-time intervals for nodes A to Clinic in two panels, original and widened, with the access threshold as a dotted vertical line. Marker shape and line style give the decision; hollow markers are unresolved.](results/access-stability/bounds.png)
 
-*Deterministic assumptions on a toy graph. The vertical line marks the recorded
-access threshold, including equality. Arrows indicate an unbounded upper time;
-no confidence intervals or geographic validation are shown.*
+Deterministic shortest-time bounds on a toy graph, in minutes to the fixed
+destination Clinic, for the 6 nodes A, B, C, D, E and Clinic. Panel (a):
+original assumptions. Panel (b): widened assumptions, same axes. Each horizontal
+line is one node's interval between its lower and upper travel time. A filled
+circle with a solid line means definite access, a filled square with a dashed
+line means definite exclusion, and a hollow diamond with a dash-dot line means
+unresolved. The dotted vertical line is the 10-minute access threshold; equality
+counts as access. No finite upper time exists for D in either panel; that line
+runs to the right edge without an end marker. No path exists for E in either
+panel, so nothing is drawn on that row; the decision is definite exclusion.
+Original: access for A, exclusion for B and E, unresolved for C and D. Widened:
+unresolved now also for A and B; a definite decision remains only for E and
+Clinic. The bounds are deterministic assumptions, not confidence intervals; no
+geography or observed travel time is involved. Exact endpoints: README.md and
+bounds.csv beside this figure. Source:
+evidence/access-stability-20261006/result.json.
+[Caption file](results/access-stability/bounds.caption.md).
 
 [Bounds and qualification tables](results/access-stability/README.md) ·
 [Bounds CSV](results/access-stability/bounds.csv) ·
