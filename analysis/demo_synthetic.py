@@ -2,6 +2,8 @@
 
 This validates the extraction tooling on data with KNOWN ground truth. It is not a
 Mongolia result — real extraction stays gated on the Phase-1 negative-control test.
+The canvas carries only the field and the paths; the words are written to
+``method_demo_synthetic.caption.md`` beside the image.
 
     python analysis/demo_synthetic.py
 """
@@ -13,38 +15,53 @@ import matplotlib.pyplot as plt
 
 from catanroads.extract import candidate_coordinates_px, extract_candidates
 from catanroads.synthetic import make_scene
-from figstyle import COLORS, MUTED, TICK, WIDTH_IN, apply, letter, save
-from plot_stress_cases import EDGE, show_input
+from figstyle import WIDTH_IN, apply, letter, save
+from plot_stress_cases import FIELD, PATH, KEYS, colorbar, field
 
-d, truth = make_scene(size=256, seed=1)
-cands = extract_candidates(d)
+OUT = Path(__file__).resolve().parents[1] / "results" / "method_demo_synthetic.png"
 
-apply()
-fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 4.1), gridspec_kw=dict(width_ratios=[1.09, 1]))
-fig.subplots_adjust(left=.03, right=.98, top=.83, bottom=.17, wspace=.12)
 
-show_input(fig, axes[0], d)
-axes[0].set_title("Input: synthetic surface disturbance", pad=4)
+def scene():
+    d, _truth = make_scene(size=256, seed=1)
+    return d, extract_candidates(d)
 
-axes[1].imshow(d, cmap="Greys", vmin=-1, vmax=3)
-for k, c in enumerate(cands):
-    axes[1].plot(*zip(*candidate_coordinates_px(c)), color=COLORS["path"], lw=1.4, path_effects=EDGE,
-                 label="Delivered path (path_px)" if k == 0 else None)
-axes[1].set_title(f"Extracted candidate corridors (n = {len(cands)})", pad=4)
-axes[1].set_xticks([]); axes[1].set_yticks([])
-axes[1].spines[:].set_visible(True); axes[1].spines[:].set_color("#808080")
-for ax, tag in zip(axes, "ab"):
-    letter(ax, tag)
 
-fig.text(.02, .975, f"Synthetic method demo: {len(cands)} delivered paths trace the curved and braided corridors "
-         "and part of\nthe broken one; the round blob is rejected", fontsize=9, fontweight="bold", va="top",
-         linespacing=1.3)
-fig.legend(loc="lower left", bbox_to_anchor=(.02, .085), borderaxespad=0, handlelength=2.4)
-fig.text(.02, .015,
-         "Known-truth scene make_scene(size=256, seed=1). One interior-biased path per accepted component (CR-09); "
-         "no branch or\njunction recovery. Not a real-imagery result.",
-         fontsize=TICK, color=MUTED, linespacing=1.4)
+def figure(d, cands):
+    apply()
+    fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 3.45))
+    fig.subplots_adjust(left=.02, right=.93, top=.84, bottom=.03, wspace=.06)
+    field(axes[0], d)
+    im = field(axes[1], d)
+    for k, c in enumerate(cands):
+        axes[1].plot(*zip(*candidate_coordinates_px(c)), gid=f"path:{k}", **PATH)
+    colorbar(fig, im, list(axes), [d])
+    for ax, tag in zip(axes, "ab"):
+        letter(ax, tag)
+    fig.legend(handles=[KEYS["path"]], loc="upper center", bbox_to_anchor=(.5, .995),
+               handlelength=2.6, handletextpad=.5, borderaxespad=0)
+    return fig
 
-out = Path(__file__).resolve().parents[1] / "results" / "method_demo_synthetic.png"
-save(fig, out)
-print(f"wrote {out}  ({len(cands)} candidates)")
+
+def caption(cands):
+    return (f"Synthetic method demo: {len(cands)} delivered paths trace the curved and braided corridors and "
+            "part of the broken one; the round blob is rejected. Panel (a): the known-truth synthetic "
+            "disturbance field from make_scene(size=256, seed=1). Panel (b): the same field with each "
+            "candidate's delivered path_px as a white line with a black edge. Grey level is the disturbance "
+            f"(colourbar), {FIELD['vmin']} to {FIELD['vmax']} z units; values beyond the scale are clipped. "
+            "One interior-biased path per accepted component (CR-09); no branch or junction recovery. "
+            "Not a real-imagery result. The path geometry is pinned in results/extractor_stress_cases.json "
+            "(cases.demo_reference.exported_paths_px). Source: analysis/catanroads/synthetic.py and "
+            "analysis/catanroads/extract.py.")
+
+
+def main():
+    d, cands = scene()
+    fig = figure(d, cands)
+    save(fig, OUT)
+    OUT.with_suffix(".caption.md").write_text(caption(cands) + "\n")
+    plt.close(fig)
+    print(f"wrote {OUT}  ({len(cands)} candidates)")
+
+
+if __name__ == "__main__":
+    main()

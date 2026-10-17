@@ -4,7 +4,7 @@
     "evidence/access-stability-20261006/result.json": "a824d3a6be425425042993c2a28b37ba19ae72a2962e28c1e18c505d36ddd58c",
     "evidence/access-stability-20261006/qualification.json": "490982fb65de59182d8644e92961ab1bf5fa900d0a0a9fb64d871eb774554abc",
     "analysis/plot_access_bounds.py": "8ef31a251cf5e2b78966e1350306016b18437c46674fc7b339f3ddcf1bbac5be",
-    "analysis/figstyle.py": "09eeeb7ef4c29e3ac61a083b650678e17026903b68380172ed8f879336c49909"
+    "analysis/figstyle.py": "a2b48efc856ee0b9ad5f802f175481ad6167715eabfda83b5e36130bbe8ddff1"
   },
   "reference": {
     "repository": "500ft/sensor-enclosure-thermal-design",

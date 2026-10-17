@@ -20,6 +20,7 @@ from pathlib import Path
 
 import matplotlib as mpl
 from matplotlib.text import Text
+from matplotlib.transforms import Bbox
 
 INK = 'black'
 # Marker fill carries state: filled is definite, hollow is unresolved.
@@ -79,8 +80,10 @@ def audit(fig):
     drawn += [t for t in fig.findobj(Text)
               if id(t) not in tick_labels and t.get_visible() and t.get_text().strip()]
     texts = [(f'text {t.get_text()!r}', t.get_window_extent(renderer).padded(1), owner.get(id(t))) for t in drawn]
-    others = [(f"data in {ax.get_ylabel() or 'axes'}", line.get_window_extent(renderer), None)
-              for ax in fig.axes for line in ax.lines]
+    # A clipped line is drawn only inside its axes, so only that part can touch anything.
+    others = [(f"data in {ax.get_ylabel() or 'axes'}", box, None) for ax in fig.axes for line in ax.lines
+              if (box := line.get_window_extent(renderer) if not line.get_clip_on()
+                  else Bbox.intersection(line.get_window_extent(renderer), ax.bbox)) is not None]
     others += [('legend frame', legend.get_window_extent(renderer), legend) for legend in legends]
     hits = []
     for i, (name_a, box_a, legend_a) in enumerate(texts):

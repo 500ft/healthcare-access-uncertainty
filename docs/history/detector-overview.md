@@ -17,10 +17,22 @@ both periods are invisible to it.
 [How it works](#how-it-works) · [Results so far](#results-so-far) ·
 [Roadmap](../../ROADMAP.md) · [Getting started](#getting-started)
 
-![Synthetic test scene: known-truth corridors on the left, extracted paths on the right; path recall 0.93 and precision 1.00 against 0.44 and 0.45 for the old straight chord](../../results/figures/01_demo_paths_vs_chords.png)
+![Synthetic test scene in grey: the disturbance field on the left; on the right the same field with reference centerlines, dash-dot legacy chords and white delivered paths](../../results/figures/01_demo_paths_vs_chords.png)
 
-*Synthetic test scene, not satellite imagery.
-[How the figure is made](../data-and-figures.md).*
+Demo scene: each accepted component is delivered as one path along its corridor.
+Synthetic construction with known truth; not imagery and not a site result.
+Panel (a): the known-truth synthetic disturbance field (case demo_reference).
+Panel (b): the same field with the delivered geometry of the 6 candidates.
+Geometry: the reference centerline is a thin solid black line of pixels; the
+legacy straight chord between each candidate's endpoints_px is dash-dot; the
+delivered path_px is a white line with a black edge. Grey level is the
+disturbance field (colourbar), -1 to 6 z units; values beyond the scale are
+clipped. Line recall / precision against the reference centerline within a 2-px
+band, measured as two iterations of 4-neighbour binary dilation (L1 band), not a
+Euclidean disk: delivered path 0.93 / 1.00, legacy chord 0.44 / 0.45. Source:
+results/extractor_stress_cases.json and analysis/catanroads/stress_cases.py.
+[Caption file](../../results/figures/01_demo_paths_vs_chords.caption.md) ·
+[how the figure is made](../data-and-figures.md).
 
 ## How it works
 
