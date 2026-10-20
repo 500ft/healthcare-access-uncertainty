@@ -1,0 +1,119 @@
+{
+  "scope": "Development source qualification and catalog metadata only. No Idai baseline, alternative outcome, or reserved observation row was run or opened.",
+  "verified_on": "2026-10-15",
+  "historical_roads": {
+    "paper_and_author_code": "See source-review.json#petricola. The paper's road-extraction period follows the cyclone; the pinned author script downloads geofabrik_mozambique-latest.osm.pbf without a fixed date or content hash. The facility request uses a different active date.",
+    "official_history_source": "https://planet.openstreetmap.org/planet/full-history/",
+    "official_history_access": "The OSM full-history index was reachable by HEAD and GET. It offers a complete editing-history PBF under ODbL 1.0, but the planet-sized file was not downloaded.",
+    "tool_route": [
+      "https://docs.osmcode.org/osmium/latest/osmium-time-filter.html",
+      "https://docs.osmcode.org/osmium/latest/osmium-extract.html"
+    ],
+    "tool_semantics": "Osmium time-filter can materialize the OSM state at a specified UTC instant with nodes, ways and relations. A geographic extract must retain referenced nodes and restriction-relation members; the documented complete_ways strategy keeps ways complete but does not guarantee relation completeness. A full uncut snapshot or an explicitly checked relation-complete extract is needed before routing.",
+    "geometry_only_limit": "The current ohsome v2 feature extraction returns geometry in Parquet with OSM identifiers. It is not a drop-in OSM PBF routing import and does not establish shared-node connectivity or turn-restriction membership. The v2 API requires a key; no existing ohsome key was found in this session's environment.",
+    "ohsome_docs": [
+      "https://docs.ohsome.org/ohsome-api/v2/reference/data_model.html",
+      "https://docs.ohsome.org/ohsome-api/v2/migration_guide.html"
+    ],
+    "tiny_overpass_probe": {
+      "status": "No extract acquired",
+      "purpose": "Endpoint feasibility only; the mid-month timestamp was chosen before seeing any historical response and is not a proposed study snapshot.",
+      "query": "[out:xml][timeout:60][maxsize:67108864][date:\"2021-04-15T00:00:00Z\"];(way[\"highway\"](-19.8370,34.8340,-19.8350,34.8360);relation[\"type\"=\"restriction\"](-19.8370,34.8340,-19.8350,34.8360););(._;>;);out meta;",
+      "endpoint_results": [
+        {
+          "url": "https://overpass-api.de/api/interpreter",
+          "http_status": 406
+        },
+        {
+          "url": "https://overpass.kumi.systems/api/interpreter",
+          "http_status": 500
+        }
+      ],
+      "method": "curl POST with --data-urlencode data@query.overpassql and --max-time 90; --fail rejected both responses. No response body or OSM data was saved.",
+      "documentation": "https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL"
+    },
+    "unresolved": "Original extraction day and replication sequence, original PBF checksum, clipping polygon and extraction rules, restriction completeness, final facility snapshot, and ORS import/profile settings. A new historical snapshot would be a documented reconstruction, not exact reproduction."
+  },
+  "mao_danso": {
+    "metadata_url": "https://api.figshare.com/v2/articles/31505704",
+    "metadata_capture_sha256": "7504a785f1042cf8a74101f7e3eb092131a9e2b617dccf89c487c769f21457f8",
+    "doi": "10.6084/m9.figshare.31505704.v6",
+    "version": 6,
+    "catalog_license": "CC BY 4.0",
+    "catalog_license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "file_download_pattern": "https://ndownloader.figshare.com/files/{id}",
+    "downloaded_files": [
+      {
+        "id": 64496316,
+        "role": "network-distance code",
+        "sha256": "434ee3552bfcbf20c82026a1645041a1082fc59e90a1ab2f50722c74ae62b9a7"
+      },
+      {
+        "id": 64496310,
+        "role": "GSA code",
+        "sha256": "2f1a53f323be2dfc1488f79e11c86f3e9738626d77b58db2f12b142e6e26afd5"
+      },
+      {
+        "id": 64496331,
+        "role": "facility coordinates",
+        "sha256": "ecd89759f37038a99e509748337567abd2fc8ea28b59203f12868bd253b8176b"
+      },
+      {
+        "id": 64496334,
+        "role": "population coordinates",
+        "sha256": "55f44f16b39b5a2990673f123bbed610da358627c14ffa35cb98ec9157dc42c5"
+      },
+      {
+        "id": 66323357,
+        "role": "road-distance matrix",
+        "sha256": "7c19dd4291c0e2c99390432888d36550c90ea058e42b3a0ea299adcfe13628df"
+      }
+    ],
+    "hash_check": "All five local SHA-256 values were recomputed and matched the saved capture manifest; the research capture also matched each provider MD5.",
+    "code_use": "Scripts were inspected only. The article's catalog license is recorded separately from any software-license claim; no code was incorporated.",
+    "code_semantics": "The code requests a 2023-01-01 OSMnx drive_service graph, retains its largest strongly connected component before snapping points, and runs Dijkstra with edge length. It divides meters by 1000 to obtain kilometers. The GSA code uses this distance as an impedance input and floors exact-zero distances to 0.1 km.",
+    "qualification": "Modeled road distance and demand allocation, not measured travel time or the adopted Idai isochrone-population quantity. Largest-component snapping can relocate points from disconnected components and hide exclusions. This artifact is not an Idai baseline or independent validation set."
+  },
+  "nigeria": {
+    "paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10593805/",
+    "travel_time": {
+      "metadata_url": "https://api.figshare.com/v2/articles/22699759",
+      "metadata_capture_sha256": "b1a2212da51fb112eb446514670c4ab2f88480d8580ab42f4f4569fa2a0b99f8",
+      "doi": "10.6084/m9.figshare.22699759.v1",
+      "version": 1,
+      "catalog_license": "CC BY 4.0",
+      "file_id": 40721504,
+      "provider_md5": "f73f72e7116c3a9b1f51fc268584a653",
+      "actual_data_sha256": null,
+      "acquisition": "Metadata only; bulk travel-time data was not downloaded."
+    },
+    "facilities": {
+      "metadata_url": "https://api.figshare.com/v2/articles/22689667",
+      "metadata_capture_sha256": "4c289530f0986c10ae390ba6bdb9445ed4a3314f94d4a721404265fc1c9c6c9b",
+      "doi": "10.6084/m9.figshare.22689667.v2",
+      "version": 2,
+      "catalog_license": "CC BY 4.0",
+      "facility_csv_file_id": 41570451,
+      "facility_csv_provider_md5": "37d87977aba9fcbbf387cf42512bd8c8",
+      "actual_data_sha256": null,
+      "acquisition": "Metadata only; facility records were not downloaded."
+    },
+    "qualification": "The paper derives travel times from Google's Directions API and checks them against Google Maps front-end estimates. Facility capability was separately checked, but travel-time validation is not independent physical journeys. The service, region and road-time source differ from the adopted Idai question."
+  },
+  "reserved_observation_catalogs": {
+    "wfp_road_constraints": {
+      "metadata_url": "https://data.humdata.org/api/3/action/package_show?id=mozambique-road-access-constraints-cyclone-idai",
+      "metadata_capture_sha256": "5174a02d8bbc3e4f0e6d7f6cefc0d2a0a884b21cd87736453442864dee5eef21",
+      "catalog_license": "ODbL 1.0",
+      "catalog_lineage": "OSM geometry with access status edited from Mozambique Logistics Cluster partner reports; catalog labels the method direct observation/anecdotal data.",
+      "qualification": "Catalog terms do not settle the separate WFP development flood-layer grant. Shared OSM geometry, partners and reporting processes need lineage checks before independent evaluation. Resource hashes and frozen outcome bytes are absent; no rows were opened."
+    },
+    "aerial_survey": {
+      "metadata_url": "https://data.humdata.org/api/3/action/package_show?id=aerial-survey-idai-24-29-march-2019",
+      "metadata_capture_sha256": "4ba3871c52ee17109ddf590c3b233a3b086c5215e937601c64a533252dd50c4c",
+      "catalog_license": "CC BY; version unspecified by catalog",
+      "catalog_lineage": "The catalog names INGC, IFRC, UNDAC, MSF, DFID, Save the Children and MapAction; observations were collected by aerial survey and processed through Kobo, R and ArcGIS.",
+      "qualification": "Metadata does not establish a road-passability endpoint or independence from the WFP and development sources. Resource hashes and frozen outcome bytes are absent; no rows were opened."
+    }
+  }
+}

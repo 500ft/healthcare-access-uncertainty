@@ -53,6 +53,11 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
 - Done: sent the author and flood-custodian source and rights requests. The
   [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
   records the pending evidence.
+- Done: checked the documented OSM history route and alternative public
+  accessibility artifacts. The [source check](evidence/idai-development-inputs/reconstruction-qualification.json)
+  records the failed tiny extraction and why the available distance and
+  Google-derived time products do not qualify as this baseline or independent
+  observations.
 - Current, blocked: await responses to recover the historical road extract and
   final facility list, settle boundary and flood membership, confirm rights,
   and obtain reference output and routing settings to derive a numerical
