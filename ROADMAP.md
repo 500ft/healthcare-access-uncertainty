@@ -58,10 +58,11 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   records the failed tiny extraction and why the available distance and
   Google-derived time products do not qualify as this baseline or independent
   observations.
-- Current, blocked: await responses to recover the historical road extract and
-  final facility list, settle boundary and flood membership, confirm rights,
-  and obtain reference output and routing settings to derive a numerical
-  comparison tolerance. No Idai baseline has been reproduced.
+- Current, blocked: obtain the author's historical road identity and final
+  facility list, settle boundary and flood membership with the custodians,
+  confirm rights, and obtain reference output and routing settings to derive
+  a numerical comparison tolerance. Public OSM history access alone does not
+  recover the author's extract. No Idai baseline has been reproduced.
 - Future: real-area stability, policy comparison and independent evaluation.
 
 ## M1. Qualify and reproduce the development baseline
@@ -154,6 +155,13 @@ bytes, observation timing, vehicle/service scope, coverage and traceable lineage
 WFP Idai is an ineligible reserved candidate until these requirements are met.
 Shared event, OSM geometry and possible partner-report overlap with development
 must be resolved. Unreported roads remain unknown, never passable negatives.
+An [owner-provided account](evidence/idai-development-inputs/source-review.json#macharia_kenya_closure_route)
+excludes one Kenya closure-report route from independent final evaluation.
+An independently collected, matchable positive-only list could measure capture
+of reported positives. It could not establish population recall, specificity,
+false-positive rate or precision. The reported Kenya list also lacks independent
+lineage and matching fields, so even that narrower measure is unqualified here.
+Other sources would need their own qualification; the finish line is unchanged.
 
 1. Freeze eligibility and exclusion rules from metadata, then arrange a custodian
    content-hash freeze before opening outcome rows. Register matching rules,

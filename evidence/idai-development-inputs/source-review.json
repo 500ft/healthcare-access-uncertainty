@@ -233,7 +233,16 @@
     },
     "flood_qualification": "Public item access is not a reuse grant. No item data endpoint requested. Methods and item metadata identify Sentinel-1; article availability text says Sentinel-2. Acquisition dates must be resolved separately from portal timestamps.",
     "repositories": "Article availability lists source portals, not a pinned study code/data release. No GitHub link appears in article or supplement. UNOSAT link is a general products catalog, not an immutable input inventory.",
-    "eligibility": "Unqualified candidate only; no substitution or validation-set adoption. Rights, snapshots and observation independence remain unresolved."
+    "eligibility": "Unqualified candidate only; no substitution or validation-set adoption. Rights, snapshots and observation independence remain unresolved. The separate Macharia closure-report route is assessed below."
+  },
+  "macharia_kenya_closure_route": {
+    "provenance": "Owner-provided account of author correspondence, authorized for public paraphrase. The raw email was not inspected or authenticated in this review.",
+    "request_sent": "2026-10-15",
+    "reply_received": "2026-10-17",
+    "owner_reported_content": "The closure reports came from newspapers and Kenyan road-authority records. They record flooded roads only, lack dates, vehicle scope and segment IDs, and overlap the model inputs.",
+    "positive_only_estimand": "A separately collected, independent list of matchable reported closures could support reported-positive capture: matched reported closures identified by the model divided by all matchable reported closures. A positive-only list cannot establish population recall, specificity, false-positive rate or precision. An unreported road is unknown, not open.",
+    "eligibility": "On the owner's account, this particular Kenya closure-report route is ineligible for independent final evaluation: source overlap defeats independence and the missing time, segment and vehicle fields prevent reliable matching. Flooded-road status alone does not establish vehicle passability. Even reported-positive capture is not qualified here. This does not exclude every possible Kenya source or change the adopted Idai finish line.",
+    "what_would_change_status": "A separately sourced, licensed and immutable observation set with provenance independent of model inputs, explicit time and vehicle scope, segment matching and coverage. Any change to the evaluation claim or study area needs an explicit scope decision."
   },
   "needed_source_request": "Ask the Petricola corresponding author for original normal-road PBF and SHA-256, exact OSM timestamp/replication sequence and clipping boundary; final facility export with request and exclusions; boundary file and package/release; exact flood archive or union with member inventory; dataset license versions and redistribution terms. Request unrounded baseline output, CRS, routing direction, engine/profile and raster-extraction settings. Draft only; no message sent."
 }
