@@ -128,12 +128,14 @@ with a source-derived numerical tolerance. Reserved WFP
 road-constraint outcomes and detector holdouts remain unopened. The acquired WFP
 flood mask is the explicitly referenced development input.
 
-## Robert candidate
+## Kenya source status
 
 The exact Robert paper and supplement were read, and its linked source portals
 were inspected for metadata and rights. The [candidate record](source-review.json#robert2026)
 separates publication access from dataset permission. The roads portal requires
 written consent and restricts transfer; the linked flood item has no license entry.
-The candidate remains unqualified. Its published modeled accessibility and
-sensitivity ranges cannot establish independent observed travel-time accuracy.
-No Kenyan input layer or reserved observation was acquired.
+That input candidate remains unqualified. A separate
+[owner-reported Macharia exchange](source-review.json#macharia_kenya_closure_route)
+rules out its particular closure-report route for independent final evaluation.
+The raw correspondence was not reviewed here. No Kenyan input layer or reserved
+observation was acquired.

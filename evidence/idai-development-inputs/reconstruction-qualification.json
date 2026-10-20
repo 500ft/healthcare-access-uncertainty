@@ -2,9 +2,14 @@
   "scope": "Development source qualification and catalog metadata only. No Idai baseline, alternative outcome, or reserved observation row was run or opened.",
   "verified_on": "2026-10-15",
   "historical_roads": {
+    "access_followup_on": "2026-10-19",
     "paper_and_author_code": "See source-review.json#petricola. The paper's road-extraction period follows the cyclone; the pinned author script downloads geofabrik_mozambique-latest.osm.pbf without a fixed date or content hash. The facility request uses a different active date.",
     "official_history_source": "https://planet.openstreetmap.org/planet/full-history/",
-    "official_history_access": "The OSM full-history index was reachable by HEAD and GET. It offers a complete editing-history PBF under ODbL 1.0, but the planet-sized file was not downloaded.",
+    "official_history_access": "The public OSM full-history index and the PBF link were reachable without login by HEAD after redirects; the index was also read by GET. It offers a complete editing-history PBF under ODbL 1.0. The listed full-planet PBF was 152 GB at this check and was not downloaded.",
+    "geofabrik_protected_access": "Geofabrik's separate regional full-history and personal-metadata server is password-protected for OSM contributors. Its public download server offers raw PBFs without those personal fields; neither access path identifies the author's moving extract.",
+    "geofabrik_terms": "https://www.geofabrik.de/data/download.html",
+    "route_scope": "These checked routes and ohsome do not exhaust possible historical OSM sources. Access to any route, including a credentialed one, cannot supply the author's original extraction timestamp, clipping rules or byte identity.",
+    "local_capability_check": "No historical/raw OSM PBF was found in the known project input, source, prior-extraction, research-artifact, author-source and upstream-run directories. No matching ohsome, Geofabrik, Overpass or OSM API environment-variable name or common local credential file was found. Only presence and file types were checked; no secret values were printed. This scoped check does not prove absence elsewhere.",
     "tool_route": [
       "https://docs.osmcode.org/osmium/latest/osmium-time-filter.html",
       "https://docs.osmcode.org/osmium/latest/osmium-extract.html"
