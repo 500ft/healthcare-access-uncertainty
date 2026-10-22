@@ -35,7 +35,7 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
 - Done: inspected the paper supplements and source requests, confirmed actual
   flood sensor dates in the acquired archive, and corrected incomplete snapshot
   provenance. The [source review](evidence/idai-development-inputs/source-review.json)
-  also records why the Robert candidate remains ineligible.
+  also records why the Robert candidate remains unqualified.
 - Done: current Sofala topology fixture executed with synthetic intervals, closures,
   exhaustive small-subgraph checks, independent endpoint checks and measured
   scaling. The [compute record](evidence/sofala-scaling/README.md) also records
