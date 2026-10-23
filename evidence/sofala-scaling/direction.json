@@ -1,0 +1,365 @@
+{
+  "status": "executed",
+  "purpose": "Direction sensitivity of synthetic interval decisions on the current Beira-area fixture. Synthetic times and targets only; no historical replication, no national road input, no clinical threshold.",
+  "direction": {
+    "to_target": "Existing access_bounds: reverse multi-source Dijkstra, shortest time from each node to its nearest target along arc direction (resident travels to the facility).",
+    "from_target": "Same intervals and closures on the reversed arcs: shortest time from the nearest target to each node (outward isochrone, as the pinned isochrone helper requests from facility coordinates).",
+    "comparison": "Decision classes at the registered threshold are compared node by node on the same graph, targets, seed and interval set."
+  },
+  "protocol_sha256": "6e142e1bfd8d3e9d64e5b1488271c337086b9d61bdacf29d58e7f059cfe17363",
+  "source_sha256": "95446925a6a81001c2a8ae996fb208448a2685f62a687594aa2ee7e93da535e0",
+  "graph_sha256": "5b9299a7ea4b4b1993fad047a063ae14ad82486ca80006b87adf23f4d6e8a602",
+  "seed": 61011,
+  "threshold_minutes": 30,
+  "fixed_synthetic_target_osm_ids": [
+    5635088131,
+    5648120883,
+    6352129291
+  ],
+  "self_check": {
+    "decision_changes": 1,
+    "changes_to_target->from_target": {
+      "definite_access->definite_exclusion": 1
+    },
+    "decisions_to_target": {
+      "definite_access": 3,
+      "definite_exclusion": 0,
+      "unresolved": 0
+    },
+    "decisions_from_target": {
+      "definite_access": 2,
+      "definite_exclusion": 1,
+      "unresolved": 0
+    },
+    "nodes_with_any_endpoint_difference": 1,
+    "to_target_unreachable_lower_upper": [
+      0,
+      0
+    ],
+    "from_target_unreachable_lower_upper": [
+      1,
+      1
+    ]
+  },
+  "sizes": [
+    {
+      "nodes": 128,
+      "arcs": 243,
+      "one_way_arcs": 17,
+      "one_way_arc_share": 0.06995884773662552,
+      "ways_with_one_way_arcs": 3,
+      "ways": 27,
+      "to_target_result_sha256": "df028ffb1e85a2b038ce0fe8655f72f6f422c7deb52f74d10d901f94e884ee06",
+      "matches_scaling_record": true,
+      "registered_intervals": {
+        "decision_changes": 21,
+        "changes_to_target->from_target": {
+          "definite_exclusion->definite_access": 2,
+          "definite_exclusion->unresolved": 19
+        },
+        "decisions_to_target": {
+          "definite_access": 6,
+          "definite_exclusion": 113,
+          "unresolved": 9
+        },
+        "decisions_from_target": {
+          "definite_access": 8,
+          "definite_exclusion": 92,
+          "unresolved": 28
+        },
+        "nodes_with_any_endpoint_difference": 124,
+        "to_target_unreachable_lower_upper": [
+          25,
+          42
+        ],
+        "from_target_unreachable_lower_upper": [
+          4,
+          39
+        ]
+      },
+      "widened_intervals": {
+        "decision_changes": 67,
+        "changes_to_target->from_target": {
+          "definite_exclusion->unresolved": 67
+        },
+        "decisions_to_target": {
+          "definite_access": 4,
+          "definite_exclusion": 91,
+          "unresolved": 33
+        },
+        "decisions_from_target": {
+          "definite_access": 4,
+          "definite_exclusion": 24,
+          "unresolved": 100
+        },
+        "nodes_with_any_endpoint_difference": 123,
+        "to_target_unreachable_lower_upper": [
+          25,
+          122
+        ],
+        "from_target_unreachable_lower_upper": [
+          4,
+          88
+        ]
+      }
+    },
+    {
+      "nodes": 512,
+      "arcs": 987,
+      "one_way_arcs": 79,
+      "one_way_arc_share": 0.0800405268490375,
+      "ways_with_one_way_arcs": 11,
+      "ways": 94,
+      "to_target_result_sha256": "a4d432d3e6554269bf704b2b22605a1147fb0fe38918a72ae27c4d4fbd41bd16",
+      "matches_scaling_record": true,
+      "registered_intervals": {
+        "decision_changes": 21,
+        "changes_to_target->from_target": {
+          "definite_exclusion->definite_access": 2,
+          "definite_exclusion->unresolved": 19
+        },
+        "decisions_to_target": {
+          "definite_access": 6,
+          "definite_exclusion": 497,
+          "unresolved": 9
+        },
+        "decisions_from_target": {
+          "definite_access": 8,
+          "definite_exclusion": 476,
+          "unresolved": 28
+        },
+        "nodes_with_any_endpoint_difference": 508,
+        "to_target_unreachable_lower_upper": [
+          49,
+          134
+        ],
+        "from_target_unreachable_lower_upper": [
+          28,
+          146
+        ]
+      },
+      "widened_intervals": {
+        "decision_changes": 80,
+        "changes_to_target->from_target": {
+          "definite_exclusion->unresolved": 75,
+          "unresolved->definite_exclusion": 5
+        },
+        "decisions_to_target": {
+          "definite_access": 4,
+          "definite_exclusion": 466,
+          "unresolved": 42
+        },
+        "decisions_from_target": {
+          "definite_access": 4,
+          "definite_exclusion": 396,
+          "unresolved": 112
+        },
+        "nodes_with_any_endpoint_difference": 507,
+        "to_target_unreachable_lower_upper": [
+          49,
+          506
+        ],
+        "from_target_unreachable_lower_upper": [
+          28,
+          469
+        ]
+      }
+    },
+    {
+      "nodes": 2048,
+      "arcs": 4193,
+      "one_way_arcs": 221,
+      "one_way_arc_share": 0.052706892439780585,
+      "ways_with_one_way_arcs": 33,
+      "ways": 342,
+      "to_target_result_sha256": "e5a26bb3d19e4095d1d04f28627fb065170166ec5bd6bd49e8d0b8f7340711eb",
+      "matches_scaling_record": true,
+      "registered_intervals": {
+        "decision_changes": 21,
+        "changes_to_target->from_target": {
+          "definite_exclusion->definite_access": 2,
+          "definite_exclusion->unresolved": 19
+        },
+        "decisions_to_target": {
+          "definite_access": 6,
+          "definite_exclusion": 2033,
+          "unresolved": 9
+        },
+        "decisions_from_target": {
+          "definite_access": 8,
+          "definite_exclusion": 2012,
+          "unresolved": 28
+        },
+        "nodes_with_any_endpoint_difference": 2009,
+        "to_target_unreachable_lower_upper": [
+          138,
+          756
+        ],
+        "from_target_unreachable_lower_upper": [
+          127,
+          1328
+        ]
+      },
+      "widened_intervals": {
+        "decision_changes": 80,
+        "changes_to_target->from_target": {
+          "definite_exclusion->unresolved": 75,
+          "unresolved->definite_exclusion": 5
+        },
+        "decisions_to_target": {
+          "definite_access": 4,
+          "definite_exclusion": 2002,
+          "unresolved": 42
+        },
+        "decisions_from_target": {
+          "definite_access": 4,
+          "definite_exclusion": 1932,
+          "unresolved": 112
+        },
+        "nodes_with_any_endpoint_difference": 2002,
+        "to_target_unreachable_lower_upper": [
+          138,
+          2042
+        ],
+        "from_target_unreachable_lower_upper": [
+          127,
+          2005
+        ]
+      }
+    },
+    {
+      "nodes": 8192,
+      "arcs": 16848,
+      "one_way_arcs": 652,
+      "one_way_arc_share": 0.03869895536562203,
+      "ways_with_one_way_arcs": 97,
+      "ways": 1226,
+      "to_target_result_sha256": "fb8f3109da9892ef21a98d35ccfc323ff5fe7c688f6673721135b8f06e524dae",
+      "matches_scaling_record": true,
+      "registered_intervals": {
+        "decision_changes": 21,
+        "changes_to_target->from_target": {
+          "definite_exclusion->definite_access": 2,
+          "definite_exclusion->unresolved": 19
+        },
+        "decisions_to_target": {
+          "definite_access": 6,
+          "definite_exclusion": 8177,
+          "unresolved": 9
+        },
+        "decisions_from_target": {
+          "definite_access": 8,
+          "definite_exclusion": 8156,
+          "unresolved": 28
+        },
+        "nodes_with_any_endpoint_difference": 8166,
+        "to_target_unreachable_lower_upper": [
+          525,
+          5915
+        ],
+        "from_target_unreachable_lower_upper": [
+          412,
+          7450
+        ]
+      },
+      "widened_intervals": {
+        "decision_changes": 80,
+        "changes_to_target->from_target": {
+          "definite_exclusion->unresolved": 75,
+          "unresolved->definite_exclusion": 5
+        },
+        "decisions_to_target": {
+          "definite_access": 4,
+          "definite_exclusion": 8146,
+          "unresolved": 42
+        },
+        "decisions_from_target": {
+          "definite_access": 4,
+          "definite_exclusion": 8076,
+          "unresolved": 112
+        },
+        "nodes_with_any_endpoint_difference": 8159,
+        "to_target_unreachable_lower_upper": [
+          525,
+          8186
+        ],
+        "from_target_unreachable_lower_upper": [
+          412,
+          8149
+        ]
+      }
+    },
+    {
+      "nodes": 32577,
+      "arcs": 67290,
+      "one_way_arcs": 1968,
+      "one_way_arc_share": 0.02924654480606331,
+      "ways_with_one_way_arcs": 325,
+      "ways": 3967,
+      "to_target_result_sha256": "60a605bf9bb80efcfcbc745358f753422d85af8ccdd88867b4de2c3279e1a583",
+      "matches_scaling_record": true,
+      "registered_intervals": {
+        "decision_changes": 29,
+        "changes_to_target->from_target": {
+          "definite_access->unresolved": 2,
+          "definite_exclusion->definite_access": 2,
+          "definite_exclusion->unresolved": 22,
+          "unresolved->definite_access": 2,
+          "unresolved->definite_exclusion": 1
+        },
+        "decisions_to_target": {
+          "definite_access": 17,
+          "definite_exclusion": 32541,
+          "unresolved": 19
+        },
+        "decisions_from_target": {
+          "definite_access": 19,
+          "definite_exclusion": 32518,
+          "unresolved": 40
+        },
+        "nodes_with_any_endpoint_difference": 31225,
+        "to_target_unreachable_lower_upper": [
+          3113,
+          29782
+        ],
+        "from_target_unreachable_lower_upper": [
+          4118,
+          31820
+        ]
+      },
+      "widened_intervals": {
+        "decision_changes": 108,
+        "changes_to_target->from_target": {
+          "definite_exclusion->unresolved": 81,
+          "unresolved->definite_access": 2,
+          "unresolved->definite_exclusion": 25
+        },
+        "decisions_to_target": {
+          "definite_access": 8,
+          "definite_exclusion": 32474,
+          "unresolved": 95
+        },
+        "decisions_from_target": {
+          "definite_access": 10,
+          "definite_exclusion": 32418,
+          "unresolved": 149
+        },
+        "nodes_with_any_endpoint_difference": 31214,
+        "to_target_unreachable_lower_upper": [
+          3113,
+          32561
+        ],
+        "from_target_unreachable_lower_upper": [
+          4118,
+          32519
+        ]
+      }
+    }
+  ],
+  "command": "PYTHONPATH=analysis python analysis/run_sofala_direction.py evidence/sofala-scaling/sofala-osm.json.gz --output evidence/sofala-scaling/direction.json",
+  "environment": {
+    "python": "3.11.8 | packaged by conda-forge | (main, Feb 16 2024, 20:49:36) [Clang 16.0.6 ]",
+    "platform": "macOS-14.7.3-arm64-arm-64bit"
+  },
+  "elapsed_seconds": 3.045295292045921
+}
