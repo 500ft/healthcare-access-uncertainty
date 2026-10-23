@@ -21,7 +21,7 @@
       "https://docs.ohsome.org/ohsome-api/v2/migration_guide.html"
     ],
     "tiny_overpass_probe": {
-      "status": "No extract acquired",
+      "status": "No extract acquired; rerun shows attic access feasible at tiny scale",
       "purpose": "Endpoint feasibility only; the mid-month timestamp was chosen before seeing any historical response and is not a proposed study snapshot.",
       "query": "[out:xml][timeout:60][maxsize:67108864][date:\"2021-04-15T00:00:00Z\"];(way[\"highway\"](-19.8370,34.8340,-19.8350,34.8360);relation[\"type\"=\"restriction\"](-19.8370,34.8340,-19.8350,34.8360););(._;>;);out meta;",
       "endpoint_results": [
@@ -35,7 +35,150 @@
         }
       ],
       "method": "curl POST with --data-urlencode data@query.overpassql and --max-time 90; --fail rejected both responses. No response body or OSM data was saved.",
-      "documentation": "https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL"
+      "documentation": "https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL",
+      "rerun": {
+        "rerun_utc": "2026-10-23T14:35:00Z",
+        "query_unchanged": true,
+        "method": "Same query file; curl POST with -D headers -o body -w status; no --fail; bodies and headers kept outside git; 31 s pause between requests per the wiki guidance for 429/406.",
+        "usage_policy_reference": {
+          "url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+          "retrieved_utc": "2026-10-22T14:26:23Z",
+          "sha256": "bbc713e2764f9c1f24f3f84625d67bfcb9112463518db712151a0d71ab94e641",
+          "quoted": "Be sure to check that your app or website adds User-Agent or Referer headers to requests that uniquely identify your app. If you receive an HTTP error code such as 429 or 406, pause for 30 seconds before making a new request."
+        },
+        "attempts": [
+          {
+            "utc": "2026-10-23T14:35:00Z",
+            "url": "https://overpass-api.de/api/interpreter",
+            "method": "POST --data-urlencode data@query.overpassql, --max-time 90",
+            "user_agent": "curl default",
+            "accept": "curl default */*",
+            "http_status": 406,
+            "content_type": "text/html",
+            "body_bytes": 156,
+            "body_sha256": "7cd905d731bc5983f218aa91824747ef52e7b2cef4a2bf4aa2adba91dc3e61e6",
+            "note": "Same request as the recorded probe: curl default headers (Accept: */*, curl User-Agent). nginx front end answered 406 Not Acceptable with a 156-byte HTML body; the query never reached the interpreter."
+          },
+          {
+            "utc": "2026-10-23T14:35:31Z",
+            "url": "https://overpass-api.de/api/interpreter",
+            "method": "POST --data-urlencode data@query.overpassql, --max-time 90",
+            "user_agent": "500ft-healthcare-access-uncertainty/1.0 (+https://github.com/500ft/healthcare-access-uncertainty)",
+            "accept": "curl default */*",
+            "http_status": 200,
+            "content_type": "application/osm3s+xml",
+            "body_bytes": 20371,
+            "body_sha256": "f3d9cf083cb469eb4e079e09f7c3c47cc8fa1f8cbfb3385c35f2b5528e964460",
+            "note": "Identifying User-Agent added, as the wiki usage policy asks. Interpreter answered with attic XML."
+          },
+          {
+            "utc": "2026-10-23T14:36:47Z",
+            "url": "https://overpass-api.de/api/interpreter",
+            "method": "POST --data-urlencode data@query.overpassql, --max-time 90",
+            "user_agent": "500ft-healthcare-access-uncertainty/1.0 (+https://github.com/500ft/healthcare-access-uncertainty)",
+            "accept": "application/xml, text/xml, application/osm3s+xml",
+            "http_status": 502,
+            "content_type": "text/plain",
+            "body_bytes": 534,
+            "body_sha256": "8084e21e11df846a2e41bb93ddaf66961aa2ef71e9a9fc1f46debc960b303042",
+            "note": "Identifying User-Agent plus explicit XML Accept header. Server at capacity: 502 text/plain body telling clients to retry with backoff. Transient; not a header rejection."
+          },
+          {
+            "utc": "2026-10-23T14:37:18Z",
+            "url": "https://overpass.kumi.systems/api/interpreter",
+            "method": "POST --data-urlencode data@query.overpassql, --max-time 90",
+            "user_agent": "curl default",
+            "accept": "curl default */*",
+            "http_status": 200,
+            "content_type": "application/osm3s+xml",
+            "body_bytes": 20371,
+            "body_sha256": "a36d1e7e04c39f03bc97511e2cbfdc7e10f68b00201c4c90f515eaf58bd3313a",
+            "note": "Mirror with curl default headers, same as the recorded probe that returned 500. Answered with attic XML this time."
+          },
+          {
+            "utc": "2026-10-23T14:39:12Z",
+            "url": "https://overpass.kumi.systems/api/interpreter",
+            "method": "POST --data-urlencode data@query.overpassql, --max-time 90",
+            "user_agent": "500ft-healthcare-access-uncertainty/1.0 (+https://github.com/500ft/healthcare-access-uncertainty)",
+            "accept": "application/xml, text/xml, application/osm3s+xml",
+            "http_status": 200,
+            "content_type": "application/osm3s+xml",
+            "body_bytes": 20371,
+            "body_sha256": "3c1b8fdcb6400e4370f2fd0319998dbe975f94f2fa442cdf682629a02723d3fe",
+            "note": "Mirror with identifying User-Agent and explicit XML Accept header. Answered with attic XML."
+          },
+          {
+            "utc": "2026-10-23T14:41:09Z",
+            "url": "https://overpass.private.coffee/api/interpreter",
+            "method": "POST --data-urlencode data@query.overpassql, --max-time 90",
+            "user_agent": "500ft-healthcare-access-uncertainty/1.0 (+https://github.com/500ft/healthcare-access-uncertainty)",
+            "accept": "application/xml, text/xml, application/osm3s+xml",
+            "http_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "note": "Further public instance from the wiki list. No bytes received within the 90 s client limit; curl exit 28.",
+            "curl_error": "curl: (28) Operation timed out after 90005 milliseconds with 0 bytes received"
+          }
+        ],
+        "successful_response_content": {
+          "generator": "Overpass API 0.7.62.11 87bfad18",
+          "elements": {
+            "node": 101,
+            "way": 7,
+            "relation": 0
+          },
+          "way_ids_versions_timestamps": [
+            [
+              "60944885",
+              7,
+              "2017-02-09T21:36:23Z"
+            ],
+            [
+              "60944889",
+              11,
+              "2019-04-07T15:05:37Z"
+            ],
+            [
+              "183067163",
+              9,
+              "2021-02-09T16:38:52Z"
+            ],
+            [
+              "183067164",
+              3,
+              "2018-05-18T11:30:27Z"
+            ],
+            [
+              "589222026",
+              2,
+              "2018-05-18T13:16:58Z"
+            ],
+            [
+              "678624478",
+              1,
+              "2019-03-22T11:35:46Z"
+            ],
+            [
+              "905515388",
+              1,
+              "2021-02-09T16:38:52Z"
+            ]
+          ],
+          "latest_element_timestamp": "2021-02-09T16:39:39Z",
+          "all_element_timestamps_at_or_before_requested_date": true,
+          "meta_osm_base_per_response": {
+            "02": "2026-10-23T14:34:51Z",
+            "04": "2026-05-31T22:37:44Z",
+            "05": "2026-06-01T08:52:28Z"
+          },
+          "sha256_without_meta_line": "f6efd25543dbfd048219402c7ff932cb81f9f0190222d66246aa5b89d1960de0",
+          "identical_across_three_200_responses_apart_from_meta_line": true,
+          "retention": "Bodies kept in the external task workspace only; ODbL OSM data, not adopted as a road extract."
+        },
+        "finding": "Small-scale public attic access works: overpass-api.de and the kumi.systems mirror returned the requested 2021-04-15 state once an identifying User-Agent was sent, and every returned element version predates that date. The recorded 406 was the nginx front end rejecting the curl default User-Agent, and the recorded mirror 500 did not recur. Feasibility only: this does not identify the author extraction day, clipping rules or PBF, and a national attic extract would still be a documented reconstruction needing the owner scope decision.",
+        "what_would_change_this": "Repeated 4xx or 5xx with an identifying User-Agent, or returned element versions later than the requested date."
+      }
     },
     "unresolved": "Original extraction day and replication sequence, original PBF checksum, clipping polygon and extraction rules, restriction completeness, final facility snapshot, and ORS import/profile settings. A new historical snapshot would be a documented reconstruction, not exact reproduction."
   },
