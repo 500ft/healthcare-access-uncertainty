@@ -1,0 +1,183 @@
+{
+  "status": "executed",
+  "scope": "Population support and denominator check on hash-pinned DEVELOPMENT inputs. No isochrone, facility, road or flood input was used; no baseline was reproduced.",
+  "executed_utc": "2026-10-23T14:55:52.880121+00:00",
+  "commands": [
+    "python3 tools/fetch_idai_development.py --output <external-dir>",
+    "python3 tools/fetch_idai_development.py --output <external-dir> --check-only",
+    "python3 tools/check_population_denominator.py --input <external-dir> --output evidence/idai-development-inputs/population-denominator.json"
+  ],
+  "inputs": {
+    "population": {
+      "filename": "moz_ppp_2020_UNadj_constrained.tif",
+      "bytes": 36240814,
+      "sha256": "48cd6e325a9cf178cd16aeee4b476794a53149e771062c737106da9f49424612",
+      "matches_manifest": true
+    },
+    "boundary_candidate": {
+      "filename": "geoBoundariesSSCGS-3_0_0-MOZ-ADM0.geojson",
+      "bytes": 1250877,
+      "sha256": "88d960b6cd2f40cd96378873ba9756b0202d774e2c8de5221760a8f0adcf5273",
+      "matches_manifest": true
+    }
+  },
+  "pinned_rule": {
+    "source": "https://raw.githubusercontent.com/GIScience/healthcare-access-idai/69bbe253b4dcd926a630b557251b5f65688301d5/src/2_healthcare_access/vector_analysis/1.4_population_estimates.R",
+    "sha256": "25721923e81323382a2378306023e7c2dddca7717a96d22be13e400c42f3c720",
+    "denominator": "total_pop <- cellStats(population, 'sum'): sum of every non-NA raster cell; the boundary is not applied",
+    "numerator": "exact_extract(population, differenced_isochrones$geom[i], 'sum'): cell value times covered fraction per isochrone polygon"
+  },
+  "rule_applied": "Denominator: every raster cell not equal to nodata and finite, summed with math.fsum over float64 strip sums. Clip variants: cell centre inside the boundary (rasterio geometry_mask), cells fully inside (centre inside and not touched by the boundary line), edge cells (touched by the boundary line, all_touched), and exactextract coverage-fraction sum.",
+  "raster": {
+    "crs": "EPSG:4326",
+    "width": 12746,
+    "height": 19678,
+    "cells": 250815788,
+    "dtype": "float32",
+    "nodata": -99999.0,
+    "pixel_size_deg": [
+      0.0008333333299858782,
+      0.0008333333300132128
+    ],
+    "bounds": [
+      30.217916561,
+      -26.868749691,
+      40.839583185,
+      -10.470416423
+    ],
+    "block_shape": [
+      512,
+      12746
+    ],
+    "area_or_point": "Area"
+  },
+  "boundary": {
+    "geometry_type": "MultiPolygon",
+    "parts": 10,
+    "bounds": [
+      30.215594780846782,
+      -26.868042494497065,
+      40.8375248,
+      -10.473774500000001
+    ],
+    "valid": true,
+    "extends_beyond_raster": [
+      true,
+      false,
+      false,
+      false
+    ]
+  },
+  "cells": {
+    "all": {
+      "valid_cells": 3815034,
+      "population": 31255435.136049263,
+      "nodata_cells": 247000754,
+      "nan_cells": 0,
+      "negative_valid_cells": 0,
+      "zero_valid_cells": 0,
+      "min_valid_value": 0.0875030905008316,
+      "max_valid_value": 1734.7161865234375,
+      "float64_running_sum": 31255435.136049263
+    },
+    "center_inside": {
+      "valid_cells": 3807023,
+      "population": 31093143.359448098
+    },
+    "fully_inside": {
+      "valid_cells": 3804443,
+      "population": 31049897.437036954
+    },
+    "edge": {
+      "valid_cells": 3509,
+      "population": 57967.758587390184
+    },
+    "center_outside": {
+      "valid_cells": 8011,
+      "population": 162291.77660116553
+    }
+  },
+  "denominator_cellstats_rule": 31255435.136049263,
+  "float64_running_sum_minus_fsum": 0.0,
+  "boundary_clip": {
+    "exactextract": {
+      "count": 3806838.7582625914,
+      "sum": 31090206.72370577
+    },
+    "fractional_bracket_full_cells_to_edge_cells": [
+      31049897.437036954,
+      31107865.195624344
+    ],
+    "exactextract_within_bracket": true,
+    "center_inside_minus_exactextract": 2936.635742329061,
+    "cellstats_minus_exactextract": 165228.4123434946,
+    "cellstats_minus_center_inside": 162291.77660116553
+  },
+  "printed_totals": {
+    "explicit_national_total_in_paper_or_supplements": null,
+    "note": "The paper prints population counts with a percentage of the country population; the supplements print no population total. The implied denominators below are consistency checks only. No input version is selected by agreement with any printed value.",
+    "pairs": [
+      {
+        "quantity": "beyond 6 h walking, raster-based",
+        "million": 3.01,
+        "percent": 9.61,
+        "implied_country_population": 31321540.062434968,
+        "implied_interval_at_printed_precision": [
+          31253250.1300052,
+          31389901.09318064
+        ],
+        "computed_minus_implied": -66104.92638570443,
+        "computed_within_interval": true,
+        "exactextract_clip_within_interval": false
+      },
+      {
+        "quantity": "beyond 6 h walking, network-based",
+        "million": 14.76,
+        "percent": 47.23,
+        "implied_country_population": 31251323.311454587,
+        "implied_interval_at_printed_precision": [
+          31237429.87191701,
+          31265219.69295924
+        ],
+        "computed_minus_implied": 4111.824594676495,
+        "computed_within_interval": true,
+        "exactextract_clip_within_interval": false
+      },
+      {
+        "quantity": "beyond 1 h driving, raster-based",
+        "million": 4.52,
+        "percent": 14.46,
+        "implied_country_population": 31258644.536652833,
+        "implied_interval_at_printed_precision": [
+          31213273.418596607,
+          31304047.04254583
+        ],
+        "computed_minus_implied": -3209.400603570044,
+        "computed_within_interval": true,
+        "exactextract_clip_within_interval": false
+      },
+      {
+        "quantity": "beyond 1 h driving, network-based",
+        "million": 14.15,
+        "percent": 45.29,
+        "implied_country_population": 31243100.02207993,
+        "implied_interval_at_printed_precision": [
+          31228612.429627992,
+          31257590.813735235
+        ],
+        "computed_minus_implied": 12335.11396933347,
+        "computed_within_interval": true,
+        "exactextract_clip_within_interval": false
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.11.8 | packaged by conda-forge | (main, Feb 16 2024, 20:49:36) [Clang 16.0.6 ]",
+    "platform": "macOS-14.7.3-arm64-arm-64bit",
+    "numpy": "2.4.6",
+    "rasterio": "1.4.4",
+    "gdal": "3.10.3",
+    "exactextract": "0.3.0"
+  },
+  "elapsed_seconds": 18.298812708002515
+}
