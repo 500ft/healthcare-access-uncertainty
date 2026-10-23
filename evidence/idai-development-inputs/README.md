@@ -12,8 +12,10 @@ the available OSM history route and the downloaded Mao/Danso artifact hashes.
 The paper used a later road extract for its retrospective event analysis and
 notes the resulting time bias. The pinned author script downloads a moving PBF,
 so neither that script nor an arbitrary event-time snapshot recovers its
-original input. A tiny historical Overpass request failed at both tested
-endpoints; no road extract was acquired. The full-history OSM route retains
+original input. A tiny historical Overpass request first failed at both tested
+endpoints; the rerun with an identifying User-Agent returned the requested 2021
+state from both, so small-scale public attic access works. No road extract was
+acquired. The full-history OSM route retains
 raw nodes, ways and relations before clipping, but the author's timestamp,
 extract rules and routing import remain unknown. Any newly built road input
 would be a documented reconstruction.

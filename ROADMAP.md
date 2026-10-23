@@ -58,6 +58,12 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   records the failed tiny extraction and why the available distance and
   Google-derived time products do not qualify as this baseline or independent
   observations.
+- Done: repeated the tiny attic Overpass request with response diagnostics. The
+  [source check](evidence/idai-development-inputs/reconstruction-qualification.json)
+  records that the earlier 406 was a front-end rejection of the default client
+  identity and that both public endpoints returned the requested historical
+  state. Feasibility only; no road extract was adopted and the author's
+  extraction identity is still unknown.
 - Current, blocked: obtain the author's historical road identity and final
   facility list, settle boundary and flood membership with the custodians,
   confirm rights, and obtain reference output and routing settings to derive
