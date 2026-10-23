@@ -36,6 +36,12 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   flood sensor dates in the acquired archive, and corrected incomplete snapshot
   provenance. The [source review](evidence/idai-development-inputs/source-review.json)
   also records why the Robert candidate remains unqualified.
+- Done: computed the pinned population raster's valid-cell support and its total
+  under the author's cellStats rule, with boundary clipping as a sensitivity. The
+  [denominator check](evidence/idai-development-inputs/population-denominator.json)
+  records the values, their printed-precision consistency with the paper's
+  percentages and the difference a clip would make. Author bytes and the
+  boundary release remain unconfirmed.
 - Done: current Sofala topology fixture executed with synthetic intervals, closures,
   exhaustive small-subgraph checks, independent endpoint checks and measured
   scaling. The [compute record](evidence/sofala-scaling/README.md) also records
