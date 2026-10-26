@@ -99,3 +99,6 @@ and edited text should read like an engineer wrote it for another engineer.
   section. Don't chain clauses with em dashes.
 - Keep dates and changelog entries out of README and roadmap prose unless the
   date matters to the reader. History belongs in git and the progress log.
+- In public research prose, name the quantity, source and check behind a status.
+  Keep authorization details in the decision record when they matter to scope;
+  do not replace missing input rights or owner decisions with implied permission.

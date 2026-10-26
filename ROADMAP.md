@@ -12,26 +12,29 @@ separately registered evaluation against independent observations. Report both
 unresolved decisions and observed errors. A negative comparison is a valid
 result; missing observations cannot establish success or failure.
 
-The owner adopted this dependency plan and cleanup for the existing software
-project. The [decision record](docs/ACCESS_STABILITY.md#owner-decision) preserves
-the scope of that adoption. [Current evidence](results/README.md) distinguishes
-the executed toy result from the blocked real-area study.
+The [decision record](docs/ACCESS_STABILITY.md#owner-decision) establishes this
+software question and retires the earlier detector work. [Current results](results/README.md)
+cover toy graphs and a current-network software fixture. The historical Idai
+baseline remains unreproduced.
 
 ## Dependencies and verified state
 
-Qualified inputs and target → independent development replication → justified
-bounds and stability → route-cost measurement selection → independent evaluation.
+Identified inputs with confirmed reuse terms and a specified target →
+independent development replication → justified bounds and stability →
+route-cost measurement selection → independent evaluation.
 
-Evaluation metadata can be qualified alongside development, but reserved outcomes
-stay closed until eligibility, models and the evaluation procedure are frozen.
+Evaluation-source metadata can be checked alongside development. Reserved
+outcome rows stay closed until source eligibility and the models and evaluation
+procedure are fixed before inspection.
 
 - Done: interval bounds, optional closures, inverse speed conversion and nested
   widening verified on toy graphs by an independent exhaustive oracle.
-- Done: development source and WFP catalog metadata inspected and hashed.
+- Done: inspected and hashed development-source and WFP catalog metadata.
 - Done: acquired and hashed the published population product and both
   development flood archives; matched an archived boundary candidate to its
   immutable archive object. The [input record](evidence/idai-development-inputs/README.md)
-  separates qualified reuse from unresolved historical identity and flood terms.
+  distinguishes confirmed product reuse terms from unresolved historical identity
+  and flood-archive terms.
 - Done: inspected the paper supplements and source requests, confirmed actual
   flood sensor dates in the acquired archive, and corrected incomplete snapshot
   provenance. The [source review](evidence/idai-development-inputs/source-review.json)
@@ -46,7 +49,7 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   at the paper's maximum driving horizon for first reproduction. The
   [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
   defines its scope and a precision-based comparison rule.
-- Done: owner accepted a documented reconstruction of that quantity as the
+- Done: the owner accepted a documented reconstruction of that quantity as the
   first fallback if original historical inputs cannot be recovered. Candidate
   substitutions still need identity, rights and sensitivity checks; see the
   [decision record](docs/ACCESS_STABILITY.md#reconstruction-fallback-adopted-by-the-owner).
@@ -67,8 +70,8 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
 
 ## M1. Qualify and reproduce the development baseline
 
-Prerequisites: immutable, legally usable development inputs and the original
-routing configuration. The owner selected the paper's network-driving
+Prerequisites: identifiable, legally usable development inputs and the original
+routing configuration. The selected target is the paper's network-driving
 potential-access quantity at its maximum driving horizon; see the
 [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner).
 Facility membership, input periods, direction and numerical comparison details
@@ -91,38 +94,42 @@ coverage, not actual service availability.
    incorporated into a distributed combined program, satisfy the applicable
    license obligations; a separate folder is insufficient.
 
-Completion evidence: input hashes and permissions, a fully specified version of
-the adopted estimand, runnable commands and a source-linked comparison within
-the declared tolerance, or an explained discrepancy. Software tests alone do not complete this milestone.
+Completion evidence: input hashes and reuse permissions, a fully specified
+version of the adopted quantity, runnable commands and a comparison to the
+published result within the declared tolerance, or an explained discrepancy.
+Software tests alone do not complete this milestone.
 Original road bytes remain unrecovered. A historical reconstruction is an
 accepted conditional fallback and must be labeled separately from exact
-replication. Its actual input substitutions still need qualification. Changes
-to the published estimand require a new-study scope decision. The
+replication. Each replacement input still needs a documented identity and
+confirmed reuse terms. Changes to the published estimand require a new-study
+scope decision. The
 [source request](evidence/idai-development-inputs/source-review.json#needed_source_request)
 identifies missing author artifacts. Stop before replication or substitution
 until source eligibility and remaining target details are settled.
 
 ## M2. Establish real-area decision stability
 
-Prerequisites: M1 and at least two independently sourced, defensible bound
-families. The existing toy intervals do not qualify either family.
+Prerequisites: M1 and at least two independently sourced travel-time bound
+families with evidence for their ranges and joint assumptions. The existing toy
+intervals supply neither family.
 
 1. Convert positive speed bounds into time bounds with the inverse endpoints.
    Represent possible closures explicitly; address common weather effects,
    correlated road conditions, missing links and facility availability.
 2. Specify admissible joint scenarios and the assumptions connecting each bound
    source to the service and mode. Marginal coverage is not joint route coverage.
-   The existing implementation assumes fixed available facilities; qualify any
-   facility-scenario extension before using it for claims.
+   The existing implementation assumes fixed available facilities; check the
+   meaning and implementation of any facility-scenario extension before using it
+   for real-area claims.
 3. Compute definite access, definite exclusion and unresolved decisions, including
    disconnected cases. Verify nested widening cannot create a definite decision
    from an unresolved one on the same graph and facility set.
 4. Produce a reproducible development figure and note linking classifications to
    source bounds, thresholds and assumptions. Label synthetic cases separately.
 
-Completion evidence: qualified independent bound families, implementation checks
-covering their joint assumptions, and real-area outputs with unresolved cases
-and sensitivity to widening reported. No probabilistic guarantee is inferred
+Completion evidence: independently sourced bound families with justified ranges,
+implementation checks covering their joint assumptions, and real-area outputs
+with unresolved cases and sensitivity to widening reported. No probabilistic guarantee is inferred
 from the deterministic interval proof.
 
 ## M3. Compare measurement selection at route-based cost
@@ -150,8 +157,9 @@ simplify it and report the result rather than selecting favorable cases.
 
 ## M4. Evaluate independently, conditionally
 
-Prerequisites: M3 and separately qualified observations with licensed immutable
-bytes, observation timing, vehicle/service scope, coverage and traceable lineage.
+Prerequisites: M3 and separately collected observations whose fixed bytes have
+confirmed reuse rights, observation timing, vehicle/service scope, coverage and
+traceable lineage.
 WFP Idai is an ineligible reserved candidate until these requirements are met.
 Shared event, OSM geometry and possible partner-report overlap with development
 must be resolved. Unreported roads remain unknown, never passable negatives.
@@ -161,7 +169,8 @@ An independently collected, matchable positive-only list could measure capture
 of reported positives. It could not establish population recall, specificity,
 false-positive rate or precision. The reported Kenya list also lacks independent
 lineage and matching fields, so even that narrower measure is unqualified here.
-Other sources would need their own qualification; the finish line is unchanged.
+Other sources need the same rights, lineage and matching checks; the finish line
+is unchanged.
 
 1. Freeze eligibility and exclusion rules from metadata, then arrange a custodian
    content-hash freeze before opening outcome rows. Register matching rules,
@@ -170,8 +179,8 @@ Other sources would need their own qualification; the finish line is unchanged.
    errors as bounds widen, accounting for dependence, incomplete reporting and
    uncertainty. Do not tune on reserved outcomes.
 3. If independence cannot be established, request a decision on another source
-   or event. A second region is a conditional extension requiring its own rights,
-   qualification and registration, not an assumed ready dataset.
+   or event. A second region would require its own reuse rights, source checks
+   and registration before study work begins.
 
 Completion evidence: frozen registration and hashes, independent observation
 provenance, reproducible comparisons and an explicit account of exclusions and
@@ -180,17 +189,17 @@ Publication, external contact and field collection remain separate decisions.
 
 ## Owner inputs and retained safeguards
 
-The next unblocking input is the original road extract or its exact historical
+The next required input is the original road extract or its exact historical
 identity, the final facility export, boundary and flood member versions,
 routing configuration and unrounded reference outputs. Custodians must confirm
 the applicable dataset terms. Derive and freeze the numerical reproduction
-tolerance from those sources before comparison; the target itself is selected.
+tolerance from those sources before comparison. The target itself is selected.
 Changing the study or its estimand, acquisition commitments and any physical
 work require an explicit owner decision. No purchase, naming change or
 publication is adopted.
 
-The detector question is inactive and superseded; its scientific outcome remains
-unresolved. The [history index](docs/history/README.md) identifies retained
-reproduction code, frozen configuration and evidence. Candidate layers and old
-holdouts remain closed. Cleanup supplies no labels or authority to resume that
-study; resumption requires an explicit decision and the original blind safeguards.
+The detector study is inactive; its scientific outcome remains unresolved. The
+[history index](docs/history/README.md) links the reproduction code, fixed
+configuration and evidence. Candidate layers and old holdouts remain closed.
+Resuming that study requires an explicit decision and the original blind
+safeguards.

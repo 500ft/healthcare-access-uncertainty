@@ -66,8 +66,9 @@ comparison. The [source review](../evidence/idai-development-inputs/source-revie
 and [compute probe](../evidence/sofala-scaling/README.md) record further input
 and runtime questions; neither resolves the historical calculation.
 
-The owner adopted a precision-based reproduction comparison rule. Obtain the
-unrounded reference output if possible, match its statistic, units, denominator
+The reproduction comparison will use the published result's display precision
+and checked numerical error. Obtain the unrounded reference output if possible,
+match its statistic, units, denominator
 and inputs, and derive numerical allowance from independent arithmetic,
 raster extraction and geometry error bounds. Half the last reported unit is a
 rounding interval only when round-to-nearest at that precision is established.
@@ -76,7 +77,7 @@ convention is unknown, obtain it or leave the display interval unresolved.
 Geometric and raster extraction errors need separate justified bounds. The
 paper's travel-time band width is
 not a permitted error in population coverage. No numerical tolerance can be
-frozen until reference precision and the relevant numerical error bounds are
+set before reference precision and the relevant numerical error bounds are
 established. Keep this reproduction check separate from any clinical acceptance
 rule.
 
@@ -93,12 +94,12 @@ data. The original historical baseline has not been reproduced.
 If the original historical inputs cannot be recovered, the owner accepts a
 documented reconstruction of the same published driving potential-access
 quantity as the first fallback. Report it as a reconstruction. Each replacement
-needs a traceable snapshot, content hash and qualified reuse terms before use.
+needs a traceable snapshot, content hash and confirmed reuse terms before use.
 Record how it changes population support, period, facility membership and road
 semantics, then compare the selected quantity under justified input variants.
 The [input comparison](../evidence/idai-development-inputs/README.md#conditional-reconstruction-inputs)
-lists available candidates and missing sources. These are candidates, not
-approved substitutes. Do not select versions by agreement with the published
+lists available candidates and missing sources. None is approved as a substitute.
+Do not select versions by agreement with the published
 headline. A change to the target population, facility eligibility, routing
 direction, mode or access statistic requires a separate new-study scope decision.
 The current Sofala software fixture has a smaller area and synthetic times; it
@@ -107,9 +108,10 @@ does not supply the national road input.
 ## Dependency plan and cleanup adoption
 
 The owner authorized the dependency-based [roadmap](../ROADMAP.md) and removal
-of obsolete detector execution and reporting surfaces. This does not qualify
-real data or authorize research runs. The [history index](history/README.md)
-records removals and necessary retained reproduction dependencies. Reserved
+of obsolete detector execution and reporting surfaces. This decision did not
+establish usable real-area inputs or authorize research runs. The
+[history index](history/README.md) records removed active files and the
+reproduction code still available. Reserved
 outcomes and detector holdouts remain closed. Physical work, funding, naming
 and publication decisions remain unprovided.
 
@@ -128,8 +130,10 @@ shortest path above. Thus L <= actual shortest time <= U. For the independent
 interval box these endpoints are attainable. With correlated restrictions they
 can be conservative. This is a deterministic argument, not probabilistic coverage.
 
-For finite nonnegative threshold tau, U <= tau means definite access; L > tau
-means definite exclusion; all other cases remain unresolved. Equality at tau
+Here L is the shortest time using optimistic edge values, U uses pessimistic
+values, and tau is the access threshold in minutes. For finite nonnegative tau,
+U <= tau means definite access; L > tau means definite exclusion; all other cases
+remain unresolved. Equality at tau
 counts as access. Widening intervals or allowing additional closures cannot
 increase L or decrease U, so it cannot turn an unresolved decision into a definite
 one. This requires nested sets on the same graph and facility set. Adding a
@@ -155,26 +159,27 @@ threshold require numerical error bounds before use as real-arithmetic certifica
 
 ## Limits and open evidence questions
 
-These toy bounds do not qualify a real-area uncertainty family. Real healthcare
+These toy bounds do not establish credible real-area travel-time ranges. Real healthcare
 access also depends on graph completeness, transport mode, correlated conditions
 and whether a facility actually provides the required service. Marginal interval
 coverage cannot establish joint route or population coverage.
 
-The [initial source qualification](../evidence/access-stability-20261006/qualification.json)
-retains the metadata probe and WFP candidate ineligibility. The
+The [initial source record](../evidence/access-stability-20261006/qualification.json)
+records the metadata probe and why WFP observations cannot yet be used. The
 [acquired development inputs](../evidence/idai-development-inputs/README.md) now
 resolve the population and flood download access checks, pin an archived boundary
 candidate, and record historical identity and license questions. The initial
 probe remains historical evidence; its failed flood HEAD request no longer
 describes GET availability. The [subsequent source review](../evidence/idai-development-inputs/source-review.json)
 corrects incomplete period provenance and checks flood dates inside that archive.
-Robert remains an unqualified input candidate with unresolved source rights.
+The Robert inputs remain unavailable for this study because source permissions
+and lineage have not been established.
 The separate [Kenya closure-report route](../evidence/idai-development-inputs/source-review.json#macharia_kenya_closure_route)
 is ineligible for independent final evaluation based on an owner-provided
 account of correspondence; the raw email was not reviewed here.
-No outcome rows were fetched or inspected, no observation policy was evaluated,
-and no synthetic agreement is reported as observed accuracy. Metadata hashes
-freeze this qualification decision; they do not freeze unavailable outcome bytes.
+No outcome rows were fetched or inspected, and no observation policy was
+evaluated. The metadata hashes identify the catalog snapshot and eligibility
+record; they do not identify unavailable outcome bytes.
 
 There is no manuscript in the tracked repository. The current README and this
 method note state the supported claims; prior detector claims and figures are

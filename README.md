@@ -41,17 +41,19 @@ evidence/access-stability-20261006/result.json.
 [Vector figure](results/access-stability/bounds.svg) ·
 [Figure guide](docs/data-and-figures.md)
 
-The [current-network compute result](evidence/sofala-scaling/README.md) checks
-software scaling on a dated Sofala OSM fixture with synthetic times and closures.
+The [Sofala software result](evidence/sofala-scaling/README.md) checks
+scaling on a dated OSM road network with synthetic times and closures.
 [Timings and memory](results/sofala-scaling.md) accompany independent routing
-checks and an isolated upstream compatibility probe. Clinical accuracy remains
-unqualified.
+checks and an isolated upstream compatibility probe. No measured journey times
+or clinical outcomes were used to assess accuracy.
 
-The [Idai qualification record](evidence/access-stability-20261006/qualification.json)
-identifies a development baseline, checks its input links and records the
-reproduction blockers. No published baseline has been reproduced here.
-WFP observed constraints remain an unopened, currently ineligible evaluation
-candidate. Metadata and eligibility are hashed before outcome access.
+The [Idai source record](evidence/idai-development-inputs/README.md) identifies
+the published development baseline and the inputs still needed to reproduce it:
+the author's historical roads and final facility list, boundary and flood
+membership, routing settings, reference output and confirmed reuse rights. No
+published baseline has been reproduced here. WFP road-constraint outcomes remain
+unopened. Their catalog metadata does not yet establish observation timing,
+vehicle scope or independence from the development inputs.
 
 ## Getting started
 
@@ -72,22 +74,23 @@ for retained detector checks.
 
 ## What's next
 
-The [roadmap](ROADMAP.md) orders prerequisites and completion evidence without
-a schedule. The [selected reproduction target](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)
-now has a clear published quantity. Historical input identities and a derived
-numerical comparison rule precede development replication, bounds,
-route-cost measurement selection and independent evaluation. Real-area claims
-require licensed, pinned development inputs and independently sourced bound families. The WFP
-candidate also needs observation dates, vehicle scope and independent lineage
-before evaluation can be registered at row level.
+The [roadmap](ROADMAP.md) orders the remaining work by dependency. The first
+Idai target is the published [60-minute network-driving potential-access
+quantity](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner),
+which describes modeled population coverage by mapped facilities. Reproduction
+requires the historical input identities, reuse rights and a numerical comparison
+rule derived from the original output. Real-area stability then needs two
+independently sourced travel-time bound families. Measurement-policy comparison
+and an evaluation against independently collected observations follow. WFP
+road-constraint reports cannot enter that evaluation until their dates, vehicle
+scope, coverage and source lineage are established.
 
 ## Retained history
 
-The owner adopted this software question in this repository. The detector track
-is inactive and superseded, with its evidence retained; it was not scientifically
-disproved. The [history index](docs/history/README.md) preserves the baseline
-packet, code, dated QA reports, figures and previous questions. Its candidate
-layers and holdout remain unopened.
+This repository now studies healthcare access. The earlier detector study is
+inactive; its scientific outcome remains unresolved. The [history index](docs/history/README.md)
+links its baseline materials, code, dated QA reports, figures and previous
+questions. Its candidate layers and holdout remain unopened.
 
 The [UCI trip probe](evidence/route-feasibility-20261004/README.md) is a
 non-Mongolian parser demonstration, not field validation. Its reported usable
