@@ -70,9 +70,10 @@ procedure are fixed before inspection.
 
 ## M1. Qualify and reproduce the development baseline
 
-Prerequisites: identifiable, legally usable development inputs and the original
-routing configuration. The selected target is the paper's network-driving
-potential-access quantity at its maximum driving horizon; see the
+Prerequisites: fixed development input snapshots with recorded content hashes,
+confirmed reuse terms and the original routing configuration. The selected
+target is the paper's network-driving potential-access quantity at its maximum
+driving horizon, as specified in the
 [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner).
 Facility membership, input periods, direction and numerical comparison details
 need original-source confirmation. This target measures modeled geographical
