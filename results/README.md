@@ -2,13 +2,15 @@
 
 Executed results verify deterministic travel-time bounds on toy graphs and
 software scaling on a current Sofala OSM fixture with synthetic weights.
-No real-area Idai baseline or independent WFP evaluation has been qualified.
+The historical Idai baseline has not been reproduced. WFP observation timing,
+vehicle scope and independence remain unresolved, so no WFP evaluation was run.
 [ROADMAP.md](../ROADMAP.md) remains the active plan.
 
 [Current-network timing table](sofala-scaling.md) and
 [executed source, scaling and upstream compatibility record](../evidence/sofala-scaling/README.md)
-cover software behavior only. Historical replication and independent evaluation
-retain their existing gates.
+cover software behavior only. Historical replication still needs the author's
+input identities and reuse rights; evaluation needs independently collected,
+matchable observations.
 
 ![Toy travel-time intervals for nodes A to Clinic in two panels, original and widened, with the access threshold as a dotted vertical line. Marker shape and line style give the decision; hollow markers are unresolved.](access-stability/bounds.png)
 
@@ -38,10 +40,11 @@ evidence/access-stability-20261006/result.json.
 Rebuild these views with `MPLBACKEND=Agg python analysis/plot_access_bounds.py`.
 The [figure guide](../docs/data-and-figures.md) explains scales, encodings and retention.
 
-The [acquired development input record](../evidence/idai-development-inputs/README.md)
-updates source availability. Its [executed sensor-date check](../evidence/idai-development-inputs/flood-sensor-dates.json)
-and [source review](../evidence/idai-development-inputs/source-review.json) leave
-real-area replication blocked.
+The [development input record](../evidence/idai-development-inputs/README.md)
+lists acquired files and missing historical identities. Its
+[sensor-date check](../evidence/idai-development-inputs/flood-sensor-dates.json)
+and [source review](../evidence/idai-development-inputs/source-review.json)
+show why the current files cannot reproduce the published baseline.
 
 The detector JSON records, exports and figures in this directory are retained
 history. Their [previous results index and reproduction runbook](../docs/history/detector-results.md)
