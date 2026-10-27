@@ -135,7 +135,7 @@ were inspected for metadata and rights. The [candidate record](source-review.jso
 separates publication access from dataset permission. The roads portal requires
 written consent and restricts transfer; the linked flood item has no license entry.
 That input candidate remains unqualified. A separate
-[owner-reported Macharia exchange](source-review.json#macharia_kenya_closure_route)
+[reviewed Macharia reply](source-review.json#macharia_kenya_closure_route)
 rules out its particular closure-report route for independent final evaluation.
-The raw correspondence was not reviewed here. No Kenyan input layer or reserved
+The reply was reviewed on 2026-10-26. No Kenyan input layer or reserved
 observation was acquired.
