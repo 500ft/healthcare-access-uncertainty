@@ -170,8 +170,8 @@ describes GET availability. The [subsequent source review](../evidence/idai-deve
 corrects incomplete period provenance and checks flood dates inside that archive.
 Robert remains an unqualified input candidate with unresolved source rights.
 The separate [Kenya closure-report route](../evidence/idai-development-inputs/source-review.json#macharia_kenya_closure_route)
-is ineligible for independent final evaluation based on an owner-provided
-account of correspondence; the raw email was not reviewed here.
+is ineligible for independent final evaluation. The author's reply was reviewed
+on 2026-10-26 and confirms the source overlap and the missing matching fields.
 No outcome rows were fetched or inspected, no observation policy was evaluated,
 and no synthetic agreement is reported as observed accuracy. Metadata hashes
 freeze this qualification decision; they do not freeze unavailable outcome bytes.
