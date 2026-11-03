@@ -42,6 +42,10 @@ stay closed until eligibility, models and the evaluation procedure are frozen.
   actual isolated upstream schema and runtime failures. This owner-authorized
   software fixture does not replace the historical baseline or adopt a clinical
   target.
+- Done: compared both routing directions on that fixture at the registered
+  threshold. The [direction record](evidence/sofala-scaling/direction.json)
+  counts the changed decisions and the one-way arc share. Decisions do change,
+  so routing direction stays an author input for the comparison rule.
 - Done: owner selected the published network-driving potential-access quantity
   at the paper's maximum driving horizon for first reproduction. The
   [decision record](docs/ACCESS_STABILITY.md#reproduction-target-adopted-by-the-owner)

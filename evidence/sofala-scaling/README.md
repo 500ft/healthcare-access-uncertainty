@@ -62,6 +62,26 @@ sizes. Reproduction changes timings; graph and result hashes should match. The
 renderer reads the committed record, leaving scientific outputs unchanged.
 [Execution metadata](execution.json) records script hashes and resource use.
 
+## Routing direction
+
+The [direction record](direction.json) reruns the fixture's synthetic intervals
+in both routing directions on the same graph, targets, seed and threshold. The
+existing bounds measure time from each node to its nearest target along arc
+direction. The variant applies the same intervals and closures to the reversed
+arcs, which measures time from the nearest target outward, the direction the
+pinned isochrone helper requests from facility coordinates. The record counts
+the nodes whose decision class differs at the registered threshold, the same
+count under the widened intervals, and the share of one-way arcs, at every
+registered size. The to-target results reproduce the scaling record's result
+hashes. Some decisions change, so routing direction stays an author input for
+the comparison rule. The fixture cannot settle it nationally, and its synthetic
+times carry no road meaning. Rerun with:
+
+```sh
+PYTHONPATH=analysis python analysis/run_sofala_direction.py \
+  evidence/sofala-scaling/sofala-osm.json.gz --output /tmp/direction.json
+```
+
 ## Actual upstream compatibility result
 
 [The probe result](upstream.json) and [process log](upstream.log) record execution
