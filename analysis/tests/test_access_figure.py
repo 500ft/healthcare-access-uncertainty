@@ -1,68 +1,24 @@
-"""The bounds figure shows only the stored record, and its words live in the caption."""
+"""The bounds figure and tables are drawn by MATLAB from bounds.csv; their words live in the caption.
+
+Pixels are not compared. The checks cover what MATLAB reads (the CSV export), the table fragments
+it wrote against the record, the caption against its file and the docs, and the generated README.
+"""
 import csv
 import json
+import re
 from pathlib import Path
 
-import matplotlib.pyplot as plt
-import pytest
-from matplotlib.text import Text
-
-import figstyle
 import plot_access_bounds as plot
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'evidence/access-stability-20261006'
 OUT = ROOT / 'results/access-stability'
+REPORT = json.loads((SOURCE / 'result.json').read_text())
+QUALIFICATION = json.loads((SOURCE / 'qualification.json').read_text())
 
 
-@pytest.fixture(scope='module')
-def built():
-    report = json.loads((SOURCE / 'result.json').read_text())
-    fig = plot.make_figure(report)
-    yield report, fig
-    plt.close(fig)
-
-
-def test_marks_carry_stored_bounds_and_decisions(built):
-    report, fig = built
-    for ax, (scenario, rows) in zip(fig.axes, report['bounds'].items()):
-        lines = {line.get_gid(): line for line in ax.lines if line.get_gid()}
-        for row in rows:
-            key = f'{scenario}:{row["node"]}'
-            if row['lower'] == 'infinity':
-                assert key not in lines  # No path is never drawn at a finite time.
-                continue
-            line = lines[key]
-            marker, ls, definite, _ = plot.STYLES[row['classification']]
-            assert line.get_marker() == marker
-            assert line.get_markerfacecolor() == figstyle.FILL[definite]
-            x = line.get_xdata()
-            assert x[0] == row['lower']
-            if row['upper'] == 'infinity':
-                assert x[1] == ax.get_xlim()[1] and line.get_markevery() == [0]
-            else:
-                assert x[1] == row['upper']
-        assert any(list(line.get_xdata()) == [report['threshold']] * 2
-                   for line in ax.lines if line.get_gid() is None)
-
-
-def test_canvas_holds_only_axes_text_panel_letters_and_legend(built):
-    _, fig = built
-    printed = {t.get_text() for t in fig.findobj(Text) if t.get_visible() and t.get_text().strip()}
-    allowed = {'(a)', '(b)'} | {ax.get_xlabel() for ax in fig.axes}
-    allowed |= {t.get_text() for legend in fig.legends for t in legend.get_texts()}
-    allowed |= {t.get_text() for ax in fig.axes for t in ax.get_xticklabels() + ax.get_yticklabels()}
-    assert printed <= allowed, printed - allowed
-
-
-def test_nothing_printed_touches_anything(built):
-    _, fig = built
-    assert figstyle.audit(fig) == []
-
-
-def test_caption_matches_file_and_docs(built):
-    report, _ = built
-    text = plot.caption(report)
+def test_caption_matches_file_and_docs():
+    text = plot.caption(REPORT)
     assert text == (OUT / 'bounds.caption.md').read_text().strip()
     assert '10-minute access threshold' in text and 'unresolved now also for A and B' in text
     squash = lambda s: ' '.join(s.split())
@@ -71,17 +27,46 @@ def test_caption_matches_file_and_docs(built):
 
 
 def test_tables_preserve_record(tmp_path):
-    report = json.loads((SOURCE / 'result.json').read_text())
-    qualification = json.loads((SOURCE / 'qualification.json').read_text())
-    plot.write_tables(report, qualification, tmp_path)
+    plot.write_tables(REPORT, QUALIFICATION, tmp_path)
     with (tmp_path / 'bounds.csv').open() as stream:
         exported = list(csv.DictReader(stream))
     expected = [dict(scenario=s, node=r['node'], lower_min=str(r['lower']),
-                     upper_min=str(r['upper']), threshold_min=str(report['threshold']),
+                     upper_min=str(r['upper']), threshold_min=str(REPORT['threshold']),
                      classification=r['classification'])
-                for s, rows in report['bounds'].items() for r in rows]
+                for s, rows in REPORT['bounds'].items() for r in rows]
     assert exported == expected
     with (tmp_path / 'qualification.csv').open() as stream:
         exported = list(csv.DictReader(stream))
-    for got, row in zip(exported, qualification['development_baseline']['inputs'], strict=True):
+    for got, row in zip(exported, QUALIFICATION['development_baseline']['inputs'], strict=True):
         assert all(got[k] == str(v) for k, v in row.items())
+    for name in ('bounds.csv', 'qualification.csv', 'README.md'):
+        assert (tmp_path / name).read_bytes() == (OUT / name).read_bytes(), name
+
+
+def test_typeset_bounds_table_holds_every_value():
+    word = {'definite_access': 'definite access', 'definite_exclusion': 'definite exclusion',
+            'unresolved': 'unresolved'}
+    cell = lambda v: '{$\\infty$}' if v == 'infinity' else str(v)
+    body = [line.strip() for line in (OUT / 'bounds_table.tex').read_text().splitlines()
+            if re.match(r'^\S+ & ', line) and not line.startswith('Node &')]
+    original, widened = REPORT['bounds']['original'], REPORT['bounds']['widened']
+    assert len(body) == len(original)
+    for line, a, b in zip(body, original, widened, strict=True):
+        cells = [c.strip() for c in line.rstrip('\\').split(' & ')]
+        assert cells[0] == a['node'] == b['node']
+        assert cells[1:3] == [cell(a['lower']), cell(a['upper'])]
+        assert cells[4:6] == [cell(b['lower']), cell(b['upper'])]
+        assert word[a['classification']] in cells[3] and word[b['classification']] in cells[6]
+    assert f"\\qty{{{REPORT['threshold']}}}{{\\minute}}" in (OUT / 'bounds_table.tex').read_text()
+
+
+def test_typeset_qualification_table_holds_every_finding():
+    tex = (OUT / 'qualification_table.tex').read_text().replace('\\_', '_')
+    for row in QUALIFICATION['development_baseline']['inputs']:
+        assert row['input'].capitalize() in tex and row['source'] in tex and row['qualification'] in tex
+
+
+def test_rendered_outputs_are_committed():
+    for stem in ('bounds', 'bounds_table', 'qualification_table'):
+        for ext in ('.png', '.pdf'):
+            assert (OUT / f'{stem}{ext}').stat().st_size > 5_000, stem + ext

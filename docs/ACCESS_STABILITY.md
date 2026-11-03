@@ -123,24 +123,36 @@ edge can close; it is present at its lower time in the optimistic graph and
 absent in the pessimistic graph. A permanently closed edge has infinite time
 at both endpoints, or is omitted. No reachable facility gives infinite distance.
 
-Compute shortest times L using all lower endpoints and U using all upper
+Compute shortest times $L$ using all lower endpoints and $U$ using all upper
 endpoints. For any admissible configuration, every path gets no shorter than
 its optimistic length, and the pessimistic shortest path bounds the actual
-shortest path above. Thus L <= actual shortest time <= U. For the independent
+shortest path above. Thus
+
+```math
+L \le \text{actual shortest time} \le U .
+```
+
+For the independent
 interval box these endpoints are attainable. With correlated restrictions they
 can be conservative. This is a deterministic argument, not probabilistic coverage.
 
-Here L is the shortest time using optimistic edge values, U uses pessimistic
-values, and tau is the access threshold in minutes. For finite nonnegative tau,
-U <= tau means definite access; L > tau means definite exclusion; all other cases
-remain unresolved. Equality at tau
+Here $L$ is the shortest time using optimistic edge values, $U$ uses pessimistic
+values, and $\tau$ is the access threshold in minutes. For finite nonnegative $\tau$,
+$U \le \tau$ means definite access; $L > \tau$ means definite exclusion; all other cases
+remain unresolved. Equality at $\tau$
 counts as access. Widening intervals or allowing additional closures cannot
-increase L or decrease U, so it cannot turn an unresolved decision into a definite
+increase $L$ or decrease $U$, so it cannot turn an unresolved decision into a definite
 one. This requires nested sets on the same graph and facility set. Adding a
 facility or previously omitted connection changes the model.
 
-For distance d in km and positive speeds v_min <= v_max in km/h, the minute
-interval is [60d/v_max, 60d/v_min]. Zero minimum speed must be modeled as closure
+For distance $d$ in km and positive speeds $v_\text{min} \le v_\text{max}$ in km/h, the minute
+interval is
+
+```math
+\left[\frac{60\,d}{v_\text{max}},\ \frac{60\,d}{v_\text{min}}\right].
+```
+
+Zero minimum speed must be modeled as closure
 or unbounded time, rather than silently divided by zero. The current module
 rejects invalid speeds, negative/NaN times, invalid nodes and numerical overflow.
 
