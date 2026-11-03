@@ -2,23 +2,24 @@
 
 This validates the extraction tooling on data with KNOWN ground truth. It is not a
 Mongolia result — real extraction stays gated on the Phase-1 negative-control test.
-The canvas carries only the field and the paths; the words are written to
-``method_demo_synthetic.caption.md`` beside the image.
+The scene is the stress case demo_reference, so analysis/matlab/make_stress_cases.m
+draws ``method_demo_synthetic.png`` from results/figures/data/demo_reference.json.
+This script checks that the scene and its paths match that file and writes the
+words to ``method_demo_synthetic.caption.md`` beside the image.
 
     python analysis/demo_synthetic.py
 """
+import json
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+import numpy as np
 
 from catanroads.extract import candidate_coordinates_px, extract_candidates
 from catanroads.synthetic import make_scene
-from figstyle import WIDTH_IN, apply, letter, save
-from plot_stress_cases import FIELD, PATH, KEYS, colorbar, field
+from plot_stress_cases import FIELD, FIGURES
 
 OUT = Path(__file__).resolve().parents[1] / "results" / "method_demo_synthetic.png"
+DATA = FIGURES / "data" / "demo_reference.json"
 
 
 def scene():
@@ -26,28 +27,19 @@ def scene():
     return d, extract_candidates(d)
 
 
-def figure(d, cands):
-    apply()
-    fig, axes = plt.subplots(1, 2, figsize=(WIDTH_IN, 3.45))
-    fig.subplots_adjust(left=.02, right=.93, top=.84, bottom=.03, wspace=.06)
-    field(axes[0], d)
-    im = field(axes[1], d)
-    for k, c in enumerate(cands):
-        axes[1].plot(*zip(*candidate_coordinates_px(c)), gid=f"path:{k}", **PATH)
-    colorbar(fig, im, list(axes), [d])
-    for ax, tag in zip(axes, "ab"):
-        letter(ax, tag)
-    fig.legend(handles=[KEYS["path"]], loc="upper center", bbox_to_anchor=(.5, .995),
-               handlelength=2.6, handletextpad=.5, borderaxespad=0)
-    return fig
+def check(d, cands, data):
+    """The plotted file must hold this scene and these paths."""
+    assert np.array_equal(np.round(d, 2) + 0.0, np.array(data["field"])), "field differs from the plot data"
+    drawn = [c["path_px"] for c in data["candidates"]]
+    assert drawn == [[[float(x), float(y)] for x, y in candidate_coordinates_px(c)] for c in cands]
 
 
 def caption(cands):
     return (f"Synthetic method demo: {len(cands)} delivered paths trace the curved and braided corridors and "
             "part of the broken one; the round blob is rejected. Panel (a): the known-truth synthetic "
             "disturbance field from make_scene(size=256, seed=1). Panel (b): the same field with each "
-            "candidate's delivered path_px as a white line with a black edge. Grey level is the disturbance "
-            f"(colourbar), {FIELD['vmin']} to {FIELD['vmax']} z units; values beyond the scale are clipped. "
+            "candidate's delivered path_px as a blue line. Grey level is the disturbance "
+            f"(colour bar), {FIELD['vmin']} to {FIELD['vmax']} z units; values beyond the scale are clipped. "
             "One interior-biased path per accepted component (CR-09); no branch or junction recovery. "
             "Not a real-imagery result. The path geometry is pinned in results/extractor_stress_cases.json "
             "(cases.demo_reference.exported_paths_px). Source: analysis/catanroads/synthetic.py and "
@@ -56,11 +48,9 @@ def caption(cands):
 
 def main():
     d, cands = scene()
-    fig = figure(d, cands)
-    save(fig, OUT)
+    check(d, cands, json.loads(DATA.read_text()))
     OUT.with_suffix(".caption.md").write_text(caption(cands) + "\n")
-    plt.close(fig)
-    print(f"wrote {OUT}  ({len(cands)} candidates)")
+    print(f"wrote {OUT.with_suffix('.caption.md')}  ({len(cands)} candidates)")
 
 
 if __name__ == "__main__":

@@ -4,69 +4,95 @@
     {
       "id": "access-bounds-readable",
       "evidence_type": "deterministic toy assumptions; no observed travel times",
-      "generator": "analysis/plot_access_bounds.py",
-      "command": "MPLBACKEND=Agg python analysis/plot_access_bounds.py",
+      "generator": "analysis/matlab/make_access_bounds.m; analysis/matlab/make_access_tables.m",
+      "command": "python analysis/plot_access_bounds.py && cd analysis/matlab && matlab -batch make_figures",
       "inputs": [
         "evidence/access-stability-20261006/result.json",
         "evidence/access-stability-20261006/qualification.json",
-        "analysis/figstyle.py"
+        "analysis/plot_access_bounds.py",
+        "analysis/matlab/fig_style.m",
+        "analysis/matlab/export_pair.m"
       ],
       "outputs": [
         "results/access-stability/bounds.png",
-        "results/access-stability/bounds.svg",
+        "results/access-stability/bounds.pdf",
         "results/access-stability/bounds.caption.md",
         "results/access-stability/bounds.csv",
         "results/access-stability/qualification.csv",
+        "results/access-stability/bounds_table.tex",
+        "results/access-stability/bounds_table.pdf",
+        "results/access-stability/bounds_table.png",
+        "results/access-stability/qualification_table.tex",
+        "results/access-stability/qualification_table.pdf",
+        "results/access-stability/qualification_table.png",
         "results/access-stability/README.md",
         "results/access-stability/provenance.json"
       ],
       "boundary": "Deterministic shortest-time bounds and metadata qualification. No confidence intervals, real-area replication or observed accuracy. Reserved outcomes remain unopened.",
-      "reproducibility": "Read committed records only. Numeric marks and CSV exports checked against the existing result. Source and generator hashes recorded in the derived provenance file; original evidence and its hashed generator unchanged."
+      "reproducibility": "Read committed records only. plot_access_bounds.py writes the CSV exports, caption, Markdown tables and provenance; MATLAB R2025b draws the figure from bounds.csv and writes the table fragments, which are typeset with XeLaTeX or Tectonic (analysis/matlab/README.md). analysis/tests/test_access_figure.py checks the CSV exports, table fragments and caption against the record. Source and generator hashes are recorded in the derived provenance file; original evidence and its hashed generator unchanged."
     },
     {
       "id": "method-demo-synthetic",
       "evidence_type": "simulation",
-      "generator": "analysis/demo_synthetic.py",
-      "command": "python analysis/demo_synthetic.py",
+      "generator": "analysis/matlab/make_stress_cases.m",
+      "command": "python analysis/plot_stress_cases.py && python analysis/demo_synthetic.py && cd analysis/matlab && matlab -batch make_figures",
       "inputs": [
         "analysis/catanroads/synthetic.py",
         "analysis/catanroads/extract.py",
-        "analysis/figstyle.py"
+        "analysis/demo_synthetic.py",
+        "results/figures/data/demo_reference.json",
+        "analysis/matlab/fig_style.m",
+        "analysis/matlab/export_pair.m"
       ],
       "outputs": [
         "results/method_demo_synthetic.png",
+        "results/method_demo_synthetic.pdf",
         "results/method_demo_synthetic.caption.md"
       ],
-      "boundary": "Synthetic scene from make_scene(size=256, seed=1); demonstrates the extractor's behaviour, not performance on real imagery. Since CR-09 (2026-09-16) the white lines with a black edge are each candidate's delivered path_px (one interior-biased route per accepted component; no branch or junction recovery), not the legacy straight chord.",
-      "reproducibility": "Deterministic given the seed. Numeric output (scene fingerprint and candidate geometry) is pinned in results/method_demo_synthetic.numeric.json and gated by analysis/tests/test_demo_reproducibility.py. Do NOT gate on PNG bytes: font rasterisation differs between freetype builds, so the text bands change while every data pixel is identical -- see results/method_demo_synthetic.env.json. The rendered path geometry (path_px, path_length_px, candidate ids and order) is pinned in results/extractor_stress_cases.json under cases.demo_reference.exported_paths_px and checked by the same test module; method_demo_synthetic.numeric.json is retained as the legacy chord/scene record. results/method_demo_synthetic.env.json describes the pixel comparison of the render made before analysis/figstyle.py; the numeric gate it motivates is unchanged.",
+      "boundary": "Synthetic scene from make_scene(size=256, seed=1); demonstrates the extractor's behaviour, not performance on real imagery. Since CR-09 (2026-09-16) the blue lines are each candidate's delivered path_px (one interior-biased route per accepted component; no branch or junction recovery), not the legacy straight chord.",
+      "reproducibility": "Deterministic given the seed. Numeric output (scene fingerprint and candidate geometry) is pinned in results/method_demo_synthetic.numeric.json and gated by analysis/tests/test_demo_reproducibility.py. Do NOT gate on PNG bytes: font rasterisation differs between freetype builds, so the text bands change while every data pixel is identical -- see results/method_demo_synthetic.env.json. The rendered path geometry (path_px, path_length_px, candidate ids and order) is pinned in results/extractor_stress_cases.json under cases.demo_reference.exported_paths_px and checked by the same test module; method_demo_synthetic.numeric.json is retained as the legacy chord/scene record. results/method_demo_synthetic.env.json describes the pixel comparison of an earlier matplotlib render; the numeric gate it motivates is unchanged. The MATLAB figure draws results/figures/data/demo_reference.json; demo_synthetic.py checks that file against make_scene(size=256, seed=1).",
       "numeric_record": "results/method_demo_synthetic.numeric.json",
       "path_record": "results/extractor_stress_cases.json#cases.demo_reference.exported_paths_px"
     },
     {
       "id": "stress-case-gallery",
       "evidence_type": "simulation",
-      "generator": "analysis/plot_stress_cases.py",
-      "command": "MPLBACKEND=Agg PYTHONPATH=analysis python analysis/plot_stress_cases.py",
+      "generator": "analysis/matlab/make_stress_cases.m",
+      "command": "python analysis/plot_stress_cases.py && cd analysis/matlab && matlab -batch make_figures",
       "inputs": [
         "analysis/catanroads/stress_cases.py",
         "analysis/catanroads/extract.py",
         "results/extractor_stress_cases.json",
-        "analysis/figstyle.py"
+        "analysis/plot_stress_cases.py",
+        "analysis/matlab/fig_style.m",
+        "analysis/matlab/export_pair.m"
       ],
       "outputs": [
         "results/figures/01_demo_paths_vs_chords.png",
+        "results/figures/01_demo_paths_vs_chords.pdf",
         "results/figures/01_demo_paths_vs_chords.caption.md",
         "results/figures/02_hairpin_chord_vs_path.png",
+        "results/figures/02_hairpin_chord_vs_path.pdf",
         "results/figures/02_hairpin_chord_vs_path.caption.md",
         "results/figures/03_wide_corridor_centred_endpoints.png",
+        "results/figures/03_wide_corridor_centred_endpoints.pdf",
         "results/figures/03_wide_corridor_centred_endpoints.caption.md",
         "results/figures/04_low_snr_curve.png",
+        "results/figures/04_low_snr_curve.pdf",
         "results/figures/04_low_snr_curve.caption.md",
         "results/figures/05_misses_and_confound.png",
-        "results/figures/05_misses_and_confound.caption.md"
+        "results/figures/05_misses_and_confound.pdf",
+        "results/figures/05_misses_and_confound.caption.md",
+        "results/figures/data/demo_reference.json",
+        "results/figures/data/tight_curve.json",
+        "results/figures/data/wide_corridor.json",
+        "results/figures/data/low_snr.json",
+        "results/figures/data/crossing.json",
+        "results/figures/data/short_segments.json",
+        "results/figures/data/linear_confound_riverbank.json"
       ],
       "boundary": "Five views of the CR-09 stress cases: the delivered path_px against the legacy endpoints_px chord and each case's reference centerline. Synthetic constructions with known truth; nothing here is imagery or a site result. Caption numbers are read from the v4 stress record, not typed.",
-      "reproducibility": "Deterministic given the fixed seeds in stress_cases.py. analysis/tests/test_plot_stress_cases.py checks the script writes all five files with captions, the drawn demo paths equal the record, the canvas holds no words beyond letters, colourbar and legend, and the overlap audit is empty; pixels are not compared (font rasterisation differs between machines)."
+      "reproducibility": "Deterministic given the fixed seeds in stress_cases.py. plot_stress_cases.py writes one JSON file per case (displayed field rounded to 0.01 z units, reference pixels, paths and chords) and the captions; MATLAB draws the PNG and PDF. analysis/tests/test_plot_stress_cases.py checks that the committed data files and captions match a fresh export and that the demo paths equal the record; pixels are not compared (font rasterisation differs between machines)."
     }
   ],
   "figure_comparison_policy": {

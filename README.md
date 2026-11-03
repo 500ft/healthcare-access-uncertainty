@@ -16,29 +16,29 @@ The [executed record](evidence/access-stability-20261006/result.json) reports
 exhaustive small-graph checks, demonstration classifications and widening checks.
 The [method](docs/ACCESS_STABILITY.md) states the assumptions and proof.
 
-![Toy travel-time intervals for nodes A to Clinic in two panels, original and widened, with the access threshold as a dotted vertical line. Marker shape and line style give the decision; hollow markers are unresolved.](results/access-stability/bounds.png)
+![Toy travel-time intervals for nodes A to Clinic in two panels, original and widened, with the access threshold as a dotted vertical line. Colour and fill give the decision: filled blue is access, filled orange is exclusion, hollow dark grey is unresolved.](results/access-stability/bounds.png)
 
 Deterministic shortest-time bounds on a toy graph, in minutes to the fixed
 destination Clinic, for the 6 nodes A, B, C, D, E and Clinic. Panel (a):
 original assumptions. Panel (b): widened assumptions, same axes. Each horizontal
-line is one node's interval between its lower and upper travel time. A filled
-circle with a solid line means definite access, a filled square with a dashed
-line means definite exclusion, and a hollow diamond with a dash-dot line means
-unresolved. The dotted vertical line is the 10-minute access threshold; equality
-counts as access. No finite upper time exists for D in either panel; that line
-runs to the right edge without an end marker. No path exists for E in either
-panel, so nothing is drawn on that row; the decision is definite exclusion.
-Original: access for A, exclusion for B and E, unresolved for C and D. Widened:
-unresolved now also for A and B; a definite decision remains only for E and
-Clinic. The bounds are deterministic assumptions, not confidence intervals; no
-geography or observed travel time is involved. Exact endpoints: README.md and
-bounds.csv beside this figure. Source:
-evidence/access-stability-20261006/result.json.
+line is one node's interval between its lower and upper travel time. Colour and
+fill give the decision, which is also written at the right of each row: a filled
+blue circle means definite access, a filled orange square means definite
+exclusion, and a hollow dark grey diamond means unresolved. The dotted grey
+vertical line is the 10-minute access threshold; equality counts as access. No
+finite upper time exists for D in either panel; that line runs to the right edge
+without an end marker. No path exists for E in either panel, so that row carries
+only the words no path; the decision is definite exclusion. Original: access for
+A, exclusion for B and E, unresolved for C and D. Widened: unresolved now also
+for A and B; a definite decision remains only for E and Clinic. The bounds are
+deterministic assumptions, not confidence intervals; no geography or observed
+travel time is involved. Exact endpoints: README.md and bounds.csv beside this
+figure. Source: evidence/access-stability-20261006/result.json.
 [Caption file](results/access-stability/bounds.caption.md).
 
 [Bounds and qualification tables](results/access-stability/README.md) ·
 [Bounds CSV](results/access-stability/bounds.csv) ·
-[Vector figure](results/access-stability/bounds.svg) ·
+[Vector figure](results/access-stability/bounds.pdf) ·
 [Figure guide](docs/data-and-figures.md)
 
 The [current-network compute result](evidence/sofala-scaling/README.md) checks
@@ -61,12 +61,14 @@ Use Python 3.10+ and the existing analysis dependencies:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e "analysis[dev]"
-MPLBACKEND=Agg python analysis/plot_access_bounds.py
+python analysis/plot_access_bounds.py
 PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py analysis/tests/test_access_figure.py -q
 ```
 
-The renderer reads the committed result and qualification metadata, then writes
-the active figure and tables. It uses no network or reserved data.
+The script reads the committed result and qualification metadata, then writes
+the caption, CSV and Markdown tables. It uses no network or reserved data.
+MATLAB R2025b draws the figures and typesets the tables from those files; see
+[analysis/matlab](analysis/matlab/README.md).
 [Start here](docs/START_HERE.md) lists metadata hashes and the optional dependencies
 for retained detector checks.
 
