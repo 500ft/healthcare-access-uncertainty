@@ -89,7 +89,8 @@ def case_data(name, d, cl, cands):
             "views": [{"cols": list(c), "rows": list(r)} for c, r in VIEWS[name]],
             "reference_px": [[int(x), int(y)] for y, x in zip(rows, cols)],
             "candidates": [{"path_px": [[float(x), float(y)] for x, y in candidate_coordinates_px(c)],
-                            "endpoints_px": [[float(x), float(y)] for x, y in c["endpoints_px"]]}
+                            # Rounded so last-digit float differences between platforms do not show.
+                            "endpoints_px": [[round(float(x), 3), round(float(y), 3)] for x, y in c["endpoints_px"]]}
                            for c in cands],
             "field": (np.round(d[r0:r1 + 1, c0:c1 + 1], 2) + 0.0).tolist()}
 

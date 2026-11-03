@@ -8,6 +8,7 @@ import json
 import sys
 from pathlib import Path
 
+import numpy as np
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -25,12 +26,40 @@ def built():
     return out + [("method_demo_synthetic", ["demo_reference"], demo_synthetic.caption(cands))], data
 
 
+def _mismatches(fresh, committed):
+    """Short list of differences between two case files.
+
+    Values are compared, with one 0.01 rounding step of slack for the field and 0.001 px for
+    geometry, so last-bit float differences between platforms pass. The list stays short so a
+    failure never asks pytest to diff two large files.
+    """
+    out = []
+    for key in sorted(fresh.keys() | committed.keys()):
+        a, b = fresh.get(key), committed.get(key)
+        if key in ("field", "field_min", "field_max"):
+            a, b = np.array(a, float), np.array(b, float)
+            if a.shape != b.shape or np.abs(a - b).max() > 0.0101:
+                out.append(key)
+        elif key == "candidates":
+            if len(a) != len(b) or any(
+                    np.shape(x[k]) != np.shape(y[k]) or not np.allclose(x[k], y[k], rtol=0, atol=1e-3)
+                    for x, y in zip(a, b) for k in ("path_px", "endpoints_px")):
+                out.append(key)
+        elif a != b:
+            out.append(key)
+    return out
+
+
 def test_export_matches_committed_files(tmp_path):
     written = gallery.export_all(tmp_path)
     assert len(written) == 12
     for path in written:
         committed = gallery.FIGURES / path.relative_to(tmp_path)
-        assert path.read_bytes() == committed.read_bytes(), path.name
+        if path.suffix == ".json":
+            problems = _mismatches(json.loads(path.read_text()), json.loads(committed.read_text()))
+            assert not problems, (path.name, problems)
+        else:
+            assert path.read_text() == committed.read_text(), path.name
 
 
 def test_plot_data_hold_the_displayed_views(built):

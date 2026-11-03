@@ -29,7 +29,8 @@ def scene():
 
 def check(d, cands, data):
     """The plotted file must hold this scene and these paths."""
-    assert np.array_equal(np.round(d, 2) + 0.0, np.array(data["field"])), "field differs from the plot data"
+    # One rounding step of slack: platforms can differ in the last bit before rounding to 0.01.
+    assert np.abs(d - np.array(data["field"])).max() <= 0.0051, "field differs from the plot data"
     drawn = [c["path_px"] for c in data["candidates"]]
     assert drawn == [[[float(x), float(y)] for x, y in candidate_coordinates_px(c)] for c in cands]
 
