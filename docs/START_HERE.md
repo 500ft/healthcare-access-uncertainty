@@ -11,7 +11,7 @@ Install the existing dependencies as described in the
 [README](../README.md#getting-started), then run from the repository root:
 
 ```sh
-MPLBACKEND=Agg python analysis/plot_access_bounds.py
+python analysis/plot_access_bounds.py
 PYTHONPATH=analysis python -m pytest analysis/tests/test_access_bounds.py analysis/tests/test_access_figure.py -q
 (cd evidence/access-stability-20261006 && shasum -a 256 -c metadata-freeze.sha256)
 python tools/check_presentation.py . "Healthcare Access Uncertainty" healthcare-access-uncertainty

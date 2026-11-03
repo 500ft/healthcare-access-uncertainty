@@ -11,6 +11,10 @@ Intervals are deterministic assumptions. Infinity denotes unreachable or unbound
 travel time, not missing data. Clinic is the fixed destination. Integers retain
 the precision of the source. [Download bounds CSV](bounds.csv).
 
+![Bounds table: lower and upper travel time in minutes and the decision for each node, original and widened.](bounds_table.png)
+
+<details><summary>Table as text</summary>
+
 | Node | Original interval [min] | Original decision | Widened interval [min] | Widened decision |
 | :--- | ---: | :--- | ---: | :--- |
 | A | [5, 8] | Definite access | [3, 12] | Unresolved |
@@ -20,12 +24,18 @@ the precision of the source. [Download bounds CSV](bounds.csv).
 | E | [∞, ∞] | Definite exclusion | [∞, ∞] | Definite exclusion |
 | Clinic | [0, 0] | Definite access | [0, 0] | Definite access |
 
+</details>
+
 ## Development input qualification
 
 Recorded baseline status: **blocked**.
 These are recorded metadata findings, not new availability probes.
 [Download qualification CSV](qualification.csv). Empty optional CSV fields mean
 the source record does not supply that field; they do not mean zero.
+
+![Qualification table: recorded source and qualification finding for each development input.](qualification_table.png)
+
+<details><summary>Table as text</summary>
 
 | Input | Recorded source | Qualification finding |
 | :--- | :--- | :--- |
@@ -34,6 +44,8 @@ the source record does not supply that field; they do not mean zero.
 | Population | WorldPop | HEAD reachable; exact product redistribution license not qualified; payload not acquired |
 | Boundary | geoBoundaries SSCGS via rgeoboundaries | version not pinned; exact input terms and bytes not qualified |
 | Floods | UNOSAT plus ARC/WFP | UNOSAT HEAD reachable; WFP archive HEAD HTTP 403; exact input terms and bytes not qualified |
+
+</details>
 
 ## Reserved WFP candidate
 

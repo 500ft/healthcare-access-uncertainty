@@ -15,7 +15,7 @@ to run them.
 describe the grid; no threshold, site, window or setting is altered.**
 
 The screen runs on `EPSG:3857` at `ANALYSIS_SCALE_M = 10`. Web Mercator's linear scale factor is
-1/cos(latitude), so a nominal-10 pixel spans roughly **6.6–7.0 m of ground** across the registered
+$1/\cos(\text{latitude})$, so a nominal-10 pixel spans roughly **6.6–7.0 m of ground** across the registered
 site latitudes — not 10 m. This document previously called it "a fixed 10 m grid", which conflates
 nominal projected units with ground distance. Two consequences follow, both recorded as claim C19 in
 [the literature claim ledger](../literature/claim-ledger.md) and pinned by
@@ -90,41 +90,41 @@ current method makes — public wording stays "candidate disturbance/recovery.")
 
 ### 1. Seed-node generation
 
-Start from a mapped road graph `G_m = (V_m, E_m)` where `V_m` are intersections
-and endpoints and `E_m` are segments. Not every point where two polylines touch
+Start from a mapped road graph $G_m = (V_m, E_m)$ where $V_m$ are intersections
+and endpoints and $E_m$ are segments. Not every point where two polylines touch
 is a useful seed — distinguish true intersections, endpoints, forks,
 grade-separated crossings, and mapping artifacts, and **prioritize rural forks,
 endpoints, and low-degree nodes**.
 
-For each node `v_i`, search a region `Ω_i = { p : |p − v_i| ≤ r_i }`. The radius
+For each node $v_i$, search a region $\Omega_i = \lbrace p \mid \lvert p - v_i \rvert \le r_i \rbrace$. The radius
 should not be a single fixed value; it depends on imagery resolution, node type,
 road density, terrain, and expected branch length. Prototype by testing
-`r ∈ {250, 500, 1000, 2000} m` and reporting sensitivity.
+$r \in \lbrace 250, 500, 1000, 2000 \rbrace$ m and reporting sensitivity.
 
 ### 2. Detect unrecorded branches
 
 Within a search region, score a candidate branch by evidence, not appearance
 alone:
 
-```
-S_branch = w1·C_origin + w2·C_continuity + w3·C_surface
-         + w4·C_width  + w5·C_terrain    − w6·C_overlap
+```math
+S_\text{branch} = w_1 C_\text{origin} + w_2 C_\text{continuity} + w_3 C_\text{surface}
+  + w_4 C_\text{width} + w_5 C_\text{terrain} - w_6 C_\text{overlap}
 ```
 
-- `C_origin` — begins at the node
-- `C_continuity` — uninterrupted trail strength
-- `C_surface` — disturbed soil / reduced vegetation
-- `C_width` — consistent with an off-road vehicle track
-- `C_terrain` — physically traversable
-- `C_overlap` — similarity to already-mapped roads or non-road features (penalty)
+- $C_\text{origin}$: begins at the node
+- $C_\text{continuity}$: uninterrupted trail strength
+- $C_\text{surface}$: disturbed soil / reduced vegetation
+- $C_\text{width}$: consistent with an off-road vehicle track
+- $C_\text{terrain}$: physically traversable
+- $C_\text{overlap}$: similarity to already-mapped roads or non-road features (penalty)
 
 ### 3. Trail following
 
 Once detected, follow a branch outside the node radius — this is graph growth,
 not whole-image segmentation. At each step choose the continuation direction:
 
-```
-d* = argmax_d [ w1·I_d + w2·K_d + w3·W_d + w4·T_d − w5·Δθ_d ]
+```math
+d^\ast = \arg\max_d \left[ w_1 I_d + w_2 K_d + w_3 W_d + w_4 T_d - w_5\,\Delta\theta_d \right]
 ```
 
 (image evidence, continuity, width, terrain feasibility, minus an
@@ -134,12 +134,13 @@ road, it reaches a destination, disappears, or the terrain becomes implausible.
 
 ## Multi-year activity classification
 
-The temporal comparison is the point. For a segment `e` and year `t`, estimate
-`F_{e,t} = [W, V, D, C, B]` (width, vegetation encroachment, surface
+The temporal comparison is the point. For a segment $e$ and year $t$, estimate
+$F_{e,t} = [W, V, D, C, B]$ (width, vegetation encroachment, surface
 disturbance, continuity, neighboring-branch strength) and an activity index:
 
-```
-A_{e,t} = αW − βV + γD + δC + εB      ΔA_e = A_{e,late} − A_{e,early}
+```math
+A_{e,t} = \alpha W - \beta V + \gamma D + \delta C + \varepsilon B,
+\qquad \Delta A_e = A_{e,\text{late}} - A_{e,\text{early}}
 ```
 
 | Classification | Expected pattern |
@@ -156,8 +157,8 @@ stable / decreasing / absent recent use* — **not** vehicle counts.
 ## The distinctive problem: braided tracks
 
 In open terrain drivers spread into several parallel ruts around potholes, mud,
-sand, snow, and steep sections. Several physical tracks `{e_1, …, e_n}` are
-functionally **one route corridor** `R_j`. Treating each visible rut as a
+sand, snow, and steep sections. Several physical tracks $\lbrace e_1, \dots, e_n \rbrace$ are
+functionally **one route corridor** $R_j$. Treating each visible rut as a
 separate road makes the graph wrong. Model a corridor with: total width, number
 of parallel tracks, average separation, dominant centerline, active-track
 fraction, and lateral migration over time. This is the most novel and
@@ -194,7 +195,7 @@ Compare, and show each subsystem earns its place:
 ## Ground truth
 
 Classification cannot be evaluated without independent labels
-`Y ∈ {active, abandoned, non-road, uncertain}`. Sources: GPS traces from local
+$Y \in \lbrace \text{active}, \text{abandoned}, \text{non-road}, \text{uncertain} \rbrace$. Sources: GPS traces from local
 drivers, field visits, recent drone imagery, expert manual interpretation,
 repeated very-high-resolution imagery, or transportation records. Without this,
 the project produces plausible maps, not defensible results.

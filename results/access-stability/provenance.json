@@ -3,8 +3,11 @@
   "sha256": {
     "evidence/access-stability-20261006/result.json": "a824d3a6be425425042993c2a28b37ba19ae72a2962e28c1e18c505d36ddd58c",
     "evidence/access-stability-20261006/qualification.json": "490982fb65de59182d8644e92961ab1bf5fa900d0a0a9fb64d871eb774554abc",
-    "analysis/plot_access_bounds.py": "8ef31a251cf5e2b78966e1350306016b18437c46674fc7b339f3ddcf1bbac5be",
-    "analysis/figstyle.py": "a2b48efc856ee0b9ad5f802f175481ad6167715eabfda83b5e36130bbe8ddff1"
+    "analysis/plot_access_bounds.py": "721898ac97d55b17607afb93920d357044116c4bc37884a65ff6a62178ca623e",
+    "analysis/matlab/make_access_bounds.m": "612c811a2239bacb0587366ddb48800edffae8367284a0814ac5af00910b4bec",
+    "analysis/matlab/make_access_tables.m": "3923017cf31da11eba00b2bdd15121baaf123e42fccfcd038e00431f01922b29",
+    "analysis/matlab/fig_style.m": "dd3eba06c4e9f9e56c9dd0d1df11f53013d4c9ff59b0a4e6fe2a754b12304c30",
+    "analysis/matlab/export_pair.m": "c4a6ee6a48bca6c4305b37521815c7ffe12f481937d229a9302fe055857f0692"
   },
   "reference": {
     "repository": "500ft/sensor-enclosure-thermal-design",
@@ -12,10 +15,16 @@
   },
   "outputs": [
     "bounds.png",
-    "bounds.svg",
+    "bounds.pdf",
     "bounds.caption.md",
     "bounds.csv",
     "qualification.csv",
+    "bounds_table.tex",
+    "bounds_table.pdf",
+    "bounds_table.png",
+    "qualification_table.tex",
+    "qualification_table.pdf",
+    "qualification_table.png",
     "README.md"
   ]
 }

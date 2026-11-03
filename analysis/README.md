@@ -4,8 +4,9 @@ The current module is `catanroads.access_bounds`, reproduced through
 [`run_access_demo.py`](run_access_demo.py). Follow the repository
 [README](../README.md#getting-started) for current installation and commands,
 and [ROADMAP.md](../ROADMAP.md) for prerequisites.
-[`plot_access_bounds.py`](plot_access_bounds.py) renders the existing result and
-qualification tables without running the model.
+[`plot_access_bounds.py`](plot_access_bounds.py) writes the caption and tables for the
+existing result without running the model. The [MATLAB scripts](matlab/README.md)
+draw every figure and typeset the headline tables.
 
 ## Retained detector reproduction
 
@@ -39,7 +40,8 @@ The unused future-pipeline dependency bundle has been removed.
 # tests
 python -m pytest tests
 
-# synthetic method demonstration -> ../results/method_demo_synthetic.png
+# synthetic method demonstration: caption and data check
+# (matlab/make_figures draws ../results/method_demo_synthetic.png)
 python demo_synthetic.py
 ```
 

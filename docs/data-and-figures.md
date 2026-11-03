@@ -3,31 +3,33 @@
 ## Current access result
 
 The [PNG](../results/access-stability/bounds.png) and
-[SVG](../results/access-stability/bounds.svg) show the same committed
+[PDF](../results/access-stability/bounds.pdf) show the same committed
 [toy result](../evidence/access-stability-20261006/result.json).
 Original and widened bounds use coordinated panels with the same node order,
 scale and fixed clinic. The [method](ACCESS_STABILITY.md) defines their meaning.
 
 - Horizontal units are minutes. The threshold comes from the result; equality
   counts as access. It is a demonstration choice, not a real-area service target.
-- Filled circles with solid lines mean definite access. Filled squares with
-  dashed lines mean definite exclusion. Hollow diamonds with dash-dot lines mean
-  unresolved. The figure uses no colour; shape, fill and line style carry the
-  decision.
+- Colour and fill carry the decision. A filled blue circle is definite access, a
+  filled orange square is definite exclusion and a hollow dark grey diamond is
+  unresolved. The decision is also written at the right of each row, so the
+  figure reads in greyscale.
 - Minor ticks are 1 min apart. Exact endpoints at source precision are in the
-  generated table. No probability or confidence level is assigned to these
+  typeset table. No probability or confidence level is assigned to these
   deterministic intervals.
 - A line that runs to the right edge with a marker only at its left end has no
-  finite upper time. The common axis includes zero and all finite endpoints. A
-  disconnected node has no mark on its row; the caption names it. Clinic is the
-  fixed destination.
-- Words that used to sit on the canvas (title, threshold label, "No path" note,
-  footer) are in the [caption file](../results/access-stability/bounds.caption.md),
-  which the generator writes and the README repeats under the image.
+  finite upper time. A disconnected node carries the words "no path" on its row.
+  Clinic is the fixed destination.
+- The dotted grey threshold line is labelled once, in panel a. The title, panel
+  descriptions and outcomes are in the
+  [caption file](../results/access-stability/bounds.caption.md), which the
+  Python script writes and the README repeats under the image.
 
-The [generated Markdown tables](../results/access-stability/README.md) preserve
-node order and right-align minute intervals. [Bounds CSV](../results/access-stability/bounds.csv)
-retains separate lower/upper/threshold columns and literal `infinity` values.
+The [results page](../results/access-stability/README.md) shows the bounds and
+qualification tables typeset with booktabs and siunitx. Each image sits above the
+same table as Markdown text in a collapsed block, so the values stay searchable.
+[Bounds CSV](../results/access-stability/bounds.csv) retains separate
+lower/upper/threshold columns and literal `infinity` values.
 [Qualification CSV](../results/access-stability/qualification.csv) and the text
 tables copy the existing qualification findings, including unavailable inputs
 and unknown observation scope. Empty optional CSV fields mean unspecified in the
@@ -35,43 +37,53 @@ source. Metadata does not establish usable WFP outcomes or real-area replication
 
 ## Reproduce the presentation
 
-After installing `analysis[dev]`, run from the repository root:
+Python writes captions, tables and plot data; MATLAB R2025b draws. From the
+repository root:
 
 ```sh
-MPLBACKEND=Agg python analysis/plot_access_bounds.py
-PYTHONPATH=analysis python -m pytest analysis/tests/test_access_figure.py -q
+python analysis/plot_access_bounds.py
+python analysis/plot_stress_cases.py
+python analysis/demo_synthetic.py
+cd analysis/matlab && matlab -batch make_figures
 ```
 
-The renderer reads the two committed records, writes only
-`results/access-stability/`, and records source and generator hashes in
+The [MATLAB README](../analysis/matlab/README.md) lists what each script reads and
+writes and how to typeset the table fragments. `plot_access_bounds.py` reads the
+two committed records, writes only `results/access-stability/`, and records
+source and generator hashes in
 [provenance.json](../results/access-stability/provenance.json). These tables are
 derived views, not additional authoritative result records. No network or model
 execution is needed. The [original scientific generator](../analysis/run_access_demo.py)
 and its evidence remain unchanged; its reproduction instructions are retained in
 [the evidence record](../evidence/access-stability-20261006/README.md).
 
-All active plotting scripts import [figstyle.py](../analysis/figstyle.py). It sets
-Computer Modern type (matplotlib's bundled cmr10) at three sizes by role, outward
-ticks, one framed legend and 600-dpi PNG output. The canvas holds only data,
-axes, panel letters, a colourbar where a field is shown, and the legend. Titles,
-scores and notes are in a `<stem>.caption.md` file beside each image, written by
-the generator from the committed records. Shape, fill and line style tell series
-apart; grey is used only for the synthetic disturbance field, with a colourbar.
-In the detector figures the delivered path is a white line with a black edge, the
-legacy chord is dash-dot and the reference centerline is a thin solid line of
-pixels. `figstyle.save` refuses to write a figure where printed items touch. The
-rules follow the owner-approved sample in
-[evidence-sufficiency-benchmark PR #26](https://github.com/500ft/evidence-sufficiency-benchmark/pull/26).
+`plot_stress_cases.py` writes one JSON file per synthetic case to
+`results/figures/data/`: the displayed part of the disturbance field rounded to
+0.01 z units, the reference centerline pixels and each candidate's path and chord.
+The demo figure reuses the `demo_reference` file; `demo_synthetic.py` checks that
+it matches `make_scene(size=256, seed=1)`.
+
+All figures follow [fig_style.m](../analysis/matlab/fig_style.m): LaTeX text in
+Computer Modern, 9 pt axis labels, 8 pt labels and 7 pt ticks, bold 10 pt panel
+letters, and 300-dpi PNG plus vector PDF. The canvas holds data, axes, panel
+letters, a colour bar where a field is shown, and short labels in the colour of
+the series they name. Titles, scores and notes are in a `<stem>.caption.md` file
+beside each image. In the detector figures grey is the disturbance field, the
+delivered path is blue, the legacy chord is an orange dash-dot line, path
+endpoints are hollow blue circles and the reference centerline is a thin line of
+dark grey pixels. The style follows the owner's 2026-11-02 request to redraw all
+data visuals in MATLAB with LaTeX.
 
 ## Inventory and retention
 
 | Visual or table | Use | Disposition |
 | :--- | :--- | :--- |
-| Toy bounds figure | README and current results | Redesigned as PNG and SVG from the committed result. |
-| Bounds and qualification tables | Current results | Generated Markdown and CSV; units and unknowns explicit. |
+| Toy bounds figure | README and current results | Drawn in MATLAB from `bounds.csv` as PNG and PDF. |
+| Bounds and qualification tables | Current results | Typeset by MATLAB and LaTeX from the CSV and qualification record; Markdown text kept below each image. |
+| Reserved WFP candidate table | Current results | Retained as Markdown text: its cells are findings with no numeric values. |
 | Adoption/disposition table | Access method note | Retained as text: it records decisions, not quantitative evidence. |
 | Original toy figure and generator | Dated evidence | Retained unchanged to preserve original hashes and reproduction. |
-| Detector stress-case and demo figures | History | Redrawn with the shared figure rules from the same synthetic cases and stress record; captions beside each image. |
+| Detector stress-case and demo figures | History | Drawn in MATLAB from the exported case data; captions beside each image. |
 | Detector result tables | History | Retained unchanged; the detector is inactive and superseded. |
 | Parameter register | Detector parameters | Value column right-aligned; values unchanged and still checked by `test_parameter_register.py`. |
 | UCI aggregate tables | Historical parser probe | Retained unchanged; the trajectories are non-Mongolian and supply no field validation. |
