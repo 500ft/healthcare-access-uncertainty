@@ -30,7 +30,7 @@ archive grants.
 
 | Input | Acquired evidence | Remaining qualification |
 | --- | --- | --- |
-| Population | Original WorldPop raster, product DOI, catalog metadata and explicit CC BY license | No author-side hash is available; product and upstream filename agree. |
+| Population | Original WorldPop raster, product DOI, catalog metadata and explicit CC BY license; the [denominator check](population-denominator.json) records its valid-cell support and totals under the pinned cellStats rule and under boundary clipping | No author-side hash is available; product and upstream filename agree. |
 | Boundary | Archived SSCGS GeoJSON whose downloaded hash matches the Git LFS object at a fixed archive commit; ODbL terms | The study's unversioned boundary call does not establish which release it used. |
 | Development WFP flood mask | Original ZIP, intact CRC and the expected TIFF; GET resolves the earlier HEAD access failure | Historical byte identity and exact catalog license version need confirmation. |
 | Development UNOSAT flood mask | Original ZIP, intact CRC and member hashes | A populated water layer extends beyond the paper's stated dates. The upstream filename filter would include it. Historical membership and exact license version need confirmation. |
@@ -74,7 +74,7 @@ selected for a baseline run here.
 | --- | --- | --- | --- |
 | National road extract used by the routing engine | No suitable national replacement is acquired. The current Beira-area OSM fixture is pinned in the current-network source under ODbL and contains synthetic times. | Its limited area, later road state and assumed times change reachability and the driving model. | Once an eligible national historical reconstruction exists, compare road coverage, direction rules, connectivity and covered population against any recovered author extract or nearby qualified snapshots. |
 | Final mapped healthcare facilities | No final export is acquired. The pinned ohsome query and ODbL terms are in the [source review](source-review.json); the code's active date conflicts with the paper's account. | Facility locations, eligibility and count alter every isochrone. | Compare facility IDs, tags and locations across the author export and any justified dated rebuild. Report coverage changes without tuning the chosen snapshot to the published total. |
-| Population denominator and cell weights | The acquired original WorldPop product has a content hash, product identifier and CC BY 4.0 terms in the manifest. Author-side byte equality remains unconfirmed. | Different cells, nodata or totals change both numerator and denominator. | Check author bytes if supplied; otherwise report cell support, nodata and aggregate sensitivity for any eligible alternative product. |
+| Population denominator and cell weights | The acquired original WorldPop product has a content hash, product identifier and CC BY 4.0 terms in the manifest. Author-side byte equality remains unconfirmed. | Different cells, nodata or totals change both numerator and denominator. | Check author bytes if supplied; otherwise report cell support, nodata and aggregate sensitivity for any eligible alternative product. Executed for the acquired product in the denominator check. |
 | National clipping boundary | The archived SSCGS candidate has a content hash and ODbL terms in the manifest. Its match to the author's unpinned boundary call is unknown. | Clipping changes eligible facilities, road edges and population support. | Compare boundary geometry, included facilities and population support against a recovered author file or another qualified release. |
 | Development WFP flood mask | The acquired ZIP is hash-pinned in the manifest. Historical byte identity and its resource-specific CC BY version remain open. | Normal-condition coverage is unaffected; a later flood-loss comparison could change. | After rights and membership are established, compare the impacted area and route closures under the original and eligible alternative mask. |
 | Development UNOSAT flood members | The acquired ZIP is hash-pinned in the manifest. Its selected water layers include a later observation; historical membership and CC BY-SA version remain open. | The modeled impact union and later road removal could change. | Compare the author member list with each justified eligible member set before any flood-loss calculation. |
@@ -94,8 +94,17 @@ repository root, choose an external directory:
 python3 tools/fetch_idai_development.py --output /absolute/path/to/idai-development
 python3 tools/fetch_idai_development.py --output /absolute/path/to/idai-development --check-only
 python3 tools/inspect_idai_flood_dates.py --input /absolute/path/to/idai-development
+python3 tools/check_population_denominator.py --input /absolute/path/to/idai-development
 python3 -m pytest analysis/tests/test_idai_fetch.py analysis/tests/test_idai_flood_dates.py -q
 ```
+
+The denominator check needs rasterio and exactextract, which are outside the
+analysis extras; its test skips without them. It applies the pinned helper's
+`cellStats` rule, every valid raster cell with no boundary clip, and reports the
+boundary-clipped totals as a sensitivity. The paper prints no national total, so
+the record compares the result with the denominators implied by its printed
+count and percentage pairs at printed precision. That is a consistency check;
+no input version is selected by agreement with a printed value.
 
 Only the manifest's acquired development assets are fetched. Existing files are
 verified and preserved. The command does not extract, clip, reproject, select
