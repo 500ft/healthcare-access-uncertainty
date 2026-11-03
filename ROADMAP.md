@@ -155,7 +155,7 @@ bytes, observation timing, vehicle/service scope, coverage and traceable lineage
 WFP Idai is an ineligible reserved candidate until these requirements are met.
 Shared event, OSM geometry and possible partner-report overlap with development
 must be resolved. Unreported roads remain unknown, never passable negatives.
-An [owner-provided account](evidence/idai-development-inputs/source-review.json#macharia_kenya_closure_route)
+The [reviewed author reply](evidence/idai-development-inputs/source-review.json#macharia_kenya_closure_route)
 excludes one Kenya closure-report route from independent final evaluation.
 An independently collected, matchable positive-only list could measure capture
 of reported positives. It could not establish population recall, specificity,
