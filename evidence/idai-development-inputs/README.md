@@ -80,7 +80,8 @@ selected for a baseline run here.
 | Development UNOSAT flood members | The acquired ZIP is hash-pinned in the manifest. Its selected water layers include a later observation; historical membership and CC BY-SA version remain open. | The modeled impact union and later road removal could change. | Compare the author member list with each justified eligible member set before any flood-loss calculation. |
 
 The [decision record](../../docs/ACCESS_STABILITY.md#reconstruction-fallback-adopted-by-the-owner)
-retains the published estimand for reconstruction. A material change to its
+keeps the published population-coverage quantity as the reconstruction target.
+A material change to its
 population, facility eligibility, routing direction, mode or access statistic
 needs a new-study decision. Source eligibility comes before any substitution
 run. The isolated [upstream probe](../sofala-scaling/README.md#actual-upstream-compatibility-result)
@@ -110,8 +111,8 @@ Retain the manifest with the downloaded data. WorldPop attribution and change
 notices follow its dataset license; this does not grant rights to its separate
 building-footprint inputs. The archived boundary carries OSM attribution and
 ODbL obligations, including share-alike and access to alterations when publicly
-using a derivative database. It is not qualified merely by the geoBoundaries
-website's general license statement.
+using a derivative database. The geoBoundaries website's general license
+statement does not establish the terms for this archived file.
 
 The flood catalogs point to license-family pages listing multiple versions.
 Their current overview links alone cannot settle the historical grant. Keep
@@ -134,8 +135,10 @@ The exact Robert paper and supplement were read, and its linked source portals
 were inspected for metadata and rights. The [candidate record](source-review.json#robert2026)
 separates publication access from dataset permission. The roads portal requires
 written consent and restricts transfer; the linked flood item has no license entry.
-That input candidate remains unqualified. A separate
+That input candidate still lacks confirmed reuse rights and source identity. A separate
 [owner-reported Macharia exchange](source-review.json#macharia_kenya_closure_route)
-rules out its particular closure-report route for independent final evaluation.
-The raw correspondence was not reviewed here. No Kenyan input layer or reserved
-observation was acquired.
+describes a closure-report list with shared model inputs and no reliable time,
+vehicle or road-segment matching. This particular list cannot support independent
+final evaluation, including reported-positive capture. Unreported roads cannot
+be counted as open. The raw correspondence was not reviewed here. No Kenyan
+input layer or reserved observation was acquired.

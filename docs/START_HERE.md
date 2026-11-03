@@ -1,9 +1,11 @@
 # Start here
 
 Read the [current question and result](../README.md),
-[method and adoption decision](ACCESS_STABILITY.md), then the
-[roadmap](../ROADMAP.md). The [qualification record](../evidence/access-stability-20261006/qualification.json)
-is the source for real-data blockers and the reserved candidate's eligibility.
+[method and study decisions](ACCESS_STABILITY.md), then the
+[roadmap](../ROADMAP.md). The [development input record](../evidence/idai-development-inputs/README.md)
+lists the acquired files and missing historical identities. The earlier
+[catalog record](../evidence/access-stability-20261006/qualification.json)
+documents why WFP outcome rows remain reserved.
 
 ## Reproduce the software result
 
