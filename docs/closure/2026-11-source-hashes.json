@@ -1,0 +1,228 @@
+{
+  "record_date": "2026-11-13",
+  "candidate_status": "scope frozen for review; sign-offs pending",
+  "repository_url": "https://github.com/500ft/healthcare-access-uncertainty.git",
+  "review_base_HEAD": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+  "report_current_status_commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+  "report_frozen_result_commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+  "report_source_record_sha256": "d0e710cc00208017800227e428232a16206a91fc4c6af7c2312b96efa7a0f15b",
+  "current_portfolio_catalog_sha256": "656e437d946ccd2bbfcbf77b20829d93a4772c3668610790b8fa2b43ee2867cc",
+  "copied_report": {
+    "repository_path": "docs/closure/attachments/healthcare-access-uncertainty-report-2026-11-13.pdf",
+    "sha256": "0b8cc66a3dc6ea2ff78a48015a5f048cd49e6bcf6d3b51f19993b5bf0ec7c802",
+    "bytes": 101518,
+    "pages_in_current_catalog": 10,
+    "original_public_href_in_catalog": "/downloads/reports/healthcare-access-uncertainty.pdf",
+    "copy_method": "Unchanged existing author report; retains citations/attribution; no raw third-party data copied"
+  },
+  "closure_document_sha256": "f561ba209dfa6b71a9b067dc362958793f153acdd9866f129fc5b14787745ab1",
+  "source_files": [
+    {
+      "repository_path": "README.md",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "d79511330003e2def55b11cf874f215cdd9dc32896d7d468070478a820cee20c"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "190341f5d882617af110499647999ac889b871676daa373dc0822609590c8486"
+      },
+      "review_worktree_sha256": "7ada51113611bfacf1b0385b0904ed0627e53bb3a0e54d6bdbe6edf89a8b85d1"
+    },
+    {
+      "repository_path": "LICENSE",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "eaab9ef1f42b8f4e73f1805dfb532d45a74c91482259f53ffb76380652de234e"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "eaab9ef1f42b8f4e73f1805dfb532d45a74c91482259f53ffb76380652de234e"
+      },
+      "review_worktree_sha256": "6eef877e1bdaf15fc307c8cc882867b7e45ee19bbf986514138f8fc0358caf2f"
+    },
+    {
+      "repository_path": "docs/ACCESS_STABILITY.md",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "7f64654afa5d2f9f70f97490bafa4412e550bc839e8eb6213a9693b5e0d7c129"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "cd2c76fc4d3f5ed4fa88f9b29ab27df89e9a24566164d4d9b90e24a6fc55a8ae"
+      },
+      "review_worktree_sha256": "7311cf0581853f80c9331155c4456e6774c981022a150dde9b76b600b7459d42"
+    },
+    {
+      "repository_path": "analysis/catanroads/access_bounds.py",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "c9213860f8178379216cd1b0ec9a6479afc96b64ab7462b001df4a143bc54c0d"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "c9213860f8178379216cd1b0ec9a6479afc96b64ab7462b001df4a143bc54c0d"
+      },
+      "review_worktree_sha256": "44beceaf58b9657210b040ef7493044345abcc8cad314978be67f8e8877daac2"
+    },
+    {
+      "repository_path": "analysis/run_access_demo.py",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "43a6118ac879a941e81992280a6f11bc586bc101f289ac98646e9570f28b5557"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "43a6118ac879a941e81992280a6f11bc586bc101f289ac98646e9570f28b5557"
+      },
+      "review_worktree_sha256": "c6f89d969d82460696de11dba97394bc3999d4d8ee1abe7d97a301dd856d7b2b"
+    },
+    {
+      "repository_path": "analysis/run_sofala_scaling.py",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "1586919922dfc319441fc6965fcaadc262be1bcaa0926731d5adc0425a778920"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "1586919922dfc319441fc6965fcaadc262be1bcaa0926731d5adc0425a778920"
+      },
+      "review_worktree_sha256": "efda6d5771dbf38620e4d747d1c4f8e7a7f61730e120505ee86a3aca318e49f1"
+    },
+    {
+      "repository_path": "analysis/tests/test_access_bounds.py",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "61a939e8c0838c5a069322c062f080cc6212bef4b3902dd7a364751904f0fa96"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "61a939e8c0838c5a069322c062f080cc6212bef4b3902dd7a364751904f0fa96"
+      },
+      "review_worktree_sha256": "da4cf25f06f4c134db37f2bfc480ef580b462e81ada663fa7cab05e6d85cd8f9"
+    },
+    {
+      "repository_path": "evidence/access-stability-20261006/result.json",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "a824d3a6be425425042993c2a28b37ba19ae72a2962e28c1e18c505d36ddd58c"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "a824d3a6be425425042993c2a28b37ba19ae72a2962e28c1e18c505d36ddd58c"
+      },
+      "review_worktree_sha256": "74eef4a7ebe2b59b64a6f99300fd88bf75c6aee5b630d885e3db4f2e74dd34e5"
+    },
+    {
+      "repository_path": "evidence/access-stability-20261006/demo.json",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "7e14f263631f359c4237f483bf6db1d2a4e657448b4780e4fad456876de7a741"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "7e14f263631f359c4237f483bf6db1d2a4e657448b4780e4fad456876de7a741"
+      },
+      "review_worktree_sha256": "ba71d6fc93b47d9047e22b975b030ef4fce9951f804fccd6763c21a3fca86054"
+    },
+    {
+      "repository_path": "evidence/sofala-scaling/scaling.json",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "3883d06f7d599731763d5c44fbb61ae87e0f2dad2857697e5493f2db6fc97a9d"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "3883d06f7d599731763d5c44fbb61ae87e0f2dad2857697e5493f2db6fc97a9d"
+      },
+      "review_worktree_sha256": "5a86594f1e7f41cf54c089bc99be2a7ba66f3f45d9ef5fcf23879fe5a083cd55"
+    },
+    {
+      "repository_path": "results/sofala-scaling.md",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "f72daf5864d5b04f1d0fb22bd86d8884d650350294fe53416a196fbb72c36c0f"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "f72daf5864d5b04f1d0fb22bd86d8884d650350294fe53416a196fbb72c36c0f"
+      },
+      "review_worktree_sha256": "1771b5824141bc72527eea987be9eb16ec1f186466eec0b4c3ffcad5f8f36374"
+    },
+    {
+      "repository_path": "results/access-stability/bounds.csv",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "49a0dee9137a5cde06cbd816b2795b95db288361481be4e5f87750c61491cfa0"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "git_blob_sha256": "49a0dee9137a5cde06cbd816b2795b95db288361481be4e5f87750c61491cfa0"
+      },
+      "review_worktree_sha256": "8fdcc045b293479f1464013c05529bd4374301cc725f273ae5c90bfcdbe557eb"
+    },
+    {
+      "repository_path": "results/access-stability/bounds.pdf",
+      "review_base_HEAD": {
+        "commit": "48bf7f5518c71a8afb361a6ee46e7577fd06a4aa",
+        "git_blob_sha256": "ef7b70bbaaead0090dff0b7396a01e39f4430e0d19285406b5ad785ff99dfaad"
+      },
+      "report_frozen_result": {
+        "commit": "e6a7370b4d44fc90d9c9103afc53e97a5d5f76de",
+        "available": false
+      },
+      "review_worktree_sha256": "ef7b70bbaaead0090dff0b7396a01e39f4430e0d19285406b5ad785ff99dfaad"
+    }
+  ],
+  "owner_approval": false,
+  "Claude_review_complete": false,
+  "administrative_closure_signed_off": false,
+  "previous_candidate_document_sha256": "bc722e529e4a6d7b0bb3f9d303e4cf8779505eb0073eee912a0b48225466dfa8",
+  "original_manifest_sha256": "e445e6f8e78f4075379bdfb1f4b985d5e8a66980a793ff60060fe1f05115116f",
+  "administrative_candidate_artifact_hashes": {
+    "README.md": "ede5060ffe49d16b20ffb1935ea2d7db05ccdf2f304c9b2327ea19393bcd0b91",
+    "docs/closure/2026-11-review.md": "f561ba209dfa6b71a9b067dc362958793f153acdd9866f129fc5b14787745ab1"
+  },
+  "owner_authorization": {
+    "implementation": true,
+    "draft_review_pull_request": true,
+    "decision_date": "2026-11-13",
+    "scope": "Prepare and present the frozen paper/computational scope for review; no new scientific work or formal closure approval."
+  },
+  "approval_field_meaning": "owner_approval, Claude_review_complete and administrative_closure_signed_off below refer to final closure/sign-off, not permission to prepare implementation and a draft PR.",
+  "hash_record_context": "Existing source_files hashes and report/catalog snapshot hashes are preserved from initial candidate preparation. The README pointer and closure authority wording are later administrative edits; their current identities are listed separately.",
+  "validation_update_previous_closure_document_sha256": "d55522705baf9d0f5788caf617f2b6a25566aba1bb1b9685fa0d00678c4f7729",
+  "contributor_validation": {
+    "platform": "Windows task-local environment",
+    "syntax_compile": {
+      "command": "python -B -m compileall -q analysis/catanroads analysis/tests",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "pytest": {
+      "command": "python -B -m pytest analysis/tests -x -q",
+      "exit_code": 1,
+      "status": "STOPPED_DURING_COLLECTION",
+      "exception": "ModuleNotFoundError: No module named 'resource'",
+      "source": "analysis/run_sofala_scaling.py",
+      "tests_completed": 0
+    },
+    "later_planned_commands": "NOT RUN after first nonzero exit",
+    "source_fix_or_retry": false,
+    "submission_checks_complete": false,
+    "full_CI_result": "Pending; not claimed passed",
+    "log_records": [
+      {
+        "evidence_basename": "01-output.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exit_code": 0
+      },
+      {
+        "evidence_basename": "02-output.txt",
+        "sha256": "60e5e537e0384fff5c87c130fc27d31fd0bc350fe9fd9d6f2aa0d0056b3b3d89",
+        "exit_code": 1
+      }
+    ]
+  },
+  "review_base_context": "Source/result hashes and HEAD pins identify the pre-documentation review base. The new administrative commit does not claim to retain that same Git HEAD."
+}
