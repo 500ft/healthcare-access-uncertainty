@@ -108,3 +108,5 @@ combined derived program must meet
 its applicable GPL obligations; placing it in a separate folder is insufficient.
 See [qualification](evidence/access-stability-20261006/README.md) and
 [contributing](CONTRIBUTING.md).
+
+[Scope-freeze review packet](docs/closure/2026-11-review.md) records the retained study and pending closure decision.
